@@ -1,17 +1,25 @@
 {
   "images" : [
     {
-      "filename" : "bt-logo-512.png",
+      "filename" : "as_alert_logo_full.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+<<<<<<< HEAD
       "filename" : "bt-logo-512@2x.png",
+=======
+      "filename" : "as_alert_logo_full.png",
+>>>>>>> Fixed image reference.
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+<<<<<<< HEAD
       "filename" : "bt-logo-512@3x.png",
+=======
+      "filename" : "as_alert_logo_full.png",
+>>>>>>> Fixed image reference.
       "idiom" : "universal",
       "scale" : "3x"
     }
