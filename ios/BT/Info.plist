@@ -49,6 +49,8 @@
 	<integer>2</integer>
 	<key>ENDeveloperRegion</key>
 	<string>US-HI</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
