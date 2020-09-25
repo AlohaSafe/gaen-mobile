@@ -17,7 +17,7 @@ import { ListItem, ListItemSeparator } from "../components"
 
 import { Icons } from "../assets"
 import { Colors, Spacing } from "../styles"
-import ShareAnonymizedDataSwitch from "./ShareAnonymizedDataSwitch"
+import ShareAnonymizedDataListItem from "./ShareAnonymizedDataListItem"
 
 type SettingsListItem = {
   label: string
@@ -95,7 +95,7 @@ const Settings: FunctionComponent = () => {
         {healthAuthoritySupportsAnalytics && (
           <>
             <ListItemSeparator />
-            <ShareAnonymizedDataSwitch />
+            <ShareAnonymizedDataListItem />
           </>
         )}
       </View>
