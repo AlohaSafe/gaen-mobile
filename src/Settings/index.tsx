@@ -76,7 +76,7 @@ const Settings: FunctionComponent = () => {
   }
   const legal: SettingsListItem = {
     label: t("screen_titles.legal"),
-    onPress: () => navigation.navigate(SettingsStackScreens.Legal),
+    onPress: () => navigation.navigate(SettingsScreens.Legal),
     icon: Icons.Document,
   }
   const howTheAppWorks: SettingsListItem = {
@@ -93,7 +93,7 @@ const Settings: FunctionComponent = () => {
 
   const debugMenu: SettingsListItem = {
     label: "EN Debug Menu",
-    onPress: () => navigation.navigate(SettingsStackScreens.ENDebugMenu),
+    onPress: () => navigation.navigate(SettingsScreens.ENDebugMenu),
     icon: Icons.Document,
   }
 
