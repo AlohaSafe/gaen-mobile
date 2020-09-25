@@ -13,8 +13,13 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+<<<<<<< HEAD
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="q8g-oj-mOm">
                     <rect key="frame" x="90" y="107.66666666666669" width="300" height="265"/>
+=======
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="q8g-oj-mOm">
+                    <rect key="frame" x="37" y="323" width="300" height="265"/>
+>>>>>>> Fixed differences.
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="EXe-K5-Sov"/>
                         <constraint firstAttribute="height" constant="265" id="n6f-I6-D0G"/>
@@ -32,6 +37,10 @@
         </view>
     </objects>
     <resources>
+<<<<<<< HEAD
         <image name="logoImage" width="139.33332824707031" height="120.66666412353516"/>
+=======
+        <image name="logoImage" width="209" height="181"/>
+>>>>>>> Fixed differences.
     </resources>
 </document>
