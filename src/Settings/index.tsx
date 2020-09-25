@@ -34,7 +34,11 @@ const Settings: FunctionComponent = () => {
   } = useTranslation()
   const languageName = getLocalNames()[localeCode]
   const { displayReportAnIssue } = useConfigurationContext()
-  const showDebugMenu = env.STAGING === "true" || __DEV__
+
+  // FIXME: Change this back (or add something fancier) before going live
+  // const showDebugMenu = env.STAGING === "true" || __DEV__
+  const showDebugMenu = true
+
   const { healthAuthoritySupportsAnalytics } = useConfigurationContext()
 
   const handleOnPressSelectLanguage = () => {
