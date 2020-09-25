@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@color/splash_background"/>
+
+    <!-- Circles -->
+    <!-- <item
+        android:width="687dp"
+        android:drawable="@drawable/ic_splash_circles"
+        android:gravity="center" /> -->
+
+    <!-- Logo -->
+    <item
+        android:width="100dp"
+        android:height="162dp"
+        android:drawable="@drawable/as_alert_logo_icon"
+        android:gravity="center" />
+
+    <!-- Text -->
+    <item
+        android:width="300dp"
+        android:height="100dp"
+        android:drawable="@drawable/as_alert_logo_text"
+        android:gravity="center"
+        android:top="275dp" />
+</layer-list>
