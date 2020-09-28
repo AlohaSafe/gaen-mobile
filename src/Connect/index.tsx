@@ -11,7 +11,11 @@ import {
   loadAuthorityLinks,
   applyTranslations,
 } from "../configuration/authorityLinks"
+<<<<<<< HEAD
 import { Stacks, ModalStackScreens, useStatusBarEffect } from "../navigation"
+=======
+import { Stacks, ModalScreens, useStatusBarEffect } from "../navigation"
+>>>>>>> Remove report an issue module (#453)
 import {
   ListItem,
   ListItemSeparator,
@@ -40,11 +44,15 @@ const ConnectScreen: FunctionComponent = () => {
   } = useTranslation()
   const osInfo = `${Platform.OS} v${Platform.Version}`
   const { applicationName, versionInfo } = useApplicationInfo()
+<<<<<<< HEAD
   const {
     healthAuthorityName,
     displayCallbackForm,
     emergencyPhoneNumber,
   } = useConfigurationContext()
+=======
+  const { healthAuthorityName, displayCallbackForm } = useConfigurationContext()
+>>>>>>> Remove report an issue module (#453)
 
   const aboutContent = authorityCopyTranslation(
     loadAuthorityCopy("about"),
