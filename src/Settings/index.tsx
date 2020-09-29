@@ -8,8 +8,8 @@ import { getLocalNames } from "../locales/languages"
 import {
   useStatusBarEffect,
   Stacks,
-  ModalScreens,
-  SettingsScreens,
+  ModalStackScreens,
+  SettingsStackScreens,
 } from "../navigation"
 import { useConfigurationContext } from "../ConfigurationContext"
 import { ListItem, ListItemSeparator } from "../components"
@@ -42,13 +42,13 @@ const Settings: FunctionComponent = () => {
 
   const handleOnPressSelectLanguage = () => {
     navigation.navigate(Stacks.Modal, {
-      screen: ModalScreens.LanguageSelection,
+      screen: ModalStackScreens.LanguageSelection,
     })
   }
 
   const handleOnPressHowTheAppWorks = () => {
     navigation.navigate(Stacks.Modal, {
-      screen: ModalScreens.HowItWorksReviewFromSettings,
+      screen: ModalStackScreens.HowItWorksReviewFromSettings,
     })
   }
 
@@ -59,7 +59,7 @@ const Settings: FunctionComponent = () => {
   }
   const legal: SettingsListItem = {
     label: t("screen_titles.legal"),
-    onPress: () => navigation.navigate(SettingsScreens.Legal),
+    onPress: () => navigation.navigate(SettingsStackScreens.Legal),
     icon: Icons.Document,
   }
   const howTheAppWorks: SettingsListItem = {
@@ -69,7 +69,7 @@ const Settings: FunctionComponent = () => {
   }
   const debugMenu: SettingsListItem = {
     label: "EN Debug Menu",
-    onPress: () => navigation.navigate(SettingsScreens.ENDebugMenu),
+    onPress: () => navigation.navigate(SettingsStackScreens.ENDebugMenu),
     icon: Icons.Document,
   }
 
