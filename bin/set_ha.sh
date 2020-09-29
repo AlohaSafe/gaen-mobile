@@ -21,9 +21,12 @@ require 'dotenv'
 require_relative "./download_copy_methods"
 require_relative "./download_links_methods"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 require_relative "./download_welcome_image_methods"
 >>>>>>> Enable configuration of brand colors
+=======
+>>>>>>> Remove welcome image downloading script (#470)
 require_relative "./download_brand_colors_methods"
 require_relative "./fetch_configurable_images_methods"
 
