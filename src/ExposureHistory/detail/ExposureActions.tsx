@@ -153,6 +153,7 @@ const RecommendationBubble: FunctionComponent<RecommendationBubbleProps> = ({
           fill={Colors.primary125}
           width={Iconography.small}
           height={Iconography.small}
+          fill={Colors.asAlertRed}
         />
       </View>
       <Text style={style.recommendationText}>{text}</Text>

@@ -21,7 +21,7 @@ const ListItem: FunctionComponent<ListItemProps> = ({
     <TouchableOpacity onPress={onPress} accessible accessibilityLabel={label}>
       <View style={style.listItem}>
         <SvgXml
-          fill={Colors.primary100}
+          fill={Colors.asAlertRed}
           xml={icon}
           width={Iconography.small}
           height={Iconography.small}

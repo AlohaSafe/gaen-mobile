@@ -50,7 +50,7 @@ const ExposureDetail: FunctionComponent = () => {
             xml={Icons.ExposureIcon}
             accessible
             accessibilityLabel={t("exposure_history.possible_exposure")}
-            fill={Colors.primary125}
+            fill={Colors.asAlertRed}
             width={Iconography.xxSmall}
             height={Iconography.xxSmall}
           />
