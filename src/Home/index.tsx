@@ -124,7 +124,7 @@ const Home: FunctionComponent = () => {
         contentContainerStyle={style.contentContainer}
       >
         <View style={style.topScrollViewBackground} />
-        <GradientBackground gradient={Colors.gradient100} angleCenterY={1}>
+        <GradientBackground gradient={Colors.gradient100} angleCenterY={0.5}>
           <View style={style.topContainer}>
             <SettingsButton />
             <View style={style.topIconContainer}>
@@ -212,7 +212,7 @@ const style = StyleSheet.create({
   headerText: {
     ...Typography.header2,
     ...Typography.mediumBold,
-    color: Colors.white,
+    color: Colors.primaryText,
     textAlign: "center",
     marginBottom: Spacing.xxSmall,
   },
@@ -220,7 +220,7 @@ const style = StyleSheet.create({
     ...Typography.body1,
     fontSize: Typography.large,
     paddingHorizontal: Spacing.medium,
-    color: Colors.white,
+    color: Colors.primaryText,
     textAlign: "center",
     marginBottom: Spacing.xxSmall,
   },

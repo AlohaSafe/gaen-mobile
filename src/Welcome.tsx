@@ -23,7 +23,7 @@ import { Images } from "./assets"
 import { Spacing, Colors, Typography, Outlines } from "./styles"
 
 const Welcome: FunctionComponent = () => {
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", `${Colors.asAlertRed}69`)
   const navigation = useNavigation()
   const {
     t,
@@ -46,12 +46,12 @@ const Welcome: FunctionComponent = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={Colors.primaryLightBackground} />
+      <StatusBar backgroundColor={`${Colors.asAlertRed}69`} />
       <ScrollView
         alwaysBounceVertical={false}
         contentContainerStyle={style.contentContainer}
       >
-        <GradientBackground gradient={Colors.gradient10} angleCenterY={0.75}>
+        <GradientBackground gradient={Colors.asGradientRed} angleCenterY={0.45}>
           <View style={style.mainContentContainer}>
             <TouchableOpacity
               onPress={handleOnPressSelectLanguage}
@@ -60,7 +60,7 @@ const Welcome: FunctionComponent = () => {
               <LinearGradient
                 colors={Colors.gradient10}
                 useAngle
-                angle={0}
+                angle={213.69}
                 angleCenter={{ x: 0.5, y: 0.5 }}
                 style={style.languageButtonContainer}
               >
@@ -109,9 +109,9 @@ const style = StyleSheet.create({
     marginBottom: Spacing.xSmall,
   },
   languageButtonText: {
-    ...Typography.body3,
+    ...Typography.semiBold,
     letterSpacing: Typography.largeLetterSpacing,
-    color: Colors.primary125,
+    color: Colors.white,
     textAlign: "center",
     textTransform: "uppercase",
   },
