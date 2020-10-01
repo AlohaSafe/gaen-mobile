@@ -22,7 +22,7 @@ import { Images } from "./assets"
 import { Spacing, Colors, Typography, Outlines, Layout } from "./styles"
 
 const Welcome: FunctionComponent = () => {
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", `${Colors.asAlertRed}69`)
   const navigation = useNavigation()
   const {
     t,
@@ -47,7 +47,7 @@ const Welcome: FunctionComponent = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={Colors.primaryLightBackground} />
+      <StatusBar backgroundColor={`${Colors.asAlertRed}69`} />
       <ScrollView
         style={style.container}
         contentContainerStyle={style.contentContainer}
@@ -104,9 +104,9 @@ const style = StyleSheet.create({
     marginBottom: Spacing.xSmall,
   },
   languageButtonText: {
-    ...Typography.body3,
+    ...Typography.semiBold,
     letterSpacing: Typography.largeLetterSpacing,
-    color: Colors.primary125,
+    color: Colors.white,
     textAlign: "center",
     textTransform: "uppercase",
   },
