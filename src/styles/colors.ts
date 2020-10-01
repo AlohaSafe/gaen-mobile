@@ -8,6 +8,30 @@ const applyOpacity = (hexColor: string, opacity: number): string => {
   return `rgba(${red}, ${green}, ${blue}, ${opacity})`
 }
 
+// AlohaSafe Colors
+export const asAlertRed = "#cc0000"
+export const asRed = "#ff4444"
+export const asOrange = "#ff8800"
+export const asStoryOrange = "#ffbb33"
+export const asGreen = "#007e33"
+export const asTravelGreen = "#00c851"
+export const asLightBlue = "#0099cc"
+export const asWorkplaceBlue = "#33b5e5"
+export const asDarkGreen = "#00695c"
+export const asLightGreen = "#2bbbad"
+export const asBlue = "#1a4267"
+export const asSecondaryBlue = "#4285f4"
+export const asGray = "#414042"
+export const asSecondaryGray = "#808285"
+
+export const asGradientRed = [asSecondaryBlue, "#ffffff", "#ffffff", asAlertRed]
+export const asGradientBackground = [
+  asSecondaryBlue,
+  "#ffffff",
+  "#ffffff",
+  "#ffffff",
+]
+
 // Neutrals
 export const white = "#ffffff"
 export const neutral10 = "#e9eaf0"
@@ -52,6 +76,20 @@ export const gradient10 = [gradient10Dark, gradient10Light]
 export const gradient100Dark = BrandColors.gradient100Dark
 export const gradient100Light = BrandColors.gradient100Light
 export const gradient100 = [gradient100Dark, gradient100Light]
+
+// Old Gradients
+export const gradientPrimary10 = [asSecondaryBlue, asBlue]
+export const gradientPrimary20 = ["#f4edfe", secondary10]
+export const gradientPrimary20Lighter = secondary10
+export const gradientPrimary100 = [
+  asSecondaryBlue,
+  `${asSecondaryBlue}10`,
+  `${asAlertRed}39`,
+  asAlertRed,
+]
+export const gradientPrimary100Lighter = "#cc0000a0"
+export const gradientPrimary110 = ["#ff7700", `${asAlertRed}`, `${asAlertRed}`]
+export const gradientNeutral75 = [neutral75, neutral100]
 
 // Transparent
 export const transparent = "rgba(0, 0, 0, 0)"
