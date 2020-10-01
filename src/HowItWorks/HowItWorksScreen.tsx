@@ -78,7 +78,7 @@ const HowItWorksScreen: FunctionComponent<HowItWorksScreenProps> = ({
           <LinearGradient
             colors={Colors.gradient10}
             useAngle
-            angle={0}
+            angle={213.69}
             angleCenter={{ x: 0.5, y: 0.5 }}
             style={style.languageButtonContainer}
           >
@@ -167,9 +167,9 @@ const createStyle = (insets: EdgeInsets) => {
       marginBottom: Spacing.xSmall,
     },
     languageButtonText: {
-      ...Typography.body3,
+      ...Typography.semiBold,
       letterSpacing: Typography.largeLetterSpacing,
-      color: Colors.primary125,
+      color: Colors.white,
       textAlign: "center",
       textTransform: "uppercase",
     },
