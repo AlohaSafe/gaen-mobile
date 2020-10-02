@@ -52,7 +52,7 @@ const Settings: FunctionComponent = () => {
   // FIXME: Change this back (or add something fancier) before going live
   // const showDebugMenu = env.STAGING === "true" || __DEV__
   const showDebugMenu = true
-
+  
   const { healthAuthoritySupportsAnalytics } = useConfigurationContext()
 
   const handleOnPressSelectLanguage = () => {
@@ -76,7 +76,7 @@ const Settings: FunctionComponent = () => {
   }
   const legal: SettingsListItem = {
     label: t("screen_titles.legal"),
-    onPress: () => navigation.navigate(SettingsScreens.Legal),
+    onPress: () => navigation.navigate(SettingsStackScreens.Legal),
     icon: Icons.Document,
   }
   const howTheAppWorks: SettingsListItem = {
@@ -93,7 +93,7 @@ const Settings: FunctionComponent = () => {
 
   const debugMenu: SettingsListItem = {
     label: "EN Debug Menu",
-    onPress: () => navigation.navigate(SettingsScreens.ENDebugMenu),
+    onPress: () => navigation.navigate(SettingsStackScreens.ENDebugMenu),
     icon: Icons.Document,
   }
 
