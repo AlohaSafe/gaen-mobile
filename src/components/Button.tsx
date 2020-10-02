@@ -47,7 +47,7 @@ const Button: FunctionComponent<ButtonProps> = ({
     } else if (disabled || loading) {
       return [`${Colors.asRed}55`, `${Colors.asRed}55`]
     } else {
-      return Colors.gradient100
+      return Colors.gradientMainButton
     }
   }
 
