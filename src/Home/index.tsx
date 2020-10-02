@@ -51,7 +51,7 @@ import {
 const TOP_ICON_SIZE = Iconography.medium
 
 const Home: FunctionComponent = () => {
-  useStatusBarEffect("light-content", Colors.gradient100Light)
+  useStatusBarEffect("light-content", Colors.asStatusBar)
   const { t } = useTranslation()
   const navigation = useNavigation()
 
@@ -118,7 +118,7 @@ const Home: FunctionComponent = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={Colors.gradient100Light} />
+      <StatusBar backgroundColor={Colors.asStatusBar} />
       <ScrollView
         style={style.container}
         contentContainerStyle={style.contentContainer}
