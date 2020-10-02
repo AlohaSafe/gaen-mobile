@@ -45,7 +45,7 @@ const Button: FunctionComponent<ButtonProps> = ({
     if (outlined) {
       return [Colors.transparent, Colors.transparent]
     } else if (disabled || loading) {
-      return [Colors.secondary75, Colors.secondary75]
+      return [`${Colors.asRed}55`, `${Colors.asRed}55`]
     } else {
       return Colors.gradient100
     }
