@@ -52,7 +52,7 @@ const Settings: FunctionComponent = () => {
   // FIXME: Change this back (or add something fancier) before going live
   // const showDebugMenu = env.STAGING === "true" || __DEV__
   const showDebugMenu = true
-  
+
   const { healthAuthoritySupportsAnalytics } = useConfigurationContext()
 
   const handleOnPressSelectLanguage = () => {
