@@ -35,11 +35,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
   const navigation = useNavigation()
 
   const introduction: HowItWorksScreenDatum = {
-<<<<<<< HEAD
     name: HowItWorksStackScreens.Introduction,
-=======
-    name: HowItWorksScreens.Introduction,
->>>>>>> Allow images on how it works flow to be configured (#466)
     image: Images.HowItWorksIntroduction,
     imageLabel: t("onboarding.screen1_image_label"),
     header: t("onboarding.screen1_header"),

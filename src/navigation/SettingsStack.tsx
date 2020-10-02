@@ -12,11 +12,7 @@ import Legal from "../Settings/Legal"
 import ENDebugMenu from "../Settings/ENDebugMenu"
 import ENLocalDiagnosisKey from "../Settings/ENLocalDiagnosisKeyScreen"
 import ExposureListDebug from "../Settings/ExposureListDebugScreen"
-<<<<<<< HEAD
 import { SettingsStackScreens } from "./index"
-=======
-import { SettingsScreens } from "./index"
->>>>>>> Remove report an issue module (#453)
 
 import { Colors, Headers } from "../styles"
 
@@ -63,11 +59,7 @@ const SettingsStack: FunctionComponent = () => {
         options={{ headerTitle: t("screen_titles.legal") }}
       />
       <Stack.Screen
-<<<<<<< HEAD
         name={SettingsStackScreens.ENDebugMenu}
-=======
-        name={SettingsScreens.ENDebugMenu}
->>>>>>> Remove report an issue module (#453)
         component={ENDebugMenu}
         options={{ headerTitle: t("screen_titles.debug") }}
       />
