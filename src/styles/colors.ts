@@ -24,13 +24,9 @@ export const asSecondaryBlue = "#4285f4"
 export const asGray = "#414042"
 export const asSecondaryGray = "#808285"
 
+export const asStatusBar = "#cc0000a0"
+
 export const asGradientRed = [asSecondaryBlue, "#ffffff", "#ffffff", asAlertRed]
-export const asGradientBackground = [
-  asSecondaryBlue,
-  "#ffffff",
-  "#ffffff",
-  "#ffffff",
-]
 
 // Neutrals
 export const white = "#ffffff"
@@ -71,7 +67,7 @@ export const primaryDarkBackround = primary125
 // Gradients
 export const gradient10Dark = "#ececff"
 export const gradient10Light = primaryLightBackground
-export const gradient10 = [gradient10Dark, gradient10Light]
+export const gradient10 = [asSecondaryBlue, asBlue]
 
 export const gradient100Dark = BrandColors.gradient100Dark
 export const gradient100Light = BrandColors.gradient100Light
@@ -83,11 +79,10 @@ export const gradient100 = [
 ]
 
 // Old Gradients
-export const gradientPrimary10 = [asSecondaryBlue, asBlue]
 export const gradientPrimary20 = ["#f4edfe", secondary10]
 export const gradientPrimary20Lighter = secondary10
 export const gradientPrimary100Lighter = "#cc0000a0"
-export const gradientPrimary110 = ["#ff7700", `${asAlertRed}`, `${asAlertRed}`]
+export const gradientMainButton = ["#ff7700", `${asAlertRed}`, `${asAlertRed}`]
 export const gradientNeutral75 = [neutral75, neutral100]
 
 // Transparent
