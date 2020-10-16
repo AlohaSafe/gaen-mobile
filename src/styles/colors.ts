@@ -26,7 +26,7 @@ export const asSecondaryGray = "#808285"
 
 export const asStatusBar = "#cc0000a0"
 
-export const asGradientRed = [asSecondaryBlue, "#ffffff", "#ffffff", asAlertRed]
+export const asGradientBlue = [asSecondaryBlue, "#ffffff", "#ffffff"]
 
 // Neutrals
 export const white = "#ffffff"
@@ -74,15 +74,13 @@ export const primaryDarkBackround = primary125
 // Gradients
 export const gradient10Dark = "#ececff"
 export const gradient10Light = primaryLightBackground
-export const gradient10 = [asSecondaryBlue, asBlue]
+export const gradient10 = [gradient10Dark, gradient10Dark]
 
 export const gradient100Dark = BrandColors.gradient100Dark
 export const gradient100Light = BrandColors.gradient100Light
 export const gradient100 = [
   asSecondaryBlue,
-  `${asSecondaryBlue}10`,
-  `${asAlertRed}39`,
-  asAlertRed,
+  primaryLightBackground
 ]
 
 // Old Gradients
