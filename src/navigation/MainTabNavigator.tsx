@@ -106,13 +106,15 @@ const MainTabNavigator: FunctionComponent = () => {
   }
 
   const tabBarOptions = {
-    showLabel: false,
+    showLabel: true,
     style: {
       backgroundColor: Colors.primaryLightBackground,
       borderTopWidth: 1,
       borderTopColor: Colors.neutral10,
       height: insets.bottom + 60,
     },
+    activeTintColor: Colors.asBlue,
+    inactiveTintColor: Colors.secondary100,
   }
 
   return (
