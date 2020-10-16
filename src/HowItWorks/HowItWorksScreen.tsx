@@ -21,6 +21,7 @@ type HowItWorksScreenContent = {
   screenNumber: number
   image: ImageSourcePropType
   imageLabel: string
+  title: string
   header: string
   primaryButtonLabel: string
   primaryButtonOnPress: () => void
@@ -109,6 +110,12 @@ const createStyle = (insets: EdgeInsets) => {
       height: 220,
       marginBottom: Spacing.medium,
     },
+    titleText: {
+      ...Typography.header1,
+      marginBottom: Spacing.xLarge,
+      paddingHorizontal: Spacing.large,
+      color: Colors.primary125
+    },
     headerText: {
       ...Typography.header2,
       marginBottom: Spacing.xLarge,
@@ -133,7 +140,7 @@ const createStyle = (insets: EdgeInsets) => {
     },
     bottomButtonText: {
       ...Typography.header5,
-      color: Colors.primary100,
+      color: Colors.asGray,
     },
   })
 }
@@ -178,13 +185,13 @@ const dotsStyle = StyleSheet.create({
     backgroundColor: Colors.primary100,
     width: 10,
     height: 10,
-    borderRadius: Outlines.borderRadiusMax,
+    borderRadius: Outlines.borderRadiusMax
   },
   dot: {
     backgroundColor: Colors.neutral30,
     width: 5,
     height: 5,
-    borderRadius: Outlines.borderRadiusMax,
+    borderRadius: Outlines.borderRadiusMax
   },
 })
 
