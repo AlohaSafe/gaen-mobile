@@ -44,7 +44,7 @@ const Button: FunctionComponent<ButtonProps> = ({
     } else if (disabled) {
       return Colors.secondary75
     } else {
-      return Colors.primary100
+      return Colors.asAlertRed
     }
   }
 
@@ -73,7 +73,7 @@ const Button: FunctionComponent<ButtonProps> = ({
     if (disabled || outlined) {
       return {}
     } else {
-      return style.buttonContainerShadow
+      return {} // return style.buttonContainerShadow to add shadow
     }
   }
   const determineBorder = (): ViewStyle => {

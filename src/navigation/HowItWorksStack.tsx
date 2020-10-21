@@ -33,6 +33,7 @@ type HowItWorksScreenDatum = {
   name: HowItWorksStackScreen
   image: ImageSourcePropType
   imageLabel: string
+  title: string
   header: string
   primaryButtonLabel: string
   primaryButtonOnPress: () => void
@@ -63,6 +64,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     name: HowItWorksStackScreens.Introduction,
     image: Images.HowItWorksIntroduction,
     imageLabel: t("onboarding.screen1_image_label"),
+    title: t(""),
     header: t("onboarding.screen1_header"),
     primaryButtonLabel: t("onboarding.screen1_button"),
     primaryButtonOnPress: () =>
@@ -72,6 +74,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     name: HowItWorksStackScreens.PhoneRemembersDevices,
     image: Images.HowItWorksPhoneRemembersDevice,
     imageLabel: t("onboarding.screen2_image_label"),
+    title: t("onboarding.screen1_button"),
     header: t("onboarding.screen2_header"),
     primaryButtonLabel: t("onboarding.screen2_button"),
     primaryButtonOnPress: () =>
@@ -81,6 +84,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     name: HowItWorksStackScreens.PersonalPrivacy,
     image: Images.HowItWorksPersonalPrivacy,
     imageLabel: t("onboarding.screen3_image_label"),
+    title: t("onboarding.screen2_button"),
     header: t("onboarding.screen3_header"),
     primaryButtonLabel: t("onboarding.screen3_button"),
     primaryButtonOnPress: () =>
@@ -90,6 +94,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     name: HowItWorksStackScreens.GetNotified,
     image: Images.HowItWorksGetNotified,
     imageLabel: t("onboarding.screen4_image_label"),
+    title: t("onboarding.screen3_button"),
     header: t("onboarding.screen4_header"),
     primaryButtonLabel: t("onboarding.screen4_button"),
     primaryButtonOnPress: () =>
@@ -99,6 +104,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     name: HowItWorksStackScreens.ValueProposition,
     image: Images.HowItWorksValueProposition,
     imageLabel: t("onboarding.screen5_image_label"),
+    title: t("onboarding.screen4_button"),
     header: t("onboarding.screen5_header"),
     primaryButtonLabel: t("onboarding.screen_5_button"),
     primaryButtonOnPress: handleOnPressNextOnValueProposition,

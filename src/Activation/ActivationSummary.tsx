@@ -45,7 +45,7 @@ const ActivationSummary: FunctionComponent = () => {
 
   const AppSetupIncompleteButtons: FunctionComponent = () => {
     return (
-      <View>
+      <View style={style.buttonContainer}>
         <Button
           label={t("common.settings")}
           onPress={handleOnPressOpenSettings}
@@ -111,8 +111,8 @@ const ActivationSummary: FunctionComponent = () => {
             <Text style={style.headerText}>{screenContent.headerText}</Text>
             <Text style={style.bodyText}>{screenContent.bodyText}</Text>
           </View>
+          <Buttons />
         </View>
-        <Buttons />
       </View>
     </ScrollView>
   )
@@ -138,6 +138,10 @@ const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  buttonContainer: {
+    alignSelf: "stretch",
+    justifyContent: "center",
+  },
   headerImage: {
     resizeMode: "cover",
     width: 230,
@@ -161,6 +165,8 @@ const style = StyleSheet.create({
     marginBottom: Spacing.xxSmall,
   },
   primaryButtonGradient: {
+    paddingTop: Spacing.xSmall,
+    paddingBottom: Spacing.xSmall + 1,
     width: "100%",
   },
   secondaryButton: {
@@ -169,6 +175,7 @@ const style = StyleSheet.create({
   },
   secondaryButtonText: {
     ...Typography.buttonSecondary,
+    color: Colors.asGray,
   },
 })
 
