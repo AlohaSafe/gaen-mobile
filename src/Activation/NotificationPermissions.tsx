@@ -86,7 +86,6 @@ const NotificationsPermissions: FunctionComponent = () => {
 }
 ////// ALOHA SAFE createStyle for insets //////
 const createStyle = (insets: EdgeInsets) => {
-
   /* eslint-disable react-native/no-unused-styles */
   return StyleSheet.create({
     safeArea: {
@@ -150,7 +149,7 @@ const createStyle = (insets: EdgeInsets) => {
       color: Colors.asGray,
     },
   })
-////// ALOHA SAFE createStyle for insets //////
+  ////// ALOHA SAFE createStyle for insets //////
 }
 
 export default NotificationsPermissions

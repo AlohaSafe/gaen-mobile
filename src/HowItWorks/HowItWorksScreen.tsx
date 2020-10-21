@@ -111,7 +111,7 @@ const createStyle = (insets: EdgeInsets) => {
     centeredContainer: {
       flexDirection: "row",
       justifyContent: "center",
-      width: "100%"
+      width: "100%",
     },
     image: {
       width: "97%",
@@ -194,13 +194,13 @@ const dotsStyle = StyleSheet.create({
     backgroundColor: Colors.primary100,
     width: 10,
     height: 10,
-    borderRadius: Outlines.borderRadiusMax
+    borderRadius: Outlines.borderRadiusMax,
   },
   dot: {
     backgroundColor: Colors.neutral30,
     width: 5,
     height: 5,
-    borderRadius: Outlines.borderRadiusMax
+    borderRadius: Outlines.borderRadiusMax,
   },
 })
 

@@ -89,10 +89,8 @@ const ActivateExposureNotifications: FunctionComponent = () => {
         <TouchableOpacity
           onPress={handleOnPressDontEnable}
           // style={style.secondaryButton}
-          >
-          <Text style={style.secondaryButtonText}>
-            {t("common.no_thanks")}
-          </Text>
+        >
+          <Text style={style.secondaryButtonText}>{t("common.no_thanks")}</Text>
         </TouchableOpacity>
       </View>
       {/* ALOHA SAFE moved buttons outside of scroll view */}
@@ -101,7 +99,6 @@ const ActivateExposureNotifications: FunctionComponent = () => {
 }
 ////// ALOHA SAFE createStyle for insets //////
 const createStyle = (insets: EdgeInsets) => {
-
   /* eslint-disable react-native/no-unused-styles */
   return StyleSheet.create({
     safeArea: {
@@ -165,6 +162,6 @@ const createStyle = (insets: EdgeInsets) => {
       color: Colors.asGray,
     },
   })
-////// ALOHA SAFE createStyle for insets //////
+  ////// ALOHA SAFE createStyle for insets //////
 }
 export default ActivateExposureNotifications

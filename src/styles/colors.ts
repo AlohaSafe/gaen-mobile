@@ -79,10 +79,7 @@ export const gradient10 = [gradient10Dark, gradient10Dark]
 
 export const gradient100Dark = BrandColors.gradient100Dark
 export const gradient100Light = BrandColors.gradient100Light
-export const gradient100 = [
-  asSecondaryBlue,
-  primaryLightBackground
-]
+export const gradient100 = [asSecondaryBlue, primaryLightBackground]
 
 // Old Gradients
 export const gradientPrimary20 = ["#f4edfe", secondary10]
