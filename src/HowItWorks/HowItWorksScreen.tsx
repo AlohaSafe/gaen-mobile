@@ -60,10 +60,13 @@ const HowItWorksScreen: FunctionComponent<HowItWorksScreenProps> = ({
             style={style.image}
             resizeMode={"contain"}
           />
-          <PositionDots
-            highlightedDotIdx={howItWorksScreenContent.screenNumber}
-            totalDotCount={totalScreenCount}
-          />
+          <View style={style.centeredContainer}>
+            <PositionDots
+              highlightedDotIdx={howItWorksScreenContent.screenNumber}
+              totalDotCount={totalScreenCount}
+            />
+          </View>
+          <Text style={style.titleText}>{howItWorksScreenContent.title}</Text>
           <Text style={style.headerText}>{howItWorksScreenContent.header}</Text>
         </View>
       </ScrollView>
@@ -105,6 +108,11 @@ const createStyle = (insets: EdgeInsets) => {
       paddingBottom: Spacing.xxLarge,
       backgroundColor: Colors.primaryLightBackground,
     },
+    centeredContainer: {
+      flexDirection: "row",
+      justifyContent: "center",
+      width: "100%"
+    },
     image: {
       width: "97%",
       height: 220,
@@ -114,7 +122,8 @@ const createStyle = (insets: EdgeInsets) => {
       ...Typography.header1,
       marginBottom: Spacing.xLarge,
       paddingHorizontal: Spacing.large,
-      color: Colors.primary125
+      color: Colors.primary125,
+      textAlign: "center",
     },
     headerText: {
       ...Typography.header2,
