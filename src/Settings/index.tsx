@@ -53,8 +53,6 @@ const Settings: FunctionComponent = () => {
   // const showDebugMenu = env.STAGING === "true" || __DEV__
   const showDebugMenu = true
 
-  const { healthAuthoritySupportsAnalytics } = useConfigurationContext()
-
   const handleOnPressSelectLanguage = () => {
     navigation.navigate(ModalStackScreens.LanguageSelection)
   }
