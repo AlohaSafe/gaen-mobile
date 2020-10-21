@@ -149,7 +149,7 @@ const MainTabNavigator: FunctionComponent = () => {
         name={Stacks.Connect}
         component={SettingsStack}
         options={{
-          tabBarLabel: t("navigation.connect"),
+          tabBarLabel: t("navigation.settings"),
           tabBarIcon: SettingsIcon,
         }}
       />
