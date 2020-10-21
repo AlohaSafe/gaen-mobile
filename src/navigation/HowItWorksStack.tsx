@@ -64,7 +64,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     name: HowItWorksStackScreens.Introduction,
     image: Images.HowItWorksIntroduction,
     imageLabel: t("onboarding.screen1_image_label"),
-    title: t(""),
+    title: t("Mahalo for using AlohaSafe Alert"),
     header: t("onboarding.screen1_header"),
     primaryButtonLabel: t("onboarding.screen1_button"),
     primaryButtonOnPress: () =>
