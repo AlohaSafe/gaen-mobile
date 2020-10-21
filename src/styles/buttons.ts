@@ -69,6 +69,6 @@ export const fixedBottom: ViewStyle = {
   ...base,
   paddingTop: Spacing.medium,
   paddingBottom: Spacing.medium,
-  backgroundColor: Colors.primary100,
+  backgroundColor: Colors.asAlertRed,
   width: "100%",
 }
