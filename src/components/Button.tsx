@@ -42,7 +42,7 @@ const Button: FunctionComponent<ButtonProps> = ({
     if (outlined) {
       return Colors.transparent
     } else if (disabled) {
-      return Colors.secondary75
+      return Colors.asTransparentRed
     } else {
       return Colors.asAlertRed
     }
@@ -147,6 +147,7 @@ const style = StyleSheet.create({
   textDisabled: {
     textAlign: "center",
     ...Typography.buttonPrimaryDisabled,
+    color: Colors.asGray,
   },
   outlinedButtonText: {
     ...Typography.buttonPrimary,
