@@ -196,11 +196,11 @@
   "navigation": {
     "connect": "Connect",
     "exposure": "Exposure",
-    "exposure_history": "Exposure History",
+    "exposure_history": "Exposures",
     "home": "Dashboard",
     "more_info": "More Info",
     "settings": "Settings",
-    "symptom_history": "Symptom Checker"
+    "symptom_history": "Symptom Tracker"
   },
   "onboarding": {
     "activation_header_title": "App Setup",
