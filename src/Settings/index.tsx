@@ -114,7 +114,14 @@ const Settings: FunctionComponent = () => {
   return (
     <>
       <StatusBar backgroundColor={Colors.secondary10} />
-      <ScrollView style={style.container} alwaysBounceVertical={false}>
+      <ScrollView
+        contentContainerStyle={style.contentContainer}
+        style={style.container}
+        alwaysBounceVertical={false}
+      >
+        <View style={style.headerRow}>
+          <Text style={style.headerText}>{t("navigation.settings")}</Text>
+        </View>
         <View style={style.section}>
           <ListItem
             label={selectLanguage.label}
@@ -179,9 +186,25 @@ const Settings: FunctionComponent = () => {
 }
 
 const style = StyleSheet.create({
+  contentContainer: {
+    paddingTop: Spacing.xSmall,
+  },
   container: {
     flex: 1,
     backgroundColor: Colors.secondary10,
+  },
+  headerRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    marginTop: Spacing.xSmall,
+    marginBottom: Spacing.xSmall,
+    marginHorizontal: Spacing.medium,
+  },
+  headerText: {
+    ...Typography.header1,
+    ...Typography.bold,
+    marginRight: Spacing.medium,
   },
   section: {
     backgroundColor: Colors.primaryLightBackground,
