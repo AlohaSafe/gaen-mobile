@@ -25,8 +25,7 @@ export const asGray = "#414042"
 export const asSecondaryGray = "#808285"
 
 export const asStatusBar = "#cc0000a0"
-
-export const asGradientBlue = [asSecondaryBlue, "#ffffff", "#ffffff"]
+export const asTransparentRed = applyOpacity(asAlertRed, 0.4)
 
 // Neutrals
 export const white = "#ffffff"
