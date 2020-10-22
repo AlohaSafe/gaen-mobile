@@ -72,22 +72,6 @@ export const warning100 = "#ffc000"
 export const primaryLightBackground = white
 export const primaryDarkBackround = primary125
 
-// Gradients
-export const gradient10Dark = "#ececff"
-export const gradient10Light = primaryLightBackground
-export const gradient10 = [gradient10Dark, gradient10Dark]
-
-export const gradient100Dark = BrandColors.gradient100Dark
-export const gradient100Light = BrandColors.gradient100Light
-export const gradient100 = [asSecondaryBlue, primaryLightBackground]
-
-// Old Gradients
-export const gradientPrimary20 = ["#f4edfe", secondary10]
-export const gradientPrimary20Lighter = secondary10
-export const gradientPrimary100Lighter = "#cc0000a0"
-export const gradientMainButton = ["#ff7700", `${asAlertRed}`, `${asAlertRed}`]
-export const gradientNeutral75 = [neutral75, neutral100]
-
 // Transparent
 export const transparent = "rgba(0, 0, 0, 0)"
 export const transparentNeutral30 = applyOpacity(neutral30, 0.4)
