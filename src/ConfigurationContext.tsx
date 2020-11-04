@@ -12,6 +12,7 @@ export interface Configuration {
   displayCovidData: boolean
   displaySymptomHistory: boolean
   displaySelfAssessment: boolean
+  displayCallEmergencyServices: boolean
   emergencyPhoneNumber: string
   findATestCenterUrl: string | null
   healthAuthorityAdviceUrl: string
@@ -36,6 +37,7 @@ const initialState: Configuration = {
   displayCovidData: false,
   displaySymptomHistory: false,
   displaySelfAssessment: false,
+  displayCallEmergencyServices: false,
   emergencyPhoneNumber: "",
   findATestCenterUrl: null,
   healthAuthorityAdviceUrl: "",
@@ -72,6 +74,7 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
   const displayCovidData = env.DISPLAY_COVID_DATA === "true"
   const displaySymptomHistory = env.DISPLAY_SYMPTOM_HISTORY === "true"
   const displaySelfAssessment = env.DISPLAY_SELF_ASSESSMENT === "true"
+  const displayCallEmergencyServices = env.DISPLAY_CALL_EMERGENCY_SERVICES === "true"
 
   const measurementSystem =
     env.MEASUREMENT_SYSTEM === "metric" ? "Metric" : "Imperial"
@@ -100,6 +103,7 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
         displayCovidData,
         displaySymptomHistory,
         displaySelfAssessment,
+        displayCallEmergencyServices,
         emergencyPhoneNumber,
         findATestCenterUrl,
         healthAuthorityAdviceUrl,

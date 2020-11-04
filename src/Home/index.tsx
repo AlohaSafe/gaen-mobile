@@ -56,6 +56,7 @@ const Home: FunctionComponent = () => {
     displaySelfAssessment,
     displayCovidData,
     displayCallbackForm,
+    displayCallEmergencyServices,
     emergencyPhoneNumber,
   } = useConfigurationContext()
 
@@ -261,7 +262,7 @@ const Home: FunctionComponent = () => {
         {displayCallbackForm && <TalkToContactTracer />}
         <ReportTestResult />
         {displaySelfAssessment && <SelfAssessment />}
-        <CallEmergencyServices />
+        {displayCallEmergencyServices && <CallEmergencyServices />}
       </ScrollView>
     </>
   )
