@@ -48,10 +48,7 @@ const Settings: FunctionComponent = () => {
   } = useConfigurationContext()
 
   const languageName = getLocalNames()[localeCode]
-
-  // FIXME: Change this back (or add something fancier) before going live
-  // const showDebugMenu = env.STAGING === "true" || __DEV__
-  const showDebugMenu = true
+  const showDebugMenu = env.DISPLAY_EN_DEBUG_MENU === "true" // || __DEV__
 
   const handleOnPressSelectLanguage = () => {
     navigation.navigate(ModalStackScreens.LanguageSelection)
