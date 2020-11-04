@@ -99,7 +99,7 @@ const History: FunctionComponent<HistoryProps> = ({
           )}
         </View>
       </ScrollView>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={handleOnPressCheckForExposures}
         style={style.button}
         testID="check-for-exposures-button"
@@ -107,7 +107,7 @@ const History: FunctionComponent<HistoryProps> = ({
         <Text style={style.buttonText}>
           {t("exposure_history.check_for_exposures")}
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       {checkingForExposures && <LoadingIndicator />}
     </>
   )
