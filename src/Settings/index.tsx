@@ -1,5 +1,6 @@
-import React, { FunctionComponent } from "react"
-import { Platform, ScrollView, View, StyleSheet } from "react-native"
+import React, { FunctionComponent, useEffect, useState } from 'react';
+
+import { Platform, ScrollView, View, StyleSheet, TouchableWithoutFeedback } from "react-native"
 import { useTranslation } from "react-i18next"
 import { useNavigation } from "@react-navigation/native"
 import env from "react-native-config"
@@ -45,10 +46,22 @@ const Settings: FunctionComponent = () => {
   const {
     healthAuthorityName,
     healthAuthoritySupportsAnalytics,
+    displayDebugMenu
   } = useConfigurationContext()
 
   const languageName = getLocalNames()[localeCode]
-  const showDebugMenu = env.DISPLAY_EN_DEBUG_MENU === "true" // || __DEV__
+
+  const CLICKS_TO_ENABLE_EN_DEBUG_MENU = 10;
+
+  const [clickCount, setClickCount] = useState(0)
+  const [showDebugMenu, setShowDebugMenu] = useState(displayDebugMenu)
+  useEffect(() => {
+    if (clickCount >= CLICKS_TO_ENABLE_EN_DEBUG_MENU) {
+      setShowDebugMenu(true)
+    }
+  }, [clickCount, showDebugMenu])
+
+  const incrementClickCount = () => setClickCount(clickCount + 1)
 
   const handleOnPressSelectLanguage = () => {
     navigation.navigate(ModalStackScreens.LanguageSelection)
@@ -116,9 +129,13 @@ const Settings: FunctionComponent = () => {
         style={style.container}
         alwaysBounceVertical={false}
       >
-        <View style={style.headerRow}>
-          <Text style={style.headerText}>{t("navigation.settings")}</Text>
-        </View>
+        <TouchableWithoutFeedback
+          touchSoundDisabled
+          onPress={incrementClickCount}>
+          <View style={style.headerRow}>
+            <Text style={style.headerText}>{t("navigation.settings")}</Text>
+          </View>
+        </TouchableWithoutFeedback>
         <View style={style.section}>
           <ListItem
             label={selectLanguage.label}
