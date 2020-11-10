@@ -25,7 +25,7 @@ export const asGray = "#414042"
 export const asSecondaryGray = "#808285"
 
 export const asStatusBar = "#cc0000a0"
-export const asTransparentRed = applyOpacity(asAlertRed, 0.4)
+export const asTransparentOrange = applyOpacity(asOrange, 0.4)
 
 // Neutrals
 export const white = "#ffffff"
@@ -58,7 +58,7 @@ export const danger10 = "#fff0f0"
 export const danger25 = "#ffe0e0"
 export const danger75 = "#ff7d7d"
 // export const danger100 = "#ff5656"
-export const danger100 = asAlertRed
+export const danger100 = asRed
 export const success10 = "#f2fcf4"
 export const success25 = "#deffe4"
 export const success50 = "#5bd9a2"
