@@ -14,7 +14,8 @@
         android:width="100dp"
         android:height="162dp"
         android:drawable="@drawable/as_alert_logo_icon"
-        android:gravity="center" />
+        android:gravity="center"
+        android:bottom="110dp" />
 
     <!-- Text -->
     <item
@@ -22,5 +23,5 @@
         android:height="100dp"
         android:drawable="@drawable/as_alert_logo_text"
         android:gravity="center"
-        android:top="275dp" />
+        android:top="165dp" />
 </layer-list>
