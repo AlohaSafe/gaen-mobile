@@ -2,6 +2,7 @@ import Foundation
 import ExposureNotification
 
 
+@available(iOS 14.0, *)
 protocol Scoring {
 
   associatedtype T: ExposureConfiguration
@@ -46,7 +47,7 @@ extension ENExposureDetectionSummary: Scoring {
   }
 }
 
-@available(iOS 13.7, *)
+@available(iOS 14.0, *)
 extension ENExposureDaySummary: Scoring {
   typealias T = DailySummariesConfiguration
 

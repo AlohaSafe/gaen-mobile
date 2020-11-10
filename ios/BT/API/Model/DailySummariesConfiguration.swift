@@ -1,7 +1,7 @@
 import Foundation
 import ExposureNotification
 
-@available(iOS 13.7, *)
+@available(iOS 14.0, *)
 struct DailySummariesConfiguration: ExposureConfiguration {
 
   static let configurationFileName = "v1.6.config.json"
@@ -65,7 +65,7 @@ struct DailySummariesConfiguration: ExposureConfiguration {
   private static let infectiousnessValueUnknownDaysSinceOnsetOfSymptoms: NSNumber = 1
 }
 
-@available(iOS 13.7, *)
+@available(iOS 14.0, *)
 extension DailySummariesConfiguration: DownloadableFile {
 
   static func create(from data: Data) -> DailySummariesConfiguration? {

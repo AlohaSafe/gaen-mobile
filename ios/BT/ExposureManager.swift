@@ -282,7 +282,7 @@ final class ExposureManager: NSObject {
   }
 
   @discardableResult func detectExposures(completionHandler: @escaping ((ExposureResult) -> Void)) -> Progress {
-    if #available(iOS 13.7, *) {
+    if #available(iOS 14.0, *) {
       return detectExposuresV2(completionHandler: completionHandler)
     } else {
       return detectExposuresV1(completionHandler: completionHandler)
@@ -346,7 +346,7 @@ final class ExposureManager: NSObject {
     return progress
   }
 
-  @available(iOS 13.7, *)
+  @available(iOS 14.0, *)
   @discardableResult func detectExposuresV2(completionHandler: @escaping ((ExposureResult) -> Void)) -> Progress {
 
     let progress = Progress()
@@ -639,7 +639,7 @@ private extension ExposureManager {
   }
 }
 
-@available(iOS 13.7, *)
+@available(iOS 14.0, *)
 extension ExposureManager {
 
   // MARK: == Exposure Detection V2 Private Promises ==

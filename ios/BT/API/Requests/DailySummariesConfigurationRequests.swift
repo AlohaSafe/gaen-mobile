@@ -1,7 +1,7 @@
 import Alamofire
 import Foundation
 
-@available(iOS 13.7, *)
+@available(iOS 14.0, *)
 enum DailySummariesConfigurationRequest: APIRequest {
 
   typealias ResponseType = DailySummariesConfiguration
