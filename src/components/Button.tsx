@@ -42,9 +42,9 @@ const Button: FunctionComponent<ButtonProps> = ({
     if (outlined) {
       return Colors.transparent
     } else if (disabled) {
-      return Colors.asTransparentRed
+      return Colors.asTransparentOrange
     } else {
-      return Colors.asAlertRed
+      return Colors.asOrange
     }
   }
 

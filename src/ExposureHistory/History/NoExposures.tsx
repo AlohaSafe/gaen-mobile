@@ -103,7 +103,7 @@ const HealthGuidelineItem: FunctionComponent<HealthGuidelineItemProps> = ({
   return (
     <View style={style.listItem}>
       <View style={style.listItemIconContainer}>
-        <SvgXml xml={icon} fill={Colors.asAlertRed} />
+        <SvgXml xml={icon} fill={Colors.asOrange} />
       </View>
       <Text style={style.listItemText}>{text}</Text>
     </View>
