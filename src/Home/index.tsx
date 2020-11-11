@@ -53,12 +53,14 @@ const Home: FunctionComponent = () => {
   const navigation = useNavigation()
   const { exposureDetectionStatus } = useExposureDetectionStatus()
   const {
-    displaySelfAssessment,
+    // displaySelfAssessment,
     displayCovidData,
     displayCallbackForm,
     displayCallEmergencyServices,
     emergencyPhoneNumber,
   } = useConfigurationContext()
+
+  let displaySelfAssessment = false
 
   const ChevronRightIcon = () => {
     return (
