@@ -1,5 +1,12 @@
 import React, { FunctionComponent } from "react"
-import { ScrollView, Image, StyleSheet, TouchableOpacity } from "react-native"
+import {
+  ScrollView,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Vibration,
+  View,
+} from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
 
@@ -26,18 +33,22 @@ export const AffectedUserComplete: FunctionComponent = () => {
         contentContainerStyle={style.contentContainer}
         alwaysBounceVertical={false}
       >
-        <Image source={Images.CheckInCircle} style={style.image} />
-        <Text style={style.header}>{t("export.complete_title")}</Text>
-        <Text style={style.contentText}>
-          {t("export.complete_body_bluetooth")}
-        </Text>
-        <TouchableOpacity
-          style={style.button}
-          onPress={handleOnPressDone}
-          accessibilityLabel={t("common.done")}
-        >
-          <Text style={style.buttonText}>{t("common.done")}</Text>
-        </TouchableOpacity>
+        <View style={style.innerContainer}>
+          <View style={style.topContainer}>
+            <Image source={Images.CheckInCircle} style={style.image} />
+            <Text style={style.header}>{t("export.complete_title")}</Text>
+            <Text style={style.contentText}>
+              {t("export.complete_body_bluetooth")}
+            </Text>
+            <TouchableOpacity
+              style={style.button}
+              onPress={handleOnPressDone}
+              accessibilityLabel={t("common.done")}
+            >
+              <Text style={style.buttonText}>{t("common.done")}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </ScrollView>
     </>
   )
@@ -49,11 +60,21 @@ const style = StyleSheet.create({
     backgroundColor: Colors.background.primaryLight,
   },
   contentContainer: {
+    flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
     paddingTop: Layout.oneTwentiethHeight,
     paddingBottom: Spacing.xxHuge,
     paddingHorizontal: Spacing.large,
+  },
+  innerContainer: {
+    flex: 1,
+    justifyContent: "space-between",
+  },
+  topContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   image: {
     width: 230,
