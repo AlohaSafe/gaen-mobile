@@ -18,7 +18,7 @@ const SectionButton: FunctionComponent<SectionButtonProps> = ({ text }) => {
         xml={Icons.ChevronRight}
         width={Iconography.xxxSmall}
         height={Iconography.xxxSmall}
-        color={Colors.primary.shade110}
+        color={Colors.neutral.white}
       />
     </View>
   )

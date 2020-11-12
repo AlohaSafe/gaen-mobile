@@ -131,7 +131,7 @@ const cardBase: ViewStyle = {
   paddingVertical: Spacing.xxSmall,
   paddingHorizontal: Spacing.medium,
   borderRadius: Outlines.borderRadiusMax,
-  backgroundColor: Colors.neutral.shade10,
+  backgroundColor: Colors.asOrange,
 }
 export const card: Record<Card, ViewStyle> = {
   base: cardBase,

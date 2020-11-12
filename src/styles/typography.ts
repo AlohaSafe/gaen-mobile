@@ -235,7 +235,7 @@ export const button: Record<Button, TextStyle> = {
     ...body.x20,
     ...style.bold,
     textTransform: "uppercase",
-    color: Colors.primary.shade110,
+    color: Colors.neutral.white,
     marginRight: Spacing.xSmall,
   },
   listItem: {
