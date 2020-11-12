@@ -88,7 +88,7 @@ const MainTabNavigator: FunctionComponent = () => {
       height: insets.bottom + 60,
     },
     activeTintColor: Colors.asBlue,
-    inactiveTintColor: Colors.secondary100,
+    inactiveTintColor: Colors.secondary.shade100,
   }
 
   return (
