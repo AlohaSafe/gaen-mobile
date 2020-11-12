@@ -25,7 +25,7 @@ export const asGray = "#414042"
 export const asSecondaryGray = "#808285"
 
 export const asStatusBar = "#cc0000a0"
-export const asTransparentOrange = applyOpacity(asOrange, 0.4)
+export const asTransparentOrange = applyOpacity(asOrange, 0.25)
 
 type Neutral =
   | "white"
