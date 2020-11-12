@@ -29,7 +29,7 @@ const BluetoothInfo: FunctionComponent = () => {
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   mainContentContainer: {
     paddingTop: Spacing.large,
@@ -45,7 +45,7 @@ const style = StyleSheet.create({
     marginBottom: Spacing.small,
   },
   bodyText: {
-    ...Typography.body1,
+    ...Typography.body.x30,
   },
 })
 export default BluetoothInfo

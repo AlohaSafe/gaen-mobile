@@ -7,6 +7,7 @@
   "common": {
     "continue": "Продолжить",
     "done": "Готово",
+    "more": "Подробнее",
     "next": "Готово",
     "something_went_wrong": "Что-то пошло не так",
     "start": "Начать"
@@ -23,7 +24,8 @@
     "bluetooth": {
       "all_services_on_subheader": "Уведомления об опасности включены",
       "tracing_off_header": "Уведомления об опасности отключены",
-      "tracing_off_subheader": "Включить уведомления об опасности, чтобы получать информацию о нахождении в опасных зонах"
+      "tracing_off_subheader": "Включить уведомления об опасности, чтобы получать информацию о нахождении в опасных зонах",
+      "tracing_on_header": "Maruziyet Tespiti Açık"
     },
     "call_emergency_services": "Скорая помощь"
   },

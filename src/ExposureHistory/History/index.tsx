@@ -16,7 +16,14 @@ import NoExposures from "./NoExposures"
 
 import { Icons } from "../../assets"
 import { ExposureHistoryStackScreens } from "../../navigation"
-import { Buttons, Spacing, Typography, Colors, Affordances } from "../../styles"
+import {
+  Buttons,
+  Spacing,
+  Typography,
+  Colors,
+  Affordances,
+  Outlines,
+} from "../../styles"
 
 type Posix = number
 
@@ -30,10 +37,14 @@ const History: FunctionComponent<HistoryProps> = ({
   exposures,
 }) => {
   useIsFocused()
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
   const { checkForNewExposures } = useExposureContext()
+  const {
+    successFlashMessageOptions,
+    errorFlashMessageOptions,
+  } = Affordances.useFlashMessageOptions()
 
   const [checkingForExposures, setCheckingForExposures] = useState<boolean>(
     false,
@@ -49,13 +60,24 @@ const History: FunctionComponent<HistoryProps> = ({
     if (checkResult.kind === "success") {
       showMessage({
         message: t("common.success"),
-        ...Affordances.successFlashMessageOptions,
+        ...successFlashMessageOptions,
       })
     } else {
-      showMessage({
-        message: t("common.something_went_wrong"),
-        ...Affordances.errorFlashMessageOptions,
-      })
+      switch (checkResult.error) {
+        case "ExceededCheckRateLimit": {
+          showMessage({
+            message: t("common.success"),
+            ...successFlashMessageOptions,
+          })
+          break
+        }
+        default: {
+          showMessage({
+            message: t("common.something_went_wrong"),
+            ...errorFlashMessageOptions,
+          })
+        }
+      }
     }
     setCheckingForExposures(false)
   }
@@ -64,7 +86,7 @@ const History: FunctionComponent<HistoryProps> = ({
 
   return (
     <>
-      <StatusBar backgroundColor={Colors.primaryLightBackground} />
+      <StatusBar backgroundColor={Colors.background.primaryLight} />
       <ScrollView
         contentContainerStyle={style.contentContainer}
         style={style.container}
@@ -102,6 +124,7 @@ const History: FunctionComponent<HistoryProps> = ({
       {/* <TouchableOpacity
         onPress={handleOnPressCheckForExposures}
         style={style.button}
+        disabled={checkingForExposures}
         testID="check-for-exposures-button"
       >
         <Text style={style.buttonText}>
@@ -119,24 +142,27 @@ const style = StyleSheet.create({
   },
   container: {
     paddingBottom: Spacing.medium,
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   headerRow: {
     flexDirection: "row",
     flexWrap: "wrap",
     alignItems: "center",
-    marginTop: Spacing.xSmall,
+    marginTop: Spacing.xxSmall,
     marginHorizontal: Spacing.medium,
   },
   headerText: {
-    ...Typography.header1,
-    ...Typography.bold,
+    ...Typography.header.x60,
+    ...Typography.style.bold,
     marginRight: Spacing.medium,
   },
   moreInfoButton: {
-    ...Buttons.tinyRounded,
     height: Spacing.xxLarge,
     width: Spacing.xxLarge,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: Outlines.borderRadiusMax,
+    backgroundColor: Colors.secondary.shade50,
   },
   moreInfoButtonIcon: {
     minHeight: Spacing.xSmall,
@@ -151,10 +177,10 @@ const style = StyleSheet.create({
     marginBottom: Spacing.large,
   },
   button: {
-    ...Buttons.fixedBottom,
+    ...Buttons.fixedBottom.base,
   },
   buttonText: {
-    ...Typography.buttonFixedBottom,
+    ...Typography.button.fixedBottom,
   },
 })
 

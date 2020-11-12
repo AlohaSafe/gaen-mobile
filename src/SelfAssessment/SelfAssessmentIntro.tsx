@@ -1,16 +1,24 @@
 import React, { FunctionComponent } from "react"
-import { ScrollView, StyleSheet, View } from "react-native"
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
+import { SvgXml } from "react-native-svg"
 
 import { SelfAssessmentStackScreens, useStatusBarEffect } from "../navigation"
-import { Button, Text } from "../components"
+import { Text } from "../components"
 import { useConfigurationContext } from "../ConfigurationContext"
 
-import { Colors, Spacing, Typography } from "../styles"
+import { Icons, Images } from "../assets"
+import { Buttons, Colors, Outlines, Spacing, Typography } from "../styles"
 
 const SelfAssessmentIntro: FunctionComponent = () => {
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
   const {
@@ -28,6 +36,7 @@ const SelfAssessmentIntro: FunctionComponent = () => {
       contentContainerStyle={style.contentContainer}
       alwaysBounceVertical={false}
     >
+      <Image source={Images.SelfAssessment} style={style.image} />
       <Text style={style.headerText}>
         {t("self_assessment.intro.covid19_self_assessment")}
       </Text>
@@ -50,52 +59,65 @@ const SelfAssessmentIntro: FunctionComponent = () => {
           {t("self_assessment.intro.if_this_is", { emergencyPhoneNumber })}
         </Text>
       </View>
-      <Button
+      <TouchableOpacity
+        style={style.button}
         onPress={handleOnPressStartAssessment}
-        label={t("self_assessment.intro.agree_and_start_assessment")}
-        customButtonStyle={style.button}
-        customButtonInnerStyle={style.buttonInner}
-      />
+      >
+        <Text style={style.buttonText}>
+          {t("self_assessment.intro.agree_and_start_assessment")}
+        </Text>
+        <SvgXml xml={Icons.Arrow} fill={Colors.background.primaryLight} />
+      </TouchableOpacity>
     </ScrollView>
   )
 }
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   contentContainer: {
     flexGrow: 1,
     alignItems: "flex-start",
-    paddingHorizontal: Spacing.xLarge,
+    paddingHorizontal: Spacing.medium,
     paddingVertical: Spacing.large,
   },
+  image: {
+    resizeMode: "contain",
+    width: Spacing.xxxMassive,
+    height: Spacing.xxxMassive,
+    marginBottom: Spacing.large,
+  },
   headerText: {
-    ...Typography.header1,
-    ...Typography.bold,
+    ...Typography.header.x60,
+    ...Typography.style.bold,
     marginBottom: Spacing.xSmall,
   },
   subheaderText: {
-    ...Typography.body1,
-    color: Colors.primaryText,
-    marginBottom: Spacing.xxxHuge,
-  },
-  bulletListContainer: {
+    ...Typography.body.x30,
+    color: Colors.text.primary,
     marginBottom: Spacing.large,
   },
+  bulletListContainer: {
+    paddingTop: Spacing.large,
+    marginBottom: Spacing.small,
+    borderTopColor: Colors.neutral.shade10,
+    borderTopWidth: Outlines.hairline,
+  },
   bulletText: {
-    ...Typography.body2,
+    ...Typography.body.x20,
     marginBottom: Spacing.medium,
   },
   emergencyText: {
-    ...Typography.mediumBold,
-    color: Colors.danger100,
+    ...Typography.utility.error,
+    ...Typography.style.medium,
   },
   button: {
-    width: "100%",
+    ...Buttons.primary.base,
   },
-  buttonInner: {
-    width: "100%",
+  buttonText: {
+    ...Typography.button.primary,
+    marginRight: Spacing.small,
   },
 })
 

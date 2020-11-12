@@ -6,19 +6,20 @@ import {
   View,
   ScrollView,
   ImageSourcePropType,
-  ViewStyle,
   TouchableOpacity,
 } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
 import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
-import { Text, Button } from "../components"
-import { ModalStackScreens, useStatusBarEffect } from "../navigation"
+import { SvgXml } from "react-native-svg"
 
-import { Outlines, Colors, Spacing, Typography } from "../styles"
+import { ModalStackScreens, useStatusBarEffect } from "../navigation"
+import { Text } from "../components"
+
+import { Colors, Spacing, Typography, Buttons } from "../styles"
+import { Icons } from "../assets"
 
 type HowItWorksScreenContent = {
-  screenNumber: number
   image: ImageSourcePropType
   imageLabel: string
   title: string
@@ -29,14 +30,12 @@ type HowItWorksScreenContent = {
 
 interface HowItWorksScreenProps {
   howItWorksScreenContent: HowItWorksScreenContent
-  totalScreenCount: number
 }
 
 const HowItWorksScreen: FunctionComponent<HowItWorksScreenProps> = ({
   howItWorksScreenContent,
-  totalScreenCount,
 }) => {
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
   const insets = useSafeAreaInsets()
@@ -46,40 +45,48 @@ const HowItWorksScreen: FunctionComponent<HowItWorksScreenProps> = ({
     navigation.navigate(ModalStackScreens.ProtectPrivacy)
   }
 
+  const {
+    image,
+    imageLabel,
+    header,
+    title,
+    primaryButtonLabel,
+    primaryButtonOnPress,
+  } = howItWorksScreenContent
+
   return (
     <>
       <ScrollView
-        alwaysBounceVertical={false}
+        style={style.container}
         contentContainerStyle={style.contentContainer}
+        alwaysBounceVertical={false}
       >
         <View>
           <Image
-            source={howItWorksScreenContent.image}
-            accessibilityLabel={howItWorksScreenContent.imageLabel}
+            source={image}
+            accessibilityLabel={imageLabel}
             accessible
             style={style.image}
             resizeMode={"contain"}
           />
-          <View style={style.centeredContainer}>
-            <PositionDots
-              highlightedDotIdx={howItWorksScreenContent.screenNumber}
-              totalDotCount={totalScreenCount}
-            />
-          </View>
-          <Text style={style.titleText}>{howItWorksScreenContent.title}</Text>
-          <Text style={style.headerText}>{howItWorksScreenContent.header}</Text>
+          <Text style={style.titleText}>{title}</Text>
+          <Text style={style.headerText}>{header}</Text>
         </View>
       </ScrollView>
       <View style={style.bottomButtonContainer}>
         <>
-          <Button
-            customButtonStyle={style.nextButton}
-            customButtonInnerStyle={style.nextButtonGradient}
-            label={howItWorksScreenContent.primaryButtonLabel}
-            onPress={howItWorksScreenContent.primaryButtonOnPress}
-            hasRightArrow
-          />
-          <TouchableOpacity onPress={handleOnPressProtectPrivacy}>
+          <TouchableOpacity
+            style={style.button}
+            onPress={primaryButtonOnPress}
+            accessibilityLabel={primaryButtonLabel}
+          >
+            <Text style={style.buttonText}>{primaryButtonLabel}</Text>
+            <SvgXml xml={Icons.Arrow} fill={Colors.background.primaryLight} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={handleOnPressProtectPrivacy}
+            accessibilityRole="button"
+          >
             <Text style={style.bottomButtonText}>
               {t("onboarding.protect_privacy_button")}
             </Text>
@@ -101,17 +108,15 @@ const createStyle = (insets: EdgeInsets) => {
 
   /* eslint-disable react-native/no-unused-styles */
   return StyleSheet.create({
+    container: {
+      backgroundColor: Colors.background.primaryLight,
+    },
     contentContainer: {
       flexGrow: 1,
       justifyContent: "space-between",
       paddingTop: headerHeight + Spacing.medium,
       paddingBottom: Spacing.xxLarge,
-      backgroundColor: Colors.primaryLightBackground,
-    },
-    centeredContainer: {
-      flexDirection: "row",
-      justifyContent: "center",
-      width: "100%",
+      backgroundColor: Colors.background.primaryLight,
     },
     image: {
       width: "97%",
@@ -119,90 +124,40 @@ const createStyle = (insets: EdgeInsets) => {
       marginBottom: Spacing.medium,
     },
     titleText: {
-      ...Typography.header1,
+      ...Typography.header.x60,
       marginBottom: Spacing.xLarge,
       paddingHorizontal: Spacing.large,
-      color: Colors.primary125,
+      color: Colors.primary.shade125,
       textAlign: "center",
     },
     headerText: {
-      ...Typography.header2,
+      ...Typography.header.x50,
       marginBottom: Spacing.xLarge,
       paddingHorizontal: Spacing.large,
     },
-    nextButton: {
-      width: "95%",
-      alignSelf: "center",
+    button: {
+      ...Buttons.thin.base,
       marginBottom: Spacing.small,
     },
-    nextButtonGradient: {
-      paddingTop: Spacing.xSmall,
-      paddingBottom: Spacing.xSmall + 1,
-      width: "95%",
-      alignSelf: "center",
+    buttonText: {
+      ...Typography.button.primary,
+      marginRight: Spacing.small,
     },
     bottomButtonContainer: {
       alignItems: "center",
       paddingTop: Spacing.small,
       paddingBottom: insets.bottom + Spacing.small,
-      backgroundColor: Colors.primaryLightBackground,
+      backgroundColor: Colors.background.primaryLight,
     },
     bottomButtonText: {
-      ...Typography.header5,
-      color: Colors.asGray,
+      ...Typography.header.x20,
+      color: Colors.primary.shade100,
+      // color: Colors.asGray,
+      paddingHorizontal: Spacing.large,
+      textAlign: "center",
     },
   })
 }
-
-interface PositionDotsProps {
-  highlightedDotIdx: number
-  totalDotCount: number
-}
-
-const PositionDots: FunctionComponent<PositionDotsProps> = ({
-  highlightedDotIdx,
-  totalDotCount,
-}) => {
-  const determineDotStyle = (dotPosition: number): ViewStyle => {
-    if (dotPosition === highlightedDotIdx) {
-      return dotsStyle.dotHighlighted
-    } else {
-      return dotsStyle.dot
-    }
-  }
-
-  const screens = Array.from(Array(totalDotCount), (i) => i + 1)
-
-  return (
-    <View style={dotsStyle.dotsContainer}>
-      {screens.map((_, idx) => {
-        return <View style={determineDotStyle(idx + 1)} key={idx} />
-      })}
-    </View>
-  )
-}
-const dotsStyle = StyleSheet.create({
-  dotsContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    width: 150,
-    justifyContent: "space-between",
-    marginBottom: Spacing.medium,
-    paddingHorizontal: Spacing.large,
-  },
-  dotHighlighted: {
-    backgroundColor: Colors.primary100,
-    width: 10,
-    height: 10,
-    borderRadius: Outlines.borderRadiusMax,
-  },
-  dot: {
-    backgroundColor: Colors.neutral30,
-    width: 5,
-    height: 5,
-    borderRadius: Outlines.borderRadiusMax,
-  },
-})
 
 const MemoizedHowItWorksScreen = React.memo(HowItWorksScreen)
 

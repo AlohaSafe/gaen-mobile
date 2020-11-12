@@ -8,30 +8,35 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  TouchableOpacity,
 } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
+import { SvgXml } from "react-native-svg"
 
-import { Text, Button, LoadingIndicator } from "../../components"
+import { Text, LoadingIndicator } from "../../components"
 import { useAffectedUserContext } from "../AffectedUserContext"
 import * as API from "../verificationAPI"
 import { calculateHmac } from "../hmac"
 import { useExposureContext } from "../../ExposureContext"
+import { useProductAnalyticsContext } from "../../ProductAnalytics/Context"
 import {
   useStatusBarEffect,
   AffectedUserFlowStackScreens,
 } from "../../navigation"
-
-import { Spacing, Forms, Colors, Typography } from "../../styles"
 import Logger from "../../logger"
+
+import { Spacing, Forms, Colors, Typography, Buttons } from "../../styles"
+import { Icons } from "../../assets"
 
 const defaultErrorMessage = ""
 
 const CodeInputForm: FunctionComponent = () => {
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
   const strategy = useExposureContext()
+  const { trackEvent } = useProductAnalyticsContext()
   const {
     setExposureSubmissionCredentials,
     setExposureKeys,
@@ -65,6 +70,7 @@ const CodeInputForm: FunctionComponent = () => {
   const handleOnPressSubmit = async () => {
     setIsLoading(true)
     setErrorMessage(defaultErrorMessage)
+    trackEvent("product_analytics", "verification_code_submitted")
     try {
       const response = await API.postCode(code)
 
@@ -124,6 +130,9 @@ const CodeInputForm: FunctionComponent = () => {
       case "NetworkConnection": {
         return t("export.error.network_connection_error")
       }
+      case "Timeout": {
+        return t("export.error.timeout_error")
+      }
       default: {
         return t("export.error.unknown_code_verification_error")
       }
@@ -150,16 +159,14 @@ const CodeInputForm: FunctionComponent = () => {
   const codeInputFocusedStyle = isFocused && { ...style.codeInputFocused }
   const codeInputStyle = { ...style.codeInput, ...codeInputFocusedStyle }
 
-  const keyboardAvoidingViewBehavior = Platform.select({
-    ios: "position" as const,
-    android: "height" as const,
-    default: "position" as const,
-  })
+  const isIOS = Platform.OS === "ios"
+
+  const shouldBeAccessible = errorMessage !== ""
 
   return (
     <KeyboardAvoidingView
       contentContainerStyle={style.outerContentContainer}
-      behavior={keyboardAvoidingViewBehavior}
+      behavior={isIOS ? "position" : "height"}
     >
       <ScrollView
         contentContainerStyle={style.contentContainer}
@@ -181,7 +188,7 @@ const CodeInputForm: FunctionComponent = () => {
           autoCompleteType="off"
           value={code}
           placeholder={t("export.code_input_placeholder").toUpperCase()}
-          placeholderTextColor={Colors.placeholderText}
+          placeholderTextColor={Colors.text.placeholder}
           maxLength={codeLengthMax}
           style={codeInputStyle}
           returnKeyType="done"
@@ -191,14 +198,28 @@ const CodeInputForm: FunctionComponent = () => {
           onSubmitEditing={Keyboard.dismiss}
           blurOnSubmit={false}
         />
-        <Text style={style.errorSubtitle}>{errorMessage}</Text>
-        <Button
+        <View
+          accessibilityElementsHidden={!shouldBeAccessible}
+          accessible={shouldBeAccessible}
+        >
+          <Text style={style.errorSubtitle}>{errorMessage}</Text>
+        </View>
+        <TouchableOpacity
+          style={isDisabled ? style.buttonDisabled : style.button}
           onPress={handleOnPressSubmit}
-          label={t("common.next")}
+          accessibilityLabel={t("common.next")}
           disabled={isDisabled}
-          customButtonStyle={style.button}
-          hasRightArrow
-        />
+        >
+          <Text
+            style={isDisabled ? style.buttonDisabledText : style.buttonText}
+          >
+            {t("common.next")}
+          </Text>
+          <SvgXml
+            xml={Icons.Arrow}
+            fill={isDisabled ? Colors.text.primary : Colors.neutral.white}
+          />
+        </TouchableOpacity>
       </ScrollView>
       {isLoading && <LoadingIndicator />}
     </KeyboardAvoidingView>
@@ -211,7 +232,7 @@ const style = StyleSheet.create({
   },
   contentContainer: {
     minHeight: "100%",
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
     paddingTop: Spacing.large,
     paddingBottom: Spacing.xxxHuge,
     paddingHorizontal: Spacing.medium,
@@ -221,33 +242,44 @@ const style = StyleSheet.create({
     marginBottom: Spacing.xxLarge,
   },
   header: {
-    ...Typography.header1,
+    ...Typography.header.x60,
     marginBottom: Spacing.xxSmall,
   },
   subheader: {
-    ...Typography.body1,
+    ...Typography.body.x30,
   },
   errorSubtitle: {
-    ...Typography.error,
-    color: Colors.errorText,
+    ...Typography.utility.error,
+    color: Colors.text.error,
     marginTop: Spacing.xxSmall,
     marginBottom: Spacing.small,
     minHeight: Spacing.xxxHuge,
   },
   codeInput: {
     ...Forms.textInput,
-    ...Typography.mediumBold,
-    fontSize: Typography.xLarge,
+    ...Typography.style.medium,
+    fontSize: Typography.size.x60,
     textAlignVertical: "center",
     textAlign: "center",
     letterSpacing: 4,
     paddingTop: Spacing.small + 2,
   },
   codeInputFocused: {
-    borderColor: Colors.primary125,
+    borderColor: Colors.primary.shade125,
   },
   button: {
-    alignSelf: "flex-start",
+    ...Buttons.primary.base,
+  },
+  buttonDisabled: {
+    ...Buttons.primary.disabled,
+  },
+  buttonText: {
+    ...Typography.button.primary,
+    marginRight: Spacing.small,
+  },
+  buttonDisabledText: {
+    ...Typography.button.primaryDisabled,
+    marginRight: Spacing.small,
   },
 })
 

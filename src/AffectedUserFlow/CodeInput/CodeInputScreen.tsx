@@ -4,7 +4,7 @@ import { View, StyleSheet } from "react-native"
 import {
   usePermissionsContext,
   ENPermissionStatus,
-} from "../../PermissionsContext"
+} from "../../Device/PermissionsContext"
 import CodeInputForm from "./CodeInputForm"
 import EnableExposureNotifications from "./EnableExposureNotifications"
 
@@ -25,7 +25,7 @@ const CodeInputScreen: FunctionComponent = () => {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
 })
 

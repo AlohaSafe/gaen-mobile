@@ -14,14 +14,16 @@ import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
 ////// ALOHA SAFE import insets //////
 
 import { ActivationStackScreens } from "../navigation"
-import { usePermissionsContext } from "../PermissionsContext"
-import { Text, Button } from "../components"
+import { usePermissionsContext } from "../Device/PermissionsContext"
+import { useConfigurationContext } from "../ConfigurationContext"
+import { Text } from "../components"
 
 import { Colors, Spacing, Typography, Buttons } from "../styles"
 
 const NotificationsPermissions: FunctionComponent = () => {
   const { t } = useTranslation()
   const { notification } = usePermissionsContext()
+  const { enableProductAnalytics } = useConfigurationContext()
   const navigation = useNavigation()
   ////// ALOHA SAFE use imported insets //////
   const insets = useSafeAreaInsets()
@@ -32,11 +34,19 @@ const NotificationsPermissions: FunctionComponent = () => {
       notification.request()
       resolve()
     })
-    navigation.navigate(ActivationStackScreens.ActivationSummary)
+    if (enableProductAnalytics) {
+      navigation.navigate(ActivationStackScreens.AnonymizedDataConsent)
+    } else {
+      navigation.navigate(ActivationStackScreens.ActivationSummary)
+    }
   }
 
   const handleOnPressMaybeLater = () => {
-    navigation.navigate(ActivationStackScreens.ActivationSummary)
+    if (enableProductAnalytics) {
+      navigation.navigate(ActivationStackScreens.AnonymizedDataConsent)
+    } else {
+      navigation.navigate(ActivationStackScreens.ActivationSummary)
+    }
   }
 
   return (
@@ -63,8 +73,25 @@ const NotificationsPermissions: FunctionComponent = () => {
           </Text>
         </View>
       </ScrollView>
-      {/* ALOHA SAFE moved buttons outside of scroll view */}
       <View style={style.buttonsContainer}>
+        <TouchableOpacity
+          onPress={handleOnPressEnable}
+          style={style.button}
+          accessibilityLabel={t("label.launch_enable_notif")}
+        >
+          <Text style={style.buttonText}>{t("label.launch_enable_notif")}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={handleOnPressMaybeLater}
+          style={style.secondaryButton}
+        >
+          <Text style={style.secondaryButtonText}>
+            {t("common.maybe_later")}
+          </Text>
+        </TouchableOpacity>
+      </View>
+      {/* ALOHA SAFE moved buttons outside of scroll view */}
+      {/* <View style={style.buttonsContainer}>
         <Button
           customButtonStyle={style.nextButton}
           customButtonInnerStyle={style.nextButtonGradient}
@@ -79,7 +106,7 @@ const NotificationsPermissions: FunctionComponent = () => {
             {t("common.maybe_later")}
           </Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
       {/* ALOHA SAFE moved buttons outside of scroll view */}
     </SafeAreaView>
   )
@@ -93,10 +120,10 @@ const createStyle = (insets: EdgeInsets) => {
       justifyContent: "space-between",
       flex: 1,
       ////// ALOHA SAFE justify and flex //////
-      backgroundColor: Colors.primaryLightBackground,
+      backgroundColor: Colors.background.primaryLight,
     },
     container: {
-      backgroundColor: Colors.primaryLightBackground,
+      backgroundColor: Colors.background.primaryLight,
       // height: "100%",
     },
     contentContainer: {
@@ -107,19 +134,19 @@ const createStyle = (insets: EdgeInsets) => {
       marginBottom: Spacing.medium,
     },
     header: {
-      ...Typography.header1,
+      ...Typography.header.x60,
       marginBottom: Spacing.large,
       ////// ALOHA SAFE added color //////
       color: Colors.asBlue,
     },
     subheader: {
-      ...Typography.header5,
+      ...Typography.header.x20,
       marginBottom: Spacing.xSmall,
       ////// ALOHA SAFE added color //////
       color: Colors.asBlue,
     },
     body: {
-      ...Typography.body1,
+      ...Typography.body.x30,
       marginBottom: Spacing.xxLarge,
     },
     ////// ALOHA SAFE button styles //////
@@ -140,11 +167,17 @@ const createStyle = (insets: EdgeInsets) => {
       alignSelf: "center",
     },
     ////// ALOHA SAFE button styles //////
+    button: {
+      ...Buttons.primary.base,
+    },
+    buttonText: {
+      ...Typography.button.primary,
+    },
     secondaryButton: {
-      ...Buttons.secondary,
+      ...Buttons.secondary.base,
     },
     secondaryButtonText: {
-      ...Typography.buttonSecondary,
+      ...Typography.button.secondary,
       ////// ALOHA SAFE added color //////
       color: Colors.asGray,
     },

@@ -32,6 +32,8 @@ final class ExposureManagerError: NSObject, LocalizedError {
   }
 }
 
+enum ENAPIVersion { case V1, V2 }
+
 @objc(ExposureManager)
 /**
  This class wrapps [ENManager](https://developer.apple.com/documentation/exposurenotification/enmanager) and acts like a controller and entry point of the different flows
@@ -314,7 +316,7 @@ final class ExposureManager: NSObject {
       }
       let indexFileString = try await(self.fetchIndexFile())
       let remoteURLs = indexFileString.gaenFilePaths
-      let targetUrls = self.urlPathsToProcess(remoteURLs)
+      let targetUrls = self.urlPathsToProcess(remoteURLs, apiVersion: .V1)
       lastProcessedUrlPath = targetUrls.last ?? .default
       processedFileCount = targetUrls.count
       let downloadedKeyArchives = try await(self.downloadKeyArchives(targetUrls: targetUrls))
@@ -332,12 +334,14 @@ final class ExposureManager: NSObject {
                   processedFileCount: processedFileCount,
                   lastProcessedUrlPath: lastProcessedUrlPath,
                   progress: progress,
+                  apiVersion: .V1,
                   completionHandler: completionHandler)
     }.catch { error in
       self.finish(.failure(error),
                   processedFileCount: processedFileCount,
                   lastProcessedUrlPath: lastProcessedUrlPath,
                   progress: progress,
+                  apiVersion: .V1,
                   completionHandler: completionHandler)
     }.always {
       unpackedArchiveURLs.cleanup()
@@ -363,7 +367,7 @@ final class ExposureManager: NSObject {
       self.isDetectingExposures = true
       let indexFileString = try await(self.fetchIndexFile())
       let remoteURLs = indexFileString.gaenFilePaths
-      let targetUrls = self.urlPathsToProcess(remoteURLs)
+      let targetUrls = self.urlPathsToProcess(remoteURLs, apiVersion: .V2)
       lastProcessedUrlPath = targetUrls.last ?? .default
       processedFileCount = targetUrls.count
       let downloadedKeyArchives = try await(self.downloadKeyArchives(targetUrls: targetUrls))
@@ -391,12 +395,14 @@ final class ExposureManager: NSObject {
                   processedFileCount: processedFileCount,
                   lastProcessedUrlPath: lastProcessedUrlPath,
                   progress: progress,
+                  apiVersion: .V2,
                   completionHandler: completionHandler)
     }.catch { error in
       self.finish(.failure(error),
                   processedFileCount: processedFileCount,
                   lastProcessedUrlPath: lastProcessedUrlPath,
                   progress: progress,
+                  apiVersion: .V2,
                   completionHandler: completionHandler)
     }.always {
       unpackedArchiveURLs.cleanup()
@@ -409,6 +415,7 @@ final class ExposureManager: NSObject {
               processedFileCount: Int,
               lastProcessedUrlPath: String,
               progress: Progress,
+              apiVersion: ENAPIVersion,
               completionHandler: ((ExposureResult) -> Void)) {
 
     // Update last exposure check date for representation in the UI
@@ -421,7 +428,9 @@ final class ExposureManager: NSObject {
       switch result {
       case let .success(newExposures):
         btSecureStorage.exposureDetectionErrorLocalizedDescription = .default
-        btSecureStorage.remainingDailyFileProcessingCapacity -= processedFileCount
+        if apiVersion == .V1 {
+          btSecureStorage.remainingDailyFileProcessingCapacity -= processedFileCount
+        }
         if lastProcessedUrlPath != .default {
           btSecureStorage.urlOfMostRecentlyDetectedKeyFile = lastProcessedUrlPath
         }
@@ -430,7 +439,6 @@ final class ExposureManager: NSObject {
       case let .failure(error):
         let exposureError = ExposureError.default(error.localizedDescription)
         btSecureStorage.exposureDetectionErrorLocalizedDescription = error.localizedDescription
-        postExposureDetectionErrorNotification(exposureError.errorDescription)
         completionHandler(.failure(exposureError))
       }
     }
@@ -468,9 +476,9 @@ extension ExposureManager {
     return 0
   }
 
-  func urlPathsToProcess(_ urlPaths: [String]) -> [String] {
+  func urlPathsToProcess(_ urlPaths: [String], apiVersion: ENAPIVersion) -> [String] {
     let startIdx = startIndex(for: urlPaths)
-    let endIdx = min(startIdx + btSecureStorage.userState.remainingDailyFileProcessingCapacity, urlPaths.count)
+    let endIdx = apiVersion == .V2 ? urlPaths.count : min(startIdx + btSecureStorage.userState.remainingDailyFileProcessingCapacity, urlPaths.count)
     return Array(urlPaths[startIdx..<endIdx])
   }
 
@@ -509,6 +517,25 @@ extension ExposureManager {
           fullfill(configuration)
         case .failure(_):
           fullfill(configuration)
+        }
+      }
+    }
+  }
+
+  ///Notifies the user that an exposure has been detected
+  func notifyUserExposureDetected() {
+    let content = UNMutableNotificationContent()
+    content.title = String.newExposureNotificationTitle.localized
+    content.body = String.newExposureNotificationBody.localized
+    content.sound = .default
+    content.userInfo = [String.notificationUrlKey: "\(String.notificationUrlBasePath)\(String.notificationUrlExposureHistoryPath)"]
+    let request = UNNotificationRequest(identifier: String.newExposureNotificationIdentifier,
+                                        content: content,
+                                        trigger: nil)
+    userNotificationCenter.add(request) { error in
+      DispatchQueue.main.async {
+        if let error = error {
+          print("Error showing error user notification: \(error)")
         }
       }
     }
@@ -583,7 +610,13 @@ private extension ExposureManager {
           case .success (let package):
             downloadedPackages.append(package)
           case .failure(let error):
-            reject(error)
+            // The index file may list key archive URLs that have been deleted
+            // from the key server. These will return 404's. Instead of aborting
+            // the entire operation, we continue and download the key archives that
+            // are present on the server
+            if (error as? GenericError != GenericError.notFound) {
+              reject(error)
+            }
           }
           dispatchGroup.leave()
         }
@@ -672,22 +705,4 @@ extension ExposureManager {
     }
   }
 
-  ///Notifies the user that an exposure has been detected
-  func notifyUserExposureDetected() {
-    let content = UNMutableNotificationContent()
-    content.title = String.newExposureNotificationTitle.localized
-    content.body = String.newExposureNotificationBody.localized
-    content.sound = .default
-    content.userInfo = [String.notificationUrlKey: "\(String.notificationUrlBasePath)\(String.notificationUrlExposureHistoryPath)"]
-    let request = UNNotificationRequest(identifier: String.newExposureNotificationIdentifier,
-                                        content: content,
-                                        trigger: nil)
-    userNotificationCenter.add(request) { error in
-      DispatchQueue.main.async {
-        if let error = error {
-          print("Error showing error user notification: \(error)")
-        }
-      }
-    }
-  }
 }

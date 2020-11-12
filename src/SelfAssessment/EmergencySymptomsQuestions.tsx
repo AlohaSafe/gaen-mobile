@@ -1,20 +1,23 @@
 import React, { FunctionComponent } from "react"
-import { StyleSheet } from "react-native"
+import { StyleSheet, TouchableOpacity } from "react-native"
 import { useTranslation } from "react-i18next"
 import { useNavigation } from "@react-navigation/native"
+import { SvgXml } from "react-native-svg"
+import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
 
 import { SelfAssessmentStackScreens, useStatusBarEffect } from "../navigation"
-import { Button, Text } from "../components"
+import { Text } from "../components"
 
 import { EmergencySymptom, SymptomGroup } from "./selfAssessment"
-import { useSelfAssessmentContext } from "../SelfAssessmentContext"
+import { useSelfAssessmentContext } from "./Context"
 import SymptomCheckbox from "./SymptomCheckbox"
 import SelfAssessmentLayout from "./SelfAssessmentLayout"
 
 import { Buttons, Colors, Spacing, Typography } from "../styles"
+import { Icons } from "../assets"
 
 const EmergencySymptomsQuestions: FunctionComponent = () => {
-  useStatusBarEffect("dark-content", Colors.secondary10)
+  useStatusBarEffect("dark-content", Colors.secondary.shade10)
   const { t } = useTranslation()
   const navigation = useNavigation()
   const {
@@ -22,6 +25,9 @@ const EmergencySymptomsQuestions: FunctionComponent = () => {
     emergencySymptoms,
     updateSymptoms,
   } = useSelfAssessmentContext()
+
+  const insets = useSafeAreaInsets()
+  const style = createStyle(insets)
 
   const {
     CHEST_PAIN,
@@ -56,13 +62,10 @@ const EmergencySymptomsQuestions: FunctionComponent = () => {
   return (
     <SelfAssessmentLayout
       bottomActionsContent={
-        <Button
-          label={t("common.next")}
-          onPress={handleOnPressNext}
-          hasRightArrow
-          customButtonStyle={style.button}
-          customButtonInnerStyle={style.buttonInner}
-        />
+        <TouchableOpacity style={style.button} onPress={handleOnPressNext}>
+          <Text style={style.buttonText}>{t("common.next")}</Text>
+          <SvgXml xml={Icons.Arrow} fill={Colors.background.primaryLight} />
+        </TouchableOpacity>
       }
     >
       <Text style={style.headerText}>
@@ -95,23 +98,27 @@ const EmergencySymptomsQuestions: FunctionComponent = () => {
   )
 }
 
-const style = StyleSheet.create({
-  headerText: {
-    ...Typography.header1,
-    marginBottom: Spacing.medium,
-  },
-  subheaderText: {
-    ...Typography.header4,
-    ...Typography.base,
-    marginBottom: Spacing.huge,
-  },
-  button: {
-    width: "100%",
-  },
-  buttonInner: {
-    ...Buttons.medium,
-    width: "100%",
-  },
-})
+const createStyle = (insets: EdgeInsets) => {
+  /* eslint-disable react-native/no-unused-styles */
+  return StyleSheet.create({
+    headerText: {
+      ...Typography.header.x60,
+      marginBottom: Spacing.medium,
+    },
+    subheaderText: {
+      ...Typography.header.x30,
+      ...Typography.style.normal,
+      marginBottom: Spacing.huge,
+    },
+    button: {
+      ...Buttons.fixedBottomThin.base,
+      paddingBottom: insets.bottom + Spacing.small,
+    },
+    buttonText: {
+      ...Typography.button.fixedBottom,
+      marginRight: Spacing.small,
+    },
+  })
+}
 
 export default EmergencySymptomsQuestions

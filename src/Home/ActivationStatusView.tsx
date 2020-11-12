@@ -28,6 +28,7 @@ type Content = {
 
 interface ActivationStatusProps {
   headerText: string
+  subheaderText?: string
   isActive: boolean
   infoAction: () => void
   fixAction: () => void
@@ -36,6 +37,7 @@ interface ActivationStatusProps {
 
 const ActivationStatusView: FunctionComponent<ActivationStatusProps> = ({
   headerText,
+  subheaderText,
   isActive,
   infoAction,
   fixAction,
@@ -44,8 +46,8 @@ const ActivationStatusView: FunctionComponent<ActivationStatusProps> = ({
   const { t } = useTranslation()
 
   const activeContent: Content = {
-    backgroundColor: Colors.success10,
-    borderColor: Colors.success100,
+    backgroundColor: Colors.accent.success25,
+    borderColor: Colors.accent.success100,
     bodyText: t("common.on"),
     statusIcon: Icons.CheckInCircle,
     actionText: t("exposure_scanning_status.learn_more"),
@@ -55,8 +57,8 @@ const ActivationStatusView: FunctionComponent<ActivationStatusProps> = ({
   }
 
   const inactiveContent: Content = {
-    backgroundColor: Colors.danger10,
-    borderColor: Colors.danger100,
+    backgroundColor: Colors.accent.danger25,
+    borderColor: Colors.accent.danger100,
     bodyText: t("common.off"),
     statusIcon: Icons.XInCircle,
     actionText: t("exposure_scanning_status.fix_this"),
@@ -64,8 +66,6 @@ const ActivationStatusView: FunctionComponent<ActivationStatusProps> = ({
     accessibilityLabel: t("home.fix", { technology: headerText }),
     chevron: Icons.ChevronRight,
   }
-
-  const content = isActive ? activeContent : inactiveContent
 
   const {
     backgroundColor,
@@ -76,7 +76,7 @@ const ActivationStatusView: FunctionComponent<ActivationStatusProps> = ({
     onPress,
     accessibilityLabel,
     chevron,
-  } = content
+  } = isActive ? activeContent : inactiveContent
 
   const outerContainerStyle = {
     ...style.outerContainer,
@@ -99,7 +99,10 @@ const ActivationStatusView: FunctionComponent<ActivationStatusProps> = ({
     >
       <View style={style.topContainer}>
         <View style={style.topTextContainer}>
-          <Text style={style.systemServiceText}>{headerText}</Text>
+          <Text style={style.headerText}>{headerText}</Text>
+          {subheaderText && (
+            <Text style={style.subheaderText}>{subheaderText}</Text>
+          )}
           <View style={statusTextContainerStyle}>
             <Text style={style.statusText}>{bodyText}</Text>
           </View>
@@ -115,7 +118,7 @@ const ActivationStatusView: FunctionComponent<ActivationStatusProps> = ({
         <Text style={style.actionText}>{actionText}</Text>
         <SvgXml
           xml={chevron}
-          fill={Colors.black}
+          fill={Colors.neutral.black}
           width={Iconography.tiny}
           height={Iconography.tiny}
         />
@@ -137,13 +140,18 @@ const style = StyleSheet.create({
   },
   topTextContainer: {
     marginTop: Spacing.xxSmall,
-    borderColor: Colors.neutral10,
+    maxWidth: 240,
   },
-  systemServiceText: {
-    ...Typography.header3,
-    color: Colors.black,
-    lineHeight: Typography.smallLineHeight,
+  headerText: {
+    ...Typography.header.x40,
+    color: Colors.neutral.black,
+    lineHeight: Typography.lineHeight.x30,
     marginBottom: Spacing.xSmall,
+  },
+  subheaderText: {
+    ...Typography.header.x10,
+    color: Colors.neutral.black,
+    marginBottom: Spacing.small,
   },
   statusTextContainer: {
     alignSelf: "flex-start",
@@ -152,18 +160,18 @@ const style = StyleSheet.create({
     borderRadius: Outlines.baseBorderRadius,
   },
   statusText: {
-    ...Typography.body2,
-    ...Typography.bold,
-    color: Colors.white,
-    lineHeight: Typography.xSmallLineHeight,
+    ...Typography.body.x20,
+    ...Typography.style.bold,
+    color: Colors.neutral.white,
+    lineHeight: Typography.lineHeight.x20,
   },
   bottomContainer: {
     flexDirection: "row",
     alignItems: "center",
   },
   actionText: {
-    ...Typography.body1,
-    color: Colors.black,
+    ...Typography.body.x30,
+    color: Colors.neutral.black,
     marginRight: Spacing.xxSmall,
     paddingBottom: 2,
   },

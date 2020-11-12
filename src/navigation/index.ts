@@ -20,6 +20,7 @@ export type ActivationStackScreen =
   | "ActivateExposureNotifications"
   | "ActivateLocation"
   | "ActivationSummary"
+  | "AnonymizedDataConsent"
   | "NotificationPermissions"
 
 export const ActivationStackScreens: {
@@ -30,6 +31,7 @@ export const ActivationStackScreens: {
   ActivateExposureNotifications: "ActivateExposureNotifications",
   ActivateLocation: "ActivateLocation",
   ActivationSummary: "ActivationSummary",
+  AnonymizedDataConsent: "AnonymizedDataConsent",
   NotificationPermissions: "NotificationPermissions",
 }
 
@@ -41,6 +43,9 @@ export type HomeStackScreen =
   | "ExposureNotificationsInfo"
   | "Home"
   | "LocationInfo"
+  | "EnterSymptoms"
+  | "EmergencyRecommendation"
+  | "CovidRecommendation"
 
 export const HomeStackScreens: {
   [key in HomeStackScreen]: HomeStackScreen
@@ -52,6 +57,9 @@ export const HomeStackScreens: {
   ExposureNotificationsInfo: "ExposureNotificationsInfo",
   Home: "Home",
   LocationInfo: "LocationInfo",
+  EnterSymptoms: "EnterSymptoms",
+  EmergencyRecommendation: "EmergencyRecommendation",
+  CovidRecommendation: "CovidRecommendation",
 }
 
 export type HowItWorksStackScreen =
@@ -117,6 +125,7 @@ export type ModalStackScreen =
   | "SelfAssessmentFromExposureDetails"
   | "SelfAssessmentFromHome"
   | "CallbackStack"
+  | "AgeVerification"
 
 export const ModalStackScreens: {
   [key in ModalStackScreen]: ModalStackScreen
@@ -130,6 +139,7 @@ export const ModalStackScreens: {
   SelfAssessmentFromExposureDetails: "SelfAssessmentFromExposureDetails",
   SelfAssessmentFromHome: "SelfAssessmentFromHome",
   CallbackStack: "CallbackStack",
+  AgeVerification: "AgeVerification",
 }
 
 export type SettingsStackScreen =
@@ -140,6 +150,7 @@ export type SettingsStackScreen =
   | "ENSubmitDebugForm"
   | "ExposureListDebugScreen"
   | "ENLocalDiagnosisKey"
+  | "ProductAnalyticsConsent"
 
 export const SettingsStackScreens: {
   [key in SettingsStackScreen]: SettingsStackScreen
@@ -151,6 +162,7 @@ export const SettingsStackScreens: {
   ENSubmitDebugForm: "ENSubmitDebugForm",
   ENLocalDiagnosisKey: "ENLocalDiagnosisKey",
   ExposureListDebugScreen: "ExposureListDebugScreen",
+  ProductAnalyticsConsent: "ProductAnalyticsConsent",
 }
 
 export type AffectedUserFlowStackScreen =
@@ -183,14 +195,16 @@ export const WelcomeStackScreens: {
 export type SymptomHistoryStackScreen =
   | "SymptomHistory"
   | "SelectSymptoms"
-  | "CallEmergencyServices"
+  | "EmergencyRecommendation"
+  | "CovidRecommendation"
 
 export const SymptomHistoryStackScreens: {
   [key in SymptomHistoryStackScreen]: SymptomHistoryStackScreen
 } = {
   SymptomHistory: "SymptomHistory",
   SelectSymptoms: "SelectSymptoms",
-  CallEmergencyServices: "CallEmergencyServices",
+  EmergencyRecommendation: "EmergencyRecommendation",
+  CovidRecommendation: "CovidRecommendation",
 }
 
 export type SelfAssessmentStackScreen =

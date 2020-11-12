@@ -1,16 +1,16 @@
 import React, { FunctionComponent } from "react"
-import { ScrollView, Image, StyleSheet } from "react-native"
+import { ScrollView, Image, StyleSheet, TouchableOpacity } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
 
-import { StatusBar, Text, Button } from "../components"
+import { StatusBar, Text } from "../components"
 import { useStatusBarEffect, Stacks } from "../navigation"
 
 import { Images } from "../assets"
-import { Colors, Layout, Spacing, Typography } from "../styles"
+import { Buttons, Colors, Layout, Spacing, Typography } from "../styles"
 
 export const AffectedUserComplete: FunctionComponent = () => {
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
 
@@ -20,7 +20,7 @@ export const AffectedUserComplete: FunctionComponent = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={Colors.primaryLightBackground} />
+      <StatusBar backgroundColor={Colors.background.primaryLight} />
       <ScrollView
         style={style.container}
         contentContainerStyle={style.contentContainer}
@@ -31,7 +31,13 @@ export const AffectedUserComplete: FunctionComponent = () => {
         <Text style={style.contentText}>
           {t("export.complete_body_bluetooth")}
         </Text>
-        <Button onPress={handleOnPressDone} label={t("common.done")} />
+        <TouchableOpacity
+          style={style.button}
+          onPress={handleOnPressDone}
+          accessibilityLabel={t("common.done")}
+        >
+          <Text style={style.buttonText}>{t("common.done")}</Text>
+        </TouchableOpacity>
       </ScrollView>
     </>
   )
@@ -40,7 +46,7 @@ export const AffectedUserComplete: FunctionComponent = () => {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   contentContainer: {
     justifyContent: "center",
@@ -56,14 +62,20 @@ const style = StyleSheet.create({
     resizeMode: "cover",
   },
   header: {
-    ...Typography.header1,
+    ...Typography.header.x60,
     textAlign: "center",
     marginBottom: Spacing.medium,
   },
   contentText: {
-    ...Typography.body2,
+    ...Typography.body.x30,
     textAlign: "center",
     marginBottom: Spacing.xxxLarge,
+  },
+  button: {
+    ...Buttons.primary.base,
+  },
+  buttonText: {
+    ...Typography.button.primary,
   },
 })
 

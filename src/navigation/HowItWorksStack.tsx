@@ -58,7 +58,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     }
   }
   const handleOnPressSkip = handleOnNavigateOutOfStack
-  const handleOnPressNextOnValueProposition = handleOnNavigateOutOfStack
+  const handleOnPressNextOnGetNotified = handleOnNavigateOutOfStack
 
   const introduction: HowItWorksScreenDatum = {
     name: HowItWorksStackScreens.Introduction,
@@ -97,17 +97,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     title: t("onboarding.screen3_button"),
     header: t("onboarding.screen4_header"),
     primaryButtonLabel: t("onboarding.screen4_button"),
-    primaryButtonOnPress: () =>
-      navigation.navigate(HowItWorksStackScreens.ValueProposition),
-  }
-  const valueProposition: HowItWorksScreenDatum = {
-    name: HowItWorksStackScreens.ValueProposition,
-    image: Images.HowItWorksValueProposition,
-    imageLabel: t("onboarding.screen5_image_label"),
-    title: t("onboarding.screen4_button"),
-    header: t("onboarding.screen5_header"),
-    primaryButtonLabel: t("onboarding.screen_5_button"),
-    primaryButtonOnPress: handleOnPressNextOnValueProposition,
+    primaryButtonOnPress: handleOnPressNextOnGetNotified,
   }
 
   const howItWorksScreenData: HowItWorksScreenDatum[] = [
@@ -115,27 +105,13 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
     phoneRemembersDevices,
     personalPrivacy,
     getNotified,
-    valueProposition,
   ]
 
-  const toStackScreen = (datum: HowItWorksScreenDatum, idx: number) => {
-    const screenNumber = idx + 1
-    const howItWorksScreenDisplayDatum = {
-      screenNumber,
-      ...datum,
-    }
-
+  const toStackScreen = (datum: HowItWorksScreenDatum) => {
     return (
-      <Stack.Screen
-        key={howItWorksScreenDisplayDatum.header}
-        name={howItWorksScreenDisplayDatum.name}
-      >
+      <Stack.Screen key={datum.header} name={datum.name}>
         {(props) => (
-          <HowItWorksScreen
-            {...props}
-            howItWorksScreenContent={howItWorksScreenDisplayDatum}
-            totalScreenCount={howItWorksScreenData.length}
-          />
+          <HowItWorksScreen {...props} howItWorksScreenContent={datum} />
         )}
       </Stack.Screen>
     )
@@ -162,7 +138,7 @@ const HowItWorksStack: FunctionComponent<HowItWorksStackProps> = ({
         headerStyleInterpolator: HeaderStyleInterpolators.forNoAnimation,
       }}
     >
-      {howItWorksScreenData.map((data, idx) => toStackScreen(data, idx))}
+      {howItWorksScreenData.map(toStackScreen)}
     </Stack.Navigator>
   )
 }
@@ -175,8 +151,8 @@ const style = StyleSheet.create({
     padding: Spacing.xSmall,
   },
   skipButtonText: {
-    ...Typography.body2,
-    color: Colors.neutral100,
+    ...Typography.body.x20,
+    color: Colors.neutral.shade100,
   },
 })
 

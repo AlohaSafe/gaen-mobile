@@ -21,7 +21,10 @@ const SwitchListItem: FunctionComponent<SwitchListItemProps> = ({
       <Switch
         onValueChange={onChange}
         value={isActive}
-        trackColor={{ true: Colors.success100, false: Colors.white }}
+        trackColor={{
+          true: Colors.accent.success100,
+          false: Colors.neutral.white,
+        }}
         testID={testID}
       />
     </View>
@@ -37,7 +40,7 @@ const style = StyleSheet.create({
     alignItems: "center",
   },
   toggleText: {
-    ...Typography.tappableListItem,
+    ...Typography.button.listItem,
   },
 })
 

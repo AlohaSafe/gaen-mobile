@@ -11,12 +11,12 @@ import { useTranslation } from "react-i18next"
 import {
   usePermissionsContext,
   ENPermissionStatus,
-} from "../PermissionsContext"
+} from "../Device/PermissionsContext"
+import { useApplicationName } from "../Device/useApplicationInfo"
+import { openAppSettings } from "../Device"
 import { useOnboardingContext } from "../OnboardingContext"
-import { useApplicationName } from "../hooks/useApplicationInfo"
-import { Text, Button } from "../components"
-import { useSystemServicesContext } from "../SystemServicesContext"
-import { openAppSettings } from "../gaen/nativeModule"
+import { useProductAnalyticsContext } from "../ProductAnalytics/Context"
+import { Text } from "../components"
 
 import { Images } from "../assets"
 import { Buttons, Colors, Spacing, Typography } from "../styles"
@@ -25,16 +25,19 @@ const ActivationSummary: FunctionComponent = () => {
   const { t } = useTranslation()
   const { applicationName } = useApplicationName()
   const { completeOnboarding } = useOnboardingContext()
-  const { isBluetoothOn, locationPermissions } = useSystemServicesContext()
+  const { trackEvent } = useProductAnalyticsContext()
+  const {
+    isBluetoothOn,
+    locationPermissions,
+    exposureNotifications: { status },
+  } = usePermissionsContext()
+
+  const isENEnabled = status === ENPermissionStatus.ENABLED
   const isLocationRequiredAndOff = locationPermissions === "RequiredOff"
   const isLocationRequired = locationPermissions !== "NotRequired"
 
-  const {
-    exposureNotifications: { status },
-  } = usePermissionsContext()
-  const isENEnabled = status === ENPermissionStatus.ENABLED
-
   const handleOnPressGoToHome = () => {
+    trackEvent("product_analytics", "onboarding_completed")
     completeOnboarding()
   }
 
@@ -46,12 +49,12 @@ const ActivationSummary: FunctionComponent = () => {
   const AppSetupIncompleteButtons: FunctionComponent = () => {
     return (
       <View style={style.buttonContainer}>
-        <Button
-          label={t("common.settings")}
+        <TouchableOpacity
           onPress={handleOnPressOpenSettings}
-          customButtonStyle={style.primaryButton}
-          customButtonInnerStyle={style.primaryButtonGradient}
-        />
+          style={style.button}
+        >
+          <Text style={style.buttonText}>{t("common.settings")}</Text>
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={handleOnPressGoToHome}
           style={style.secondaryButton}
@@ -66,12 +69,9 @@ const ActivationSummary: FunctionComponent = () => {
 
   const AppSetupCompleteButton: FunctionComponent = () => {
     return (
-      <Button
-        label={t("label.go_to_home_view")}
-        onPress={handleOnPressGoToHome}
-        customButtonStyle={style.primaryButton}
-        customButtonInnerStyle={style.primaryButtonGradient}
-      />
+      <TouchableOpacity onPress={handleOnPressGoToHome} style={style.button}>
+        <Text style={style.buttonText}>{t("label.go_to_home_view")}</Text>
+      </TouchableOpacity>
     )
   }
 
@@ -120,7 +120,7 @@ const ActivationSummary: FunctionComponent = () => {
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   contentContainer: {
     flexGrow: 1,
@@ -152,29 +152,32 @@ const style = StyleSheet.create({
     marginBottom: Spacing.xxLarge,
   },
   headerText: {
-    ...Typography.header1,
+    ...Typography.header.x60,
     textAlign: "center",
     marginBottom: Spacing.medium,
   },
   bodyText: {
-    ...Typography.body1,
+    ...Typography.body.x30,
     textAlign: "center",
   },
-  primaryButton: {
-    width: "100%",
+  button: {
+    ...Buttons.primary.base,
     marginBottom: Spacing.xxSmall,
   },
+  // Need this later
   primaryButtonGradient: {
     paddingTop: Spacing.xSmall,
     paddingBottom: Spacing.xSmall + 1,
     width: "100%",
   },
+  buttonText: {
+    ...Typography.button.primary,
+  },
   secondaryButton: {
-    ...Buttons.secondary,
-    alignSelf: "center",
+    ...Buttons.secondary.base,
   },
   secondaryButtonText: {
-    ...Typography.buttonSecondary,
+    ...Typography.button.secondary,
     color: Colors.asGray,
   },
 })

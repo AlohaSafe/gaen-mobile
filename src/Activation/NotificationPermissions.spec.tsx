@@ -6,8 +6,9 @@ import {
   PermissionsContext,
   PermissionsContextState,
   ENPermissionStatus,
-} from "../PermissionsContext"
-import { PermissionStatus } from "../permissionStatus"
+  PermissionStatus,
+} from "../Device/PermissionsContext"
+import { ActivationStackScreens } from "../navigation"
 import NotificationPermissions from "./NotificationPermissions"
 
 jest.mock("@react-navigation/native")
@@ -30,7 +31,7 @@ describe("NotificationPermissions", () => {
 
       expect(notificationRequestSpy).toHaveBeenCalled()
     })
-    it("navigates to the activation summary", async () => {
+    it("navigates to the next screen", async () => {
       expect.assertions(1)
       const navigationSpy = jest.fn()
       ;(useNavigation as jest.Mock).mockReturnValue({
@@ -42,7 +43,9 @@ describe("NotificationPermissions", () => {
       fireEvent.press(getByLabelText("Enable Notifications"))
 
       await waitFor(() => {
-        expect(navigationSpy).toHaveBeenCalledWith("ActivationSummary")
+        expect(navigationSpy).toHaveBeenCalledWith(
+          ActivationStackScreens.ActivationSummary,
+        )
       })
     })
   })
@@ -63,7 +66,7 @@ describe("NotificationPermissions", () => {
 
       expect(notificationRequestSpy).not.toHaveBeenCalled()
     })
-    it("navigates to the activation summary", () => {
+    it("navigates to the next screen", () => {
       const navigationSpy = jest.fn()
       ;(useNavigation as jest.Mock).mockReturnValue({ navigate: navigationSpy })
 
@@ -71,7 +74,9 @@ describe("NotificationPermissions", () => {
 
       fireEvent.press(getByText("Maybe later"))
 
-      expect(navigationSpy).toHaveBeenCalledWith("ActivationSummary")
+      expect(navigationSpy).toHaveBeenCalledWith(
+        ActivationStackScreens.ActivationSummary,
+      )
     })
   })
 })
@@ -80,6 +85,8 @@ const createPermissionProviderValue = (
   requestPermission: () => void = () => {},
 ): PermissionsContextState => {
   return {
+    isBluetoothOn: true,
+    locationPermissions: "RequiredOn" as const,
     notification: {
       status: PermissionStatus.UNKNOWN,
       check: () => {},

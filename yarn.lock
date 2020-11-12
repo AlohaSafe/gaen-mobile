@@ -1186,6 +1186,7 @@
 "@react-native-community/cli@^4.7.0":
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-4.13.0.tgz#04d5032f9b2b423c61ceef6be83b1bcc8a37db75"
+  integrity sha512-R+1VehIQ6VTLf+e7YOwzJk0F9tstfeSC4xy7oT6GSgB3FnXbTJGHFUp4siyO68Ae/gzGqt8SiUO145teWkP+ZA==
   dependencies:
     "@hapi/joi" "^15.0.3"
     "@react-native-community/cli-debugger-ui" "^4.9.0"
@@ -1581,6 +1582,11 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
+
+"@types/regression@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/regression/-/regression-2.0.0.tgz#0677ea78d7bdb37039c02ebbccf062042f756ae3"
+  integrity sha512-Ch2FD53M1HpFLL6zSTc/sfuyqQcIPy+/PV3xFT6QYtk9EOiMI29XOYmLNxBb1Y0lfMOR/NNa86J1gRc/1jGLyw==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -7051,6 +7057,11 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
+regression@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/regression/-/regression-2.0.1.tgz#8d29c3e8224a10850c35e337e85a8b2fac3b0c87"
+  integrity sha1-jSnD6CJKEIUMNeM36FqLL6w7DIc=
+
 remove-bom-buffer@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/remove-bom-buffer/-/remove-bom-buffer-3.0.0.tgz#c2bf1e377520d324f623892e33c10cac2c252b53"
@@ -8059,6 +8070,11 @@ truncate-utf8-bytes@^1.0.0:
   resolved "https://registry.yarnpkg.com/truncate-utf8-bytes/-/truncate-utf8-bytes-1.0.2.tgz#405923909592d56f78a5818434b0b78489ca5f2b"
   dependencies:
     utf8-byte-length "^1.0.1"
+
+ts.data.json@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/ts.data.json/-/ts.data.json-1.5.0.tgz#fe6484546974d0787f5a3224a91187355699db52"
+  integrity sha512-LLC8b4un4sRtWBA47MYaBF+JxsDYq/dUDQrl1Y2l7+RZLBbZvQpIEmr2vCCo6Tegg+hay3sBFYiQHxtTknSDtA==
 
 tsconfig-paths@^3.9.0:
   version "3.9.0"

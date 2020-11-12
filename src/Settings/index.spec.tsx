@@ -5,7 +5,7 @@ import { Linking } from "react-native"
 import { SettingsStackScreens } from "../navigation"
 import SettingsScreen from "./index"
 import { useNavigation } from "@react-navigation/native"
-import { useApplicationInfo } from "../hooks/useApplicationInfo"
+import { useApplicationInfo } from "../Device/useApplicationInfo"
 import { ConfigurationContext } from "../ConfigurationContext"
 import { factories } from "../factories"
 import {
@@ -15,7 +15,7 @@ import {
 
 jest.mock("@react-navigation/native")
 jest.mock("../configuration/authorityLinks")
-jest.mock("../hooks/useApplicationInfo")
+jest.mock("../Device/useApplicationInfo")
 
 describe("Settings", () => {
   describe("when the user deletes their data", () => {
@@ -28,7 +28,7 @@ describe("Settings", () => {
 
       const { getByLabelText } = render(<SettingsScreen />)
 
-      const deleteMyDataButton = getByLabelText("Delete My Data")
+      const deleteMyDataButton = getByLabelText("Delete my data")
       fireEvent.press(deleteMyDataButton)
       expect(navigateSpy).toHaveBeenCalledWith(
         SettingsStackScreens.DeleteConfirmation,
@@ -85,7 +85,9 @@ describe("Settings", () => {
     )
 
     expect(
-      getByText(/The applicationName app is made available by authorityName/),
+      getByText(
+        /The applicationName app is made available by the authorityName/,
+      ),
     ).toBeDefined()
   })
 

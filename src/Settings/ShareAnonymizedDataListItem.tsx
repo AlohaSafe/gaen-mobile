@@ -4,31 +4,41 @@ import { SvgXml } from "react-native-svg"
 import { useNavigation } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
 
-import { useAnalyticsContext } from "../AnalyticsContext"
+import { useProductAnalyticsContext } from "../ProductAnalytics/Context"
 import { Text } from "../components"
-import { ModalStackScreens } from "../navigation"
+import { SettingsStackScreens } from "../navigation"
 import { Icons } from "../assets"
 import { Colors, Iconography, Typography, Spacing } from "../styles"
 
 const ShareAnonymizedDataListItem: FunctionComponent = () => {
   const { t } = useTranslation()
   const navigation = useNavigation()
-  const { userConsentedToAnalytics } = useAnalyticsContext()
+  const { userConsentedToAnalytics } = useProductAnalyticsContext()
 
   const onPressShareAnonymizedData = () => {
-    navigation.navigate(ModalStackScreens.AnonymizedDataConsent)
+    navigation.navigate(SettingsStackScreens.ProductAnalyticsConsent)
   }
 
-  const rightIconColor = userConsentedToAnalytics
-    ? Colors.success100
-    : Colors.danger75
-  const rightIcon = userConsentedToAnalytics
-    ? Icons.CheckInCircle
-    : Icons.XInCircle
-  const testID = userConsentedToAnalytics ? "sharing-data" : "not-sharing-data"
-  const accessibilityLabel = userConsentedToAnalytics
-    ? t("settings.sharing_anonymized_data")
-    : t("settings.not_sharing_anonymized_data")
+  const consentingConfig = {
+    rightIconColor: Colors.accent.success100,
+    rightIcon: Icons.CheckInCircle,
+    testID: "sharing-data",
+    accessibilityLabel: t("settings.sharing_anonymized_data"),
+  }
+
+  const notConsentingConfig = {
+    rightIconColor: Colors.accent.danger75,
+    rightIcon: Icons.XInCircle,
+    testID: "not-sharing-data",
+    accessibilityLabel: t("settings.not_sharing_anonymized_data"),
+  }
+
+  const {
+    rightIconColor,
+    rightIcon,
+    testID,
+    accessibilityLabel,
+  } = userConsentedToAnalytics ? consentingConfig : notConsentingConfig
 
   return (
     <TouchableOpacity
@@ -39,7 +49,7 @@ const ShareAnonymizedDataListItem: FunctionComponent = () => {
       <View style={style.listItem}>
         <View style={style.leftContent}>
           <SvgXml
-            fill={Colors.primary100}
+            fill={Colors.primary.shade100}
             xml={Icons.BarGraph}
             width={Iconography.small}
             height={Iconography.small}
@@ -79,7 +89,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
   },
   listItemText: {
-    ...Typography.tappableListItem,
+    ...Typography.button.listItem,
   },
   rightIcon: {
     paddingRight: Spacing.medium,

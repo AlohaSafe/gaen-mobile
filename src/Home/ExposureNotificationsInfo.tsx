@@ -35,7 +35,7 @@ const ExposureNotificationsInfo: FunctionComponent = () => {
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   mainContentContainer: {
     paddingTop: Spacing.large,
@@ -46,13 +46,13 @@ const style = StyleSheet.create({
     marginBottom: Spacing.small,
   },
   subheaderText: {
-    ...Typography.body1,
-    ...Typography.mediumBold,
-    color: Colors.primaryText,
+    ...Typography.body.x30,
+    ...Typography.style.medium,
+    color: Colors.text.primary,
     marginBottom: Spacing.medium,
   },
   bodyText: {
-    ...Typography.body1,
+    ...Typography.body.x30,
     marginBottom: Spacing.xxLarge,
   },
 })

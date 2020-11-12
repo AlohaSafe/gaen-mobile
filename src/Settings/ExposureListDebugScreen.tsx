@@ -49,15 +49,15 @@ const style = StyleSheet.create({
     paddingTop: Spacing.xxxSmall,
     paddingBottom: Spacing.xxxSmall,
     borderBottomWidth: Outlines.hairline,
-    borderColor: Colors.neutral75,
+    borderColor: Colors.neutral.shade75,
   },
   itemText: {
-    ...Typography.body1,
+    ...Typography.body.x30,
     padding: Spacing.xSmall,
     maxWidth: "90%",
   },
   noExposureText: {
-    ...Typography.header5,
+    ...Typography.header.x20,
     padding: Spacing.medium,
   },
 })

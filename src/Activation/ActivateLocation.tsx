@@ -9,30 +9,42 @@ import {
 } from "react-native"
 import { useTranslation } from "react-i18next"
 import { useNavigation } from "@react-navigation/native"
+import { SvgXml } from "react-native-svg"
 
 import { ActivationStackScreens } from "../navigation"
-import { Text, Button } from "../components"
-import { useApplicationName } from "../hooks/useApplicationInfo"
-import { useSystemServicesContext } from "../SystemServicesContext"
-import { openAppSettings } from "../gaen/nativeModule"
+import { Text } from "../components"
+import { useApplicationName } from "../Device/useApplicationInfo"
+import { usePermissionsContext } from "../Device/PermissionsContext"
+import { useConfigurationContext } from "../ConfigurationContext"
+import { openAppSettings } from "../Device"
 
-import { Colors, Spacing, Typography, Buttons } from "../styles"
+import { Colors, Spacing, Typography, Buttons, Outlines } from "../styles"
+import { Icons } from "../assets"
 
 const ActivateLocation: FunctionComponent = () => {
   const { t } = useTranslation()
   const navigation = useNavigation()
   const { applicationName } = useApplicationName()
-  const { locationPermissions } = useSystemServicesContext()
+  const { locationPermissions } = usePermissionsContext()
+  const { enableProductAnalytics } = useConfigurationContext()
 
   useEffect(() => {
     const isLocationOn = locationPermissions === "RequiredOn"
     if (isLocationOn) {
-      navigation.navigate(ActivationStackScreens.ActivationSummary)
+      navigateToNextScreen()
     }
   })
 
   const handleOnPressMaybeLater = () => {
-    navigation.navigate(ActivationStackScreens.ActivationSummary)
+    navigateToNextScreen()
+  }
+
+  const navigateToNextScreen = () => {
+    if (enableProductAnalytics) {
+      navigation.navigate(ActivationStackScreens.AnonymizedDataConsent)
+    } else {
+      navigation.navigate(ActivationStackScreens.ActivationSummary)
+    }
   }
 
   const showLocationAccessAlert = () => {
@@ -65,25 +77,30 @@ const ActivateLocation: FunctionComponent = () => {
       >
         <View style={style.content}>
           <Text style={style.header}>{t("onboarding.location_header")}</Text>
-          <Text style={style.subheader}>
-            {t("onboarding.location_subheader")}
-          </Text>
-          <Text style={style.body}>{t("onboarding.location_body")}</Text>
-        </View>
-        <View style={style.buttonsContainer}>
-          <Button
-            onPress={handleOnPressAllowLocationAccess}
-            label={t("common.settings")}
-          />
-          <TouchableOpacity
-            onPress={handleOnPressMaybeLater}
-            style={style.secondaryButton}
-          >
-            <Text style={style.secondaryButtonText}>
-              {t("common.maybe_later")}
+          <View style={style.subheaderContainer}>
+            <SvgXml xml={Icons.AlertCircle} fill={Colors.accent.danger150} />
+            <Text style={style.subheaderText}>
+              {t("onboarding.location_subheader", { applicationName })}
             </Text>
-          </TouchableOpacity>
+          </View>
+          <Text style={style.bodyText}>
+            {t("onboarding.location_body", { applicationName })}
+          </Text>
         </View>
+        <TouchableOpacity
+          onPress={handleOnPressAllowLocationAccess}
+          style={style.button}
+        >
+          <Text style={style.buttonText}>{t("common.settings")}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={handleOnPressMaybeLater}
+          style={style.secondaryButton}
+        >
+          <Text style={style.secondaryButtonText}>
+            {t("common.maybe_later")}
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   )
@@ -91,10 +108,10 @@ const ActivateLocation: FunctionComponent = () => {
 
 const style = StyleSheet.create({
   safeArea: {
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   container: {
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
     height: "100%",
   },
   contentContainer: {
@@ -105,25 +122,40 @@ const style = StyleSheet.create({
     marginBottom: Spacing.medium,
   },
   header: {
-    ...Typography.header1,
+    ...Typography.header.x60,
     marginBottom: Spacing.large,
   },
-  subheader: {
-    ...Typography.header5,
-    marginBottom: Spacing.xSmall,
+  subheaderContainer: {
+    paddingVertical: Spacing.small,
+    paddingHorizontal: Spacing.large,
+    borderRadius: Outlines.baseBorderRadius,
+    borderColor: Colors.accent.danger150,
+    borderWidth: Outlines.thin,
+    marginBottom: Spacing.small,
+    flexDirection: "row",
+    alignItems: "center",
   },
-  body: {
-    ...Typography.body1,
+  subheaderText: {
+    ...Typography.header.x20,
+    color: Colors.accent.danger150,
+    paddingLeft: Spacing.medium,
+    paddingRight: Spacing.large,
+  },
+  bodyText: {
+    ...Typography.body.x30,
     marginBottom: Spacing.xxLarge,
   },
-  buttonsContainer: {
-    alignSelf: "flex-start",
+  button: {
+    ...Buttons.primary.base,
+  },
+  buttonText: {
+    ...Typography.button.primary,
   },
   secondaryButton: {
-    ...Buttons.secondary,
+    ...Buttons.secondary.base,
   },
   secondaryButtonText: {
-    ...Typography.buttonSecondary,
+    ...Typography.button.secondary,
   },
 })
 

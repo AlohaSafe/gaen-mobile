@@ -12,8 +12,7 @@
     "phone_number_required": "전화 번호 (필수)",
     "success_body": "이동경로 추적 담당자들은 귀하와 지역사회를 안전하게 지키기 위해 열심히 노력하고 있습니다. {{healthAuthorityName}}가 귀하의 전화 회신 요청을 받았습니다. 전문가가 24시간 이내에 귀하에게 연락을 드릴 것입니다.",
     "success_got_it": "알겠습니다.",
-    "success_header": "귀하는 대기중입니다.",
-    "success_requested": "전화 회신 요청하셨습니다."
+    "success_header": "귀하는 대기중입니다."
   },
   "common": {
     "back": "뒤로 가기",
@@ -21,6 +20,7 @@
     "continue": "계속",
     "done": "완료",
     "maybe_later": "나중에",
+    "more": "더 많은",
     "next": "다음",
     "no_thanks": "아니오 괜찮습니다.",
     "save": "저장",
@@ -45,7 +45,6 @@
   },
   "export": {
     "code_input_body_bluetooth": "인증 코드를 입력하십시오.",
-    "code_input_button_back": "뒤로 가기",
     "code_input_button_cancel": "취소",
     "code_input_title_bluetooth": "진단을 확인하십시오.",
     "complete_body_bluetooth": "귀하는 코로나19 확산을 방지하고, 지역사회를 보호하는데 도움이됩니다.",
@@ -76,7 +75,7 @@
       },
       "no_op": {
         "no_token_for_existing_keys": "기존 데이터가 서버로 전송되었습니다. 이는 일반적으로 본 프로세스가 이 장치에서 이전에 시도되었지만 다른 애플리케이션에서 시도되었음을 의미합니다. 사용 된 인증 코드를 제공한 기관에 이를 전달할 수 있습니다. {{newKeysInserted}} 새 키가 추가되었습니다.",
-        "title": "기존 키 제출 시도"
+        "no_token_for_existing_keys_title": "기존 키 제출 시도"
       }
     },
     "start_header_bluetooth": "바이러스 확산을 방지하고 지역 사회를 보호하는데 도움이됩니다."
@@ -86,7 +85,6 @@
       "6ft_apart": "6피트 간격",
       "ha_guidance_header": "본인은 어떻게 해야합니까?",
       "header": "코로나19 확진자와 동선이 겹쳤을 수 있습니다.",
-      "isolate": "격리",
       "next_steps": "다음 단계",
       "schedule_callback": "{{healthAuthorityName}} 에서 이동경로 조사 담당자의 지원을 받으려면 전화를 예약하십시오.",
       "speak_with_contact_tracer": "이동경로 조사 담당자와 대화하기",
@@ -206,7 +204,6 @@
     "proximity_tracing_subheader1": "어떻게 작동합니까?",
     "proximity_tracing_subheader2": "본인의 데이터는 안전합니까?",
     "proximity_tracing_subheader3": "본 앱은 코로나19 감염 예방을 위한 것이며 반드시 감염을 방지하는 것은 아닙니다.",
-    "screen_5_button": "시작",
     "screen1_button": "어떻게 작동합니까?",
     "screen1_header": "우리는 함께 코로나19의 확산을 방지할 수 있습니다.",
     "screen1_image_label": "하이파이브를 하는 두 사람",
@@ -219,18 +216,12 @@
     "screen4_button": "아프면 어떻게 해야 하나요?",
     "screen4_header": "귀하가 코로나19에 노출되었을 가능성이 있는 경우 앱에서 알림을 줄 것입니다.",
     "screen4_image_label": "휴대 전화로 알림을 받는 사람",
-    "screen5_header": "본 앱을 사용하면 코로나19의 확산을 방지하고, 타인을 보호하는 동시에 보건 전문가로부터 직접 도움을 받을 수 있습니다.",
-    "screen5_image_label": "의료 전문가와 가상으로 이야기하는 사람",
-    "step": "{{totalSteps}}에서의 {{currentStep}} 단계",
     "terms_header_title": "이용 약관",
     "welcome_image_label": "네트워크의 연결된 노드처럼 마스크를 착용한 사람들의 그림."
   },
   "screen_titles": {
     "bluetooth": "블루투스",
-    "callback": "전화 회신 요청",
-    "debug": "디버그",
     "exposure_history": "노출 이력",
-    "exposures": "노출",
     "home": "집",
     "how_the_app_works": "어떻게 앱이 작동하나요?",
     "legal": "법률",
@@ -274,20 +265,9 @@
     "share_anonymized_data_disclaimer": "계속 진행하면 {{healthAuthorityName}}의 검사 질의에 익명의 답변을 공유하는데 동의합니다.",
     "share_anonymized_data_para": "귀하의 익명 데이터는 {{healthAuthorityName}}이 코로나19의 확산을 분석, 추적 및 방지하는데 도움이 됩니다. 데이터 공유에 동의한 다른 사용자로부터 당신의 데이터가 공개될 것입니다.\n\n데이터는 설문 조사 응답과 우편 번호를 포함하지만 추가 정보나 개인 식별 정보는 포함하지 않습니다.\n\n{{healthAuthorityName}}은 일정 기간 동안 당신의 익명 데이터를 보관할 것입니다."
   },
-  "symptoms": {
-    "body_aches": "몸살",
-    "chest_pain_or_pressure": "가슴 통증 또는 압박",
-    "chills": "오한",
+  "symptom": {
     "cough": "기침",
     "diarrhea": "설사",
-    "difficulty_breathing": "호흡 곤란",
-    "disorientation_or_unresponsiveness": "방향 감각 상실 또는 무반응",
-    "fever": "발열",
-    "lightheadedness": "현기증",
-    "loss_of_appetite": "식욕 부진",
-    "loss_of_smell": "후각 상실",
-    "loss_of_taste": "미각 상실",
-    "other": "그 외 증상",
-    "vomiting": "구토"
+    "other": "그 외 증상"
   }
 }

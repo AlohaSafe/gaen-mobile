@@ -12,10 +12,10 @@ import { useNavigation } from "@react-navigation/native"
 ////// ALOHA SAFE import insets //////
 import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
 ////// ALOHA SAFE import insets //////
-import { usePermissionsContext } from "../PermissionsContext"
-import { Text, Button } from "../components"
-import { useSystemServicesContext } from "../SystemServicesContext"
+import { usePermissionsContext } from "../Device/PermissionsContext"
+import { useProductAnalyticsContext } from "../ProductAnalytics/Context"
 import { nextScreenFromExposureNotifications } from "./activationStackController"
+import { Text } from "../components"
 
 import { Spacing, Typography, Buttons, Colors } from "../styles"
 
@@ -26,11 +26,14 @@ const ActivateExposureNotifications: FunctionComponent = () => {
   ////// ALOHA SAFE use imported insets //////
   const { t } = useTranslation()
   const navigation = useNavigation()
+  const {
+    locationPermissions,
+    isBluetoothOn,
+    exposureNotifications,
+  } = usePermissionsContext()
 
-  const { locationPermissions, isBluetoothOn } = useSystemServicesContext()
+  const { trackEvent } = useProductAnalyticsContext()
   const isLocationRequiredAndOff = locationPermissions === "RequiredOff"
-
-  const { exposureNotifications } = usePermissionsContext()
 
   const navigateToNextScreen = () => {
     navigation.navigate(
@@ -43,10 +46,12 @@ const ActivateExposureNotifications: FunctionComponent = () => {
 
   const handleOnPressActivateExposureNotifications = async () => {
     await exposureNotifications.request()
+    trackEvent("product_analytics", "onboarding_en_permissions_accept")
     navigateToNextScreen()
   }
 
   const handleOnPressDontEnable = () => {
+    trackEvent("product_analytics", "onboarding_en_permissions_denied")
     navigateToNextScreen()
   }
 
@@ -80,15 +85,17 @@ const ActivateExposureNotifications: FunctionComponent = () => {
       </ScrollView>
       {/* ALOHA SAFE moved buttons outside of scroll view */}
       <View style={style.buttonsContainer}>
-        <Button
-          customButtonStyle={style.nextButton}
-          customButtonInnerStyle={style.nextButtonGradient}
+        <TouchableOpacity
           onPress={handleOnPressActivateExposureNotifications}
-          label={t("onboarding.proximity_tracing_button")}
-        />
+          style={style.button}
+        >
+          <Text style={style.buttonText}>
+            {t("onboarding.proximity_tracing_button")}
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={handleOnPressDontEnable}
-          // style={style.secondaryButton}
+          style={style.secondaryButton}
         >
           <Text style={style.secondaryButtonText}>{t("common.no_thanks")}</Text>
         </TouchableOpacity>
@@ -106,10 +113,10 @@ const createStyle = (insets: EdgeInsets) => {
       justifyContent: "space-between",
       flex: 1,
       ////// ALOHA SAFE justify and flex //////
-      backgroundColor: Colors.primaryLightBackground,
+      backgroundColor: Colors.background.primaryLight,
     },
     container: {
-      backgroundColor: Colors.primaryLightBackground,
+      backgroundColor: Colors.background.primaryLight,
       // height: "100%",
     },
     contentContainer: {
@@ -120,19 +127,19 @@ const createStyle = (insets: EdgeInsets) => {
       marginBottom: Spacing.medium,
     },
     header: {
-      ...Typography.header1,
+      ...Typography.header.x60, // header1 ??
       marginBottom: Spacing.large,
       ////// ALOHA SAFE added color //////
       color: Colors.asBlue,
     },
     subheader: {
-      ...Typography.header5,
+      ...Typography.header.x20, // header5 ???
       marginBottom: Spacing.xSmall,
       ////// ALOHA SAFE added color //////
       color: Colors.asBlue,
     },
     body: {
-      ...Typography.body1,
+      ...Typography.body.x30, // body1 ???
       marginBottom: Spacing.xxLarge,
     },
     ////// ALOHA SAFE button styles //////
@@ -153,15 +160,20 @@ const createStyle = (insets: EdgeInsets) => {
       alignSelf: "center",
     },
     ////// ALOHA SAFE button styles //////
+    button: {
+      ...Buttons.primary.base,
+    },
+    buttonText: {
+      ...Typography.button.primary,
+    },
     secondaryButton: {
-      ...Buttons.secondary,
+      ...Buttons.secondary.base,
     },
     secondaryButtonText: {
-      ...Typography.buttonSecondary,
+      ...Typography.button.secondary,
       ////// ALOHA SAFE added color //////
       color: Colors.asGray,
     },
   })
-  ////// ALOHA SAFE createStyle for insets //////
 }
 export default ActivateExposureNotifications

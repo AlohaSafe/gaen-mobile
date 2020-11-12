@@ -9,23 +9,24 @@ export interface Configuration {
   appPackageName: string
   displayAcceptTermsOfService: boolean
   displayCallbackForm: boolean
+  displayCallEmergencyServices: boolean
   displayCovidData: boolean
+  displayDebugMenu: boolean
   displaySymptomHistory: boolean
   displaySelfAssessment: boolean
-  displayCallEmergencyServices: boolean
-  displayDebugMenu: boolean
+  displayAgeVerification: boolean
+  enableProductAnalytics: boolean
   emergencyPhoneNumber: string
   findATestCenterUrl: string | null
   healthAuthorityAdviceUrl: string
-  healthAuthorityAnalyticsSiteId: number | null
-  healthAuthorityAnalyticsUrl: string | null
+  healthAuthorityCovidDataUrl: string | null
   healthAuthorityEulaUrl: string | null
   healthAuthorityLearnMoreUrl: string
   healthAuthorityLegalPrivacyPolicyUrl: string | null
   healthAuthorityName: string
   healthAuthorityPrivacyPolicyUrl: string
-  healthAuthoritySupportsAnalytics: boolean
   measurementSystem: MeasurementSystem
+  minimumAge: string
   regionCodes: string[]
   stateAbbreviation: string | null
 }
@@ -35,23 +36,24 @@ const initialState: Configuration = {
   appPackageName: "",
   displayAcceptTermsOfService: false,
   displayCallbackForm: false,
+  displayCallEmergencyServices: false,
   displayCovidData: false,
+  displayDebugMenu: false,
   displaySymptomHistory: false,
   displaySelfAssessment: false,
-  displayCallEmergencyServices: false,
-  displayDebugMenu: false,
+  displayAgeVerification: false,
   emergencyPhoneNumber: "",
+  enableProductAnalytics: false,
   findATestCenterUrl: null,
   healthAuthorityAdviceUrl: "",
-  healthAuthorityAnalyticsSiteId: null,
-  healthAuthorityAnalyticsUrl: null,
+  healthAuthorityCovidDataUrl: null,
   healthAuthorityEulaUrl: null,
   healthAuthorityLearnMoreUrl: "",
   healthAuthorityLegalPrivacyPolicyUrl: "",
   healthAuthorityName: "",
   healthAuthorityPrivacyPolicyUrl: "",
-  healthAuthoritySupportsAnalytics: false,
   measurementSystem: "Imperial" as const,
+  minimumAge: "18",
   regionCodes: [],
   stateAbbreviation: "",
 }
@@ -61,6 +63,7 @@ const ConfigurationContext = createContext<Configuration>(initialState)
 const ConfigurationProvider: FunctionComponent = ({ children }) => {
   const {
     AUTHORITY_ADVICE_URL: healthAuthorityAdviceUrl,
+    AUTHORITY_COVID_DATA_URL: healthAuthorityCovidDataUrl,
     EMERGENCY_PHONE_NUMBER: emergencyPhoneNumber,
     EULA_URL: eulaUrl,
     FIND_A_TEST_CENTER_URL: findATestCenterUrl,
@@ -73,19 +76,19 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
   const displayAcceptTermsOfService =
     env.DISPLAY_ACCEPT_TERMS_OF_SERVICE === "true"
   const displayCallbackForm = env.DISPLAY_CALLBACK_FORM === "true"
+  const displayCallEmergencyServices =
+    env.DISPLAY_CALL_EMERGENCY_SERVICES === "true"
   const displayCovidData = env.DISPLAY_COVID_DATA === "true"
+  const displayDebugMenu = env.DISPLAY_EN_DEBUG_MENU === "true"
   const displaySymptomHistory = env.DISPLAY_SYMPTOM_HISTORY === "true"
   const displaySelfAssessment = env.DISPLAY_SELF_ASSESSMENT === "true"
-  const displayCallEmergencyServices = env.DISPLAY_CALL_EMERGENCY_SERVICES === "true"
-
-  const displayDebugMenu = env.DISPLAY_EN_DEBUG_MENU === "true"
+  const displayAgeVerification = env.DISPLAY_AGE_VERIFICATION === "true"
+  const enableProductAnalytics = env.ENABLE_PRODUCT_ANALYTICS === "true"
 
   const measurementSystem =
     env.MEASUREMENT_SYSTEM === "metric" ? "Metric" : "Imperial"
 
-  const healthAuthoritySupportsAnalytics = Boolean(env.MATOMO_URL)
-  const healthAuthorityAnalyticsUrl = env.MATOMO_URL || null
-  const healthAuthorityAnalyticsSiteId = parseInt(env.MATOMO_SITE_ID) || null
+  const minimumAge = env.MINIMUM_AGE
 
   const appDownloadLink = env.SHARE_APP_LINK
   const appPackageName = Platform.select({
@@ -104,23 +107,24 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
         appPackageName,
         displayAcceptTermsOfService,
         displayCallbackForm,
+        displayCallEmergencyServices,
         displayCovidData,
+        displayDebugMenu,
         displaySymptomHistory,
         displaySelfAssessment,
-        displayCallEmergencyServices,
-        displayDebugMenu,
+        displayAgeVerification,
+        enableProductAnalytics,
         emergencyPhoneNumber,
         findATestCenterUrl,
         healthAuthorityAdviceUrl,
-        healthAuthorityAnalyticsSiteId,
-        healthAuthorityAnalyticsUrl,
+        healthAuthorityCovidDataUrl,
         healthAuthorityEulaUrl: eulaUrl || null,
         healthAuthorityLearnMoreUrl,
         healthAuthorityLegalPrivacyPolicyUrl: legalPrivacyPolicyUrl || null,
         healthAuthorityName,
         healthAuthorityPrivacyPolicyUrl,
-        healthAuthoritySupportsAnalytics,
         measurementSystem,
+        minimumAge,
         regionCodes,
         stateAbbreviation,
       }}

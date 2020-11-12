@@ -14,7 +14,7 @@ import {
 } from "../navigation"
 import { useConfigurationContext } from "../ConfigurationContext"
 import { Text, ListItem, ListItemSeparator, StatusBar } from "../components"
-import { useApplicationInfo } from "../hooks/useApplicationInfo"
+import { useApplicationInfo } from "../Device/useApplicationInfo"
 import {
   loadAuthorityCopy,
   authorityCopyTranslation,
@@ -31,12 +31,13 @@ import ShareAnonymizedDataListItem from "./ShareAnonymizedDataListItem"
 
 type SettingsListItem = {
   label: string
+  accessibilityLabel: string
   onPress: () => void
   icon: string
 }
 
 const Settings: FunctionComponent = () => {
-  useStatusBarEffect("dark-content", Colors.secondary10)
+  useStatusBarEffect("dark-content", Colors.secondary.shade10)
   const {
     t,
     i18n: { language: localeCode },
@@ -45,8 +46,8 @@ const Settings: FunctionComponent = () => {
   const { applicationName, versionInfo } = useApplicationInfo()
   const {
     healthAuthorityName,
-    healthAuthoritySupportsAnalytics,
-    displayDebugMenu
+    enableProductAnalytics,
+    displayDebugMenu,
   } = useConfigurationContext()
 
   const languageName = getLocalNames()[localeCode]
@@ -79,28 +80,31 @@ const Settings: FunctionComponent = () => {
 
   const selectLanguage: SettingsListItem = {
     label: languageName,
+    accessibilityLabel: t("common.select_language"),
     onPress: handleOnPressSelectLanguage,
     icon: Icons.LanguagesIcon,
   }
   const legal: SettingsListItem = {
     label: t("screen_titles.legal"),
+    accessibilityLabel: t("screen_titles.legal"),
     onPress: () => navigation.navigate(SettingsStackScreens.Legal),
     icon: Icons.Document,
   }
   const howTheAppWorks: SettingsListItem = {
     label: t("screen_titles.how_the_app_works"),
+    accessibilityLabel: t("screen_titles.how_the_app_works"),
     onPress: handleOnPressHowTheAppWorks,
     icon: Icons.RestartWithCheck,
   }
-
   const deleteMyData: SettingsListItem = {
     label: t("settings.delete_my_data"),
+    accessibilityLabel: t("settings.delete_my_data"),
     onPress: handleOnPressDeleteMyData,
     icon: Icons.Trash,
   }
-
   const debugMenu: SettingsListItem = {
     label: "EN Debug Menu",
+    accessibilityLabel: "EN Debug Menu",
     onPress: () => navigation.navigate(SettingsStackScreens.ENDebugMenu),
     icon: Icons.Document,
   }
@@ -123,7 +127,7 @@ const Settings: FunctionComponent = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={Colors.secondary10} />
+      <StatusBar backgroundColor={Colors.secondary.shade10} />
       <ScrollView
         contentContainerStyle={style.contentContainer}
         style={style.container}
@@ -133,21 +137,16 @@ const Settings: FunctionComponent = () => {
           touchSoundDisabled
           onPress={incrementClickCount}>
           <View style={style.headerRow}>
-            <Text style={style.headerText}>{t("navigation.settings")}</Text>
+            <Text style={style.headerText}>{t("screen_titles.settings")}</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={style.section}>
           <ListItem
             label={selectLanguage.label}
+            accessibilityLabel={selectLanguage.accessibilityLabel}
             onPress={selectLanguage.onPress}
             icon={selectLanguage.icon}
           />
-          {healthAuthoritySupportsAnalytics && (
-            <>
-              <ListItemSeparator />
-              <ShareAnonymizedDataListItem />
-            </>
-          )}
         </View>
         <View style={style.section}>
           {middleListItems.map((params, idx) => {
@@ -163,14 +162,22 @@ const Settings: FunctionComponent = () => {
         <View style={style.section}>
           <ListItem
             label={deleteMyData.label}
+            accessibilityLabel={deleteMyData.label}
             onPress={deleteMyData.onPress}
             icon={deleteMyData.icon}
           />
+          {enableProductAnalytics && (
+            <>
+              <ListItemSeparator />
+              <ShareAnonymizedDataListItem />
+            </>
+          )}
         </View>
         {showDebugMenu && (
           <View style={style.section}>
             <ListItem
               label={debugMenu.label}
+              accessibilityLabel={debugMenu.label}
               onPress={debugMenu.onPress}
               icon={debugMenu.icon}
             />
@@ -205,7 +212,13 @@ const style = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: Colors.secondary10,
+    backgroundColor: Colors.secondary.shade10,
+  },
+  headerText: {
+    ...Typography.header.x60,
+    ...Typography.style.bold,
+    // marginVertical: Spacing.medium,
+    marginHorizontal: Spacing.medium,
   },
   headerRow: {
     flexDirection: "row",
@@ -215,21 +228,16 @@ const style = StyleSheet.create({
     marginBottom: Spacing.xSmall,
     marginHorizontal: Spacing.medium,
   },
-  headerText: {
-    ...Typography.header1,
-    ...Typography.bold,
-    marginRight: Spacing.medium,
-  },
   section: {
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
     marginBottom: Spacing.xxLarge,
   },
   bottomContainer: {
     paddingHorizontal: Spacing.medium,
   },
   aboutContent: {
-    ...Typography.body1,
-    fontSize: Typography.large,
+    ...Typography.body.x30,
+    fontSize: Typography.size.x50,
   },
   infoRowContainer: {
     marginTop: Spacing.small,
@@ -239,13 +247,13 @@ const style = StyleSheet.create({
     flexDirection: "row",
   },
   infoRowLabel: {
-    ...Typography.header5,
-    color: Colors.primary150,
+    ...Typography.header.x20,
+    color: Colors.primary.shade150,
     width: 100,
     marginTop: Spacing.small,
   },
   infoRowValue: {
-    ...Typography.body1,
+    ...Typography.body.x30,
     marginTop: Spacing.small,
   },
 })

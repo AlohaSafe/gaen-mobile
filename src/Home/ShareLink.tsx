@@ -5,7 +5,7 @@ import { SvgXml } from "react-native-svg"
 
 import { useConfigurationContext } from "../ConfigurationContext"
 import { Text } from "../components"
-import { useApplicationName } from "../hooks/useApplicationInfo"
+import { useApplicationName } from "../Device/useApplicationInfo"
 
 import { Icons, Images } from "../assets"
 import {
@@ -57,7 +57,7 @@ const ShareLink: FunctionComponent = () => {
       </View>
       <SvgXml
         xml={Icons.ChevronRight}
-        fill={Colors.neutral75}
+        fill={Colors.neutral.shade75}
         width={Iconography.xxSmall}
         height={Iconography.xxSmall}
       />
@@ -71,7 +71,7 @@ const style = StyleSheet.create({
     paddingVertical: Spacing.small,
     flexDirection: "row",
     alignItems: "center",
-    borderColor: Colors.primary100,
+    borderColor: Colors.primary.shade100,
     borderWidth: Outlines.thin,
   },
   shareImageContainer: {
@@ -87,9 +87,9 @@ const style = StyleSheet.create({
     marginLeft: Spacing.medium,
   },
   shareText: {
-    ...Typography.body1,
-    ...Typography.mediumBold,
-    color: Colors.primaryText,
+    ...Typography.body.x30,
+    ...Typography.style.medium,
+    color: Colors.text.primary,
   },
 })
 

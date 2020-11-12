@@ -46,7 +46,7 @@ const ExposureListItem: FunctionComponent<ExposureListItemProps> = ({
 
   return (
     <TouchableHighlight
-      underlayColor={Colors.secondary50}
+      underlayColor={Colors.secondary.shade50}
       style={style.container}
       onPress={() =>
         navigation.navigate(ExposureHistoryStackScreens.ExposureDetail, {
@@ -69,7 +69,7 @@ const ExposureListItem: FunctionComponent<ExposureListItemProps> = ({
           accessibilityLabel={t("label.check")}
           width={Iconography.xxSmall}
           height={Iconography.xxSmall}
-          fill={Colors.primary100}
+          fill={Colors.primary.shade100}
         />
       </View>
     </TouchableHighlight>
@@ -88,13 +88,13 @@ const style = StyleSheet.create({
     alignItems: "center",
   },
   primaryText: {
-    ...Typography.header6,
+    ...Typography.header.x10,
   },
   secondaryText: {
-    ...Typography.body3,
+    ...Typography.body.x10,
     textTransform: "uppercase",
     marginTop: Spacing.xxSmall,
-    letterSpacing: Typography.mediumLetterSpacing,
+    letterSpacing: Typography.letterSpacing.x20,
   },
 })
 

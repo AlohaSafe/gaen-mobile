@@ -9,21 +9,22 @@ import {
   View,
   ScrollView,
   Keyboard,
+  TouchableOpacity,
 } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 
 import { useStatusBarEffect, CallbackStackScreens } from "../navigation"
 import { useConfigurationContext } from "../ConfigurationContext"
-import { Button, LoadingIndicator, Text } from "../components"
+import { LoadingIndicator, Text } from "../components"
 import * as API from "./callbackAPI"
 import Logger from "../logger"
 
-import { Spacing, Forms, Colors, Typography } from "../styles"
+import { Spacing, Forms, Colors, Typography, Buttons } from "../styles"
 
 const defaultErrorMessage = " "
 
 const CallbackForm: FunctionComponent = () => {
-  useStatusBarEffect("light-content", Colors.headerBackground)
+  useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const { healthAuthorityName } = useConfigurationContext()
   const navigation = useNavigation()
@@ -95,13 +96,14 @@ const CallbackForm: FunctionComponent = () => {
 
   return (
     <>
-      <ScrollView
-        style={style.container}
-        contentContainerStyle={style.contentContainer}
+      <KeyboardAvoidingView
+        contentContainerStyle={style.outerContentContainer}
+        behavior={isIOS ? "position" : "height"}
+        keyboardVerticalOffset={-100}
       >
-        <KeyboardAvoidingView
-          keyboardVerticalOffset={Spacing.xSmall}
-          behavior={isIOS ? "position" : undefined}
+        <ScrollView
+          style={style.container}
+          contentContainerStyle={style.contentContainer}
         >
           <View>
             <View style={style.headerContainer}>
@@ -156,25 +158,36 @@ const CallbackForm: FunctionComponent = () => {
             </View>
             <Text style={style.errorSubtitle}>{errorMessage}</Text>
           </View>
-          <Button
+          <TouchableOpacity
             onPress={handleOnPressSubmit}
-            label={t("common.submit")}
-            customButtonStyle={style.button}
             disabled={buttonDisabled}
-          />
-        </KeyboardAvoidingView>
-      </ScrollView>
+            style={buttonDisabled ? style.buttonDisabled : style.button}
+            accessibilityLabel={t("common.submit")}
+          >
+            <Text
+              style={
+                buttonDisabled ? style.buttonDisabledText : style.buttonText
+              }
+            >
+              {t("common.submit")}
+            </Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </KeyboardAvoidingView>
       {isLoading && <LoadingIndicator />}
     </>
   )
 }
 
 const style = StyleSheet.create({
+  outerContentContainer: {
+    minHeight: "100%",
+  },
   container: {
     height: "100%",
     paddingHorizontal: Spacing.medium,
     paddingTop: Spacing.large,
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   contentContainer: {
     justifyContent: "space-between",
@@ -184,29 +197,38 @@ const style = StyleSheet.create({
     marginBottom: Spacing.small,
   },
   header: {
-    ...Typography.header2,
+    ...Typography.header.x50,
     marginBottom: Spacing.xxSmall,
   },
   subheader: {
-    ...Typography.body1,
+    ...Typography.body.x30,
     marginBottom: Spacing.xxSmall,
   },
   errorSubtitle: {
-    ...Typography.error,
+    ...Typography.utility.error,
     height: Spacing.huge,
   },
   inputContainer: {
     marginBottom: Spacing.medium,
   },
   inputLabel: {
-    ...Typography.formInputLabel,
+    ...Typography.form.inputLabel,
     paddingBottom: Spacing.xxSmall,
   },
   textInput: {
     ...Forms.textInput,
   },
   button: {
-    alignSelf: "flex-start",
+    ...Buttons.primary.base,
+  },
+  buttonDisabled: {
+    ...Buttons.primary.disabled,
+  },
+  buttonText: {
+    ...Typography.button.primary,
+  },
+  buttonDisabledText: {
+    ...Typography.button.primaryDisabled,
   },
 })
 

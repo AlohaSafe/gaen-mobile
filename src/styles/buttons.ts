@@ -9,66 +9,130 @@ const base: ViewStyle = {
   flexDirection: "row",
   justifyContent: "center",
   alignItems: "center",
-  alignSelf: "flex-start",
+  width: "100%",
+}
+const heightBase: ViewStyle = {
+  paddingVertical: Spacing.medium,
+}
+const heightThin: ViewStyle = {
+  paddingVertical: Spacing.xSmall,
 }
 
-// Size
-const tiny: ViewStyle = {
-  paddingTop: Spacing.xxxSmall,
-  paddingBottom: Spacing.xxxSmall + 1,
-}
+// Primary
 
-export const medium: ViewStyle = {
-  paddingTop: Spacing.small,
-  paddingBottom: Spacing.small + 1,
-}
-
-const large: ViewStyle = {
-  paddingTop: Spacing.large,
-  paddingBottom: Spacing.large + 1,
-}
-
-// Borders
-const maxCornerRoundness: ViewStyle = {
-  borderRadius: Outlines.borderRadiusMax,
-}
-
-// Color
-const tertiaryBlue: ViewStyle = {
-  backgroundColor: Colors.secondary75,
-}
-
-const transparent: ViewStyle = {
-  backgroundColor: "transparent",
-}
-
-export const primary: ViewStyle = {
+type Primary = "base" | "disabled"
+const primaryBase: ViewStyle = {
   ...base,
-  ...large,
+  ...heightBase,
+  // ...Outlines.lightShadow,
   borderRadius: Outlines.borderRadiusMax,
-  paddingHorizontal: Spacing.xHuge,
-  minWidth: 180,
+  backgroundColor: Colors.asOrange,
   maxWidth: Layout.screenWidth * 0.95,
 }
-
-export const secondary: ViewStyle = {
-  ...base,
-  ...medium,
-  ...transparent,
-  paddingHorizontal: Spacing.huge,
+const primaryDisabled: ViewStyle = {
+  ...primaryBase,
+  shadowOpacity: 0,
+  elevation: 0,
+  backgroundColor: Colors.asTransparentOrange,
+}
+export const primary: Record<Primary, ViewStyle> = {
+  base: primaryBase,
+  disabled: primaryDisabled,
 }
 
-export const tinyRounded: ViewStyle = {
-  ...base,
-  ...tiny,
-  ...maxCornerRoundness,
-  ...tertiaryBlue,
+// Thin
+
+type Thin = "base" | "disabled"
+const thinBase: ViewStyle = {
+  ...primaryBase,
+  ...heightThin,
+}
+const thinDisabled: ViewStyle = {
+  ...primaryDisabled,
+  ...heightThin,
+}
+export const thin: Record<Thin, ViewStyle> = {
+  base: thinBase,
+  disabled: thinDisabled,
 }
 
-export const fixedBottom: ViewStyle = {
+// Outlined
+
+type Outlined = "base" | "thin"
+const outlinedBase: ViewStyle = {
+  ...primaryBase,
+  elevation: 0,
+  shadowOpacity: 0,
+  backgroundColor: Colors.transparent.invisible,
+  borderColor: Colors.asOrange,
+  borderWidth: Outlines.hairline,
+}
+const outlinedThin: ViewStyle = {
+  ...outlinedBase,
+  ...heightThin,
+}
+export const outlined: Record<Outlined, ViewStyle> = {
+  base: outlinedBase,
+  thin: outlinedThin,
+}
+
+// Secondary
+
+type Secondary = "base"
+const secondaryBase: ViewStyle = {
   ...base,
-  paddingTop: Spacing.medium,
-  paddingBottom: Spacing.medium,
+  ...heightThin,
+  backgroundColor: Colors.transparent.invisible,
+}
+export const secondary: Record<Secondary, ViewStyle> = {
+  base: secondaryBase,
+}
+
+// Fixed Bottom
+
+type FixedBottom = "base" | "disabled"
+const fixedBottomBase: ViewStyle = {
+  ...base,
+  ...heightThin,
   backgroundColor: Colors.asOrange,
-  width: "100%",
+}
+const fixedBottomDisabled: ViewStyle = {
+  ...fixedBottomBase,
+  backgroundColor: Colors.asTransparentOrange,
+}
+export const fixedBottom: Record<FixedBottom, ViewStyle> = {
+  base: fixedBottomBase,
+  disabled: fixedBottomDisabled,
+}
+
+// Fixed Bottom Thin
+
+type FixedBottomThin = "base" | "disabled"
+const fixedBottomThinBase: ViewStyle = {
+  ...fixedBottomBase,
+  ...heightThin,
+}
+const fixedBottomThinDisabled: ViewStyle = {
+  ...fixedBottomThinBase,
+  backgroundColor: Colors.asTransparentOrange,
+}
+export const fixedBottomThin: Record<FixedBottomThin, ViewStyle> = {
+  base: fixedBottomThinBase,
+  disabled: fixedBottomThinDisabled,
+}
+
+// Card
+
+type Card = "base"
+const cardBase: ViewStyle = {
+  ...base,
+  width: "auto",
+  alignSelf: "flex-start",
+  paddingVertical: Spacing.xxSmall,
+  paddingHorizontal: Spacing.medium,
+  borderRadius: Outlines.borderRadiusMax,
+  backgroundColor: Colors.neutral.shade10,
+}
+export const card: Record<Card, ViewStyle> = {
+  base: cardBase,
 }

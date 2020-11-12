@@ -12,14 +12,16 @@ import { useNavigation } from "@react-navigation/native"
 import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
 
 import { ExposureKey } from "../../exposureKey"
-import { Text, Button, LoadingIndicator } from "../../components"
+import { Text, LoadingIndicator } from "../../components"
 import {
   useStatusBarEffect,
   AffectedUserFlowStackScreens,
   ModalStackScreens,
 } from "../../navigation"
+import { useExposureContext } from "../../ExposureContext"
+import { useProductAnalyticsContext } from "../../ProductAnalytics/Context"
 import { Icons } from "../../assets"
-import { Colors, Spacing, Iconography, Typography } from "../../styles"
+import { Colors, Spacing, Iconography, Typography, Buttons } from "../../styles"
 import Logger from "../../logger"
 import {
   postDiagnosisKeys,
@@ -48,9 +50,11 @@ const PublishConsentForm: FunctionComponent<PublishConsentFormProps> = ({
   appPackageName,
   regionCodes,
 }) => {
-  useStatusBarEffect("dark-content", Colors.primaryLightBackground)
+  useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const navigation = useNavigation()
   const { t } = useTranslation()
+  const { trackEvent } = useProductAnalyticsContext()
+  const { getCurrentExposures } = useExposureContext()
   const [isLoading, setIsLoading] = useState(false)
   const insets = useSafeAreaInsets()
   const style = createStyle(insets)
@@ -77,6 +81,17 @@ const PublishConsentForm: FunctionComponent<PublishConsentFormProps> = ({
           ),
       },
     ])
+  }
+
+  const trackEvents = async () => {
+    const currentExposures = await getCurrentExposures()
+    trackEvent("product_analytics", "key_submission_consented_to")
+    trackEvent(
+      "epi_analytics",
+      "ens_preceding_positive_diagnosis_count",
+      undefined,
+      currentExposures.length,
+    )
   }
 
   const noOpAlertContent = ({ reason, newKeysInserted }: PostKeysNoOp) => {
@@ -147,6 +162,7 @@ const PublishConsentForm: FunctionComponent<PublishConsentFormProps> = ({
     setIsLoading(false)
     if (response.kind === "success") {
       storeRevisionToken(response.revisionToken)
+      trackEvents()
       navigation.navigate(AffectedUserFlowStackScreens.AffectedUserComplete)
     } else if (response.kind === "no-op") {
       handleNoOpResponse(response)
@@ -171,21 +187,17 @@ const PublishConsentForm: FunctionComponent<PublishConsentFormProps> = ({
             {t("export.publish_consent_title_bluetooth")}
           </Text>
           <Text style={style.bodyText}>{t("export.consent_body_0")}</Text>
-          <Text style={style.subheaderText}>
-            {t("export.consent_subheader_1")}
-          </Text>
-          <Text style={style.bodyText}>{t("export.consent_body_1")}</Text>
-          <Text style={style.subheaderText}>
-            {t("export.consent_subheader_2")}
-          </Text>
           <Text style={style.bodyText}>{t("export.consent_body_2")}</Text>
         </View>
-
-        <Button
-          label={t("export.consent_button_title")}
+        <TouchableOpacity
+          style={style.button}
           onPress={handleOnPressConfirm}
-          customButtonStyle={style.button}
-        />
+          accessibilityLabel={t("export.consent_button_title")}
+        >
+          <Text style={style.buttonText}>
+            {t("export.consent_button_title")}
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
       <TouchableOpacity
         style={style.bottomButtonContainer}
@@ -196,7 +208,7 @@ const PublishConsentForm: FunctionComponent<PublishConsentFormProps> = ({
         </Text>
         <SvgXml
           xml={Icons.ChevronUp}
-          fill={Colors.primary150}
+          fill={Colors.primary.shade150}
           width={Iconography.xxxSmall}
           height={Iconography.xxxSmall}
         />
@@ -211,7 +223,7 @@ const createStyle = (insets: EdgeInsets) => {
   return StyleSheet.create({
     outerContainer: {
       flex: 1,
-      backgroundColor: Colors.primaryLightBackground,
+      backgroundColor: Colors.background.primaryLight,
     },
     contentContainer: {
       paddingTop: Spacing.medium,
@@ -222,24 +234,21 @@ const createStyle = (insets: EdgeInsets) => {
       marginBottom: Spacing.small,
     },
     header: {
-      ...Typography.header1,
+      ...Typography.header.x60,
       paddingBottom: Spacing.medium,
     },
-    subheaderText: {
-      ...Typography.body1,
-      ...Typography.mediumBold,
-      color: Colors.black,
-      marginBottom: Spacing.xxSmall,
-    },
     bodyText: {
-      ...Typography.body1,
+      ...Typography.body.x30,
       marginBottom: Spacing.xxLarge,
     },
     button: {
-      alignSelf: "flex-start",
+      ...Buttons.primary.base,
+    },
+    buttonText: {
+      ...Typography.button.primary,
     },
     bottomButtonContainer: {
-      backgroundColor: Colors.secondary10,
+      backgroundColor: Colors.secondary.shade10,
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
@@ -247,8 +256,8 @@ const createStyle = (insets: EdgeInsets) => {
       paddingBottom: insets.bottom + Spacing.small,
     },
     bottomButtonText: {
-      ...Typography.header5,
-      color: Colors.primary100,
+      ...Typography.header.x20,
+      color: Colors.primary.shade100,
       marginRight: Spacing.xSmall,
     },
   })

@@ -12,14 +12,7 @@ import { SvgXml } from "react-native-svg"
 import { useConfigurationContext } from "./ConfigurationContext"
 import { Text } from "./components"
 
-import {
-  Buttons,
-  Colors,
-  Iconography,
-  Outlines,
-  Spacing,
-  Typography,
-} from "./styles"
+import { Buttons, Colors, Iconography, Spacing, Typography } from "./styles"
 import { Icons } from "./assets"
 
 const CallEmergencyServices: FunctionComponent = () => {
@@ -39,7 +32,7 @@ const CallEmergencyServices: FunctionComponent = () => {
       <View>
         <SvgXml
           xml={Icons.AsteriskInCircle}
-          fill={Colors.danger100}
+          fill={Colors.accent.danger100}
           width={Iconography.large}
           height={Iconography.large}
           style={style.icon}
@@ -72,7 +65,7 @@ const CallEmergencyServices: FunctionComponent = () => {
         </Text>
         <SvgXml
           xml={Icons.Arrow}
-          fill={Colors.white}
+          fill={Colors.neutral.white}
           width={Iconography.xSmall}
           height={Iconography.xSmall}
         />
@@ -84,7 +77,7 @@ const CallEmergencyServices: FunctionComponent = () => {
 const style = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: Colors.primaryLightBackground,
+    backgroundColor: Colors.background.primaryLight,
   },
   contentContainer: {
     flexGrow: 1,
@@ -96,26 +89,21 @@ const style = StyleSheet.create({
     marginBottom: Spacing.small,
   },
   headerText: {
-    ...Typography.header2,
+    ...Typography.header.x50,
     marginBottom: Spacing.medium,
   },
   bodyText: {
-    ...Typography.body1,
+    ...Typography.body.x30,
     marginBottom: Spacing.xLarge,
   },
   buttonContainer: {
-    ...Buttons.primary,
-    ...Buttons.medium,
-    width: "100%",
-    flexDirection: "row",
+    ...Buttons.thin.base,
     justifyContent: "space-between",
-    alignSelf: "center",
     paddingHorizontal: Spacing.xLarge,
-    borderRadius: Outlines.borderRadiusMax,
-    backgroundColor: Colors.danger100,
+    backgroundColor: Colors.accent.danger100,
   },
   buttonText: {
-    ...Typography.buttonPrimary,
+    ...Typography.button.primary,
   },
 })
 

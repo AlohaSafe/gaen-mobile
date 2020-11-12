@@ -63,7 +63,7 @@ const HealthGuidelines: FunctionComponent = () => {
             </Text>
             <SvgXml
               xml={Icons.Arrow}
-              fill={Colors.primary125}
+              fill={Colors.primary.shade125}
               style={style.ctaArrow}
             />
           </TouchableOpacity>
@@ -113,30 +113,30 @@ const HealthGuidelineItem: FunctionComponent<HealthGuidelineItemProps> = ({
 const style = StyleSheet.create({
   noExposureCard: {
     ...Affordances.floatingContainer,
-    backgroundColor: Colors.primary125,
-    borderColor: Colors.primary125,
+    backgroundColor: Colors.primary.shade125,
+    borderColor: Colors.primary.shade125,
     marginBottom: Spacing.small,
     marginHorizontal: Spacing.medium,
   },
   headerText: {
-    ...Typography.header5,
+    ...Typography.header.x20,
     paddingBottom: Spacing.xxxSmall,
-    color: Colors.white,
+    color: Colors.neutral.white,
   },
   subheaderText: {
-    ...Typography.body1,
-    color: Colors.secondary10,
+    ...Typography.body.x30,
+    color: Colors.secondary.shade10,
   },
   card: {
     ...Affordances.floatingContainer,
     marginHorizontal: Spacing.medium,
   },
   cardHeaderText: {
-    ...Typography.header3,
+    ...Typography.header.x40,
     paddingBottom: Spacing.xSmall,
   },
   cardSubheaderText: {
-    ...Typography.body2,
+    ...Typography.body.x20,
     paddingBottom: Spacing.large,
   },
   learnMoreCtaContainer: {
@@ -145,14 +145,14 @@ const style = StyleSheet.create({
     paddingBottom: Spacing.large,
   },
   learnMoreCta: {
-    ...Typography.buttonSecondary,
-    color: Colors.primary125,
+    ...Typography.button.secondary,
+    color: Colors.primary.shade125,
   },
   ctaArrow: {
     marginLeft: Spacing.xxSmall,
   },
   listHeading: {
-    ...Typography.header5,
+    ...Typography.header.x20,
     paddingBottom: Spacing.medium,
   },
   listItem: {
@@ -165,7 +165,7 @@ const style = StyleSheet.create({
     width: Spacing.huge,
   },
   listItemText: {
-    ...Typography.body2,
+    ...Typography.body.x20,
   },
 })
 

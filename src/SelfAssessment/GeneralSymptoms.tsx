@@ -1,11 +1,13 @@
 import React, { FunctionComponent } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigation } from "@react-navigation/native"
-import { StyleSheet } from "react-native"
+import { StyleSheet, TouchableOpacity } from "react-native"
+import { SvgXml } from "react-native-svg"
+import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
 
 import { SelfAssessmentStackScreens } from "../navigation"
-import { useSelfAssessmentContext } from "../SelfAssessmentContext"
-import { Button, Text } from "../components"
+import { useSelfAssessmentContext } from "./Context"
+import { Text } from "../components"
 import {
   OtherSymptom,
   PrimarySymptom,
@@ -14,7 +16,8 @@ import {
 import SymptomCheckbox from "./SymptomCheckbox"
 import SelfAssessmentLayout from "./SelfAssessmentLayout"
 
-import { Typography, Spacing, Buttons } from "../styles"
+import { Colors, Typography, Spacing, Buttons } from "../styles"
+import { Icons } from "../assets"
 
 const GeneralSymptoms: FunctionComponent = () => {
   const { t } = useTranslation()
@@ -32,6 +35,9 @@ const GeneralSymptoms: FunctionComponent = () => {
     otherSymptoms,
     updateSymptoms,
   } = useSelfAssessmentContext()
+
+  const insets = useSafeAreaInsets()
+  const style = createStyle(insets)
 
   const symptomToString = (
     symptom: PrimarySymptom | SecondarySymptom | OtherSymptom,
@@ -65,14 +71,28 @@ const GeneralSymptoms: FunctionComponent = () => {
   return (
     <SelfAssessmentLayout
       bottomActionsContent={
-        <Button
-          label={t("common.next")}
-          onPress={handleOnPressNext}
-          hasRightArrow
+        <TouchableOpacity
           disabled={noSymptomsSelected}
-          customButtonStyle={style.button}
-          customButtonInnerStyle={style.buttonInner}
-        />
+          style={noSymptomsSelected ? style.buttonDisabled : style.button}
+          onPress={handleOnPressNext}
+          accessibilityLabel={t("common.next")}
+        >
+          <Text
+            style={
+              noSymptomsSelected ? style.buttonDisabledText : style.buttonText
+            }
+          >
+            {t("common.next")}
+          </Text>
+          <SvgXml
+            xml={Icons.Arrow}
+            fill={
+              noSymptomsSelected
+                ? Colors.neutral.black
+                : Colors.background.primaryLight
+            }
+          />
+        </TouchableOpacity>
       }
     >
       <Text style={style.headerText}>
@@ -120,23 +140,35 @@ const GeneralSymptoms: FunctionComponent = () => {
   )
 }
 
-const style = StyleSheet.create({
-  headerText: {
-    ...Typography.header1,
-    marginBottom: Spacing.medium,
-  },
-  subheaderText: {
-    ...Typography.header4,
-    ...Typography.base,
-    marginBottom: Spacing.huge,
-  },
-  button: {
-    width: "100%",
-  },
-  buttonInner: {
-    ...Buttons.medium,
-    width: "100%",
-  },
-})
+const createStyle = (insets: EdgeInsets) => {
+  /* eslint-disable react-native/no-unused-styles */
+  return StyleSheet.create({
+    headerText: {
+      ...Typography.header.x60,
+      marginBottom: Spacing.medium,
+    },
+    subheaderText: {
+      ...Typography.header.x30,
+      ...Typography.style.normal,
+      marginBottom: Spacing.huge,
+    },
+    button: {
+      ...Buttons.fixedBottomThin.base,
+      paddingBottom: insets.bottom + Spacing.small,
+    },
+    buttonDisabled: {
+      ...Buttons.fixedBottomThin.disabled,
+      paddingBottom: insets.bottom + Spacing.small,
+    },
+    buttonText: {
+      ...Typography.button.fixedBottom,
+      marginRight: Spacing.small,
+    },
+    buttonDisabledText: {
+      ...Typography.button.fixedBottomDisabled,
+      marginRight: Spacing.small,
+    },
+  })
+}
 
 export default GeneralSymptoms

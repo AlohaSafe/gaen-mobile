@@ -10,13 +10,14 @@ import { useNavigation } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
 
 import { Stacks, ActivationStackScreen, ActivationStackScreens } from "./index"
-import { useSystemServicesContext } from "../SystemServicesContext"
+import { usePermissionsContext } from "../Device/PermissionsContext"
 import ActivateExposureNotifications from "../Activation/ActivateExposureNotifications"
 import ActivateLocation from "../Activation/ActivateLocation"
 import NotificationPermissions from "../Activation/NotificationPermissions"
 import ActivationSummary from "../Activation/ActivationSummary"
 import ActivateBluetooth from "../Activation/ActivateBluetooth"
 import AcceptTermsOfService from "../Activation/AcceptTermsOfService"
+import ProductAnalyticsConsentForm from "../Activation/ProductAnalyticsConsentForm"
 import { useConfigurationContext } from "../ConfigurationContext"
 
 import { Icons } from "../assets"
@@ -31,8 +32,11 @@ const Stack = createStackNavigator<ActivationStackParams>()
 const ActivationStack: FunctionComponent = () => {
   const { t } = useTranslation()
   const navigation = useNavigation()
-  const { locationPermissions, isBluetoothOn } = useSystemServicesContext()
-  const { displayAcceptTermsOfService } = useConfigurationContext()
+  const { locationPermissions, isBluetoothOn } = usePermissionsContext()
+  const {
+    displayAcceptTermsOfService,
+    enableProductAnalytics,
+  } = useConfigurationContext()
 
   interface ActivationStep {
     screenName: ActivationStackScreen
@@ -88,6 +92,14 @@ const ActivationStack: FunctionComponent = () => {
     default: activationStepsIOS,
   })
 
+  if (enableProductAnalytics) {
+    const anonymizedDataConsent: ActivationStep = {
+      screenName: ActivationStackScreens.AnonymizedDataConsent,
+      component: ProductAnalyticsConsentForm,
+    }
+    activationSteps.push(anonymizedDataConsent)
+  }
+
   const activationSummary: ActivationStep = {
     screenName: ActivationStackScreens.ActivationSummary,
     component: ActivationSummary,
@@ -103,7 +115,7 @@ const ActivationStack: FunctionComponent = () => {
       <TouchableOpacity onPress={handleOnPressClose}>
         <SvgXml
           xml={Icons.Close}
-          fill={Colors.neutral140}
+          fill={Colors.neutral.shade140}
           style={style.closeIcon}
           accessible
           accessibilityLabel={t("common.close")}
@@ -153,8 +165,8 @@ const ActivationStack: FunctionComponent = () => {
 
 const style = StyleSheet.create({
   headerTitle: {
-    ...Typography.header4,
-    color: Colors.neutral100,
+    ...Typography.header.x30,
+    color: Colors.neutral.shade100,
     maxWidth: Layout.halfWidth,
   },
   headerRight: {

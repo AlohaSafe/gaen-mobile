@@ -43,9 +43,9 @@ const DateInfoHeader: FunctionComponent<DateInfoHeaderProps> = ({
 
 const style = StyleSheet.create({
   subHeaderText: {
-    ...Typography.header6,
+    ...Typography.header.x10,
     textTransform: "uppercase",
-    color: Colors.neutral140,
+    color: Colors.neutral.shade140,
   },
   headerContainer: {
     flexDirection: "row",
