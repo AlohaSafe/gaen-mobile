@@ -184,7 +184,7 @@ const CodeInputForm: FunctionComponent = () => {
         </View>
         <TextInput
           testID="code-input"
-          keyboardType={Platform.OS === 'android' ? "numeric" : "number-pad"}
+          keyboardType={Platform.OS === "android" ? "numeric" : "number-pad"}
           autoCompleteType="off"
           value={code}
           placeholder={t("export.code_input_placeholder").toUpperCase()}

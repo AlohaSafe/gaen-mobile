@@ -165,12 +165,6 @@ const style = StyleSheet.create({
     ...Buttons.primary.base,
     marginBottom: Spacing.xxSmall,
   },
-  // Need this later
-  primaryButtonGradient: {
-    paddingTop: Spacing.xSmall,
-    paddingBottom: Spacing.xSmall + 1,
-    width: "100%",
-  },
   buttonText: {
     ...Typography.button.primary,
   },

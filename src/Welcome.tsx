@@ -159,7 +159,6 @@ const style = StyleSheet.create({
   buttonText: {
     ...Typography.button.primary,
     marginRight: Spacing.small,
-    fontWeight: "700"
   },
 })
 

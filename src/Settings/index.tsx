@@ -1,6 +1,12 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from "react"
 
-import { Platform, ScrollView, View, StyleSheet, TouchableWithoutFeedback } from "react-native"
+import {
+  Platform,
+  ScrollView,
+  View,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from "react-native"
 import { useTranslation } from "react-i18next"
 import { useNavigation } from "@react-navigation/native"
 import env from "react-native-config"
@@ -52,7 +58,7 @@ const Settings: FunctionComponent = () => {
 
   const languageName = getLocalNames()[localeCode]
 
-  const CLICKS_TO_ENABLE_EN_DEBUG_MENU = 10;
+  const CLICKS_TO_ENABLE_EN_DEBUG_MENU = 10
 
   const [clickCount, setClickCount] = useState(0)
   const [showDebugMenu, setShowDebugMenu] = useState(displayDebugMenu)
@@ -135,7 +141,8 @@ const Settings: FunctionComponent = () => {
       >
         <TouchableWithoutFeedback
           touchSoundDisabled
-          onPress={incrementClickCount}>
+          onPress={incrementClickCount}
+        >
           <View style={style.headerRow}>
             <Text style={style.headerText}>{t("screen_titles.settings")}</Text>
           </View>
