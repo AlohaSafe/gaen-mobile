@@ -246,7 +246,7 @@
     "location_header": "Activate Location",
     "location_subheader": "{{applicationName}} never accesses your location data and your device is never tracked.",
     "no_take_me": "No, take me back",
-    "notification_body1": "You’ll receive notifications when you may have crossed paths with someone who has reported positive for COVID-19.",
+    "notification_body1": "You’ll receive notifications when you been too close for too long, to someone who has reported positive for COVID-19.",
     "notification_body2": "The app does this using Bluetooth Low Energy and secure random codes without knowing who you are or where you’ve been. You can turn this off at any time in settings.",
     "notification_header": "Get notified if you may have been exposed",
     "notification_subheader1": "When will I get notified?",
