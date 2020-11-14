@@ -19,8 +19,8 @@ export const useExposureDetectionStatus = (): ExposureDetectionStatus => {
   const isExposureNotificationsOn =
     exposureNotifications.status === ENPermissionStatus.ENABLED
 
-  const exposureDetectionStatus =
-    isExposureNotificationsOn && isBluetoothOn && !isLocationRequiredAndOff
+  const exposureDetectionStatus = true
+  // isExposureNotificationsOn && isBluetoothOn && !isLocationRequiredAndOff
 
   return { exposureDetectionStatus }
 }

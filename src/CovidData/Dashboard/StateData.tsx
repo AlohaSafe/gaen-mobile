@@ -21,12 +21,12 @@ const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
   const { t } = useTranslation()
 
   const {
-    metrics: { caseDensity, infectionRate, testPositivityRatio },
-    state: stateAbbreviation,
+    // metrics: { caseDensity, infectionRate, testPositivityRatio },
+    metrics: { caseDensity, testPositivityRatio },
   } = data
 
-  const casesPer100kText = caseDensity.toFixed(1)
-  const infectionRateText = infectionRate.toFixed(2)
+  const casesPer100kText = caseDensity //.toFixed(1)
+  // const infectionRateText = infectionRate.toFixed(2)
   const positiveTestRateText = (testPositivityRatio * 100).toFixed(1) + "%"
   const source = data.source
   const sourceText = t("covid_data.source", { source })
@@ -34,7 +34,7 @@ const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
   return (
     <View style={style.container}>
       <View style={style.headerContainer}>
-        <Text style={style.headerText}>{stateAbbreviation.toUpperCase()}</Text>
+        <Text style={style.headerText}>{t("covid_data.state_of_hawaii")}</Text>
       </View>
       <View style={style.metricsContainer}>
         <View style={style.metricContainer}>
@@ -46,11 +46,11 @@ const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
           <View style={style.dataContainer}>
             <Text style={style.dataText}>{casesPer100kText}</Text>
             <View style={style.unitContainer}>
-              <Text style={style.unitText}>{t("covid_data.per_100k")}</Text>
+              <Text style={style.unitText}>{t("covid_data.7_day_avg")}</Text>
             </View>
           </View>
         </View>
-        <View style={style.metricContainer}>
+        {/* <View style={style.metricContainer}>
           <View style={style.labelContainer}>
             <Text style={style.labelText}>
               {t("covid_data.infection_rate")}
@@ -59,7 +59,7 @@ const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
           <View style={style.dataContainer}>
             <Text style={style.dataText}>{infectionRateText}</Text>
           </View>
-        </View>
+        </View> */}
         <View style={style.metricContainer}>
           <View style={style.labelContainer}>
             <Text style={style.labelText}>

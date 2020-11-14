@@ -22,9 +22,9 @@ export type CovidDatum = {
 type Metrics = {
   testPositivityRatio: number
   caseDensity: number
-  contactTracerCapacityRatio: number
-  infectionRate: number
-  icuHeadroomRatio: number
+  // contactTracerCapacityRatio: number
+  // infectionRate: number
+  // icuHeadroomRatio: number
 }
 
 type RiskLevels = {
@@ -39,9 +39,9 @@ type RiskLevels = {
 export const emptyMetrics = {
   testPositivityRatio: 0,
   caseDensity: 0,
-  contactTracerCapacityRatio: 0,
-  infectionRate: 0,
-  icuHeadroomRatio: 0,
+  // contactTracerCapacityRatio: 0,
+  // infectionRate: 0,
+  // icuHeadroomRatio: 0,
 }
 
 export const emptyRiskLevels = {
@@ -95,7 +95,7 @@ const percentDifference = (a: number, b: number) => {
 type TrendData = number[]
 
 export const toLineChartCasesNew = (data: Timeseries): TrendData => {
-  return data.map(toCasesNew).slice(0, 7)
+  return data.map(toCasesNew).slice(0, 7).reverse()
 }
 
 export const toCasesNew = (datum: CovidDatum): number => {

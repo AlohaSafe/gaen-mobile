@@ -43,6 +43,7 @@
     "yes": "Yes"
   },
   "covid_data": {
+    "7_day_avg": "7 day avg",
     "apologies_data_unavailable": "Apologies, COVID data is unavailable.",
     "cases_today": "Cases today",
     "covid_coverage": "Covid Coverage",
@@ -51,6 +52,7 @@
     "deaths_today": "Deaths today",
     "down_from_last_week": "Down from last week",
     "error_getting_data": "Sorry, we could not fetch the latest COVID cases data for {{location}}.",
+    "state_of_hawaii": "State of Hawaii",
     "infection_rate": "Infection rate",
     "new_cases": "New Cases",
     "past_7_days": "Past 7 days",
