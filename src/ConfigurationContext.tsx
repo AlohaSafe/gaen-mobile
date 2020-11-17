@@ -23,7 +23,6 @@ export interface Configuration {
   healthAuthorityEulaUrl: string | null
   healthAuthorityLearnMoreUrl: string
   healthAuthorityLegalPrivacyPolicyUrl: string | null
-  healthAuthorityName: string
   healthAuthorityPrivacyPolicyUrl: string
   measurementSystem: MeasurementSystem
   minimumAge: string
@@ -50,7 +49,6 @@ const initialState: Configuration = {
   healthAuthorityEulaUrl: null,
   healthAuthorityLearnMoreUrl: "",
   healthAuthorityLegalPrivacyPolicyUrl: "",
-  healthAuthorityName: "",
   healthAuthorityPrivacyPolicyUrl: "",
   measurementSystem: "Imperial" as const,
   minimumAge: "18",
@@ -67,7 +65,6 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
     EMERGENCY_PHONE_NUMBER: emergencyPhoneNumber,
     EULA_URL: eulaUrl,
     FIND_A_TEST_CENTER_URL: findATestCenterUrl,
-    GAEN_AUTHORITY_NAME: healthAuthorityName,
     LEARN_MORE_URL: healthAuthorityLearnMoreUrl,
     LEGAL_PRIVACY_POLICY_URL: legalPrivacyPolicyUrl,
     PRIVACY_POLICY_URL: healthAuthorityPrivacyPolicyUrl,
@@ -121,7 +118,6 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
         healthAuthorityEulaUrl: eulaUrl || null,
         healthAuthorityLearnMoreUrl,
         healthAuthorityLegalPrivacyPolicyUrl: legalPrivacyPolicyUrl || null,
-        healthAuthorityName,
         healthAuthorityPrivacyPolicyUrl,
         measurementSystem,
         minimumAge,
