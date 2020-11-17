@@ -3,6 +3,7 @@ export type CovidData = {
   fips: string
   country: string
   state: string
+  county: string
   population: number
   metrics: Metrics
   riskLevels: RiskLevels
@@ -19,9 +20,10 @@ export type CovidDatum = {
   positiveCasesNew: number
 }
 
-type Metrics = {
+export type Metrics = {
+  casesLast7Days: number
   testPositivityRatio: number
-  caseDensity: number
+  // caseDensity: number
   // contactTracerCapacityRatio: number
   // infectionRate: number
   // icuHeadroomRatio: number

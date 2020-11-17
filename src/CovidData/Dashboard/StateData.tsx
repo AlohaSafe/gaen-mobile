@@ -14,27 +14,20 @@ import {
 } from "../../styles"
 
 type StateDataProps = {
-  data: CovidData.CovidData
+  data: CovidData.CovidData[]
 }
 
-const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
+const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({ county, metrics, source }) => {
   const { t } = useTranslation()
+  const { casesLast7Days, testPositivityRatio } = metrics
 
-  const {
-    // metrics: { caseDensity, infectionRate, testPositivityRatio },
-    metrics: { caseDensity, testPositivityRatio },
-  } = data
-
-  const casesPer100kText = caseDensity //.toFixed(1)
-  // const infectionRateText = infectionRate.toFixed(2)
   const positiveTestRateText = (testPositivityRatio * 100).toFixed(1) + "%"
-  const source = data.source
   const sourceText = t("covid_data.source", { source })
 
   return (
     <View style={style.container}>
       <View style={style.headerContainer}>
-        <Text style={style.headerText}>{t("covid_data.state_of_hawaii")}</Text>
+        <Text style={style.headerText}>{t(`covid_data.regions.${county}`)}</Text>
       </View>
       <View style={style.metricsContainer}>
         <View style={style.metricContainer}>
@@ -44,22 +37,12 @@ const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
             </Text>
           </View>
           <View style={style.dataContainer}>
-            <Text style={style.dataText}>{casesPer100kText}</Text>
+            <Text style={style.dataText}>{casesLast7Days}</Text>
             <View style={style.unitContainer}>
               <Text style={style.unitText}>{t("covid_data.7_day_avg")}</Text>
             </View>
           </View>
         </View>
-        {/* <View style={style.metricContainer}>
-          <View style={style.labelContainer}>
-            <Text style={style.labelText}>
-              {t("covid_data.infection_rate")}
-            </Text>
-          </View>
-          <View style={style.dataContainer}>
-            <Text style={style.dataText}>{infectionRateText}</Text>
-          </View>
-        </View> */}
         <View style={style.metricContainer}>
           <View style={style.labelContainer}>
             <Text style={style.labelText}>
@@ -72,6 +55,14 @@ const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
         </View>
       </View>
       <Text style={style.sourceText}>{sourceText}</Text>
+    </View>
+  )
+}
+
+const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
+  return (
+    <View>
+      {data.map((county) => countyMetricsWidget(county))}
     </View>
   )
 }

@@ -55,7 +55,7 @@ const CovidDataCard: FunctionComponent<CovidDataCardProps> = ({
         return <LoadingIndicator />
       case "SUCCESS": {
         return (
-          <CovidDataInfo data={dataRequest.data} locationName={locationName} />
+          <CovidDataInfo data={dataRequest.data[0]} locationName={locationName} />
         )
       }
     }

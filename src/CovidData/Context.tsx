@@ -15,7 +15,7 @@ export type RequestStatus = "SUCCESS" | "LOADING" | "ERROR" | "MISSING_INFO"
 
 export type CovidDataRequest = {
   status: RequestStatus
-  data: CovidData.CovidData
+  data: CovidData.CovidData[]
   error?: string
 }
 
@@ -26,7 +26,7 @@ export type CovidDataContextState = {
 
 const initialRequest: CovidDataRequest = {
   status: "MISSING_INFO",
-  data: CovidData.empty,
+  data: [CovidData.empty],
 }
 
 const initialState: CovidDataContextState = {
