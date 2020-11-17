@@ -23,10 +23,6 @@ export type CovidDatum = {
 export type Metrics = {
   casesLast7Days: number
   testPositivityRatio: number
-  // caseDensity: number
-  // contactTracerCapacityRatio: number
-  // infectionRate: number
-  // icuHeadroomRatio: number
 }
 
 type RiskLevels = {
@@ -39,11 +35,8 @@ type RiskLevels = {
 }
 
 export const emptyMetrics = {
+  casesLast7Days: 0,
   testPositivityRatio: 0,
-  caseDensity: 0,
-  // contactTracerCapacityRatio: 0,
-  // infectionRate: 0,
-  // icuHeadroomRatio: 0,
 }
 
 export const emptyRiskLevels = {
@@ -60,6 +53,7 @@ export const empty: CovidData = {
   fips: "",
   country: "",
   state: "",
+  county: "",
   population: 0,
   metrics: emptyMetrics,
   riskLevels: emptyRiskLevels,
