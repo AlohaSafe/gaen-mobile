@@ -9,9 +9,9 @@ import {
 } from "react-native"
 import { useTranslation } from "react-i18next"
 import { useNavigation } from "@react-navigation/native"
-import env from "react-native-config"
+// import env from "react-native-config"
 
-import { getLocalNames } from "../locales/languages"
+import { useLocaleInfo } from "../locales/languages"
 import {
   useStatusBarEffect,
   ModalStackScreens,
@@ -56,7 +56,7 @@ const Settings: FunctionComponent = () => {
     displayDebugMenu,
   } = useConfigurationContext()
 
-  const languageName = getLocalNames()[localeCode]
+  const { languageName } = useLocaleInfo()
 
   const CLICKS_TO_ENABLE_EN_DEBUG_MENU = 10
 
