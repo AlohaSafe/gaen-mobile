@@ -25,7 +25,7 @@ const LineChart: FunctionComponent<LineChartProps> = ({
 
   // Scale Data
   const max = Math.max(...lineData)
-  const min = Math.min(...lineData)
+  const min = 0 // Math.min(...lineData)
   const shrinkYScaleBy = 1.25
   const scaleFactor = height / (max - min) / shrinkYScaleBy
   const toScale = (datum: number) => {
