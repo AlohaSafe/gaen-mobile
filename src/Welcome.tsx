@@ -31,7 +31,7 @@ const Welcome: FunctionComponent = () => {
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const navigation = useNavigation()
   const { t } = useTranslation()
-  const { languageName, localeCode } = useLocaleInfo()
+  const { languageName } = useLocaleInfo()
   const { applicationName } = useApplicationName()
   const { displayAgeVerification } = useConfigurationContext()
 
