@@ -117,7 +117,7 @@ const Settings: FunctionComponent = () => {
   )
 
   const aboutContent =
-    customAboutCopy ||
+    // customAboutCopy ||
     t("about.description", {
       applicationName,
       healthAuthorityName,
