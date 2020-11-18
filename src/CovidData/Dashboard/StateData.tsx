@@ -29,7 +29,10 @@ const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({
   const sourceText = t("covid_data.source", { source })
 
   return (
-    <View style={style.container}>
+    <View
+      key={`hiData-${county}`}
+      style={style.container}
+    >
       <View style={style.headerContainer}>
         <Text style={style.headerText}>
           {t(`covid_data.regions.${county}`)}

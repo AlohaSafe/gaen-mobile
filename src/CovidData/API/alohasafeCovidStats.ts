@@ -122,7 +122,6 @@ const toCovidData = (stateData: StateCovidData): CovidData[] => {
     const casesLast7Days = stateData[county].avg_cases_last7days
 
     return {
-      key: `hiData-${county}`,
       source: "health.hawaii.gov",
       fips: "15",
       country: "USA",
