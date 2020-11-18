@@ -47,10 +47,7 @@ const Settings: FunctionComponent = () => {
   } = useTranslation()
   const navigation = useNavigation()
   const { applicationName, versionInfo } = useApplicationInfo()
-  const {
-    enableProductAnalytics,
-    displayDebugMenu,
-  } = useConfigurationContext()
+  const { enableProductAnalytics, displayDebugMenu } = useConfigurationContext()
   const { healthAuthorityName, about: customAboutCopy } = useCustomCopy()
 
   const { languageName } = useLocaleInfo()

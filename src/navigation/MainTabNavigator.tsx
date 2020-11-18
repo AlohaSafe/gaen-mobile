@@ -92,9 +92,7 @@ const TabBar: FunctionComponent<TabBarProps> = ({
           !focused && navigation.navigate(tab.name)
         }
 
-        const textColor = focused
-          ? Colors.asBlue
-          : Colors.secondary.shade100
+        const textColor = focused ? Colors.asBlue : Colors.secondary.shade100
 
         type TabButtonConfig = {
           label: string
