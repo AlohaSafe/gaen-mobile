@@ -19,8 +19,9 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
   locationName,
 }) => {
   const { t } = useTranslation()
-
   const newCasesData = CovidData.toLineChartCasesNew(data.timeseries)
+  ////// ALOHA SAFE make date array for x-axis labels //////
+  const datesData = CovidData.toLineChartDatesNew(data.timeseries)
 
   const toPoint = (newCaseDatum: number, idx: number): [number, number] => {
     return [idx, newCaseDatum]
@@ -37,6 +38,8 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
     trend > 0 ? t("covid_data.trending_up") : t("covid_data.trending_down")
   const trendColor =
     trend > 0 ? Colors.accent.warning100 : Colors.accent.success100
+  ////// ALOHA SAFE add conditional dot colors for trend line points //////
+  const dotColor = trend > 0 ? Colors.primary.shade100 : Colors.asOrange
 
   const source = data.source
   const sourceText = t("covid_data.source", { source })
@@ -61,6 +64,9 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
             width={lineChartWidth}
             height={lineChartHeight}
             color={trendColor}
+            ////// ALOHA SAFE pass date and dot color props //////
+            datesData={datesData}
+            dotColor={dotColor}
           />
         </View>
       </View>

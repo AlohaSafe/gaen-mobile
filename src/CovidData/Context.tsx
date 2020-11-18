@@ -9,7 +9,10 @@ import React, {
 import { useConfigurationContext } from "../ConfigurationContext"
 
 import * as CovidData from "./covidData"
-import { fetchStateTimeseries, NetworkResponse } from "./API/alohasafeCovidStats"
+import {
+  fetchStateTimeseries,
+  NetworkResponse,
+} from "./API/alohasafeCovidStats"
 
 export type RequestStatus = "SUCCESS" | "LOADING" | "ERROR" | "MISSING_INFO"
 

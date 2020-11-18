@@ -17,7 +17,11 @@ type StateDataProps = {
   data: CovidData.CovidData[]
 }
 
-const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({ county, metrics, source }) => {
+const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({
+  county,
+  metrics,
+  source,
+}) => {
   const { t } = useTranslation()
   const { casesLast7Days, testPositivityRatio } = metrics
 
@@ -27,7 +31,9 @@ const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({ county, m
   return (
     <View style={style.container}>
       <View style={style.headerContainer}>
-        <Text style={style.headerText}>{t(`covid_data.regions.${county}`)}</Text>
+        <Text style={style.headerText}>
+          {t(`covid_data.regions.${county}`)}
+        </Text>
       </View>
       <View style={style.metricsContainer}>
         <View style={style.metricContainer}>
@@ -60,11 +66,7 @@ const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({ county, m
 }
 
 const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
-  return (
-    <View>
-      {data.map((county) => countyMetricsWidget(county))}
-    </View>
-  )
+  return <View>{data.map((county) => countyMetricsWidget(county))}</View>
 }
 
 const style = StyleSheet.create({

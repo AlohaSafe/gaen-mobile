@@ -97,3 +97,11 @@ export const toLineChartCasesNew = (data: Timeseries): TrendData => {
 export const toCasesNew = (datum: CovidDatum): number => {
   return datum.positiveCasesNew
 }
+
+export const toLineChartDatesNew = (data: Timeseries): string[] => {
+  return data.map(toDatesNew).slice(0, 7).reverse()
+}
+
+export const toDatesNew = (datum: CovidDatum): string => {
+  return datum.date.substring(0, datum.date.length - 5)
+}
