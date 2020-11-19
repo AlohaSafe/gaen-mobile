@@ -5,9 +5,9 @@ import { render, waitFor } from "@testing-library/react-native"
 import { factories } from "../factories"
 import { ConfigurationContext } from "../ConfigurationContext"
 import { useCovidDataContext, CovidDataContextProvider } from "./Context"
-import { fetchStateTimeseries } from "./API/covidActNow"
+import { fetchStateTimeseries } from "./API/alohasafeCovidStats"
 
-jest.mock("./API/covidActNow.ts")
+jest.mock("./API/alohasafeCovidStats")
 describe("CovidDataContextProvider", () => {
   it("doesn't start the request if it should not be requested", async () => {
     const configurationContext = factories.configurationContext.build({

@@ -8,6 +8,7 @@ export default Factory.define<Configuration>(() => ({
   displayCallbackForm: false,
   displayCallEmergencyServices: false,
   displayCovidData: false,
+  displayDebugMenu: false,
   displaySymptomHistory: false,
   displaySelfAssessment: false,
   displayAgeVerification: false,

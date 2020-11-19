@@ -3,12 +3,12 @@ import { StyleSheet, TouchableOpacity, View, ScrollView } from "react-native"
 import { SvgXml } from "react-native-svg"
 import { useTranslation } from "react-i18next"
 import { useNavigation, useIsFocused } from "@react-navigation/native"
-import { showMessage } from "react-native-flash-message"
+// import { showMessage } from "react-native-flash-message"
 
 import { ExposureDatum } from "../../exposure"
 import { LoadingIndicator, StatusBar, Text } from "../../components"
 import { useStatusBarEffect } from "../../navigation/index"
-import { useExposureContext } from "../../ExposureContext"
+// import { useExposureContext } from "../../ExposureContext"
 
 import DateInfoHeader from "./DateInfoHeader"
 import ExposureList from "./ExposureList"
@@ -21,7 +21,7 @@ import {
   Spacing,
   Typography,
   Colors,
-  Affordances,
+  // Affordances,
   Outlines,
 } from "../../styles"
 
@@ -40,47 +40,48 @@ const History: FunctionComponent<HistoryProps> = ({
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
-  const { checkForNewExposures } = useExposureContext()
-  const {
-    successFlashMessageOptions,
-    errorFlashMessageOptions,
-  } = Affordances.useFlashMessageOptions()
+  // const { checkForNewExposures } = useExposureContext()
+  // const {
+  //   successFlashMessageOptions,
+  //   errorFlashMessageOptions,
+  // } = Affordances.useFlashMessageOptions()
 
-  const [checkingForExposures, setCheckingForExposures] = useState<boolean>(
-    false,
-  )
+  // const [checkingForExposures, setCheckingForExposures] = useState<boolean>(
+  //   false,
+  // )
+  const [checkingForExposures] = useState<boolean>(false)
 
   const handleOnPressMoreInfo = () => {
     navigation.navigate(ExposureHistoryStackScreens.MoreInfo)
   }
 
-  const handleOnPressCheckForExposures = async () => {
-    setCheckingForExposures(true)
-    const checkResult = await checkForNewExposures()
-    if (checkResult.kind === "success") {
-      showMessage({
-        message: t("common.success"),
-        ...successFlashMessageOptions,
-      })
-    } else {
-      switch (checkResult.error) {
-        case "ExceededCheckRateLimit": {
-          showMessage({
-            message: t("common.success"),
-            ...successFlashMessageOptions,
-          })
-          break
-        }
-        default: {
-          showMessage({
-            message: t("common.something_went_wrong"),
-            ...errorFlashMessageOptions,
-          })
-        }
-      }
-    }
-    setCheckingForExposures(false)
-  }
+  // const handleOnPressCheckForExposures = async () => {
+  //   setCheckingForExposures(true)
+  //   const checkResult = await checkForNewExposures()
+  //   if (checkResult.kind === "success") {
+  //     showMessage({
+  //       message: t("common.success"),
+  //       ...successFlashMessageOptions,
+  //     })
+  //   } else {
+  //     switch (checkResult.error) {
+  //       case "ExceededCheckRateLimit": {
+  //         showMessage({
+  //           message: t("common.success"),
+  //           ...successFlashMessageOptions,
+  //         })
+  //         break
+  //       }
+  //       default: {
+  //         showMessage({
+  //           message: t("common.something_went_wrong"),
+  //           ...errorFlashMessageOptions,
+  //         })
+  //       }
+  //     }
+  //   }
+  //   setCheckingForExposures(false)
+  // }
 
   const showExposureHistory = exposures.length > 0
 

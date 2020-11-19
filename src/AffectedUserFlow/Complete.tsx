@@ -4,7 +4,7 @@ import {
   Image,
   StyleSheet,
   TouchableOpacity,
-  Vibration,
+  // Vibration,
   View,
 } from "react-native"
 import { useNavigation } from "@react-navigation/native"

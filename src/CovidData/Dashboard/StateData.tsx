@@ -17,7 +17,7 @@ type StateDataProps = {
   data: CovidData.CovidData[]
 }
 
-const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({
+const CountyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({
   county,
   metrics,
   source,
@@ -66,7 +66,7 @@ const countyMetricsWidget: FunctionComponent<CovidData.CovidData> = ({
 }
 
 const StateData: FunctionComponent<StateDataProps> = ({ data }) => {
-  return <View>{data.map((county) => countyMetricsWidget(county))}</View>
+  return <View>{data.map((county) => CountyMetricsWidget(county))}</View>
 }
 
 const style = StyleSheet.create({

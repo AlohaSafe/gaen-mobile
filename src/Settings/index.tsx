@@ -48,7 +48,8 @@ const Settings: FunctionComponent = () => {
   const navigation = useNavigation()
   const { applicationName, versionInfo } = useApplicationInfo()
   const { enableProductAnalytics, displayDebugMenu } = useConfigurationContext()
-  const { healthAuthorityName, about: customAboutCopy } = useCustomCopy()
+  // const { healthAuthorityName, about: customAboutCopy } = useCustomCopy()
+  const { healthAuthorityName } = useCustomCopy()
 
   const { languageName } = useLocaleInfo()
 

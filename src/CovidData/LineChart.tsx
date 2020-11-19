@@ -90,8 +90,8 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
     return currentYPosition > height
       ? []
       : buildHorizontalLineYPositions(
-          currentYPosition + verticalSpacing,
-        ).concat([currentYPosition])
+        currentYPosition + verticalSpacing,
+      ).concat([currentYPosition])
   }
 
   interface HorizontalLineProps {
@@ -139,7 +139,7 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
 
   return (
     <>
-      {lineCoords.map((yCoord: number, index: number, yCoords: number[]) => {
+      {lineCoords.map((yCoord: number, _index: number, _yCoords: number[]) => {
         const startPoint: SvgPath.Coordinate = [0, yCoord]
         const endPoint: SvgPath.Coordinate = [width, yCoord]
         return (
@@ -178,8 +178,8 @@ const DataPoints: FunctionComponent<DataPointsProps> = ({
   coords,
   dotColor,
   lineData,
-  height,
-  datesData,
+  // height,
+  // datesData,
 }) => {
   ////// ALOHA SAFE label position variables //////
   const radius = 4
