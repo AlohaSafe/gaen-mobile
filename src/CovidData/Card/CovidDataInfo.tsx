@@ -22,7 +22,6 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
   const newCasesData = CovidData.toLineChartCasesNew(data.timeseries)
   ////// ALOHA SAFE make date array for x-axis labels //////
   const datesData = CovidData.toLineChartDatesNew(data.timeseries)
-
   const toPoint = (newCaseDatum: number, idx: number): [number, number] => {
     return [idx, newCaseDatum]
   }
@@ -37,9 +36,7 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
   const trendText =
     trend > 0 ? t("covid_data.trending_up") : t("covid_data.trending_down")
   const trendColor =
-    trend > 0 ? Colors.accent.warning100 : Colors.accent.success100
-  ////// ALOHA SAFE add conditional dot colors for trend line points //////
-  const dotColor = trend > 0 ? Colors.primary.shade100 : Colors.asOrange
+    trend < 0 ? Colors.accent.warning100 : Colors.accent.success100
 
   const source = data.source
   const sourceText = t("covid_data.source", { source })
@@ -55,7 +52,9 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
           <Text style={{ ...style.trendText, color: trendColor }}>
             {trendText}
           </Text>
-          <Text style={style.sourceText}>{t("covid_data.past_7_days")}</Text>
+          <Text style={style.sourceText}>{`${t(
+            "covid_data.past_7_days",
+          )} (Up to: ${datesData[datesData.length - 1]})`}</Text>
           <Text style={style.legendText}>{labelText}</Text>
         </View>
         <View style={style.chartContainer}>
@@ -66,7 +65,6 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
             color={trendColor}
             ////// ALOHA SAFE pass date and dot color props //////
             datesData={datesData}
-            dotColor={dotColor}
           />
         </View>
       </View>
