@@ -14,10 +14,7 @@ import { useFocusEffect, useNavigation } from "@react-navigation/native"
 ////// ALOHA SAFE import insets //////
 import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
 ////// ALOHA SAFE import insets //////
-import {
-  ENPermissionStatus,
-  usePermissionsContext,
-} from "../Device/PermissionsContext"
+import { usePermissionsContext } from "../Device/PermissionsContext"
 import { openAppSettings } from "../Device"
 import { useApplicationName } from "../Device/useApplicationInfo"
 import { useProductAnalyticsContext } from "../ProductAnalytics/Context"
@@ -54,7 +51,7 @@ const ActivateExposureNotifications: FunctionComponent = () => {
 
   useFocusEffect(
     useCallback(() => {
-      if (exposureNotifications.status === ENPermissionStatus.ENABLED) {
+      if (exposureNotifications.status === "Enabled") {
         navigateToNextScreen()
       }
     }, [exposureNotifications.status, navigateToNextScreen]),
@@ -90,7 +87,7 @@ const ActivateExposureNotifications: FunctionComponent = () => {
     try {
       const response = await exposureNotifications.request()
       if (response.kind === "success") {
-        if (response.status !== ENPermissionStatus.ENABLED) {
+        if (response.status !== "Enabled") {
           showNotAuthorizedAlert()
         }
       } else {
