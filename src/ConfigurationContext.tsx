@@ -26,6 +26,7 @@ export interface Configuration {
   healthAuthorityPrivacyPolicyUrl: string
   measurementSystem: MeasurementSystem
   minimumAge: string
+  minimumPhoneDigits: number
   regionCodes: string[]
   stateAbbreviation: string | null
 }
@@ -52,6 +53,7 @@ const initialState: Configuration = {
   healthAuthorityPrivacyPolicyUrl: "",
   measurementSystem: "Imperial" as const,
   minimumAge: "18",
+  minimumPhoneDigits: 0,
   regionCodes: [],
   stateAbbreviation: "",
 }
@@ -86,6 +88,7 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
     env.MEASUREMENT_SYSTEM === "metric" ? "Metric" : "Imperial"
 
   const minimumAge = env.MINIMUM_AGE
+  const minimumPhoneDigits = parseInt(env.MINIMUM_PHONE_DIGITS) || 0
 
   const appDownloadLink = env.SHARE_APP_LINK
   const appPackageName = Platform.select({
@@ -121,6 +124,7 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
         healthAuthorityPrivacyPolicyUrl,
         measurementSystem,
         minimumAge,
+        minimumPhoneDigits,
         regionCodes,
         stateAbbreviation,
       }}
