@@ -294,6 +294,7 @@ const createStyle = (insets: EdgeInsets) => {
       alignItems: "center",
       justifyContent: "center",
       paddingTop: Spacing.small,
+      paddingHorizontal: Spacing.medium,
       paddingBottom: insets.bottom + Spacing.small,
     },
     bottomButtonText: {
