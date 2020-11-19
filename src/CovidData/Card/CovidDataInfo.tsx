@@ -54,7 +54,7 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
           </Text>
           <Text style={style.sourceText}>{`${t(
             "covid_data.past_7_days",
-          )} (Up to: ${datesData[datesData.length - 1]})`}</Text>
+          )} (up to ${datesData[datesData.length - 1]})`}</Text>
           <Text style={style.legendText}>{labelText}</Text>
         </View>
         <View style={style.chartContainer}>
@@ -83,21 +83,23 @@ const style = StyleSheet.create({
   trendContainer: {
     flex: 4,
     justifyContent: "center",
+    marginRight: 8,
   },
   chartContainer: {
     flex: 3,
+    paddingTop: 8,
   },
   legendText: {
-    ...Typography.body.x20,
+    ...Typography.body.x30,
   },
   trendText: {
-    ...Typography.header.x30,
+    ...Typography.header.x40,
     ...Typography.style.semibold,
     lineHeight: Typography.lineHeight.x40,
   },
   sourceText: {
     ...Typography.body.x30,
-    ...Typography.base.x10,
+    ...Typography.base.x20,
   },
 })
 

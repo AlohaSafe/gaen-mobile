@@ -90,8 +90,8 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
     return currentYPosition > height
       ? []
       : buildHorizontalLineYPositions(
-        currentYPosition + verticalSpacing,
-      ).concat([currentYPosition])
+          currentYPosition + verticalSpacing,
+        ).concat([currentYPosition])
   }
 
   interface HorizontalLineProps {

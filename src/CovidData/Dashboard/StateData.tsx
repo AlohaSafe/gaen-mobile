@@ -96,13 +96,13 @@ const style = StyleSheet.create({
     paddingTop: Spacing.small,
   },
   labelContainer: {
-    flex: 2,
+    flex: 3,
   },
   labelText: {
     ...Typography.header.x20,
   },
   dataContainer: {
-    flex: 1,
+    flex: 2,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -112,14 +112,14 @@ const style = StyleSheet.create({
     marginRight: Spacing.xSmall,
   },
   unitContainer: {
-    width: 40,
+    // width: 40,
   },
   unitText: {
     ...Typography.body.x10,
   },
   sourceText: {
     ...Typography.body.x30,
-    ...Typography.base.x10,
+    ...Typography.base.x20,
   },
 })
 
