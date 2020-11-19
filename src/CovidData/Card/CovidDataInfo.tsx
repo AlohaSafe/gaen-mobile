@@ -36,7 +36,7 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
   const trendText =
     trend > 0 ? t("covid_data.trending_up") : t("covid_data.trending_down")
   const trendColor =
-    trend < 0 ? Colors.accent.warning100 : Colors.accent.success100
+    trend > 0 ? Colors.accent.warning100 : Colors.accent.success100
 
   const source = data.source
   const sourceText = t("covid_data.source", { source })
