@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next"
 
 import { StatusBar, Text } from "../components"
 import { useStatusBarEffect, Stacks } from "../navigation"
+import { useAffectedUserContext } from "./AffectedUserContext"
 
 import { Images } from "../assets"
 import { Buttons, Colors, Layout, Spacing, Typography } from "../styles"
@@ -20,10 +21,9 @@ export const AffectedUserComplete: FunctionComponent = () => {
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
+  const { toHome } = useAffectedUserContext()
 
-  const handleOnPressDone = () => {
-    navigation.navigate(Stacks.Home)
-  }
+  const handleOnPressDone = () => toHome(Stacks.Home, navigation)
 
   return (
     <>
