@@ -8,8 +8,8 @@ import {
   Platform,
   Alert,
 } from "react-native"
+import { SvgXml } from "react-native-svg"
 import { useTranslation } from "react-i18next"
-import { useFocusEffect } from "@react-navigation/native"
 
 ////// ALOHA SAFE import insets //////
 import { useSafeAreaInsets, EdgeInsets } from "react-native-safe-area-context"
@@ -21,24 +21,58 @@ import { useProductAnalyticsContext } from "../ProductAnalytics/Context"
 import { Text } from "../components"
 import { useActivationNavigation } from "./useActivationNavigation"
 
-import { Spacing, Typography, Buttons, Colors } from "../styles"
+import { Icons } from "../assets"
+import { Spacing, Typography, Buttons, Colors, Iconography } from "../styles"
 
 const ActivateExposureNotifications: FunctionComponent = () => {
   ////// ALOHA SAFE use imported insets //////
-  const insets = useSafeAreaInsets()
-  const style = createStyle(insets)
+  // const insets = useSafeAreaInsets()
+  // const style = createStyle(insets)
   ////// ALOHA SAFE use imported insets //////
   const { t } = useTranslation()
   const { exposureNotifications } = usePermissionsContext()
-  const { applicationName } = useApplicationName()
-  const { trackEvent } = useProductAnalyticsContext()
-  const { goToNextScreenFrom } = useActivationNavigation()
 
-  useFocusEffect(() => {
-    if (exposureNotifications.status === "Active") {
-      goToNextScreenFrom("ActivateExposureNotifications")
-    }
-  })
+  const isENActive = exposureNotifications.status === "Active"
+
+  return (
+    <SafeAreaView style={style.safeArea}>
+      <ScrollView
+        style={style.container}
+        contentContainerStyle={style.contentContainer}
+        alwaysBounceVertical={false}
+      >
+        <View style={style.content}>
+          <Text style={style.header}>
+            {t("onboarding.proximity_tracing_header")}
+          </Text>
+          <Text style={style.subheader}>
+            {t("onboarding.proximity_tracing_subheader1")}
+          </Text>
+          <Text style={style.body}>
+            {t("onboarding.proximity_tracing_body1")}
+          </Text>
+          <Text style={style.subheader}>
+            {t("onboarding.proximity_tracing_subheader2")}
+          </Text>
+          <Text style={style.body}>
+            {t("onboarding.proximity_tracing_body2")}
+          </Text>
+          <Text style={style.subheader}>
+            {t("onboarding.proximity_tracing_subheader3")}
+          </Text>
+        </View>
+        {!isENActive ? <EnableENButtons /> : <ENAlreadyEnabledButtons />}
+      </ScrollView>
+    </SafeAreaView>
+  )
+}
+
+const EnableENButtons: FunctionComponent = () => {
+  const { t } = useTranslation()
+  const { trackEvent } = useProductAnalyticsContext()
+  const { exposureNotifications } = usePermissionsContext()
+  const { goToNextScreenFrom } = useActivationNavigation()
+  const { applicationName } = useApplicationName()
 
   const showNotAuthorizedAlert = () => {
     const errorMessage = Platform.select({
@@ -111,35 +145,43 @@ const ActivateExposureNotifications: FunctionComponent = () => {
   }
 
   return (
-    <SafeAreaView style={style.safeArea}>
-      <ScrollView
-        style={style.container}
-        contentContainerStyle={style.contentContainer}
-        alwaysBounceVertical={false}
+    <View>
+      <TouchableOpacity onPress={handleOnPressEnable} style={style.button}>
+        <Text style={style.buttonText}>
+          {t("onboarding.proximity_tracing_button")}
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={handleOnPressDontEnable}
+        style={style.secondaryButton}
       >
-        <View style={style.content}>
-          <Text style={style.header}>
-            {t("onboarding.proximity_tracing_header")}
-          </Text>
-          <Text style={style.subheader}>
-            {t("onboarding.proximity_tracing_subheader1")}
-          </Text>
-          <Text style={style.body}>
-            {t("onboarding.proximity_tracing_body1")}
-          </Text>
-          <Text style={style.subheader}>
-            {t("onboarding.proximity_tracing_subheader2")}
-          </Text>
-          <Text style={style.body}>
-            {t("onboarding.proximity_tracing_body2")}
-          </Text>
-          <Text style={style.subheader}>
-            {t("onboarding.proximity_tracing_subheader3")}
-          </Text>
+        <Text style={style.secondaryButtonText}>{t("common.no_thanks")}</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+const ENAlreadyEnabledButtons: FunctionComponent = () => {
+  const { t } = useTranslation()
+  const { goToNextScreenFrom } = useActivationNavigation()
+
+  const handleOnPressContinue = () => {
+    goToNextScreenFrom("ActivateExposureNotifications")
+  }
+
+  return (
+    <View style={style.alreadyActiveContainer}>
+      <View style={style.alreadyActiveInfoContainer}>
+        <View style={style.alreadyActiveIconContainer}>
+          <SvgXml
+            xml={Icons.CheckInCircle}
+            fill={Colors.accent.success100}
+            width={Iconography.xSmall}
+            height={Iconography.xSmall}
+          />
         </View>
-      </ScrollView>
       {/* ALOHA SAFE moved buttons outside of scroll view */}
-      <View style={style.buttonsContainer}>
+      {/* <View style={style.buttonsContainer}>
         <TouchableOpacity onPress={handleOnPressEnable} style={style.button}>
           <Text style={style.buttonText}>
             {t("onboarding.proximity_tracing_button")}
@@ -151,81 +193,152 @@ const ActivateExposureNotifications: FunctionComponent = () => {
         >
           <Text style={style.secondaryButtonText}>{t("common.no_thanks")}</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
       {/* ALOHA SAFE moved buttons outside of scroll view */}
-    </SafeAreaView>
+        <View style={style.alreadyActiveTextContainer}>
+          <Text style={style.alreadyActiveText}>
+            {t("onboarding.proximity_tracing_already_active")}
+          </Text>
+        </View>
+      </View>
+      <TouchableOpacity onPress={handleOnPressContinue} style={style.button}>
+        <Text style={style.buttonText}>{t("common.continue")}</Text>
+      </TouchableOpacity>
+    </View>
   )
 }
-////// ALOHA SAFE createStyle for insets //////
-const createStyle = (insets: EdgeInsets) => {
-  /* eslint-disable react-native/no-unused-styles */
-  return StyleSheet.create({
-    safeArea: {
-      ////// ALOHA SAFE justify and flex //////
-      justifyContent: "space-between",
-      flex: 1,
-      ////// ALOHA SAFE justify and flex //////
-      backgroundColor: Colors.background.primaryLight,
-    },
-    container: {
-      backgroundColor: Colors.background.primaryLight,
-      // height: "100%",
-    },
-    contentContainer: {
-      paddingVertical: Spacing.large,
-      paddingHorizontal: Spacing.medium,
-    },
-    content: {
-      marginBottom: Spacing.medium,
-    },
-    header: {
-      ...Typography.header.x60, // header1 ??
-      marginBottom: Spacing.large,
-      ////// ALOHA SAFE added color //////
-      color: Colors.asBlue,
-    },
-    subheader: {
-      ...Typography.header.x20, // header5 ???
-      marginBottom: Spacing.xSmall,
-      ////// ALOHA SAFE added color //////
-      color: Colors.asBlue,
-    },
-    body: {
-      ...Typography.body.x30, // body1 ???
-      marginBottom: Spacing.xxLarge,
-    },
-    ////// ALOHA SAFE button styles //////
-    buttonsContainer: {
-      alignItems: "center",
-      paddingTop: Spacing.small,
-      paddingBottom: insets.bottom + Spacing.small,
-    },
-    nextButton: {
-      width: "95%",
-      alignSelf: "center",
-      marginBottom: Spacing.small,
-    },
-    nextButtonGradient: {
-      paddingTop: Spacing.xSmall,
-      paddingBottom: Spacing.xSmall + 1,
-      width: "95%",
-      alignSelf: "center",
-    },
-    ////// ALOHA SAFE button styles //////
-    button: {
-      ...Buttons.primary.base,
-    },
-    buttonText: {
-      ...Typography.button.primary,
-    },
-    secondaryButton: {
-      ...Buttons.secondary.base,
-    },
-    secondaryButtonText: {
-      ...Typography.button.secondary,
-      ////// ALOHA SAFE added color //////
-      color: Colors.asGray,
-    },
-  })
-}
+
+// ////// ALOHA SAFE createStyle for insets //////
+// const createStyle = (insets: EdgeInsets) => {
+//   /* eslint-disable react-native/no-unused-styles */
+//   return StyleSheet.create({
+//     safeArea: {
+//       ////// ALOHA SAFE justify and flex //////
+//       justifyContent: "space-between",
+//       flex: 1,
+//       ////// ALOHA SAFE justify and flex //////
+//       backgroundColor: Colors.background.primaryLight,
+//     },
+//     container: {
+//       backgroundColor: Colors.background.primaryLight,
+//       // height: "100%",
+//     },
+//     contentContainer: {
+//       paddingVertical: Spacing.large,
+//       paddingHorizontal: Spacing.medium,
+//     },
+//     content: {
+//       marginBottom: Spacing.medium,
+//     },
+//     header: {
+//       ...Typography.header.x60, // header1 ??
+//       marginBottom: Spacing.large,
+//       ////// ALOHA SAFE added color //////
+//       color: Colors.asBlue,
+//     },
+//     subheader: {
+//       ...Typography.header.x20, // header5 ???
+//       marginBottom: Spacing.xSmall,
+//       ////// ALOHA SAFE added color //////
+//       color: Colors.asBlue,
+//     },
+//     body: {
+//       ...Typography.body.x30, // body1 ???
+//       marginBottom: Spacing.xxLarge,
+//     },
+//     ////// ALOHA SAFE button styles //////
+//     buttonsContainer: {
+//       alignItems: "center",
+//       paddingTop: Spacing.small,
+//       paddingBottom: insets.bottom + Spacing.small,
+//     },
+//     nextButton: {
+//       width: "95%",
+//       alignSelf: "center",
+//       marginBottom: Spacing.small,
+//     },
+//     nextButtonGradient: {
+//       paddingTop: Spacing.xSmall,
+//       paddingBottom: Spacing.xSmall + 1,
+//       width: "95%",
+//       alignSelf: "center",
+//     },
+//     ////// ALOHA SAFE button styles //////
+//     button: {
+//       ...Buttons.primary.base,
+//     },
+//     buttonText: {
+//       ...Typography.button.primary,
+//     },
+//     secondaryButton: {
+//       ...Buttons.secondary.base,
+//     },
+//     secondaryButtonText: {
+//       ...Typography.button.secondary,
+//       ////// ALOHA SAFE added color //////
+//       color: Colors.asGray,
+//     },
+//   })
+// }
+
+const style = StyleSheet.create({
+  safeArea: {
+    backgroundColor: Colors.background.primaryLight,
+  },
+  container: {
+    backgroundColor: Colors.background.primaryLight,
+    height: "100%",
+  },
+  contentContainer: {
+    paddingVertical: Spacing.large,
+    paddingHorizontal: Spacing.medium,
+  },
+  content: {
+    marginBottom: Spacing.medium,
+  },
+  header: {
+    ...Typography.header.x60,
+    marginBottom: Spacing.large,
+  },
+  subheader: {
+    ...Typography.header.x20,
+    marginBottom: Spacing.xSmall,
+  },
+  body: {
+    ...Typography.body.x30,
+    marginBottom: Spacing.xxLarge,
+  },
+  button: {
+    ...Buttons.primary.base,
+  },
+  buttonText: {
+    ...Typography.button.primary,
+  },
+  secondaryButton: {
+    ...Buttons.secondary.base,
+  },
+  secondaryButtonText: {
+    ...Typography.button.secondary,
+  },
+  alreadyActiveContainer: {
+    borderTopWidth: 1,
+    borderTopColor: Colors.neutral.shade50,
+  },
+  alreadyActiveInfoContainer: {
+    flexDirection: "row",
+    paddingVertical: Spacing.large,
+  },
+  alreadyActiveIconContainer: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  alreadyActiveTextContainer: {
+    flex: 8,
+    justifyContent: "center",
+  },
+  alreadyActiveText: {
+    ...Typography.body.x30,
+  },
+})
+
 export default ActivateExposureNotifications
