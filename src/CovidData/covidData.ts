@@ -17,6 +17,7 @@ type Date = string
 export type CovidDatum = {
   date: Date
   positiveCasesNew: number
+  positiveCasesNew7DayAvg: number
 }
 
 export type Metrics = {
@@ -62,6 +63,7 @@ export const empty: CovidData = {
 export const emptyDatum: CovidDatum = {
   date: "2020-01-01",
   positiveCasesNew: 0,
+  positiveCasesNew7DayAvg: 0,
 }
 
 export const toNewCasesPercentage = (data: Timeseries): number | null => {
@@ -89,15 +91,15 @@ const percentDifference = (a: number, b: number) => {
 type TrendData = number[]
 
 export const toLineChartCasesNew = (data: Timeseries): TrendData => {
-  return data.map(toCasesNew).slice(0, 7).reverse()
+  return data.map(toCasesNew).slice(0, 14).reverse()
 }
 
 export const toCasesNew = (datum: CovidDatum): number => {
-  return datum.positiveCasesNew
+  return Math.round(datum.positiveCasesNew7DayAvg)
 }
 
 export const toLineChartDatesNew = (data: Timeseries): string[] => {
-  return data.map(toDatesNew).slice(0, 7).reverse()
+  return data.map(toDatesNew).slice(0, 14).reverse()
 }
 
 export const toDatesNew = (datum: CovidDatum): string => {

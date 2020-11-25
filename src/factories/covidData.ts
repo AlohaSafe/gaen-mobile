@@ -5,6 +5,7 @@ export const covidDatum = Factory.define<CovidDatum>(() => {
   return {
     date: "2020-01-01",
     positiveCasesNew: 0,
+    positiveCasesNew7DayAvg: 0,
   }
 })
 
@@ -32,6 +33,7 @@ export const covidData = Factory.define<CovidData>(() => {
       {
         date: "2020-01-01",
         positiveCasesNew: 0,
+        positiveCasesNew7DayAvg: 0,
       },
     ],
   }

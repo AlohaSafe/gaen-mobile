@@ -61,6 +61,7 @@
     },
     "infection_rate": "Infection rate",
     "new_cases": "New Cases",
+    "past_14_days": "Past 14 days",
     "past_7_days": "Past 7 days",
     "per_100k": "per 100k",
     "positive_test_rate": "Positive test rate",

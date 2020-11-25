@@ -1,5 +1,11 @@
 import React, { FunctionComponent } from "react"
-import { Svg, Path, G, Text, Circle } from "react-native-svg"
+import {
+  Svg,
+  Path,
+  G,
+  Text,
+  // Circle
+} from "react-native-svg"
 
 import * as SvgPath from "./SvgPath"
 import { Colors } from "../styles"
@@ -15,7 +21,7 @@ interface LineChartProps {
 const NUMBER_OF_HORIZONTAL_LINES = 6
 
 const LineChart: FunctionComponent<LineChartProps> = ({
-  datesData,
+  // datesData,
   lineData,
   width,
   height,
@@ -52,24 +58,24 @@ const LineChart: FunctionComponent<LineChartProps> = ({
   return (
     <Svg height={height} width="100%" viewBox={viewBox}>
       {/* ////// ALOHA SAFE wrap in G tag to shift content right ////// */}
-      <G translate="5, 0">
-        <HorizontalLines height={height} width={width} />
-        <Path
-          d={trendLinePath}
-          fill="none"
-          stroke={color}
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-        {/* ////// ALOHA SAFE add points on trend line ////// */}
-        <DataPoints
+      {/* <G translate="5, 0"> */}
+      <HorizontalLines height={height} width={width} />
+      <Path
+        d={trendLinePath}
+        fill="none"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      {/* ////// ALOHA SAFE add points on trend line ////// */}
+      {/* <DataPoints
           height={height}
           coords={coordinates}
           datesData={datesData}
           lineData={lineData}
           dotColor={color}
-        />
-      </G>
+        /> */}
+      {/* </G> */}
     </Svg>
   )
 }
@@ -109,7 +115,7 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
     strokeWidth,
     color,
     ////// ALOHA SAFE add prop type for line values //////
-    lineValue,
+    // lineValue,
   }) => {
     const path = SvgPath.toLine(start, end)
     return (
@@ -123,7 +129,7 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
           x="-4"
           y={`${start[1]}`}
         >
-          {lineValue}
+          {/* {lineValue} */}
         </Text>
       </G>
     )
@@ -166,118 +172,118 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
 }
 
 ////// ALOHA SAFE create data point component with labels and date on x-axis //////
-interface DataPointsProps {
-  coords: SvgPath.Coordinate[]
-  dotColor: string
-  lineData: number[]
-  height: number
-  datesData: string[]
-}
+// interface DataPointsProps {
+//   coords: SvgPath.Coordinate[]
+//   dotColor: string
+//   lineData: number[]
+//   height: number
+//   datesData: string[]
+// }
 
-const DataPoints: FunctionComponent<DataPointsProps> = ({
-  coords,
-  dotColor,
-  lineData,
-  // height,
-  // datesData,
-}) => {
-  ////// ALOHA SAFE label position variables //////
-  const radius = 4
+// const DataPoints: FunctionComponent<DataPointsProps> = ({
+//   coords,
+//   dotColor,
+//   lineData,
+//   // height,
+//   // datesData,
+// }) => {
+//   ////// ALOHA SAFE label position variables //////
+//   const radius = 4
 
-  let xOffsetLow = radius + 3.5
-  let xOffsetHigh = radius + 3.5
+//   let xOffsetLow = radius + 3.5
+//   let xOffsetHigh = radius + 3.5
 
-  const yOffsetLow = radius + 9
-  const yOffsetHigh = radius + 1
+//   const yOffsetLow = radius + 9
+//   const yOffsetHigh = radius + 1
 
-  ////// ALOHA SAFE create a y-coodinates array, find the index of the min and max for comparisions later //////
-  const coordsY = coords.map((coordArray: number[]) => {
-    return coordArray[1]
-  })
+//   ////// ALOHA SAFE create a y-coodinates array, find the index of the min and max for comparisions later //////
+//   const coordsY = coords.map((coordArray: number[]) => {
+//     return coordArray[1]
+//   })
 
-  const lowIndex = coordsY.reduceRight(
-    (lowIdx: number, y: number, idx: number, arr: number[]) => {
-      return y > arr[lowIdx] ? idx : lowIdx
-    },
-    0,
-  )
+//   const lowIndex = coordsY.reduceRight(
+//     (lowIdx: number, y: number, idx: number, arr: number[]) => {
+//       return y > arr[lowIdx] ? idx : lowIdx
+//     },
+//     0,
+//   )
 
-  const highIndex = coordsY.reduceRight(
-    (highIdx: number, y: number, idx: number, arr: number[]) => {
-      return y < arr[highIdx] ? idx : highIdx
-    },
-    0,
-  )
-  const lastIndex = coords.length - 1
+//   const highIndex = coordsY.reduceRight(
+//     (highIdx: number, y: number, idx: number, arr: number[]) => {
+//       return y < arr[highIdx] ? idx : highIdx
+//     },
+//     0,
+//   )
+//   const lastIndex = coords.length - 1
 
-  ////// ALOHA SAFE change offset if 3 digit new cases to keep label centered on data point //////
-  const lowMoreThanTwoDigits = lineData[lowIndex].toString().length > 2
-  const highMoreThanTwoDigits = lineData[highIndex].toString().length > 2
+//   ////// ALOHA SAFE change offset if 3 digit new cases to keep label centered on data point //////
+//   const lowMoreThanTwoDigits = lineData[lowIndex].toString().length > 2
+//   const highMoreThanTwoDigits = lineData[highIndex].toString().length > 2
 
-  xOffsetLow = lowMoreThanTwoDigits ? xOffsetLow + 1.5 : xOffsetLow
-  xOffsetHigh = highMoreThanTwoDigits ? xOffsetHigh + 1.5 : xOffsetHigh
+//   xOffsetLow = lowMoreThanTwoDigits ? xOffsetLow + 1.5 : xOffsetLow
+//   xOffsetHigh = highMoreThanTwoDigits ? xOffsetHigh + 1.5 : xOffsetHigh
 
-  return (
-    <>
-      {coords.map((point: number[], idx: number) => {
-        const xCoord = point[0]
-        const yCoord = point[1]
-        const highY = highIndex === idx
-        const lowY = lowIndex === idx
+//   return (
+//     <>
+//       {coords.map((point: number[], idx: number) => {
+//         const xCoord = point[0]
+//         const yCoord = point[1]
+//         const highY = highIndex === idx
+//         const lowY = lowIndex === idx
 
-        return (
-          <G key={`coord-${point}`}>
-            <Circle cx={xCoord} cy={yCoord} r={radius} fill={dotColor} />
-            {highY ? (
-              ////// ALOHA SAFE add label to the highest value data point //////
-              <Text
-                fill={Colors.asSecondaryGray}
-                stroke={Colors.asSecondaryGray}
-                fontSize="12"
-                ////// ALOHA SAFE shift x offset if last dot to prevent cutoff from end of canvas //////
-                x={
-                  lastIndex && lowMoreThanTwoDigits
-                    ? xCoord - xOffsetHigh - 4
-                    : xCoord - xOffsetHigh
-                }
-                y={yCoord - yOffsetHigh}
-              >
-                {lineData[idx]}
-              </Text>
-            ) : null}
-            {lowY ? (
-              ////// ALOHA SAFE add label to the lowest value data point //////
-              <Text
-                fill={Colors.asSecondaryGray}
-                stroke={Colors.asSecondaryGray}
-                fontSize="12"
-                ////// ALOHA SAFE shift x offset if last dot to prevent cutoff from end of canvas //////
-                x={
-                  lastIndex && lowMoreThanTwoDigits
-                    ? xCoord - xOffsetLow - 4
-                    : xCoord - xOffsetLow
-                }
-                y={yCoord + yOffsetLow}
-              >
-                {lineData[idx]}
-              </Text>
-            ) : null}
-            {/* <Text
-              fill="red"
-              stroke="red"
-              fontSize="8"
-              fontWeight="bold"
-              x={xCoord}
-              y={height + 10}
-              transform={`rotate(-30, ${xCoord}, ${height + 10})`}
-            >
-              {datesData[idx]}
-            </Text> */}
-          </G>
-        )
-      })}
-    </>
-  )
-}
+//         return (
+//           <G key={`coord-${point}`}>
+//             <Circle cx={xCoord} cy={yCoord} r={radius} fill={dotColor} />
+//             {highY ? (
+//               ////// ALOHA SAFE add label to the highest value data point //////
+//               <Text
+//                 fill={Colors.asSecondaryGray}
+//                 stroke={Colors.asSecondaryGray}
+//                 fontSize="12"
+//                 ////// ALOHA SAFE shift x offset if last dot to prevent cutoff from end of canvas //////
+//                 x={
+//                   lastIndex && lowMoreThanTwoDigits
+//                     ? xCoord - xOffsetHigh - 4
+//                     : xCoord - xOffsetHigh
+//                 }
+//                 y={yCoord - yOffsetHigh}
+//               >
+//                 {lineData[idx]}
+//               </Text>
+//             ) : null}
+//             {lowY ? (
+//               ////// ALOHA SAFE add label to the lowest value data point //////
+//               <Text
+//                 fill={Colors.asSecondaryGray}
+//                 stroke={Colors.asSecondaryGray}
+//                 fontSize="12"
+//                 ////// ALOHA SAFE shift x offset if last dot to prevent cutoff from end of canvas //////
+//                 x={
+//                   lastIndex && lowMoreThanTwoDigits
+//                     ? xCoord - xOffsetLow - 4
+//                     : xCoord - xOffsetLow
+//                 }
+//                 y={yCoord + yOffsetLow}
+//               >
+//                 {lineData[idx]}
+//               </Text>
+//             ) : null}
+//             {/* <Text
+//               fill="red"
+//               stroke="red"
+//               fontSize="8"
+//               fontWeight="bold"
+//               x={xCoord}
+//               y={height + 10}
+//               transform={`rotate(-30, ${xCoord}, ${height + 10})`}
+//             >
+//               {datesData[idx]}
+//             </Text> */}
+//           </G>
+//         )
+//       })}
+//     </>
+//   )
+// }
 
 export default LineChart

@@ -31,7 +31,7 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
 
   const lineChartWidth =
     0.5 * (Layout.screenWidth - 2 * Spacing.medium - 2 * Spacing.medium)
-  const lineChartHeight = 80
+  const lineChartHeight = 110
 
   const trendText =
     trend > 0 ? t("covid_data.trending_up") : t("covid_data.trending_down")
@@ -52,10 +52,10 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
           <Text style={{ ...style.trendText, color: trendColor }}>
             {trendText}
           </Text>
-          <Text style={style.sourceText}>{`${t(
-            "covid_data.past_7_days",
-          )} (up to ${datesData[datesData.length - 1]})`}</Text>
           <Text style={style.legendText}>{labelText}</Text>
+          <Text style={style.legendExplanationText}>
+            {t("covid_data.past_14_days")}, {t("covid_data.7_day_avg")}
+          </Text>
         </View>
         <View style={style.chartContainer}>
           <LineChart
@@ -76,6 +76,7 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
 const style = StyleSheet.create({
   headerText: {
     ...Typography.body.x20,
+    marginBottom: 8,
   },
   dataContainer: {
     flexDirection: "row",
@@ -87,10 +88,13 @@ const style = StyleSheet.create({
   },
   chartContainer: {
     flex: 3,
-    paddingTop: 8,
   },
   legendText: {
     ...Typography.body.x30,
+    marginTop: 4,
+  },
+  legendExplanationText: {
+    ...Typography.body.x10,
   },
   trendText: {
     ...Typography.header.x40,
@@ -100,6 +104,7 @@ const style = StyleSheet.create({
   sourceText: {
     ...Typography.body.x30,
     ...Typography.base.x20,
+    marginTop: 4,
   },
 })
 

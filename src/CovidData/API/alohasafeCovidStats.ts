@@ -30,6 +30,7 @@ export interface RequestFailure {
 
 type Actuals = {
   cases: number
+  cases_avg_last7days: number
 }
 
 type ActualsDatum = Actuals & WithDate
@@ -52,6 +53,7 @@ type Metrics = {
 const ActualsDecoder = JsonDecoder.object<Actuals>(
   {
     cases: JsonDecoder.number,
+    cases_avg_last7days: JsonDecoder.number,
   },
   "Actuals",
 )
@@ -104,6 +106,7 @@ const toCovidData = (stateData: StateCovidData): CovidData[] => {
     return {
       date: actualsDatum.date,
       positiveCasesNew: actualsDatum.cases,
+      positiveCasesNew7DayAvg: actualsDatum.cases_avg_last7days,
     }
   }
 
