@@ -5,6 +5,7 @@ import {
   HeaderStyleInterpolators,
 } from "@react-navigation/stack"
 import { Platform } from "react-native"
+import env from "react-native-config"
 import {
   LinkingOptions,
   NavigationContainer,
@@ -51,11 +52,17 @@ const settingsStackTransitionPreset = Platform.select({
   android: TransitionPresets.DefaultTransition,
 })
 
+const linkPrefixes = JSON.parse(env.DEEP_LINK_PREFIXES)
+
 const linking: LinkingOptions = {
-  prefixes: ["pathcheck://"],
+  prefixes: linkPrefixes,
   config: {
     screens: {
-      ExposureHistoryFlow: "exposureHistory",
+      AffectedUserStack: {
+        screens: {
+          AffectedUserCodeInput: "v",
+        },
+      },
     },
   },
 }
@@ -161,7 +168,7 @@ const MainNavigator: FunctionComponent = () => {
             return (
               <SelfAssessmentStack
                 {...props}
-                destinationOnCancel={Stacks.ExposureHistoryFlow}
+                destinationOnCancel={Stacks.ExposureHistory}
               />
             )
           }}
