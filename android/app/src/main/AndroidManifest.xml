@@ -40,6 +40,28 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data 
+                    android:scheme="http"
+                    android:host="alert.alohasafe.org"
+                    android:pathPrefix="/" 
+                  />
+                <!-- note that the leading "/" is required for pathPrefix-->
+            </intent-filter>
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data 
+                    android:scheme="https"
+                    android:host="alert.alohasafe.org"
+                    android:pathPrefix="/" 
+                  />
+                <!-- note that the leading "/" is required for pathPrefix-->
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
