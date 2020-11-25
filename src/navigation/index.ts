@@ -234,7 +234,7 @@ export type Stack =
   | "Activation"
   | "AffectedUserStack"
   | "Connect"
-  | "ExposureHistoryFlow"
+  | "ExposureHistory"
   | "HowItWorks"
   | "Settings"
   | "Home"
@@ -244,7 +244,7 @@ export const Stacks: { [key in Stack]: Stack } = {
   Activation: "Activation",
   AffectedUserStack: "AffectedUserStack",
   Connect: "Connect",
-  ExposureHistoryFlow: "ExposureHistoryFlow",
+  ExposureHistory: "ExposureHistory",
   HowItWorks: "HowItWorks",
   Settings: "Settings",
   Home: "Home",

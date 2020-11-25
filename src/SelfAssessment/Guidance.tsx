@@ -25,7 +25,7 @@ interface GuidanceProps {
 }
 
 const Guidance: FunctionComponent<GuidanceProps> = ({
-  destinationOnCancel = Stacks.ExposureHistoryFlow,
+  destinationOnCancel = Stacks.ExposureHistory,
 }) => {
   useStatusBarEffect("dark-content", Colors.secondary.shade10)
   const { t } = useTranslation()
