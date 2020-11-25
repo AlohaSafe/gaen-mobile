@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react"
+import React, { FunctionComponent, useState, useEffect } from "react"
 import {
   Alert,
   StyleSheet,
@@ -10,7 +10,7 @@ import {
   Platform,
   TouchableOpacity,
 } from "react-native"
-import { useNavigation } from "@react-navigation/native"
+import { useNavigation, useRoute } from "@react-navigation/native"
 import { useTranslation } from "react-i18next"
 import { SvgXml } from "react-native-svg"
 
@@ -32,6 +32,7 @@ import { Icons } from "../../assets"
 const defaultErrorMessage = ""
 
 const CodeInputForm: FunctionComponent = () => {
+  const route = useRoute()
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
@@ -66,6 +67,12 @@ const CodeInputForm: FunctionComponent = () => {
   const handleOnToggleFocus = () => {
     setIsFocused(!isFocused)
   }
+
+  useEffect(() => {
+    if (route.params && "c" in route.params) {
+      setCode(route.params.c)
+    }
+  }, [code, route.params])
 
   const handleOnPressSubmit = async () => {
     setIsLoading(true)
