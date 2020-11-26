@@ -47,9 +47,9 @@ const ShareLink: FunctionComponent = () => {
       onPress={handleOnPressShare}
       accessibilityLabel={t("home.bluetooth.share", { applicationName })}
     >
-      {/* <View style={style.shareImageContainer}>
-        <Image source={Images.HugEmoji} style={style.shareImage} />
-      </View> */}
+      <View style={style.shareImageContainer}>
+        <Image source={Images.ShareIcon} style={style.shareImage} />
+      </View>
       <View style={style.shareTextContainer}>
         <Text style={style.shareText}>
           {t("home.bluetooth.share", { applicationName })}
@@ -79,17 +79,16 @@ const style = StyleSheet.create({
     justifyContent: "center",
   },
   shareImage: {
-    width: Iconography.small,
-    height: Iconography.small,
+    width: Iconography.xSmall,
+    height: Iconography.xSmall,
   },
   shareTextContainer: {
     flex: 1,
     marginLeft: Spacing.medium,
   },
   shareText: {
-    ...Typography.body.x30,
+    ...Typography.base.x40,
     ...Typography.style.medium,
-    color: Colors.text.primary,
   },
 })
 

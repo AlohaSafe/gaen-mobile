@@ -12,6 +12,7 @@ import ProtectPrivacyReceiveNotification from "./protectPrivacyReceiveNotificati
 import ProtectPrivacySubmitKeys from "./protectPrivacySubmitKeys.png"
 import ProtectPrivacyTop from "./protectPrivacyTop.png"
 import SelfAssessment from "./selfAssessment.png"
+import ShareIcon from './shareIcon.png'
 import SickEmoji from "./sickEmoji.png"
 import SmileEmoji from "./smileEmoji.png"
 import WelcomeImage from "./welcomeImage.png"
@@ -31,6 +32,7 @@ export const Images = {
   ProtectPrivacySubmitKeys,
   ProtectPrivacyTop,
   SelfAssessment,
+  ShareIcon,
   SickEmoji,
   SmileEmoji,
   WelcomeImage,
