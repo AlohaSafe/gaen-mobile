@@ -32,7 +32,7 @@ const LineChart: FunctionComponent<LineChartProps> = ({
   }
   // Scale Data
   const max = Math.max(...lineData)
-  const min = 0 // Math.min(...lineData)
+  const min = Math.min(...lineData)
   const shrinkYScaleBy = 1.25
   const scaleFactor = height / (max - min) / shrinkYScaleBy
   const toScale = (datum: number) => {
@@ -106,7 +106,7 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
     strokeWidth: number
     color: string
     ////// ALOHA SAFE add prop type for line values //////
-    lineValue: string
+    // lineValue: string
   }
 
   const HorizontalLine: FunctionComponent<HorizontalLineProps> = ({
@@ -155,17 +155,17 @@ const HorizontalLines: FunctionComponent<HorizontalLinesProps> = ({
             color={lineColor}
             strokeWidth={1}
             key={`hline-${yCoord}`}
-            lineValue=""
+            // lineValue=""
           />
         )
       })}
       <HorizontalLine
         start={baseLineStart}
         end={baseLineEnd}
-        color={baseLineColor}
-        strokeWidth={2}
+        color={lineColor}
+        strokeWidth={1}
         ////// ALOHA SAFE label bottom line 0 //////
-        lineValue="0"
+        // lineValue="0"
       />
     </>
   )
