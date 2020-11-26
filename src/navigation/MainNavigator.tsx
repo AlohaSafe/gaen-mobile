@@ -58,11 +58,7 @@ const linking: LinkingOptions = {
   prefixes: linkPrefixes,
   config: {
     screens: {
-      AffectedUserStack: {
-        screens: {
-          AffectedUserCodeInput: "v",
-        },
-      },
+      ExposureHistory: "exposureHistory",
     },
   },
 }
