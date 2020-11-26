@@ -158,6 +158,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
   return [RCTLinkingManager application:application openURL:url options:options];
 }
+
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler
@@ -168,6 +169,14 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     NSDictionary *options = [[NSDictionary alloc] init];
     [RCTLinkingManager application:[UIApplication sharedApplication] openURL:url options:options];
   }
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity
+ restorationHandler:(nonnull void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
+{
+ return [RCTLinkingManager application:application
+                  continueUserActivity:userActivity
+                    restorationHandler:restorationHandler];
 }
 
 @end
