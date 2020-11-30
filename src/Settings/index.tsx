@@ -52,7 +52,6 @@ const Settings: FunctionComponent = () => {
   const { healthAuthorityName } = useCustomCopy()
 
   const { languageName } = useLocaleInfo()
-<<<<<<< HEAD
 
   const CLICKS_TO_ENABLE_EN_DEBUG_MENU = 10
 
@@ -65,9 +64,6 @@ const Settings: FunctionComponent = () => {
   }, [clickCount, showDebugMenu])
 
   const incrementClickCount = () => setClickCount(clickCount + 1)
-=======
-  const showDebugMenu = env.DISPLAY_DEBUG_MENU === "true" || __DEV__
->>>>>>> Remove staging env var (#719)
 
   const handleOnPressSelectLanguage = () => {
     navigation.navigate(ModalStackScreens.LanguageSelection)

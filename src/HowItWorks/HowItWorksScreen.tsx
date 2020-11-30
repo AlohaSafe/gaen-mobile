@@ -33,7 +33,14 @@ interface HowItWorksScreenProps {
 }
 
 const HowItWorksScreen: FunctionComponent<HowItWorksScreenProps> = ({
-  howItWorksScreenContent,
+  howItWorksScreenContent: {
+    image,
+    imageLabel,
+    title,
+    header,
+    primaryButtonLabel,
+    primaryButtonOnPress,
+  },
 }) => {
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
@@ -44,15 +51,6 @@ const HowItWorksScreen: FunctionComponent<HowItWorksScreenProps> = ({
   const handleOnPressProtectPrivacy = () => {
     navigation.navigate(ModalStackScreens.ProtectPrivacy)
   }
-
-  const {
-    image,
-    imageLabel,
-    header,
-    title,
-    primaryButtonLabel,
-    primaryButtonOnPress,
-  } = howItWorksScreenContent
 
   return (
     <>
