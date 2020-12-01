@@ -19,11 +19,9 @@ const HeaderLeftBackButton = () => {
   const handleBack = () =>
     navigation.dispatch(() => {
       if (navigation.canGoBack()) {
-        console.log("going back")
         return CommonActions.goBack()
       }
       // Navigate to route "name: App" since "Home" is not the base route name.
-      console.log("clearing routes")
       return CommonActions.reset({
         index: 1,
         routes: [{ name: "App" }],

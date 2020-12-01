@@ -21,12 +21,17 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
   const { t } = useTranslation()
   const newCasesData = CovidData.toLineChartCasesNew(data.timeseries)
   ////// ALOHA SAFE make date array for x-axis labels //////
-  const datesData = CovidData.toLineChartDatesNew(data.timeseries)
+  // const datesData = CovidData.toLineChartDatesNew(data.timeseries)
+  const trendData = CovidData.toTrendNew(data.timeseries)
   const toPoint = (newCaseDatum: number, idx: number): [number, number] => {
     return [idx, newCaseDatum]
   }
-  const newCasesPoints = newCasesData.map(toPoint)
-  const result = regression.linear(newCasesPoints)
+  // const newCasesPoints = newCasesData.map(toPoint)
+  // const result = regression.linear(newCasesPoints)
+  // const trend = result.equation[0]
+
+  const trendPoints = trendData.map(toPoint)
+  const result = regression.linear(trendPoints)
   const trend = result.equation[0]
 
   const lineChartWidth =
@@ -64,7 +69,7 @@ const CovidDataInfo: FunctionComponent<CovidDataInfoProps> = ({
             height={lineChartHeight}
             color={trendColor}
             ////// ALOHA SAFE pass date and dot color props //////
-            datesData={datesData}
+            // datesData={datesData}
           />
         </View>
       </View>

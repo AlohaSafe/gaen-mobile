@@ -11,7 +11,7 @@ import * as SvgPath from "./SvgPath"
 import { Colors } from "../styles"
 
 interface LineChartProps {
-  datesData: string[]
+  // datesData: string[]
   lineData: number[]
   width: number
   height: number

@@ -1,6 +1,7 @@
 package org.pathcheck.covidsafepaths;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import com.facebook.react.ReactActivity;
@@ -21,32 +22,36 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    SplashScreen.show(this, R.style.SplashTheme);
-    super.onCreate(savedInstanceState);
+      SplashScreen.show(this, R.style.SplashTheme);
+      super.onCreate(savedInstanceState);
 
-    bluetoothHelper = new BluetoothHelper(new BluetoothHelper.BluetoothCallback() {
-      @Override
-      public void onBluetoothAvailable() {
-        EventSender.INSTANCE.sendBluetoothStatusChangedEvent(getReactContext(), true);
-      }
+      bluetoothHelper = new BluetoothHelper(new BluetoothHelper.BluetoothCallback() {
+          @Override
+          public void onBluetoothAvailable() {
+              EventSender.INSTANCE.sendBluetoothStatusChangedEvent(getReactContext(), true);
+          }
 
-      @Override
-      public void onBluetoothUnavailable() {
-        EventSender.INSTANCE.sendBluetoothStatusChangedEvent(getReactContext(), false);
-      }
-    });
+          @Override
+          public void onBluetoothUnavailable() {
+              EventSender.INSTANCE.sendBluetoothStatusChangedEvent(getReactContext(), false);
+          }
+      });
 
-    locationHelper = new LocationHelper(new LocationHelper.LocationCallback() {
-      @Override
-      public void onLocationAvailable() {
-        EventSender.INSTANCE.sendLocationStatusChangedEvent(getReactContext(), true);
-      }
+      locationHelper = new LocationHelper(new LocationHelper.LocationCallback() {
+          @Override
+          public void onLocationAvailable() {
+              EventSender.INSTANCE.sendLocationStatusChangedEvent(getReactContext(), true);
+          }
 
-      @Override
-      public void onLocationUnavailable() {
-        EventSender.INSTANCE.sendLocationStatusChangedEvent(getReactContext(), false);
-      }
-    });
+          @Override
+          public void onLocationUnavailable() {
+              EventSender.INSTANCE.sendLocationStatusChangedEvent(getReactContext(), false);
+          }
+      });
+      // ATTENTION: This was auto-generated to handle app links.
+      Intent appLinkIntent = getIntent();
+      String appLinkAction = appLinkIntent.getAction();
+      Uri appLinkData = appLinkIntent.getData();
   }
 
   @Override
