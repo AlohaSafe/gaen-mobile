@@ -1,9 +1,8 @@
 import React, { FunctionComponent, useState, useEffect } from "react"
 import { View, Text, Button } from "react-native"
-import { useNavigation } from "@react-navigation/native"
 
 import { StatusBar } from "../../components"
-import { Stacks, useStatusBarEffect } from "../../navigation"
+import { useStatusBarEffect } from "../../navigation"
 import { useAffectedUserContext } from "../AffectedUserContext"
 import PublishConsentForm from "./PublishConsentForm"
 import { useExposureContext } from "../../ExposureContext"
@@ -15,12 +14,11 @@ const PublishConsentScreen: FunctionComponent = () => {
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const [revisionToken, setRevisionToken] = useState("")
   const { storeRevisionToken, getRevisionToken } = useExposureContext()
-  const navigation = useNavigation()
   const {
     certificate,
     hmacKey,
     exposureKeys,
-    toHome,
+    navigateOutOfStack,
   } = useAffectedUserContext()
   const { appPackageName, regionCodes } = useConfigurationContext()
 
@@ -40,7 +38,7 @@ const PublishConsentScreen: FunctionComponent = () => {
         revisionToken={revisionToken}
         appPackageName={appPackageName}
         regionCodes={regionCodes}
-        toHome={toHome}
+        navigateOutOfStack={navigateOutOfStack}
       />
     )
   } else {
@@ -49,12 +47,7 @@ const PublishConsentScreen: FunctionComponent = () => {
         <StatusBar backgroundColor={Colors.background.primaryLight} />
         <View>
           <Text>Invalid State</Text>
-          <Button
-            onPress={() => {
-              navigation.navigate(Stacks.Home)
-            }}
-            title={"Go Back"}
-          />
+          <Button onPress={navigateOutOfStack} title={"Go Back"} />
         </View>
       </>
     )

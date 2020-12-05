@@ -52,13 +52,19 @@ const settingsStackTransitionPreset = Platform.select({
   android: TransitionPresets.DefaultTransition,
 })
 
-const linkPrefixes = JSON.parse(env.DEEP_LINK_PREFIXES)
+const customPrefixes = env.DEEP_LINK_PREFIXES?.split(",") || []
+const allPrefixes = ["pathcheck://", "https://*.en.express/", ...customPrefixes]
 
 const linking: LinkingOptions = {
-  prefixes: linkPrefixes,
+  prefixes: allPrefixes,
   config: {
     screens: {
       ExposureHistory: "exposureHistory",
+      AffectedUserStack: {
+        screens: {
+          AffectedUserCodeInput: "v",
+        },
+      },
     },
   },
 }
@@ -95,7 +101,13 @@ const MainNavigator: FunctionComponent = () => {
       <Stack.Navigator headerMode="screen" screenOptions={defaultScreenOptions}>
         {isOnboardingComplete ? (
           <>
-            <Stack.Screen name={"App"} component={MainTabNavigator} />
+            <Stack.Screen
+              name={"App"}
+              component={MainTabNavigator}
+              options={{
+                gestureEnabled: false,
+              }}
+            />
             <Stack.Screen
               name={Stacks.Settings}
               component={SettingsStack}
@@ -107,6 +119,9 @@ const MainNavigator: FunctionComponent = () => {
             <Stack.Screen
               name={WelcomeStackScreens.Welcome}
               component={Welcome}
+              options={{
+                gestureEnabled: false,
+              }}
             />
             <Stack.Screen
               name={ModalStackScreens.AgeVerification}

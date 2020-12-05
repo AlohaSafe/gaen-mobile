@@ -1,29 +1,20 @@
 import React, { FunctionComponent } from "react"
-import {
-  ScrollView,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  // Vibration,
-  View,
-} from "react-native"
-import { useNavigation } from "@react-navigation/native"
+import { ScrollView, View, Image, StyleSheet, TouchableOpacity } from "react-native"
 import { useTranslation } from "react-i18next"
 
 import { StatusBar, Text } from "../components"
-import { useStatusBarEffect, Stacks } from "../navigation"
-import { useAffectedUserContext } from "./AffectedUserContext"
+import { useStatusBarEffect } from "../navigation"
 
 import { Images } from "../assets"
 import { Buttons, Colors, Layout, Spacing, Typography } from "../styles"
+import { useAffectedUserContext } from "./AffectedUserContext"
 
 export const AffectedUserComplete: FunctionComponent = () => {
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
-  const navigation = useNavigation()
-  const { toHome } = useAffectedUserContext()
+  const { navigateOutOfStack } = useAffectedUserContext()
 
-  const handleOnPressDone = () => toHome(Stacks.Home, navigation)
+  const handleOnPressDone = navigateOutOfStack
 
   return (
     <>
