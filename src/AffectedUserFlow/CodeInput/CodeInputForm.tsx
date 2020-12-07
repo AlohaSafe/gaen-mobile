@@ -265,7 +265,7 @@ const CodeInputForm: FunctionComponent<CodeInputFormProps> = ({ linkCode }) => {
         <TouchableOpacity
           style={style.secondaryButton}
           onPress={handleOnPressSecondaryButton}
-          accessibilityLabel={t("common.start")}
+          accessibilityLabel={t("export.intro.what_is_a")}
         >
           <View style={style.secondaryButtonIconContainer}>
             <SvgXml
