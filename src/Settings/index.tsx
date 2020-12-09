@@ -11,7 +11,8 @@ import { useTranslation } from "react-i18next"
 import { useNavigation } from "@react-navigation/native"
 // import env from "react-native-config"
 
-import { useLocaleInfo } from "../locales/languages"
+import ShareAnonymizedDataListItem from "./ShareAnonymizedDataListItem"
+import { enabledLocales, useLocaleInfo } from "../locales/languages"
 import {
   useStatusBarEffect,
   ModalStackScreens,
@@ -30,7 +31,6 @@ import {
 
 import { Icons } from "../assets"
 import { Colors, Spacing, Typography } from "../styles"
-import ShareAnonymizedDataListItem from "./ShareAnonymizedDataListItem"
 
 type SettingsListItem = {
   label: string
@@ -126,14 +126,12 @@ const Settings: FunctionComponent = () => {
 
   const osInfo = `${Platform.OS} v${Platform.Version}`
 
+  const showLanguagePicker = enabledLocales().length > 1
+
   return (
     <>
       <StatusBar backgroundColor={Colors.secondary.shade10} />
-      <ScrollView
-        contentContainerStyle={style.contentContainer}
-        style={style.container}
-        alwaysBounceVertical={false}
-      >
+      <ScrollView contentContainerStyle={style.contentContainer} style={style.container} alwaysBounceVertical={false}>
         <TouchableWithoutFeedback
           touchSoundDisabled
           onPress={incrementClickCount}
@@ -142,14 +140,16 @@ const Settings: FunctionComponent = () => {
             <Text style={style.headerText}>{t("screen_titles.settings")}</Text>
           </View>
         </TouchableWithoutFeedback>
-        <View style={style.section}>
-          <ListItem
-            label={selectLanguage.label}
-            accessibilityLabel={selectLanguage.accessibilityLabel}
-            onPress={selectLanguage.onPress}
-            icon={selectLanguage.icon}
-          />
-        </View>
+        {showLanguagePicker && (
+          <View style={style.section} testID={"settings-language-picker"}>
+            <ListItem
+              label={selectLanguage.label}
+              accessibilityLabel={selectLanguage.accessibilityLabel}
+              onPress={selectLanguage.onPress}
+              icon={selectLanguage.icon}
+            />
+          </View>
+        )}
         <View style={style.section}>
           {middleListItems.map((params, idx) => {
             const isLastItem = idx === middleListItems.length - 1
