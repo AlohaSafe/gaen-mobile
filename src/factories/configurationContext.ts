@@ -22,6 +22,7 @@ export default Factory.define<Configuration>(() => ({
   healthAuthorityPrivacyPolicyUrl: "authorityPrivacyPolicyUrl",
   healthAuthorityLegalPrivacyPolicyUrl: "authorityLegalPrivacyPolicyUrl",
   healthAuthorityVerificationCodeInfoUrl: "authorityVerificationCodeInfoUrl",
+  includeSymptomOnsetDate: false,
   measurementSystem: "Imperial",
   minimumAge: "18",
   minimumPhoneDigits: 0,
