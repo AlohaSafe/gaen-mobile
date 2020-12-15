@@ -15,7 +15,7 @@ import { ExposureDatum } from "../../exposure"
 import { LoadingIndicator, StatusBar, Text } from "../../components"
 import { useStatusBarEffect } from "../../navigation/index"
 import DateInfoHeader from "./DateInfoHeader"
-import ExposureList from "./ExposureList"
+import HasExposures from "./HasExposures"
 import NoExposures from "./NoExposures"
 import { useExposureContext } from "../../ExposureContext"
 
@@ -169,7 +169,7 @@ const History: FunctionComponent<HistoryProps> = ({
         </View>
         <View style={style.listContainer}>
           {showExposureHistory ? (
-            <ExposureList exposures={exposures} />
+            <HasExposures exposures={exposures} />
           ) : (
             <NoExposures />
           )}
@@ -218,7 +218,7 @@ const style = StyleSheet.create({
     marginHorizontal: Spacing.medium,
   },
   listContainer: {
-    marginTop: Spacing.xxLarge,
+    marginTop: Spacing.medium,
     marginBottom: Spacing.large,
   },
   button: {
