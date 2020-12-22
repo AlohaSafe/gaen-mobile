@@ -26,6 +26,8 @@ Note that this is an optionally enabled feature and not every build includes it.
 
 - Number of ENs preceding key submission (Category: epi_analytics, Action: ens_preceding_positive_diagnosis_count)
 
+- User tapped next steps button (Category: product_analytics, Action: tapped_next_steps_button)
+
 - Session length
 
 - Screen views
