@@ -23,8 +23,8 @@ import { Spacing, Typography, Buttons, Colors, Iconography } from "../styles"
 
 const ActivateExposureNotifications: FunctionComponent = () => {
   ////// ALOHA SAFE use imported insets //////
-  // const insets = useSafeAreaInsets()
-  // const style = createStyle(insets)
+  const insets = useSafeAreaInsets()
+  const style = createStyle(insets)
   ////// ALOHA SAFE use imported insets //////
   const { t } = useTranslation()
   const { exposureNotifications } = usePermissionsContext()
@@ -58,13 +58,13 @@ const ActivateExposureNotifications: FunctionComponent = () => {
             {t("onboarding.proximity_tracing_subheader3")}
           </Text>
         </View>
-        {!isENActive ? <EnableENButtons /> : <ENAlreadyEnabledButtons />}
       </ScrollView>
+      {!isENActive ? <EnableENButtons style={style} /> : <ENAlreadyEnabledButtons style={style} />}
     </SafeAreaView>
   )
 }
 
-const EnableENButtons: FunctionComponent = () => {
+const EnableENButtons: FunctionComponent = ({style}) => {
   const { t } = useTranslation()
   const { trackEvent } = useProductAnalyticsContext()
   const { goToNextScreenFrom } = useActivationNavigation()
@@ -81,7 +81,7 @@ const EnableENButtons: FunctionComponent = () => {
   }
 
   return (
-    <View>
+    <View style={style.buttonsContainer}>
       <TouchableOpacity onPress={handleOnPressEnable} style={style.button}>
         <Text style={style.buttonText}>
           {t("onboarding.proximity_tracing_button")}
@@ -93,11 +93,26 @@ const EnableENButtons: FunctionComponent = () => {
       >
         <Text style={style.secondaryButtonText}>{t("common.no_thanks")}</Text>
       </TouchableOpacity>
+      {/* ALOHA SAFE moved buttons outside of scroll view */}
+      {/* <View style={style.buttonsContainer}>
+        <TouchableOpacity onPress={handleOnPressEnable} style={style.button}>
+          <Text style={style.buttonText}>
+            {t("onboarding.proximity_tracing_button")}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={handleOnPressDontEnable}
+          style={style.secondaryButton}
+        >
+          <Text style={style.secondaryButtonText}>{t("common.no_thanks")}</Text>
+        </TouchableOpacity>
+      </View> */}
+      {/* ALOHA SAFE moved buttons outside of scroll view */}
     </View>
   )
 }
 
-const ENAlreadyEnabledButtons: FunctionComponent = () => {
+const ENAlreadyEnabledButtons: FunctionComponent = ({style}) => {
   const { t } = useTranslation()
   const { goToNextScreenFrom } = useActivationNavigation()
 
@@ -116,21 +131,6 @@ const ENAlreadyEnabledButtons: FunctionComponent = () => {
             height={Iconography.xSmall}
           />
         </View>
-      {/* ALOHA SAFE moved buttons outside of scroll view */}
-      {/* <View style={style.buttonsContainer}>
-        <TouchableOpacity onPress={handleOnPressEnable} style={style.button}>
-          <Text style={style.buttonText}>
-            {t("onboarding.proximity_tracing_button")}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={handleOnPressDontEnable}
-          style={style.secondaryButton}
-        >
-          <Text style={style.secondaryButtonText}>{t("common.no_thanks")}</Text>
-        </TouchableOpacity>
-      </View> */}
-      {/* ALOHA SAFE moved buttons outside of scroll view */}
         <View style={style.alreadyActiveTextContainer}>
           <Text style={style.alreadyActiveText}>
             {t("onboarding.proximity_tracing_already_active")}
@@ -144,137 +144,98 @@ const ENAlreadyEnabledButtons: FunctionComponent = () => {
   )
 }
 
-// ////// ALOHA SAFE createStyle for insets //////
-// const createStyle = (insets: EdgeInsets) => {
-//   /* eslint-disable react-native/no-unused-styles */
-//   return StyleSheet.create({
-//     safeArea: {
-//       ////// ALOHA SAFE justify and flex //////
-//       justifyContent: "space-between",
-//       flex: 1,
-//       ////// ALOHA SAFE justify and flex //////
-//       backgroundColor: Colors.background.primaryLight,
-//     },
-//     container: {
-//       backgroundColor: Colors.background.primaryLight,
-//       // height: "100%",
-//     },
-//     contentContainer: {
-//       paddingVertical: Spacing.large,
-//       paddingHorizontal: Spacing.medium,
-//     },
-//     content: {
-//       marginBottom: Spacing.medium,
-//     },
-//     header: {
-//       ...Typography.header.x60, // header1 ??
-//       marginBottom: Spacing.large,
-//       ////// ALOHA SAFE added color //////
-//       color: Colors.asBlue,
-//     },
-//     subheader: {
-//       ...Typography.header.x20, // header5 ???
-//       marginBottom: Spacing.xSmall,
-//       ////// ALOHA SAFE added color //////
-//       color: Colors.asBlue,
-//     },
-//     body: {
-//       ...Typography.body.x30, // body1 ???
-//       marginBottom: Spacing.xxLarge,
-//     },
-//     ////// ALOHA SAFE button styles //////
-//     buttonsContainer: {
-//       alignItems: "center",
-//       paddingTop: Spacing.small,
-//       paddingBottom: insets.bottom + Spacing.small,
-//     },
-//     nextButton: {
-//       width: "95%",
-//       alignSelf: "center",
-//       marginBottom: Spacing.small,
-//     },
-//     nextButtonGradient: {
-//       paddingTop: Spacing.xSmall,
-//       paddingBottom: Spacing.xSmall + 1,
-//       width: "95%",
-//       alignSelf: "center",
-//     },
-//     ////// ALOHA SAFE button styles //////
-//     button: {
-//       ...Buttons.primary.base,
-//     },
-//     buttonText: {
-//       ...Typography.button.primary,
-//     },
-//     secondaryButton: {
-//       ...Buttons.secondary.base,
-//     },
-//     secondaryButtonText: {
-//       ...Typography.button.secondary,
-//       ////// ALOHA SAFE added color //////
-//       color: Colors.asGray,
-//     },
-//   })
-// }
-
-const style = StyleSheet.create({
-  safeArea: {
-    backgroundColor: Colors.background.primaryLight,
-  },
-  container: {
-    backgroundColor: Colors.background.primaryLight,
-    height: "100%",
-  },
-  contentContainer: {
-    paddingVertical: Spacing.large,
-    paddingHorizontal: Spacing.medium,
-  },
-  content: {
-    marginBottom: Spacing.medium,
-  },
-  header: {
-    ...Typography.header.x60,
-    marginBottom: Spacing.large,
-  },
-  subheader: {
-    ...Typography.header.x20,
-    marginBottom: Spacing.xSmall,
-  },
-  body: {
-    ...Typography.body.x30,
-    marginBottom: Spacing.xxLarge,
-  },
-  button: {
-    ...Buttons.primary.base,
-  },
-  buttonText: {
-    ...Typography.button.primary,
-  },
-  secondaryButton: {
-    ...Buttons.secondary.base,
-  },
-  secondaryButtonText: {
-    ...Typography.button.secondary,
-  },
-  alreadyActiveContainer: {
-    borderTopWidth: 1,
-    borderTopColor: Colors.neutral.shade50,
-  },
-  alreadyActiveInfoContainer: {
-    flexDirection: "row",
-    paddingVertical: Spacing.large,
-  },
-  alreadyActiveIconContainer: {
-    flex: 1,
-    justifyContent: "center",
-  },
-  alreadyActiveTextContainer: {
-    flex: 8,
-    justifyContent: "center",
-  },
-  alreadyActiveText: {
-    ...Typography.body.x30,
-  },
-})
+////// ALOHA SAFE createStyle for insets //////
+const createStyle = (insets: EdgeInsets) => {
+  /* eslint-disable react-native/no-unused-styles */
+  return StyleSheet.create({
+    safeArea: {
+      ////// ALOHA SAFE justify and flex //////
+      justifyContent: "space-between",
+      flex: 1,
+      ////// ALOHA SAFE justify and flex //////
+      backgroundColor: Colors.background.primaryLight,
+    },
+    container: {
+      backgroundColor: Colors.background.primaryLight,
+      // height: "100%",
+    },
+    contentContainer: {
+      paddingVertical: Spacing.large,
+      paddingHorizontal: Spacing.medium,
+    },
+    content: {
+      marginBottom: Spacing.medium,
+    },
+    header: {
+      ...Typography.header.x60, // header1 ??
+      marginBottom: Spacing.large,
+      ////// ALOHA SAFE added color //////
+      color: Colors.asBlue,
+    },
+    subheader: {
+      ...Typography.header.x20, // header5 ???
+      marginBottom: Spacing.xSmall,
+      ////// ALOHA SAFE added color //////
+      color: Colors.asBlue,
+    },
+    body: {
+      ...Typography.body.x30, // body1 ???
+      marginBottom: Spacing.xxLarge,
+    },
+    ////// ALOHA SAFE button styles //////
+    buttonsContainer: {
+      alignItems: "center",
+      paddingTop: Spacing.small,
+      paddingBottom: insets.bottom + Spacing.small,
+    },
+    nextButton: {
+      width: "95%",
+      alignSelf: "center",
+      marginBottom: Spacing.small,
+    },
+    nextButtonGradient: {
+      paddingTop: Spacing.xSmall,
+      paddingBottom: Spacing.xSmall + 1,
+      width: "95%",
+      alignSelf: "center",
+    },
+    ////// ALOHA SAFE button styles //////
+    button: {
+      ...Buttons.primary.base,
+    },
+    buttonText: {
+      ...Typography.button.primary,
+    },
+    secondaryButton: {
+      ...Buttons.secondary.base,
+    },
+    secondaryButtonText: {
+      ...Typography.button.secondary,
+      ////// ALOHA SAFE added color //////
+      color: Colors.asGray,
+    },
+    alreadyActiveContainer: {
+      borderTopWidth: 1,
+      borderTopColor: Colors.neutral.shade50,
+      alignItems: "center",
+      paddingBottom: insets.bottom + Spacing.small,
+    },
+    alreadyActiveInfoContainer: {
+      flexDirection: "row",
+      paddingVertical: Spacing.large,
+    },
+    alreadyActiveIconContainer: {
+      flex: 1,
+      justifyContent: "center",
+    },
+    alreadyActiveTextContainer: {
+      flex: 8,
+      justifyContent: "center",
+    },
+    alreadyActiveText: {
+      ...Typography.body.x30,
+    },
+  })
+}
 
 export default ActivateExposureNotifications
