@@ -131,7 +131,11 @@ const Settings: FunctionComponent = () => {
   return (
     <>
       <StatusBar backgroundColor={Colors.secondary.shade10} />
-      <ScrollView contentContainerStyle={style.contentContainer} style={style.container} alwaysBounceVertical={false}>
+      <ScrollView
+        contentContainerStyle={style.contentContainer}
+        style={style.container}
+        alwaysBounceVertical={false}
+      >
         <TouchableWithoutFeedback
           touchSoundDisabled
           onPress={incrementClickCount}

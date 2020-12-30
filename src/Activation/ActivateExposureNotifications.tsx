@@ -59,12 +59,16 @@ const ActivateExposureNotifications: FunctionComponent = () => {
           </Text>
         </View>
       </ScrollView>
-      {!isENActive ? <EnableENButtons style={style} /> : <ENAlreadyEnabledButtons style={style} />}
+      {!isENActive ? (
+        <EnableENButtons style={style} />
+      ) : (
+        <ENAlreadyEnabledButtons style={style} />
+      )}
     </SafeAreaView>
   )
 }
 
-const EnableENButtons: FunctionComponent = ({style}) => {
+const EnableENButtons: FunctionComponent = ({ style }) => {
   const { t } = useTranslation()
   const { trackEvent } = useProductAnalyticsContext()
   const { goToNextScreenFrom } = useActivationNavigation()
@@ -112,7 +116,7 @@ const EnableENButtons: FunctionComponent = ({style}) => {
   )
 }
 
-const ENAlreadyEnabledButtons: FunctionComponent = ({style}) => {
+const ENAlreadyEnabledButtons: FunctionComponent = ({ style }) => {
   const { t } = useTranslation()
   const { goToNextScreenFrom } = useActivationNavigation()
 

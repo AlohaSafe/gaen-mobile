@@ -1,5 +1,11 @@
 import React, { FunctionComponent } from "react"
-import { ScrollView, View, Image, StyleSheet, TouchableOpacity } from "react-native"
+import {
+  ScrollView,
+  View,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native"
 import { useTranslation } from "react-i18next"
 
 import { StatusBar, Text } from "../components"
