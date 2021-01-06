@@ -69,7 +69,6 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="exposureHistory"
                     android:scheme="pathcheck"
                     tools:ignore="AppLinkUrlError" />
             </intent-filter>
