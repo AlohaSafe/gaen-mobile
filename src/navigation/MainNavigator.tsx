@@ -195,7 +195,7 @@ const MainNavigator: FunctionComponent = () => {
             return (
               <SelfAssessmentStack
                 {...props}
-                destinationOnCancel={Stacks.ExposureHistory}
+                destinationOnCancel={Stacks.Home}
               />
             )
           }}
