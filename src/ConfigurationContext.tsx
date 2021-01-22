@@ -22,6 +22,7 @@ export interface Configuration {
   healthAuthorityAdviceUrl: string
   healthAuthorityCovidDataUrl: string | null
   healthAuthorityEulaUrl: string | null
+  healthAuthorityDataDashboardUrl: string
   healthAuthorityLearnMoreUrl: string
   healthAuthorityLegalPrivacyPolicyUrl: string | null
   healthAuthorityHealthCheckUrl: string | null
@@ -96,6 +97,7 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
 
   const appDownloadUrl = env.SHARE_APP_LINK || null
   const healthAuthorityCovidDataUrl = env.AUTHORITY_COVID_DATA_URL || null
+  const healthAuthorityDataDashboardUrl = env.AUTHORITY_DATA_DASHBOARD_URL || healthAuthorityCovidDataUrl || ""
   const healthAuthorityEulaUrl = env.EULA_URL || null
   const healthAuthorityHealthCheckUrl = env.HEALTH_CHECK_URL || null
   const healthAuthorityLegalPrivacyPolicyUrl =
@@ -158,6 +160,7 @@ const ConfigurationProvider: FunctionComponent = ({ children }) => {
         findATestCenterUrl,
         healthAuthorityAdviceUrl,
         healthAuthorityCovidDataUrl,
+        healthAuthorityDataDashboardUrl,
         healthAuthorityEulaUrl,
         healthAuthorityHealthCheckUrl,
         healthAuthorityLearnMoreUrl,

@@ -3,29 +3,30 @@ import {
   View,
   Linking,
   TouchableOpacity,
-  ScrollView,
+  // ScrollView,
   StyleSheet,
 } from "react-native"
+import { WebView } from 'react-native-webview';
 import { useTranslation } from "react-i18next"
 
 import { useConfigurationContext } from "../../ConfigurationContext"
 import { Text } from "../../components"
-import { useCovidDataContext } from "../Context"
-import StateData from "./StateData"
+// import { useCovidDataContext } from "../Context"
+// import StateData from "./StateData"
 
 import { Typography, Buttons, Colors, Spacing } from "../../styles"
 
 const CovidDataDashboard: FunctionComponent = () => {
   const { t } = useTranslation()
 
-  const {
-    request: { status, data },
-  } = useCovidDataContext()
-  const { healthAuthorityCovidDataUrl } = useConfigurationContext()
+  // const {
+  //   request: { status, data },
+  // } = useCovidDataContext()
+  // if (status === "MISSING_INFO") {
+  //   return null
+  // }
 
-  if (status === "MISSING_INFO") {
-    return null
-  }
+  const { healthAuthorityCovidDataUrl, healthAuthorityDataDashboardUrl } = useConfigurationContext()
 
   const handleOnPressLearnMore = () => {
     if (healthAuthorityCovidDataUrl) {
@@ -35,12 +36,9 @@ const CovidDataDashboard: FunctionComponent = () => {
 
   return (
     <View style={style.outerContainer}>
-      <ScrollView
-        style={style.container}
-        contentContainerStyle={style.contentContainer}
-      >
-        <StateData data={data} />
-      </ScrollView>
+      <WebView
+        source={{ uri: healthAuthorityDataDashboardUrl }}
+      />
       {healthAuthorityCovidDataUrl ? (
         <TouchableOpacity
           style={style.button}
