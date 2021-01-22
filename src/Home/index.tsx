@@ -68,6 +68,7 @@ const Home: FunctionComponent = () => {
         <NotificationsOff />
         <ExposureDetectionStatusCard />
         {displayCovidData && <CovidDataCard />}
+        {appDownloadUrl && <ShareLink appDownloadUrl={appDownloadUrl} />}
         {verificationStrategy === "Simple" ? (
           <SimpleVerificationFlowButton />
         ) : (
@@ -76,7 +77,6 @@ const Home: FunctionComponent = () => {
         {healthAuthorityHealthCheckUrl && (
           <HealthCheckLink healthCheckUrl={healthAuthorityHealthCheckUrl} />
         )}
-        {appDownloadUrl && <ShareLink appDownloadUrl={appDownloadUrl} />}
         {/* {displaySelfAssessment && <SelfAssessment />}
         {displaySymptomHistory && <SymptomHistory />} */}
         {displayCallEmergencyServices && (
