@@ -1372,7 +1372,7 @@
 				CODE_SIGN_ENTITLEMENTS = "BT/BT-Development.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 37;
 				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = J2YMJA4HKD;
@@ -1383,7 +1383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.0.12;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift/RealmSwift.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation/ZIPFoundation.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Private/Realm/Realm.modulemap\" -D DEBUG -D FB_SONARKIT_ENABLED";
 				PRODUCT_BUNDLE_IDENTIFIER = org.alohasafe.alert;
 				PRODUCT_NAME = BT;
@@ -1403,7 +1403,7 @@
 				CODE_SIGN_ENTITLEMENTS = "BT/BT-Production.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 37;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = J2YMJA4HKD;
@@ -1414,7 +1414,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.0.12;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift/RealmSwift.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/ZIPFoundation/ZIPFoundation.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Private/Realm/Realm.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = org.alohasafe.alert;
 				PRODUCT_NAME = BT;
