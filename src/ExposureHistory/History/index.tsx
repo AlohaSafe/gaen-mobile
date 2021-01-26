@@ -6,10 +6,11 @@ import {
   View,
   ScrollView,
 } from "react-native"
+import env from "react-native-config"
 import { SvgXml } from "react-native-svg"
 import { useTranslation } from "react-i18next"
 import { useNavigation, useIsFocused } from "@react-navigation/native"
-// import { showMessage } from "react-native-flash-message"
+import { showMessage } from "react-native-flash-message"
 
 import { ExposureDatum } from "../../exposure"
 import { LoadingIndicator, StatusBar, Text } from "../../components"
@@ -47,92 +48,92 @@ const History: FunctionComponent<HistoryProps> = ({
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   const navigation = useNavigation()
-  // const { detectExposures } = useExposureContext()
-  // const { successFlashMessageOptions } = Affordances.useFlashMessageOptions()
-  // const {
-  //   exposureNotifications: { status },
-  // } = usePermissionsContext()
-  // const requestExposureNotifications = useRequestExposureNotifications()
+  const { detectExposures } = useExposureContext()
+  const { successFlashMessageOptions } = Affordances.useFlashMessageOptions()
+  const {
+    exposureNotifications: { status },
+  } = usePermissionsContext()
+  const requestExposureNotifications = useRequestExposureNotifications()
 
-  // const [checkingForExposures, setCheckingForExposures] = useState<boolean>(
-  //   false,
-  // )
-  const [checkingForExposures] = useState<boolean>(false)
+  const showCheckForExposuresButton = env.POST_DIAGNOSIS_KEYS_URL.indexOf("integration") > -1
+  const [checkingForExposures, setCheckingForExposures] = useState<boolean>(
+    false,
+  )
 
   const handleOnPressMoreInfo = () => {
     navigation.navigate(ExposureHistoryStackScreens.MoreInfo)
   }
 
-  // const showEnableExposureNotificationsAlert = () => {
-  //   Alert.alert(
-  //     t("exposure_notification_alerts.cant_check_for_exposures_title"),
-  //     t("exposure_notification_alerts.cant_check_for_exposures_body"),
-  //     [
-  //       {
-  //         text: t("common.back"),
-  //         style: "cancel",
-  //       },
-  //       {
-  //         text: t(
-  //           "exposure_notification_alerts.cant_check_for_exposures_button",
-  //         ),
-  //         onPress: () => requestExposureNotifications(),
-  //       },
-  //     ],
-  //   )
-  // }
+  const showEnableExposureNotificationsAlert = () => {
+    Alert.alert(
+      t("exposure_notification_alerts.cant_check_for_exposures_title"),
+      t("exposure_notification_alerts.cant_check_for_exposures_body"),
+      [
+        {
+          text: t("common.back"),
+          style: "cancel",
+        },
+        {
+          text: t(
+            "exposure_notification_alerts.cant_check_for_exposures_button",
+          ),
+          onPress: () => requestExposureNotifications(),
+        },
+      ],
+    )
+  }
 
-  // const checkForExposures = async () => {
-  //   setCheckingForExposures(true)
-  //   const result = await detectExposures()
-  //   if (result.kind === "success") {
-  //     showMessage({
-  //       message: t("common.success"),
-  //       ...successFlashMessageOptions,
-  //     })
-  //   } else if (result.kind === "failure") {
-  //     switch (result.error) {
-  //       case "RateLimited":
-  //         showMessage({
-  //           message: t("common.success"),
-  //           ...successFlashMessageOptions,
-  //         })
-  //         break
-  //       case "NotAuthorized":
-  //         showAlert(
-  //           t(
-  //             "exposure_notification_alerts.share_exposure_information_ios_title",
-  //           ),
-  //           t(
-  //             "exposure_notification_alerts.share_exposure_information_ios_body",
-  //           ),
-  //         )
-  //         break
-  //       default:
-  //         showAlert(
-  //           t("exposure_notification_alerts.unhandled_error_title"),
-  //           t("exposure_notification_alerts.unhandled_error_body"),
-  //         )
-  //     }
-  //   }
-  //   setCheckingForExposures(false)
-  // }
+  const checkForExposures = async () => {
+    setCheckingForExposures(true)
+    const result = await detectExposures()
+    if (result.kind === "success") {
+      showMessage({
+        message: t("common.success"),
+        ...successFlashMessageOptions,
+      })
+    } else if (result.kind === "failure") {
+      switch (result.error) {
+        case "RateLimited":
+          showMessage({
+            message: t("common.success"),
+            ...successFlashMessageOptions,
+          })
+          break
+        case "NotAuthorized":
+          showAlert(
+            t(
+              "exposure_notification_alerts.share_exposure_information_ios_title",
+            ),
+            t(
+              "exposure_notification_alerts.share_exposure_information_ios_body",
+            ),
+          )
+          break
+        default:
+          showAlert(
+            t("exposure_notification_alerts.unhandled_error_title"),
+            t("exposure_notification_alerts.unhandled_error_body"),
+          )
+      }
+    }
+    setCheckingForExposures(false)
+  }
 
-  // const showAlert = (title: string, body: string) => {
-  //   Alert.alert(title, body, [
-  //     {
-  //       text: t("common.okay"),
-  //     },
-  //   ])
-  // }
+  const showAlert = (title: string, body: string) => {
+    Alert.alert(title, body, [
+      {
+        text: t("common.okay"),
+      },
+    ])
+  }
 
-  // const handleOnPressCheckForExposures = async () => {
-  //   if (status !== "Active") {
-  //     showEnableExposureNotificationsAlert()
-  //   } else {
-  //     await checkForExposures()
-  //   }
-  // }
+  const handleOnPressCheckForExposures = async () => {
+    if (status !== "Active") {
+      showEnableExposureNotificationsAlert()
+    } else {
+      await checkForExposures()
+    }
+  }
 
   const showExposureHistory = exposures.length > 0
 
@@ -171,20 +172,22 @@ const History: FunctionComponent<HistoryProps> = ({
           {showExposureHistory ? (
             <HasExposures exposures={exposures} />
           ) : (
-            <NoExposures />
-          )}
+              <NoExposures />
+            )}
         </View>
       </ScrollView>
-      {/* <TouchableOpacity
-        onPress={handleOnPressCheckForExposures}
-        style={style.button}
-        disabled={checkingForExposures}
-        testID="check-for-exposures-button"
-      >
-        <Text style={style.buttonText}>
-          {t("exposure_history.check_for_exposures")}
-        </Text>
-      </TouchableOpacity> */}
+      {showCheckForExposuresButton && (
+        <TouchableOpacity
+          onPress={handleOnPressCheckForExposures}
+          style={style.button}
+          disabled={checkingForExposures}
+          testID="check-for-exposures-button"
+        >
+          <Text style={style.buttonText}>
+            {t("exposure_history.check_for_exposures")}
+          </Text>
+        </TouchableOpacity>
+      )}
       {checkingForExposures && <LoadingIndicator />}
     </>
   )
