@@ -156,11 +156,12 @@
   },
   "exposure_history": {
     "check_for_exposures": "Check for exposures",
+    "contact_provider": "Contact a healthcare provider to be tested for COVID-19 and let them know about your possible exposure.",
     "days_remaining": "There are {{daysOfQuarantineLeft}} days left in your recommended quarantine period.",
     "exposure_detail": {
       "2m_apart": "2m apart",
       "6ft_apart": "6ft apart",
-      "general_guidance": "General Guidance",
+      "general_guidance": "General guidance",
       "ha_guidance_header": "What should I do?",
       "header": "Someone you were near has since tested positive for COVID-19.",
       "next_steps": "Review health guidelines",

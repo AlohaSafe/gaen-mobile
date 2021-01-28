@@ -47,36 +47,39 @@ const NextSteps: FunctionComponent<NextStepsProps> = ({ exposureDate }) => {
   }
 
   const displayNextStepsLink =
-    !displaySelfAssessment && healthAuthorityAdviceUrl !== ""
+    ////// ALOHA SAFE disable self assessment env var check //////
+    // !displaySelfAssessment &&
+    healthAuthorityAdviceUrl !== ""
 
   return (
     <>
       {displayCallbackForm && (
         <RequestCallBackActions healthAuthorityName={healthAuthorityName} />
       )}
-      {displaySelfAssessment && (
+      {/* ////// ALOHA SAFE swap order and color of nextSteps/general guidance button and selfAssessment/personalized guidance button  ////// */}
+      {displayNextStepsLink && (
         <TouchableOpacity
           style={style.buttonOutlined}
+          onPress={handleOnPressNextStep}
+          accessibilityLabel={t("exposure_history.exposure_detail.next_steps")}
+          disabled={!isInternetReachable}
+        >
+          <Text style={style.buttonOutlinedText}>
+            {t("exposure_history.exposure_detail.general_guidance")}
+          </Text>
+          <SvgXml xml={Icons.Arrow} fill={Colors.primary.shade100} />
+        </TouchableOpacity>
+      )}
+      {displaySelfAssessment && (
+        <TouchableOpacity
+          style={style.button}
           onPress={handleOnPressPersonalizeMyGuidance}
           accessibilityLabel={t(
             "exposure_history.exposure_detail.personalize_my_guidance",
           )}
         >
-          <Text style={style.buttonOutlinedText}>
-            {t("exposure_history.exposure_detail.personalize_my_guidance")}
-          </Text>
-          <SvgXml xml={Icons.Arrow} fill={Colors.primary.shade100} />
-        </TouchableOpacity>
-      )}
-      {displayNextStepsLink && (
-        <TouchableOpacity
-          style={style.button}
-          onPress={handleOnPressNextStep}
-          accessibilityLabel={t("exposure_history.exposure_detail.next_steps")}
-          disabled={!isInternetReachable}
-        >
           <Text style={style.buttonText}>
-            {t("exposure_history.exposure_detail.next_steps")}
+            {t("exposure_history.exposure_detail.personalize_my_guidance")}
           </Text>
           <SvgXml xml={Icons.Arrow} fill={Colors.background.primaryLight} />
         </TouchableOpacity>
