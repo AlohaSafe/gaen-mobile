@@ -63,8 +63,7 @@ const linking: LinkingOptions = {
     screens: {
       App: {
         screens: {
-          ExposureHistory: "exposureHistory"
-          
+          ExposureHistory: "exposureHistory",
         },
       },
       AffectedUserStack: {

@@ -6,7 +6,7 @@ import {
   // ScrollView,
   StyleSheet,
 } from "react-native"
-import { WebView } from 'react-native-webview';
+import { WebView } from "react-native-webview"
 import { useTranslation } from "react-i18next"
 
 import { useConfigurationContext } from "../../ConfigurationContext"
@@ -26,7 +26,10 @@ const CovidDataDashboard: FunctionComponent = () => {
   //   return null
   // }
 
-  const { healthAuthorityCovidDataUrl, healthAuthorityDataDashboardUrl } = useConfigurationContext()
+  const {
+    healthAuthorityCovidDataUrl,
+    healthAuthorityDataDashboardUrl,
+  } = useConfigurationContext()
 
   const handleOnPressLearnMore = () => {
     if (healthAuthorityCovidDataUrl) {
@@ -36,9 +39,7 @@ const CovidDataDashboard: FunctionComponent = () => {
 
   return (
     <View style={style.outerContainer}>
-      <WebView
-        source={{ uri: healthAuthorityDataDashboardUrl }}
-      />
+      <WebView source={{ uri: healthAuthorityDataDashboardUrl }} />
       {healthAuthorityCovidDataUrl ? (
         <TouchableOpacity
           style={style.button}

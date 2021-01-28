@@ -55,7 +55,8 @@ const History: FunctionComponent<HistoryProps> = ({
   } = usePermissionsContext()
   const requestExposureNotifications = useRequestExposureNotifications()
 
-  const showCheckForExposuresButton = env.POST_DIAGNOSIS_KEYS_URL.indexOf("integration") > -1
+  const showCheckForExposuresButton =
+    env.POST_DIAGNOSIS_KEYS_URL.indexOf("integration") > -1
   const [checkingForExposures, setCheckingForExposures] = useState<boolean>(
     false,
   )
@@ -172,8 +173,8 @@ const History: FunctionComponent<HistoryProps> = ({
           {showExposureHistory ? (
             <HasExposures exposures={exposures} />
           ) : (
-              <NoExposures />
-            )}
+            <NoExposures />
+          )}
         </View>
       </ScrollView>
       {showCheckForExposuresButton && (
