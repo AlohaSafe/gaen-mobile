@@ -6,19 +6,21 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ////// ALOHA SAFE import ScrollView //////
+  ScrollView,
 } from "react-native"
 import { useTranslation } from "react-i18next"
 import dayjs from "dayjs"
 import DateTimePicker from "@react-native-community/datetimepicker"
 import { useNavigation } from "@react-navigation/native"
 import { SvgXml } from "react-native-svg"
-import StaticSafeAreaInsets from "react-native-static-safe-area-insets"
-
+////// ALOHA SAFE remove insets //////
 import { AffectedUserFlowStackScreens, useStatusBarEffect } from "../navigation"
 import { useAffectedUserContext } from "./AffectedUserContext"
 import Checkbox from "../components/Checkbox"
 
-import { Buttons, Colors, Forms, Spacing, Typography } from "../styles"
+////// ALOHA SAFE import Outlines for rounded box symptom list //////
+import { Buttons, Colors, Forms, Spacing, Typography, Outlines } from "../styles"
 import { Icons } from "../assets"
 
 type Posix = number
@@ -26,6 +28,8 @@ type Posix = number
 const SymptomOnsetDate: FunctionComponent = () => {
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
+  ////// ALOHA SAFE create symptom list object //////
+  const symptomKeys = Object.keys(t('symptom', { returnObjects: true }))
   const navigation = useNavigation()
 
   const {
@@ -79,57 +83,76 @@ const SymptomOnsetDate: FunctionComponent = () => {
   const noSymptomsContainerStyle = localSymptomOnsetDate ? { opacity: 0.5 } : {}
 
   return (
-    <View style={style.container}>
+    ////// ALOHA SAFE use ScrollView and add symptom list //////
+    <ScrollView 
+      style={style.container}
+      contentContainerStyle={style.contentContainer}
+      alwaysBounceVertical={false}
+    >
+      <Text style={style.headerText}>
+        {t("aloha_safe.have_you_had_symptoms")}
+      </Text>
       <View>
-        <Text style={style.headerText}>
-          {t("export.symptom_onset.symptoms")}
+        <Text style={style.bodyText}>
+          {t("aloha_safe.recognizing_symptoms")}
         </Text>
-
-        <View style={style.radioButtonsContainer}>
+      </View>
+      <View>
+        <View >
           <Text style={style.subheaderText}>
-            {t("export.symptom_onset.did_you_have_symptoms")}
+            {t("aloha_safe.symptoms_include")}
           </Text>
-          <View style={noSymptomsContainerStyle}>
-            <Checkbox
-              label={t("export.symptom_onset.no_i_didnt_have")}
-              onPress={handleOnPressNoSymptoms}
-              checked={Boolean(!localSymptomOnsetDate)}
-            />
-          </View>
-          <View style={hasSymptomsContainerStyle}>
-            <Checkbox
-              label={t("export.symptom_onset.yes_i_did_have")}
-              onPress={handleOnPressHasSymptoms}
-              checked={Boolean(localSymptomOnsetDate)}
-            />
-          </View>
         </View>
-
-        {localSymptomOnsetDate ? (
-          <View>
-            <Text style={style.subheaderText}>
-              {t("export.symptom_onset.when_did_your_symptoms")}
-            </Text>
-            <View style={style.inputContainer}>
-              {Platform.OS === "android" && (
-                <Pressable
-                  onPress={handleOnPressDateInput}
-                  style={style.dateInput}
-                >
-                  <Text style={style.dateInputText}>{formattedDate}</Text>
-                </Pressable>
-              )}
-              {showDatePicker && (
-                <DatePicker
-                  date={localSymptomOnsetDate}
-                  handleOnChangeTestDate={handleOnChangeTestDate}
-                />
-              )}
-            </View>
-          </View>
-        ) : null}
+        <View style={style.listContainer}>
+          {symptomKeys.map((symptomKey, idx) => {
+            return (
+              <Text key={idx} style={style.listText}>
+              • {t(`symptom.${symptomKey}`)}
+              </Text>
+            )
+          })}
+        </View>
+      </View>
+      <View style={style.radioButtonsContainer}>
+        <View style={noSymptomsContainerStyle}>
+          <Checkbox
+            label={t("export.symptom_onset.no_i_didnt_have")}
+            onPress={handleOnPressNoSymptoms}
+            checked={Boolean(!localSymptomOnsetDate)}
+          />
+        </View>
+        <View style={hasSymptomsContainerStyle}>
+          <Checkbox
+            label={t("export.symptom_onset.yes_i_did_have")}
+            onPress={handleOnPressHasSymptoms}
+            checked={Boolean(localSymptomOnsetDate)}
+          />
+        </View>
       </View>
 
+      {localSymptomOnsetDate ? (
+        <View>
+          <Text style={style.subheaderText}>
+            {t("export.symptom_onset.when_did_your_symptoms")}
+          </Text>
+          <View style={style.inputContainer}>
+            {Platform.OS === "android" && (
+              <Pressable
+                onPress={handleOnPressDateInput}
+                style={style.dateInput}
+              >
+                <Text style={style.dateInputText}>{formattedDate}</Text>
+              </Pressable>
+            )}
+            {showDatePicker && (
+              <DatePicker
+                date={localSymptomOnsetDate}
+                handleOnChangeTestDate={handleOnChangeTestDate}
+              />
+            )}
+          </View>
+        </View>
+      ) : null}
       <TouchableOpacity
         style={style.button}
         onPress={handleOnPressContinue}
@@ -138,7 +161,7 @@ const SymptomOnsetDate: FunctionComponent = () => {
         <Text style={style.buttonText}>{t("common.continue")}</Text>
         <SvgXml xml={Icons.Arrow} fill={Colors.background.primaryLight} />
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   )
 }
 
@@ -165,12 +188,15 @@ const DatePicker: FunctionComponent<DatePickerProps> = ({
 
 const style = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "space-between",
-    paddingTop: Spacing.medium,
-    paddingHorizontal: Spacing.large,
-    paddingBottom: StaticSafeAreaInsets.safeAreaInsetsBottom + Spacing.small,
     backgroundColor: Colors.background.primaryLight,
+  },
+  ////// ALOHA SAFE modify containers for ScrollView //////
+  contentContainer: {
+    flexGrow: 1,
+    justifyContent: "center",
+    paddingTop: Spacing.small,
+    paddingHorizontal: Spacing.large,
+    paddingBottom: Spacing.xLarge,
   },
   headerText: {
     ...Typography.header.x60,
@@ -199,6 +225,24 @@ const style = StyleSheet.create({
   buttonText: {
     ...Typography.button.primary,
     marginRight: Spacing.small,
+  },
+  ////// ALOHA SAFE add styles for descritpion text and symptoms list //////
+  bodyText: {
+    ...Typography.body.x30,
+    marginBottom: Spacing.medium,
+  },
+  listContainer: {
+    ...Outlines.roundedBorder,
+    paddingHorizontal: Spacing.medium,
+    paddingVertical: Spacing.xxSmall,
+    marginHorizontal: Spacing.medium,
+    marginBottom: Spacing.large,
+    backgroundColor: Colors.secondary.shade50,
+    borderColor: Colors.secondary.shade100,
+  },
+  listText: {
+    ...Typography.body.x30,
+    marginBottom: Spacing.tiny,
   },
 })
 
