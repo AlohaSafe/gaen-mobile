@@ -156,7 +156,6 @@
   },
   "exposure_history": {
     "check_for_exposures": "Check for exposures",
-    "contact_provider": "Contact a healthcare provider to be tested for COVID-19 and let them know about your possible exposure.",
     "days_remaining": "There are {{daysOfQuarantineLeft}} days left in your recommended quarantine period.",
     "exposure_detail": {
       "2m_apart": "2m apart",
@@ -525,5 +524,13 @@
     "network_connection_title": "No Internet Connection",
     "unknown_body": "An unexpected error occurred. Please try again.",
     "unknown_title": "Something Went Wrong"
+  },
+  "aloha_safe": {
+    "contact_provider": "Contact a healthcare provider to be tested for COVID-19 and let them know about your possible exposure.",
+    "have_you_had_symptoms": "Have you had symptoms?",
+    "hdoh": "Hawaii State Department of Health",
+    "hawaii_us": "Hawaii, United States",
+    "recognizing_symptoms": "Recognizing COVID-19 symptoms, and when they started, can help identify when you were most infectious (usually several days before symptoms start). A person with COVID-19 may not have symptoms, but still be contagious.",
+    "symptoms_include": "Symptoms can include one or more of the following:"
   }
 }
