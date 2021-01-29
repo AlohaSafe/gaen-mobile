@@ -6,22 +6,24 @@
     "version": "Version:"
   },
   "aloha_safe": {
+    "about": "The AlohaSafe Alert app is made available by ",
     "contact_provider": "Contact a healthcare provider to be tested for COVID-19 and let them know about your possible exposure.",
     "have_you_had_symptoms": "Have you had symptoms?",
-    "hdoh": "Hawaii State Department of Health",
     "hawaii_us": "Hawaii, United States",
+    "healthAuthorityName": "Hawaii State Department of Health",
+    "legal": "AlohaSafe Alert Mobile Legal Policies:",
     "recognizing_symptoms": "Recognizing COVID-19 symptoms, and when they started, can help identify when you were most infectious (usually several days before symptoms start). A person with COVID-19 may not have symptoms, but still be contagious.",
     "symptoms_include": "Symptoms can include one or more of the following:"
   },
   "callback": {
-    "fill_out_the_info": "Fill out the information below and a contact tracer from {{healthAuthorityName}} will get in touch.",
-    "firstname": "First name",
-    "lastname": "Last name",
-    "phone_number_required": "Phone number (required)",
-    "request_a_call": "Request a call from a contact tracer",
-    "success_body": "Our contact tracers are working hard to keep you and your community safe. The {{healthAuthorityName}} has received your request for a call back. An expert will contact you within 24 hours.",
-    "success_got_it": "Got it",
-    "success_header": "You're in the queue"
+    "fill_out_the_info": "",
+    "firstname": "",
+    "lastname": "",
+    "phone_number_required": "",
+    "request_a_call": "",
+    "success_body": "",
+    "success_got_it": "",
+    "success_header": ""
   },
   "common": {
     "back": "Back",
@@ -69,19 +71,19 @@
   },
   "escrow_verification": {
     "error": {
-      "invalid_phone_number": "Phone number must be 10 digits"
+      "invalid_phone_number": ""
     },
-    "person_and_health_expert": "A person talking to a health expert",
+    "person_and_health_expert": "",
     "start": {
-      "body": "If you have tested positive for COVID-19 (not through an antibody test), you can anonymously report the test.\n\nReporting your test will help others in your community contain the spread of the virus.",
-      "header": "Report a positive test",
-      "what_is_a_verification_code": "What is a verification code?"
+      "body": "",
+      "header": "",
+      "what_is_a_verification_code": ""
     },
     "user_details_form": {
-      "phone_number": "Phone number",
-      "subheader": "Please provide your phone number and test date and we'll text you your verification code.",
-      "test_date": "Test date",
-      "test_details": "Test Details"
+      "phone_number": "",
+      "subheader": "",
+      "test_date": "",
+      "test_details": ""
     }
   },
   "export": {
@@ -126,9 +128,7 @@
       }
     },
     "symptom_onset": {
-      "did_you_have_symptoms": "Did you have any symptoms?",
       "no_i_didnt_have": "No, I didn't have any symptoms",
-      "symptoms": "Symptoms",
       "when_did_your_symptoms": "When did your symptoms begin?",
       "yes_i_did_have": "Yes, I did have symptoms"
     },
@@ -314,13 +314,13 @@
     "you_must_be": "You must be {{minimumAge}} or older to use {{applicationName}}. Are you over {{minimumAge}}?"
   },
   "product_analytics": {
-    "i_understand_and_consent": "I Understand and Consent",
-    "privacy_policy": "Privacy Policy",
-    "share_anonymized_data": "Share Anonymized Data",
-    "share_anonymized_data_disclaimer": "By proceeding, you agree to share anonymized event data with the {{healthAuthorityName}}",
-    "share_data_para_1": "Anonymous and aggregated data about how communities are using this app helps the {{healthAuthorityName}} Commission, analyze, understand, and contain the spread of COVID-19.",
-    "share_data_para_2": "This data contains no personally-identifying information.",
-    "stop_sharing_data": "Stop Sharing Data"
+    "i_understand_and_consent": "",
+    "privacy_policy": "",
+    "share_anonymized_data": "",
+    "share_anonymized_data_disclaimer": "",
+    "share_data_para_1": "",
+    "share_data_para_2": "",
+    "stop_sharing_data": ""
   },
   "screen_titles": {
     "bluetooth": "Bluetooth",
@@ -443,27 +443,9 @@
     "errors": {
       "deleting_data": "Sorry, we could not delete your data"
     },
-    "not_sharing_anonymized_data": "Not sharing anonymized data",
-    "share_anonymized_data": "Share anonymized data",
-    "sharing_anonymized_data": "Sharing anonymized data"
-  },
-  "symptom_history": {
-    "did_not_feel_well": "You did not feel well",
-    "errors": {
-      "updating_symptoms": "Sorry, we could not update your symptoms"
-    },
-    "felt_well": "You felt well",
-    "no_entry": "No entry",
-    "no_symptoms": "No symptoms",
-    "share_history": "Share symptom history",
-    "sharing": {
-      "header": "Symptom history from {{startDate}} to {{endDate}}",
-      "no_symptoms_were_logged": "No symptoms were logged",
-      "you_did_not_feel_well": "You did not feel well, symptoms included: {{symptomList}}",
-      "you_felt_well": "You felt well"
-    },
-    "symptom_history": "Symptoms",
-    "to_protect_your_privacy": "To protect your privacy, entries are stored on your device and deleted automatically after {{days}} days."
+    "not_sharing_anonymized_data": "",
+    "share_anonymized_data": "",
+    "sharing_anonymized_data": ""
   },
   "symptom": {
     "bluish_lips_or_face": "Bluish lips or face",
@@ -483,6 +465,24 @@
     "shortness_of_breath_or_difficulty_breathing": "Shortness of breath or difficulty breathing",
     "sore_throat": "Sore throat",
     "trouble_breathing": "Trouble breathing"
+  },
+  "symptom_history": {
+    "did_not_feel_well": "",
+    "errors": {
+      "updating_symptoms": ""
+    },
+    "felt_well": "",
+    "no_entry": "",
+    "no_symptoms": "",
+    "share_history": "",
+    "sharing": {
+      "header": "",
+      "no_symptoms_were_logged": "",
+      "you_did_not_feel_well": "",
+      "you_felt_well": ""
+    },
+    "symptom_history": "",
+    "to_protect_your_privacy": ""
   },
   "verification_code_alerts": {
     "code_used_body": "The verification code provided has already been used.",
