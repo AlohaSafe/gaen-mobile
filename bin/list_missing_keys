@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# Usage: list_missing_keys [json-filename] [src-dir-to-scan]
+
+jsonfilename = ARGV.shift || './src/locales/en.json'
+srcdir = ARGV.shift || './src'
+
+require 'json'
+
+# borrowed from https://github.com/AlohaSafe/xlsx-locales/blob/main/app/models/term.rb#L57
+def flatten_hash(hash, prefix: '', separator: '.')
+  new_hash = {}
+  hash.each do |k, v|
+    case v
+    when Hash then new_hash.merge!(flatten_hash(v, prefix: "#{prefix}#{k}.", separator: separator))
+    else new_hash["#{prefix}#{k}"] = v
+    end
+  end
+  new_hash
+end
+
+hash = flatten_hash(JSON.parse(File.read(jsonfilename)))
+
+`grep -R -e 't("[a-zA-Z_.]*")' -e "t('[a-zA-Z_.]*')" #{srcdir}`.each_line do |line|
+  puts line if line =~ /[^\w]t\(['"]([\w.]+)['"]\)/ && hash[Regexp.last_match(1)].to_s.strip == ''
+end
