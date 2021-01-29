@@ -20,7 +20,14 @@ import { useAffectedUserContext } from "./AffectedUserContext"
 import Checkbox from "../components/Checkbox"
 
 ////// ALOHA SAFE import Outlines for rounded box symptom list //////
-import { Buttons, Colors, Forms, Spacing, Typography, Outlines } from "../styles"
+import {
+  Buttons,
+  Colors,
+  Forms,
+  Spacing,
+  Typography,
+  Outlines,
+} from "../styles"
 import { Icons } from "../assets"
 
 type Posix = number
@@ -29,7 +36,7 @@ const SymptomOnsetDate: FunctionComponent = () => {
   useStatusBarEffect("dark-content", Colors.background.primaryLight)
   const { t } = useTranslation()
   ////// ALOHA SAFE create symptom list object //////
-  const symptomKeys = Object.keys(t('symptom', { returnObjects: true }))
+  const symptomKeys = Object.keys(t("symptom", { returnObjects: true }))
   const navigation = useNavigation()
 
   const {
@@ -84,7 +91,7 @@ const SymptomOnsetDate: FunctionComponent = () => {
 
   return (
     ////// ALOHA SAFE use ScrollView and add symptom list //////
-    <ScrollView 
+    <ScrollView
       style={style.container}
       contentContainerStyle={style.contentContainer}
       alwaysBounceVertical={false}
@@ -98,7 +105,7 @@ const SymptomOnsetDate: FunctionComponent = () => {
         </Text>
       </View>
       <View>
-        <View >
+        <View>
           <Text style={style.subheaderText}>
             {t("aloha_safe.symptoms_include")}
           </Text>
@@ -107,7 +114,7 @@ const SymptomOnsetDate: FunctionComponent = () => {
           {symptomKeys.map((symptomKey, idx) => {
             return (
               <Text key={idx} style={style.listText}>
-              • {t(`symptom.${symptomKey}`)}
+                • {t(`symptom.${symptomKey}`)}
               </Text>
             )
           })}

@@ -57,9 +57,7 @@ const HasExposures: FunctionComponent<HasExposuresProps> = ({ exposures }) => {
           {t("exposure_history.next_steps")}
         </Text>
         {/* ////// ALOHA SAFE add custom body text and key in en.json ////// */}
-        <Text style={style.bodyText}>
-          {t("aloha_safe.contact_provider")}
-        </Text>
+        <Text style={style.bodyText}>{t("aloha_safe.contact_provider")}</Text>
         <NextSteps exposureDate={mostRecentExposure.date} />
       </View>
     </View>
