@@ -409,7 +409,7 @@
       "learn_more": "Learn more about the CDC Coronavirus Self-Checker this Self Assessment is based on",
       "this_is_based_on": "This is based on the latest guidance from the CDC and may be updated over time as we learn more about how the virus spreads and the illness it causes",
       "this_is_not_intended": "This is not intended for diagnosis or treatment",
-      "you_are_a_resident": "You are a resident of the community supported by {{ healthAuthorityName }}"
+      "you_are_a_resident": "You are a resident of the community supported by {{healthAuthorityName}}"
     },
     "underlying_conditions": {
       "blood_disorder": "Blood disorder, such as sickle cell disease or thalassemia",

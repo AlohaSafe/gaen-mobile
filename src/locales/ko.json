@@ -5,6 +5,16 @@
     "operating_system_abbr": "OS:",
     "version": "버전:"
   },
+  "aloha_safe": {
+    "about": "AlohaSafe Alert 앱은 제공하는 버건당국은: ",
+    "contact_provider": "코로나19 검사를 받으려면 의료 제공자에게 연락하여 가능한 노출에 대해 알려주십시오.",
+    "have_you_had_symptoms": "증상이 있었습니까?",
+    "hawaii_us": "미국 하와이",
+    "healthAuthorityName": "Hawaii State Department of Health",
+    "legal": "AlohaSafe Alert 앱 법률 정책:",
+    "recognizing_symptoms": "코로나19 증상과 증상이 시작된 시기를 인식하면 가장 감염된 시기(일반적으로 증상이 시작되기 며칠 전)를 식별하는 데 도움이 될 수 있습니다. 코로나19에 걸린 사람은 증상이 없는데도 전염성이 있습니다.",
+    "symptoms_include": "증상은 다음 중 하나 이상을 포함 할 수 있습니다."
+  },
   "callback": {
     "fill_out_the_info": "아래 정보를 입력하고 {{healthAuthorityName}}를 통해 이동경로 조사 담당자에게 연락 받으십시오. ",
     "firstname": "이름 (선택)",
@@ -46,7 +56,7 @@
     "apologies_data_unavailable": "죄송합니다. 코로나 데이터를 사용할 수 없습니다.",
     "covid_stats": "코로나19 통계",
     "daily_new_cases": "10만명당 일일 신규 확진자",
-    "error_getting_data": "죄송합니다. {{location}} 대한 신규 확진자 데이터를 가져올 수 없습니다.",
+    "error_getting_data": "죄송합니다. {{location}}에 대한 신규 확진자 데이터를 가져올 수 없습니다.",
     "infection_rate": "감염률",
     "new_cases": "신규 확진자",
     "overall_risk_level_in": "{{locationName}}에 전반적인 위험 수준",
