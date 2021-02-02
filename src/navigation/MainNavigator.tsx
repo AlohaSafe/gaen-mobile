@@ -55,7 +55,7 @@ const settingsStackTransitionPreset = Platform.select({
 })
 
 const enxApplinksDomain = `https://${env.ENX_APPLINKS_DOMAIN}`
-const allPrefixes = ["pathcheck://", "https://*.en.express", enxApplinksDomain]
+const allPrefixes = ["pathcheck://", `https://us-${env.STATE_ABBREVIATION.toLowerCase()}.en.express`, enxApplinksDomain]
 
 const linking: LinkingOptions = {
   prefixes: allPrefixes,
