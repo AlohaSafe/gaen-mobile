@@ -10,6 +10,7 @@ import { StorageUtils } from "../utils"
 
 import ar from "./ar.json"
 import ch from "./ch.json"
+import chk from "./chk.json"
 import da from "./da.json"
 import el from "./el.json"
 import en from "./en.json"
@@ -21,6 +22,7 @@ import fr from "./fr.json"
 import hmn from "./hmn.json"
 import ht from "./ht.json"
 import id from "./id.json"
+import ilo from "./ilo.json"
 import it from "./it.json"
 import ja from "./ja.json"
 import ko from "./ko.json"
@@ -53,6 +55,7 @@ type Resource = Record<Locale.Locale, ResourceLanguage>
 const LANGUAGE_RESOURCES: Resource = {
   ar: { label: ar._display_name, translation: ar },
   ch: { label: ch._display_name, translation: ch },
+  chk: { label: chk._display_name, translation: chk },
   da: { label: da._display_name, translation: da },
   el: { label: el._display_name, translation: el },
   en: { label: en._display_name, translation: en },
@@ -64,6 +67,7 @@ const LANGUAGE_RESOURCES: Resource = {
   fr: { label: fr._display_name, translation: fr },
   hmn: { label: hmn._display_name, translation: hmn },
   id: { label: id._display_name, translation: id },
+  ilo: { label: ilo._display_name, translation: ilo },
   it: { label: it._display_name, translation: it },
   ja: { label: ja._display_name, translation: ja },
   ko: { label: ko._display_name, translation: ko },

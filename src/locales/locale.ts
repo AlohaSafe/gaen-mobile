@@ -1,6 +1,7 @@
 export type Locale =
   | "ar"
   | "ch"
+  | "chk"
   | "da"
   | "el"
   | "en"
@@ -12,6 +13,7 @@ export type Locale =
   | "hmn"
   | "ht"
   | "id"
+  | "ilo"
   | "it"
   | "ja"
   | "ko"
@@ -69,6 +71,9 @@ export const fromString = (l: string): Locale => {
     case "ch": {
       return "ch"
     }
+    case "chk": {
+      return "chk"
+    }
     case "da": {
       return "da"
     }
@@ -102,6 +107,9 @@ export const fromString = (l: string): Locale => {
     }
     case "id": {
       return "id"
+    }
+    case "ilo": {
+      return "ilo"
     }
     case "it": {
       return "it"

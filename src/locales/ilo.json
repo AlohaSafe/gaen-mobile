@@ -1,0 +1,499 @@
+{
+  "_display_name": "Ilocano",
+  "about": {
+    "description": "Mabalin nga usaren ti {{applicationName}} app babaen iti {healthAuthorityName}}.",
+    "operating_system_abbr": "OS:",
+    "version": "Bersyon:"
+  },
+  "aloha_safe": {
+    "about": "Mabalinton nga usaren ti AlohaSafe app agigga iti  ",
+    "contact_provider": "Makiuman iti provider ti taripato ti salun-at tapno maeksamen iti COVID-19 ken ipakaammo kadakuada ti posible a pannaka-expose mo.",
+    "have_you_had_symptoms": "Adda kadi dagiti sintomasmo?",
+    "hawaii_us": "Hawaii, Estados Unidos",
+    "healthAuthorityName": "Departamento ti Salun-at ti Estado ti Hawaii",
+    "legal": "Dagiti Ligal nga Annuruten ti AlohaSafe Alert Mobile",
+    "recognizing_symptoms": "Ti pannakailasin kadagiti sintomas ti COVID-19, ken no kaano a nangrugi dagitoy, ket makatulong a mangammo no kaanoka a pirmi a makaakar (kadawyan a sumagmamano nga aldaw sakbay a mangrugi dagiti sintomas). Mabalin nga awan dagiti sintomas ti tao nga adda COVID-19 na, ngem makaakar latta.",
+    "symptoms_include": "Mabalin a karaman dagiti sintomas ti maysa wenno ad-adu pay kadagiti sumaganad:"
+  },
+  "callback": {
+    "fill_out_the_info": "Punoan ti impormasion iti baba ken ti contact tracer form manipud iti {{healthAuthorityName}} nga adda pannakilangenmo.",
+    "firstname": "Nagan",
+    "lastname": "Apilyedo",
+    "phone_number_required": "Numero ti telepono (masapul)",
+    "request_a_call": "Agrekuesta iti tawag manipud iti contact tracer",
+    "success_body": "Ikarkarigatan dagiti contact tracer mi ti mangpatalinaed kenka ken ti komunidamo a natalged. Naawat ti {{healthAuthorityName}} dawatmo para iti call back. Kontakennaka ti maysa nga eksperto iti uneg ti 24 oras.",
+    "success_got_it": "Naawatak",
+    "success_header": "Sikan ti sumaruno"
+  },
+  "common": {
+    "back": "Agsubli",
+    "cancel": "Kanselaen",
+    "close_screen": "Iserra ti screen",
+    "confirm": "Kumpirmaen",
+    "continue": "Agpatuloy",
+    "done": "Nalpasen",
+    "edit": "I-edit",
+    "learn_more": "Ammoen ti ad-adu pay",
+    "maybe_later": "Madamdama siguro",
+    "more": "Ad-adu pay",
+    "next": "Sumaruno",
+    "no_thanks": "Saan agyamank laengen",
+    "off": "I-OFF",
+    "okay": "Ok",
+    "on": "I-ON",
+    "save": "I-save",
+    "select_language": "Pilien ti pagsasao",
+    "settings": "Lukatan dagiti Setting",
+    "skip": "Labsan",
+    "something_went_wrong": "Adda rimsua a kamali",
+    "start": "Rugian",
+    "submit": "Isubmitir",
+    "success": "Balligi"
+  },
+  "covid_data": {
+    "7_day_avg": "7 aldaw nga avg",
+    "apologies_data_unavailable": "Dispensar, saan a mausar ti data ti COVID",
+    "daily_new_cases": "Dagiti inaldaw a kabbaro a kaso",
+    "error_getting_data": "Ladingitenmi, saanmi a maala dagiti kabaroan a data ti COVID para iti {{location}}.",
+    "new_cases": "Dagiti Kabbaro a Kaso",
+    "past_14_days": "Napalabas a 14 nga aldaw",
+    "positive_test_rate": "Positibo a rate ti pannakaeksamen",
+    "see_more": "Kitaen ti ad-adu pay",
+    "source": "pamataudan: {{source}}",
+    "spread_of_the_virus_in": "Agdama nga Aktibidad ti COVID-19 iti Hawaii",
+    "trending_down": "Agte-trend nga agpababa",
+    "trending_up": "Angte-trend nga agpangato"
+  },
+  "errors": {
+    "description": "Adda napasamak a kamali Maidawat nga i-reload ti app.",
+    "reload": "I-reload",
+    "title": "Di ammo a kamali"
+  },
+  "escrow_verification": {
+    "error": {
+      "invalid_phone_number": "Masapul a 10 a bilang ti numero ti telepono"
+    },
+    "person_and_health_expert": "Maysa a tao a makisarsarita iti eksperto iti salun-at",
+    "start": {
+      "body": "No naeksamenka a positbo iti COVID-19 (saan a babaen iti antibody a pannakaeksamen), mabalinmo nga anonimo nga i-report ti pannakaeksamen.\n\nMakatulong kadagiti dadduma iti komunidad a manglapped iti panagwaras ti virus ti panangireportmo iti pannakaeksamenmo.",
+      "header": "I-report ti positibo nga eksamen",
+      "what_is_a_verification_code": "Ania ti verification code"
+    },
+    "user_details_form": {
+      "phone_number": "Numero ti telepono",
+      "subheader": "Maidawat nga itedmo ti numero ti teleponom ken petsa ti pannakaeksamen ken i-text mi kenka ti verification code mo.",
+      "test_date": "Petsa ti pannakaeksamen",
+      "test_details": "Dagiti Detalye ti Pannakaeksamen"
+    }
+  },
+  "export": {
+    "code": "Code",
+    "complete_body_bluetooth": "Tumultulongka a manglapped iti panagwaras ti virus ken mangproteher kadagiti dadduma iti komunidadmo.",
+    "complete_title": "Pagyamanmi ti panamagtalinaedmo a natalged ti komunidadmo!",
+    "consent_body_0": "Opsional ti panangiburay iti positibo a diagnosis mo ken maaramid laeng no adda pammalubosmo.",
+    "consent_body_2": "Ti laeng maiburay nga impormasion ket ti set dagiti random a numero nga inburay ti teleponom babaen iti Bluetooth kadagiti asideg a telepono iti napalabas a 14 nga aldaw, a kadua ti iskor ti natingiting a peggad a maibasar iti no mabukel dagiti sintomasmo.",
+    "consent_button_title": "Maawatan ken Umannugotak",
+    "consent_warning_message": "Ti panagpatuloy ket ikkatenna ti bileg ti verification code mo. No kayatmo nga iburay ti positibo a diagnosis mo iti masangoanan, masapulmo nga umuna ti mangala iti baro a verification code.",
+    "consent_warning_title": "Pakdaar!",
+    "enable_exposure_notifications_body": "Masapul a paganaem dagiti notipikasion ti pannaka-expose tapno makareport iti positibo a resulta.",
+    "enable_exposure_notifications_button": "Paganaen Dagiti Notipikasion ti Pannaka-expose",
+    "enable_exposure_notifications_title": "Paganaen dagiti notipikasion ti pannaka-expose tapno agpatuloy",
+    "enter_verification_code": "Ipan ti verification code",
+    "error": {
+      "invalid_format": "Masapul nga aglaon laeng kadagiti numero ken letra dagiti code",
+      "network_connection_error": "Awan koneksyon ti internet",
+      "unknown_code_verification_error": "Padasen ti sabali a code"
+    },
+    "intro": {
+      "body1": "No nakaawatka iti verification code manipud iti {{healthAuthorityName}}  fpara iti positibo a pannakaeksamen iti COVID-19, mabalinmo nga isubmitir ti verification code iti sumaganad nga screen.",
+      "body2": "No awan code mo, ngem positibo ti pannakaeksamenmo, masapulmo ti mangala iti verification code manipud iti  {{healthAuthorityName}} sakbay nga agpatuloy.",
+      "header": "Adda kadi verification code mo?",
+      "what_is_a": "Ania ti verification code"
+    },
+    "never_mind_button_title": "Bay-am latta",
+    "person_and_health_expert": "Maysa a tao a makisarsarita iti eksperto iti salun-at",
+    "publish_consent_title_bluetooth": "Pakaamoan dagiti sabsabli iti komunidadmo",
+    "publish_keys": {
+      "errors": {
+        "description": "Saan a makumpleto ti operasion. {{message}}",
+        "internal_server_error": "Adda problema ti server, maidawat a balbaliwan a padasen madamdama",
+        "timeout": "Mabayag unay a makumpleto ti rekuesta",
+        "unknown": "Napaay a mangisubmitir iti data ti pannaka-expose"
+      },
+      "no_op": {
+        "empty_exposure_keys": "Kasla awan encounter logs mo iti aparatom, maidawat nga aguray iti 24 oras tapno agpatuloy no kalepleppasmo nga in-reset ti bukodmo a data. Mabalin a masapulmo ti agrekuesta iti baro a verification code.",
+        "empty_exposure_keys_title": "Awan mabalin nga usaren a data ti encounter logging",
+        "no_token_for_existing_keys": "Naipatulod iti server ti agdama a data. Kadawyan a kayat a saoen daytoy immunan a nagandat daytoy a proseso manipud iti sabali nga aparato. Mabalinmo daytoy nga ikomunikar iti awtoridad a nangted iti verification code a nausar. Adda dagiti {{newKeysInserted}} a kabbaro a keys nga nainayon.",
+        "no_token_for_existing_keys_title": "Gandaten nga isubmitir dagiti keys nga agdama"
+      }
+    },
+    "symptom_onset": {
+      "did_you_have_symptoms": "Adda kadi aniaman a sintomasmo?",
+      "no_i_didnt_have": "Saan, awan ti aniaman a sintomasko",
+      "symptoms": "Dagiti sintomas",
+      "when_did_your_symptoms": "Kaano a nangrugi dagiti sintomasmo?",
+      "yes_i_did_have": "Wen, adda dagiti sintomasko"
+    },
+    "verification_code_info": {
+      "how_do_i_get_body": "Makiuman iti awtoridad ti salun-atmo, {{healthAuthorityName}}.",
+      "how_do_i_get_header": "Kasanoak a makaala iti verification code?",
+      "info_body": "Ti verification code ket maysa a code nga inted kenka ti awtoridadmo iti salun-at, {{healthAuthorityName}}, no makaawatka iti positbo a resulta ti pannakaeksamen.\n\nTi verification code ket mausar a pangpaneknek nga husto ti positibo a resulta ti eksamenmo.\n\nAg-expire iti apagbiit ti tunggal verification code tapno masigurado a saan a maisubmitir dagiti napalabas a resulta ti eksamen.\n\nNo makainkuentroka iti kamali iti panangisubmitirmo iti verification code, masapul a mangalaka iti baro a code manipud iti bukodmo nga awtoridad ti salun-at sakbay nga isubmitir manen.",
+      "info_header": "Ania ti verification code?",
+      "what_happens_body": "No isubmitirmo ti verification code, dawaten kenka ti app nga iburaymo ti random anonymous exposure keys manipud kadagiti sabali nga aparato a nakakonektaam.\n\nNo mangtedka iti pammalubos, ipatulod ti app dagitoy a key iti maysa a server ti exposure notification. Pakaamoanto ti notification server dagiti aparato a nagkonektaam iti positibo a resulta ti eksamen.\n\nSaan a pulos nga agkolekta wenno agidulin iti personal nga impormasion ti app. Ti laeng random anonymous keys a naidulin iti aparatom ti maiburay.",
+      "what_happens_header": "Ania ti mapasamak no isubmitirko ti bukodko a code?"
+    }
+  },
+  "exposure_history": {
+    "check_for_exposures": "Usisaen dagiti pananka-expose",
+    "days_remaining": "Adda pay {{daysOfQuarantineLeft}} nga aldaw a nabatbati iti nairekumenda a panawen ti pannaka-quarantine mo.",
+    "exposure_detail": {
+      "general_guidance": "Sapasap a pannakabayabay",
+      "next_steps": "Repasoen dagiti annuruten ti salun-at",
+      "personalize_my_guidance": "Ipersonal ti pannakabayabayko",
+      "schedule_callback": "Iyiskedyul ti maysa a tawag tapno makaala iti suporta manipud iti contact tracer nga aggapu iti {{healthAuthorityName}}.",
+      "speak_with_contact_tracer": "Makisarita iti maysa a contact tracer"
+    },
+    "exposure_report": "Report ti Pannaka-expose",
+    "exposure_summary": "Maysa a naasetgam iti nagbaetan ti  {{startDate}} ken {{endDate}} ket naeksamen a positibo iti COVID-19.",
+    "health_guidelines": {
+      "six_feet_apart": "Agtalinaed iti 6 kadapan a baet",
+      "stay_home": "Agtalinaed iti pagtaengan no masakit",
+      "title": "Dagiti Annuruten ti Salun-at",
+      "two_meters_apart": "Agtalinaed iti 2 metro a baet",
+      "wash_your_hands": "Kanayon a buggoan dagiti imam",
+      "wear_a_mask": "Agusar ti maskara"
+    },
+    "how_does_this_work": "Kasano daytoy nga umepekto?",
+    "how_does_this_work_para": "No naka-on ti Exposure Notifications, agusar ti teleponom iti Bluetooth tapno ag-swap ket i-save ti random number strings (maaw-awagan iti random IDs) manipud iti aniaman kadagiti telepono a maiyasideg iti dayta a gumangana met ti Exposure Notifications na. Saannaka a personal nga mailasin ti random IDs kadagiti sabali nga agus-usar ken mamin-adu a masuktan iti inaldaw tapno maproteheran ti kinapribadom.",
+    "last_days": "Maudi a 14 nga aldaw",
+    "more_info": "Ammoen ti ad-adu pay panggep iti Exposure Notifications",
+    "next_steps": "Dagiti Sumaruno nga Addang",
+    "no_connectivity_message": "Saanka a nakakonekta iti internet!",
+    "no_exposure_reports": "Awan Dagiti Report ti Pannaka-expose",
+    "no_exposure_reports_over_past": "Saanka a nakaawat iti aniaman a report ti pannaka-expose iti napalabas a 14-nga-aladaw",
+    "possible_exposures": "Dagiti Posible a Pannaka-expose",
+    "review_health_guidance": "Repasoen Ti Bayabay ti Salun-at",
+    "updated": "Napabaro",
+    "why_did_i_get_an_en": "Apay a nakaawatak iti exposure notification?",
+    "why_did_i_get_an_en_para": "Makaawatka iti exposure notification no ti maysa a tao nga immuna a naasetgam ket makaawat iti positibo a pannakaeksamen iti COVID-19 ken pilienna a pakaammoan dagiti sabsabali.",
+    "your_device_exchanged": "Iti tunggal binatog ti petsa iti baba, naki-exchange keys ti aparatom iti sabali nga aparato a nakaawat kalpasanna iti napaneknekan a positibo a resulta ti pannakaeksamen."
+  },
+  "exposure_notification_alerts": {
+    "bluetooth_body": "Tapno i-activate ti Exposure Notifications, masapul nga umunam nga i-turn on ti Bluetooth iti bukodmo a settings ti app.",
+    "bluetooth_title": "Paganaen ti Bluetooth",
+    "cant_check_for_exposures_body": "Masapul a paganem ti Exposure Notifications tapno i-check dagiti pannaka-expose.",
+    "cant_check_for_exposures_button": "Paganaen Dagiti Notipikasion ti Pannaka-expose",
+    "cant_check_for_exposures_title": "Saan a Ma-check Dagiti Pannaka-expose",
+    "location_body": "Masapul ti google a dagiti aparato nga paan-andaren ti Android 10 wenno nababbaba ket mapagana dagiti location services da tapno mausar ti Exposure Notifications. {{applicationName}} ket saanna a subaybayan wenno irekord ti lokasionmo.",
+    "location_title": "Paganaen Dagiti Serbisio ti Lokasion",
+    "set_active_region_ios_body": "Lukatan ti Settings app, mapan iti settings ti Exposure Notifications para iti daytoy nga app, kalpsanna talmegan ti ‚Set As Active Region‘.",
+    "set_active_region_ios_title": "I-set ti Aktibo a Rehiyon",
+    "share_exposure_information_ios_body": "Lukatan ti Settings app, kalpasanna mapan iti settings ti Exposure Notifications para iti daytoy nga app. Siguradoen a nai-turn on ti ‚Share Exposure Information‘, kalpasanna talmegan ti ‚Set As Active Region‘.",
+    "share_exposure_information_ios_title": "Iburay ti Impormasion ti Pannaka-expose",
+    "unhandled_error_body": "Adda napasamak a saan nga ekspektaren. Maidawat nga i-close ken balbaliwan nga i-open ti app ken padasen manen.",
+    "unhandled_error_title": "Adda Rimsua a Kamali",
+    "use_exposure_notifications_android_body": "Tapno paganaen ti Exposure Notifications, mapan iti screen ti COVID-19 Exposure Notifications iti bukodmo a Settings app ken paganaen ti ‚Use Exposure Notifications‘.",
+    "use_exposure_notifications_android_title": "Paganaen Dagiti Notipikasion ti Pannaka-expose"
+  },
+  "exposure_scanning_status": {
+    "fix_this": "Ayusen daytoy",
+    "learn_more": "Ammoen ti ad-adu pay",
+    "your_device_is_not": "Saan nga agis-scan ti aparatom kadagiti pannaka-expose. Ayusen dagiti problema iti baba tapno paganaen ti Exposure Detection.",
+    "your_device_is_scanning": "Agis-scan ti aparatom kadagiti pannaka-expose ken agtultuloy nga aramidenna urap i-close mo ti app."
+  },
+  "home": {
+    "bluetooth": {
+      "location_disabled_error_message": "Tapno paganaen ti teknolohiya ti Exposure Notification, palubusan ti akses iti Lokasion iti Settings app",
+      "location_disabled_error_title": "Palubusan iti Settings",
+      "location_header": "Lokasion",
+      "location_subheader": "{{applicationName}} saanna a pulos i-access ti data ti lokasionmo ken saan a pulos masubaybayan ti aparatom.",
+      "proximity_tracing_header": "Dagiti Notipikasion ti Pannaka-expose",
+      "share": "Iburay ti {{applicationName}}",
+      "share_message": "Padasen daytoy nga app {{applicationName}}, a makatulong kadatayo a manglapped iti COVID-19! {{appDownloadUrl}}",
+      "tracing_off_header": "Naka-off ti Exposure Detection",
+      "tracing_on_header": "Naka-on ti Exposure Detection"
+    },
+    "bluetooth_info_body": "Ma-detect ti teleponom dagiti sabali a telepono a nabayag a nakainnasidegmo kabayatan ti Bluetooth Low Energy. Palubusan daytoy ti app a mangi-log iti anonimo a pannaki-ingkuentrom, uray saan a naka-open iti aparatom ti app.",
+    "call_emergency_services": "Tumawag Kadagiti Serbisio ti Emerhensia",
+    "error": {
+      "share_link_failed": "Napaay a manglukat iti link a maiburay"
+    },
+    "fix": "I-fix dagiti problema iti {{technology}}",
+    "get_more_info": "Alaen ti ad-adu nga impormasion iti {{technology}}",
+    "have_a_positive_test": "Addaan iti positibo nga eksamen?",
+    "location_info_body": "Masapul ti google a dagiti aparato nga paan-andaren ti Android 10 wenno nababbaba ket mapagana dagiti location services da tapno mausar ti Exposure Detection. {{applicationName}} ket saanna a subaybayan wenno irekord ti lokasionmo.",
+    "location_info_subheader": "{{applicationName}} ket saanna a subaybayan wenno irekord ti lokasionmo",
+    "notifications_off": "I-turn on dagiti notipikasion tapno mapakaammoan no adda maawatmo a pannaka-expose",
+    "open_healthcheck": "Lukatan ti Healthcheck",
+    "proximity_tracing_info_body_1": "No mai-turn on dagiti smatphone nga ayan ti app, guman-gana ti Bluetooth na, ken nagassideg iti sumagmamano a tiempo, nairehistro ti ingkuentro iti aparatom.",
+    "proximity_tracing_info_body_2": "Iti pannakapasamak ti inkuentro, ti bukodmo a data, ken impormasion ket agtalinaed nga anonimo. Saan nga agidulin ti app iti aniaman a personal a data. Maiburay laeng ti random IDs. Maikkat dagitoy kalpasan ti 14 nga aldaw.",
+    "proximity_tracing_info_subheader_1": "Kasano a gumana ti Exposure Notifications?",
+    "proximity_tracing_info_subheader_2": "Natalged kadi ti bukodko a data?",
+    "verification_code_card": {
+      "if_you_have_a_code": "Isubmitir ti verification code mo tapno makatulong a mangpatalinaed iti kinatalged ti komunidadmo.",
+      "if_you_have_a_positive_test": "No naeksamenka a positibo iti COVID-19, mabalinmo nga anonimo nga ireport ti pannakaeksamen tapno makatulong a mamagtalinaed iti kinatalged ti komunidadmo.",
+      "more_info": "Ania ti verification code?",
+      "report_positive_test": "Ireport ti Positibo nga Eksamen",
+      "submit_code": "Isubmitir ti code"
+    }
+  },
+  "label": {
+    "checked_checkbox": "I-check ti kahon ti tsek",
+    "go_to_home_view": "Mapan iti Home View",
+    "launch_enable_notif": "Paganaen Dagiti Notipikasion",
+    "launch_get_started": "Mangrugi",
+    "launch_screen1_header": "Welcome iti  ",
+    "privacy_policy": "Annuruten ti Kinapribado",
+    "unchecked_checkbox": "Saan nga i-check ti kahon ti tsek"
+  },
+  "navigation": {
+    "exposure_history": "Dagiti pannaka-expose",
+    "home": "Dashboard",
+    "settings": "Dagiti setting",
+    "symptom_history": "Dagiti sintomas"
+  },
+  "onboarding": {
+    "app_setup_complete_body": "{{applicationName}} ket aktibo. Dios ti agngina iti itutulong a mangdadael iti kadena ti impeksion.",
+    "app_setup_complete_header": "Kumpleto ti Setup ti App!",
+    "app_setup_incomplete_body": "{{applicationName}} masapulna ti Exposure Notifications pammalubos ti Bluetooth tapno maamoan no na-expose ka iti COVID-19. Mabalinmo nga awtorisaen daytoy iti Settings",
+    "app_setup_incomplete_header": "Saan a Kumpleto ti Setup ti App",
+    "app_setup_incomplete_location_body": "{{applicationName}} masapulna ti Exposure Notifications, Bluetooth, pammalubos ti Lokasion tapno maamoan no na-expose ka iti COVID-19. Mabalinmo nga awtorisaen daytoy iti Settings.",
+    "eula": "Ligal a Katulagan ti Agus-usar",
+    "eula_agree_terms_of_use": "Umanamongak a nabasa ken akseptarek dagiti termino ti panagusar",
+    "i_am_over": "Wen, siak ket nasursurok ngem {{minimumAge}}",
+    "location_alert_body": "Tapno usaren ti Exposure Notifications, masapul a paganaen ti Location Services",
+    "location_alert_header": "Paganaen Dagiti Serbisio ti Lokasion",
+    "location_body": "Masapul ti google a dagiti aparato nga paan-andaren ti Android 10 wenno nababbaba ket mapagana dagiti location services da tapno mausar ti panag-scan ti Bluetooth para iti Exposure Detection. Nupaykasta, {{applicationName}} ket SAAN na subaybayan wenno irekord ti lokasionmo.",
+    "location_header": "I-activate ti Lokasion",
+    "location_services_already_active": "Aktibo dagiti serbisio ti lokasion",
+    "location_subheader": "{{applicationName}} saanna a pulos i-access ti data ti lokasionmo ken saan a pulos masubaybayan ti aparatom.",
+    "no_take_me": "Saan, isublinak",
+    "notification_body1": "Makaawatka kadagiti pakaammo no nabayag unay ti pannaki-asidegmo, iti siasinoman a naireport a positibo iti COVID-19.",
+    "notification_body2": "Aramiden daytoy ti app iti panangaramatna iti Bluetooth Low Energy ken i-secure na ti random codes a saanna nga ammo no siasinoka wenno dinno ti naggapuam. Mai-turn off mo daytoy iti aniaman nga oras iti settings.",
+    "notification_header": "Mapakaammoanka no mabalin nga adda pannaka-expose mo",
+    "notification_subheader1": "Kaanoak a mapakaammoan?",
+    "notification_subheader2": "Kasano a gumana daytoy?",
+    "notification_subheader3": "Saannaka a proteheran daytoy nga app manipud iti impeksion ti COVID-19.",
+    "please_read_the": "Maidawat a basaen ti  ",
+    "privacy_policy": "Annuruten ti Kinapribado",
+    "protect_privacy": {
+      "body_1": "Saan a naglaon dagitoy nga ID iti personal nga impormasion ken mabaliwan iti tunggal 10-20 minutos tapno maproteheran ti kinasiasinom.",
+      "body_2": "Makisinnukat dagiti telepono kadagiti random nga ID kadagiti sabali nga aparato babaen iti Bluetooth Low Energy. Palubusan daytoy ti {{applicationName}} nga anonimo a subaybayanna ti inaldaw a pannaki-ingkuentrom, uray saan a naka-open daytoy iti aparatom.",
+      "body_3": "Kalpasan a maeksamen a positibo iti COVID-19, mabalin a makibinnuray dagiti agus-usar iti verification code iti {{applicationName}} tapno mapaneknekan ti diagnosis da. Mai-flag dagiti kaudian a random ID da ken natalged a mai-upload iti server. Makatulong daytoy a proseso ti pannakapaneknek a manglapped kadagiti report a false positive.",
+      "body_4": "No maitugma ti nai-flag nga ID iti maysa nga ID a naidulin iti teleponom, kayat a saoen daytoy a mabalin a nakainkuentroka iti maysa a naeksamen a positibo iti COVID-19. Kastoy no kasano nga ti {{applicationName}} ket madeterminarna no na-expose ka iti virus.",
+      "body_5": "No adda ti pannaka-itugma, pakaammoannaka ti {{applicationName}} ken mangted iti nayon a bayabay manipud iti bukodmo a departamento ti salun-at.\n\nKastoy no kasano nga ti {{applicationName}} ket ma-empower naka tapno makaaramid kadagiti desision panggep iti salun-atmo, ken pagtalinaedenna a natalged ti komunidadmo, a saan a maam-ammoan no siasinoka wenno sadinno ti naggapuam.",
+      "subheader_1": "No i-turn on mo ti Exposure Notifications, mai-tag ti teleponom iti masansan-nga-agbaliw, random IDs",
+      "subheader_2": "Dagiti telepono a napagana ti Exposure Notifications na ket isukatna dagiti ID kadagiti sabali nga aparato a mainkuentroda.",
+      "subheader_3": "No maeksamen a positibo ti agus-usar, mabalinda a pilien nga anonimoda nga iburay ti kasasaad ti salun-atda",
+      "subheader_4": "Tunggal maysa a telepono ket masansanna nga i-ping ti server para kadagiti listaan ti nai-flag nga ID ken agbirok kadagiti mai-tugma",
+      "subheader_5": "Mapakaammonka no ti {{applicationName}} ket makasarak iti positibo a pannaka-itugma iti nai-flag nga ID"
+    },
+    "protect_privacy_button": "Kasanomi a proteheran ti kinapribadom",
+    "proximity_tracing_already_active": "Aktibo ti Exposure notifications",
+    "proximity_tracing_body1": "No mai-turn on dagiti smatphone nga ayan ti app, guman-gana ti Bluetooth na, ken nagassideg iti sumagmamano a tiempo, nairehistro ti ingkuentro iti aparatom.",
+    "proximity_tracing_body2": "Iti pannakapasamak ti inkuentro, ti bukodmo a data, ken impormasion ket agtalinaed nga anonimo. Saan nga agidulin ti app iti aniaman a personal a data. Maiburay laeng ti random IDs. Maikkat dagitoy kalpasan ti 14 nga aldaw.",
+    "proximity_tracing_button": "Paganen ti Exposure Notifications",
+    "proximity_tracing_header": "Paganen ti Exposure Notifications",
+    "proximity_tracing_subheader1": "Kasano a gumana daytoy?",
+    "proximity_tracing_subheader2": "Natalged kadi ti bukodko a data?",
+    "proximity_tracing_subheader3": "Saannaka a proteheran daytoy nga app manipud iti impeksion ti COVID-19.",
+    "screen1_button": "Kasano a gumana daytoy?",
+    "screen1_header": "Iti panagtitinnulongtayo, mapaginadtayo ti panangwars ti COVID-19",
+    "screen1_image_label": "Dua a tao nga agha-high five iti tunggal maysa",
+    "screen1_title": "Mahalo para iti panangusar iti AlohaSafe Alert",
+    "screen2_button": "Protektado kadi ti kinapribadok?",
+    "screen2_header": "Matandaanan ti teleponom dagiti sabali nga aparato a maasetganna, ngem saannaka nga ipakaammo iti siasinoman.",
+    "screen2_image_label": "Dua a tao kadagiti teleponoda",
+    "screen3_button": "Kasano no ma-expose nak?",
+    "screen3_header": "Saan a pulos a rumuar iti teleponom ti personal a pakaamoan kenka.",
+    "screen3_image_label": "Maysa a tao iti sango ti naka-lock a telepono",
+    "screen4_button": "Mangrugi",
+    "screen4_header": "Pakaammoannaka ti app no mabalin a na-expose ka iti COVID-19",
+    "screen4_image_label": "Ti tao a makaala iti notipikasion iti teleponoda",
+    "terms_header_title": "Annuruten ti panagusar",
+    "verify_your_age": "Panaeknekam Ti Edadmo",
+    "welcome_image_label": "Ti maysa nga ilustrasion dagiti tao a naka-on ti maskarada, nagkikinnonekta a kasla buko it maysa a network.",
+    "you_must_be": "Masapul a {{minimumAge}} wenno natataeng tapno mausar ti {{applicationName}}. Nalablabeska kadi ngem {{minimumAge}}?"
+  },
+  "product_analytics": {
+    "i_understand_and_consent": "Maawatan ken Umannugotak",
+    "privacy_policy": "Annuruten ti Kinapribado",
+    "share_anonymized_data": "Maawatan ken Umannugotak",
+    "share_anonymized_data_disclaimer": "Babaen iti panagpatuloy, umanamongka a mangiburay iti saan nga ammo a data ti pasamak iti {{healthAuthorityName}}",
+    "share_data_para_1": "Ti anonimo ken nagtitipon a data panggep iti no kasano nga ususaren dagiti komunidad daytoy nga app ket makatulong iti {{healthAuthorityName}} Commission, analisaren, maawatan, ken lappedan ti panagwaras ti COVID-19.",
+    "share_data_para_2": "Saan a naglaon daytoy a data iti impormasion a makailasin iti kinasiasino.",
+    "stop_sharing_data": "Isardeng ti Mangiburay iti Data"
+  },
+  "screen_titles": {
+    "bluetooth": "Bluetooth",
+    "exposure_history": "Dagiti pannaka-expose",
+    "exposure_notifications": "Dagiti Notipikasion ti Pannaka-expose",
+    "exposure_scanning": "Pannaka-detect ti pannaka-expose",
+    "home": "Dashboard",
+    "how_the_app_works": "Kasano a gumana ti app",
+    "legal": "Ligal",
+    "location": "Lokasion",
+    "protect_privacy": "Kasanomi a proteheran ti kinapribadom",
+    "select_language": "Pilien ti Pagsasao",
+    "select_symptoms": "Pilien Dagiti Sintomas",
+    "settings": "Dagiti setting"
+  },
+  "self_assessment": {
+    "age_range": {
+      "eighteen_to_sixty_four": "18 - 64",
+      "get_my_guidance": "Alaen ti Bayabayko",
+      "how_old_are_you": "Mano ti tawenmo?",
+      "sixty_five_and_over": "65+"
+    },
+    "call_emergency_services": {
+      "call_emergencies": "Tawagan ti {{emergencyPhoneNumber}}",
+      "seek_medical_attention": "Agbirok a sigud iti medikal nga atension",
+      "urgent_medical_attention_needed": "Mabalin a masapul ti insigida a medikal nga atension. Maidawat a tawagan ti {{emergencyPhoneNumber}} wenno mapan iti Departamento ti Emerhenya"
+    },
+    "emergency_symptoms": {
+      "are_you_experiencing": "Mapadpadasam kadi ti aniaman kadagitoy nga emerhesya a sintomas?",
+      "chest_pain": "Nakaro, tuloy-tuloy a panagsakit ti barukong wenno panagkupitna",
+      "difficulty_breathing": "Napalalo a pannakaparigat nga umanges",
+      "disorientation": "Nakaro a pannakaawan ti panunot wenno pannakaimaymayeng",
+      "lightheadedness": "Nakaro, tuloy-tuloy a panagtatapaw ti ulo",
+      "select_any": "Pilien amin a mayaplikar (wenno awan)."
+    },
+    "general_symptoms": {
+      "aching": "Panagsaksakit ti sibubukel a bagi",
+      "are_you_experiencing": "Mapadpadasam kadi ti aniaman kadagitoy a sintomas?",
+      "cough": "Baro wenno kumarkaro nga uyek",
+      "difficulty_breathing": "Kalalainganna wenno gagangay a marigatan nga umanges",
+      "fever_or_chills": "Panaggurigor ken panangpayegpeg",
+      "loss_of_smell_taste_appetite": "Mabayag a pannakaawan ti panagrama, panagangot, wenno ganas a mangan",
+      "other": "Sabali",
+      "select_any": "Pilien amin a mayaplikar.",
+      "vomiting_or_diarrhea": "Panagsarwa wenno panagtakki"
+    },
+    "guidance": {
+      "call_your_healthcare_provider": "Tawagan ti provider mo iti taripato ti salun-at, linya ti balakad ti adda iti klinika, wenno provider ti telemedicine iti uneg ti 24 oras.",
+      "clean_hands": "Kanayonmo buggoan dagiti imam.",
+      "cover_coughs": "Kaluban dagiti panaguyek ken panagbaengmo.",
+      "dont_go_to_work": "Saan a mapan iti trabaho, iskuela, wenno publiko a lugar.",
+      "dont_use_public_transport": "Saan nga usaren ti publiko a transportasion wenno makiluglugan.",
+      "drink_water": "Uminom ti adu a danum ken sabali pay a nalitaw a likido tapno maliklikan ti pannakaibus ti likdo (dehydration).",
+      "feeling_fine": "Naimbag a denggen a nasayaat ti marikriknam. Masapul a bantayam dagiti sintomasmo ken agtalinaed iti pagtaengan.",
+      "find_a_test_center_nearby": "Dagiti Sumaruno nga Addang",
+      "find_telehealth": "Agbirok kadagiti serbisio ti telehealth",
+      "follow_cdc_guidance": "No adda mabukel a sintomasmo, suruten dagiti panangbayabay ti CDC.",
+      "guidance": "Ti Bayabaymo",
+      "if_symptoms_develop": "No makabukelka kadagiti sintomas ti COVID-19 wenno no mangrugi a makariknaka iti madi, tawagan ti provider ti taripato ti salun-atmo, linya ti balakad ti taga-klinika, wenno provider ti telemedicine.",
+      "may_help_you_feel_better": "Adtoy ti sumagmamano nga addang a makatulong kenka a sumayaat ti riknam:",
+      "monitor_your_symptoms": "Ladingitek a madmadi ti bagbagim. Agtalinaedka iti pagtaengan ken subaybayam dagiti sintomasmo. Tawagam ti provider mo no kumaro dagiti sintomasmo, agtalinaed iti pagtaengan.",
+      "practice_social_distancing": "Suruten ti social distancing.",
+      "protect_others": "Aramiden dagitoy nga addang tapno makatulong a mangproteher kadagiti dadduma manipud iti panagsakit.",
+      "rest": "Agtalinaed iti pagtaengan ken aginana.",
+      "seek_medical_care": "No ti panagkunam ket maysa nga emerhensia wenno dumakes ti marikriknam, agbirok iti medikal a taripato.",
+      "stay_6_feet_away": "Agtalinaed iti 6 kadapan a kaadayo kadagiti sabsabali ken saan a mapan iti paggaaduan dagiti tao.",
+      "stay_at_home": "Agtalinaed iti pagtaengan malaksid no mapan agpaagas.",
+      "stay_away_from_higher_risk_people": "No mabalin, saan nga umasideg kadagiti tao nga addaan iti nangatngato a risgo nga agkasakit manipud iti COVID-19.",
+      "stay_home_14_days": "Agtalinaed iti pagtaengan iti 14 nga aldaw.",
+      "take_care_of_yourself": "Sursuroen no kasano a saluadam ti bagim wenno siasinoman a masakit.",
+      "take_temperature": "Alaem ti temperaturam iti mamindua iti maysa nga aldaw ken bantayan dagiti sintomas ti COVID-19",
+      "watch_for_covid_symptoms": "Bantayan dagiti sintomas ti COVID-19.",
+      "you_have_underlying_conditions": "Ladingitek sa madmadi ti riknam. Mabalin a mainaig iti COVID-19 dagiti sintomasmo. Addaanka pay kadagiti medikal a kondision a mabalin a mangpapeggad kenka a kumaro ti sakitna.",
+      "your_symptoms_might_be_related": "Ladingitek sa madmadi ti riknam. Mabalin a mainaig iti COVID-19 dagiti sintomasmo."
+    },
+    "how_are_you_feeling": {
+      "good": "Nasayaat",
+      "not_well": "Saan a naimbag",
+      "title": "Kumusta ti marikriknam?"
+    },
+    "intro": {
+      "agree_and_start_assessment": "Umanamong ken rugian ti pannakatingiting",
+      "covid19_self_assessment": "Panangtingiting iti bukod a bagi iti COVID-19",
+      "find_out_how_to_care": "Ammoen no kasano a saluadan ti bagim ken sabsabali kalpasan ti aside a pannakilangen it maysa nga adda COVID-19 na",
+      "if_this_is": "No daytoy ket emerhensia, maidawat a tawagan ti {{emergencyPhoneNumber}}",
+      "learn_more": "Ammoen ti ad-adu pay panggep iti CDC Corona Virus Self-Checker Naibasar daytoy a Panangtingiting iti Bukod a bagi iti",
+      "this_is_based_on": "Naibasar daytoy iti kaudian bayabay manipud iti CDC ken mabalin a mapabaro iti panaglabas ti tiempo kabayatan a maammoantayo ti ad-adu pay no kasano nga agwaras ti virus ken ti maipaayna a sakit",
+      "this_is_not_intended": "Saan daytoy a nairanta a pang-diagnose wenno panagagas",
+      "you_are_a_resident": "Agnanaedka iti komunidad a suportado babaen iti {{ healthAuthorityName }}"
+    },
+    "underlying_conditions": {
+      "blood_disorder": "Sakit iti dara, a kas iti sickle cell disease wenno thalassemia",
+      "cerebrovascular_disease": "Sakit a cerebrovascular wenno neurological a kondision, a kas iti stroke wenno demensia",
+      "diabetes": "Dyabetis",
+      "do_you_have": "Addaanka kadi iti aniaman kadagiti sumaganand a kondision?",
+      "heart_condition": "Nakaro a kondision ti puso, a kas iti panagpalia ti puso, sakit ti coronary artery, wenno cardiomyopathy",
+      "high_blood_pressure": "Nangato a presion ti dara",
+      "kidney_disease": "Di aglalaing a sakit ti kidney",
+      "liver_disease": "Sakit ti dalem",
+      "lung_disease": "Di aglalaing a sakit ti bara, a kas iti kalalainganna agingga iti nakaro nga asma, COPD, cystic fibrosis, wenno pulmonary fibrosis",
+      "obesity": "Sobra a kinalukmeg",
+      "pregnancy": "Panagsikog",
+      "select_all_or_none": "Pilien amin a mayaplikar (wenno awan)",
+      "smoking": "Panagsigarilio",
+      "weakened_immune_system": "Kimmapsut a resistansia wenno panagtumtumar kadagiti agas a mangpakapsut iti imyuno"
+    }
+  },
+  "settings": {
+    "data_deleted": "Naikkat ti data",
+    "delete_data_are_you_sure": "Siguradoka?",
+    "delete_data_disclosure1": "No talmegam ti „Delete My Data“, isuamin a data nga naidulin agingga iti {{applicationName}} ket maikkat:",
+    "delete_data_disclosure2": "Saan daytoy nga ikkaten ti data nga naaramid wenno kinolekta ti aparatom para iti Exposure Notifications.\n\nMabalinmo nga ikkaten daytoy nayon a data iti bukodmo a Settings ti aparato.",
+    "delete_data_language_token": "Ti token a naidulin iti aparatom a mang-save iti kayatmo a pagsasao",
+    "delete_data_note": "Tandaanan",
+    "delete_data_onboarding_token": "Ti token a naidulin iti aparatom a mang-save uray makumpletom ti app onboarding",
+    "delete_data_product_analytics": "Ti token a naidulin iti aparatom a mang-save uray impalubosmo ti mangubray iti data ti analytics ti produkto",
+    "delete_data_symptom_history": "Aniaman a logs ti sintomas a naidulin iti aparatom",
+    "delete_data_this_action": "Ikkaten daytoy nga aksion ti isuamin a data a naidulin agingga iti {{applicationName}}.",
+    "delete_my_data": "Ikkaten ti bukodko a data",
+    "errors": {
+      "deleting_data": "Dispensarem, saanmi a maikkat ti bukodmo a data"
+    },
+    "not_sharing_anonymized_data": "Saan nga ibur-buray ti saan nga ammo a data",
+    "share_anonymized_data": "Iburay ti saan nga ammo a data",
+    "sharing_anonymized_data": "Panangiburay ti saan nga ammo a data"
+  },
+  "symptom": {
+    "bluish_lips_or_face": "Umas-asul a bibig wenno rupa",
+    "congestion_or_runny_nose": "Panagletlet wenno runny nose",
+    "cough": "Uyek",
+    "diarrhea": "Panagtakki",
+    "fatigue": "Pannaka-utoy",
+    "fever_or_chills": "Panaggurigor wenno panangpayegpeg",
+    "headache": "Sakit ti ulo",
+    "inability_to_wake_or_stay_awake": "Saan a pannakariing wenno panagtalinaed a siririing",
+    "muscle_or_body_aches": "Nasakit a masel wenno bagi",
+    "nausea_or_vomiting": "Pannakaulaw wenno panagsarwa",
+    "new_confusion": "Baro a pannakaulaw ti panunot",
+    "new_loss_of_taste_or_smell": "Baro pannakapukaw ti panagraman wenno panagangot",
+    "other": "Sabali",
+    "persistent_pain_or_pressure_in_the_chest": "Di agsarsardeng a sakit wenno panangkupit ti barukong",
+    "shortness_of_breath_or_difficulty_breathing": "Kaababa ti panaganges wenno marigatan nga umanges",
+    "sore_throat": "Nasakit a karabukob",
+    "trouble_breathing": "Problema iti panaganges"
+  },
+  "symptom_history": {
+    "did_not_feel_well": "Madmadi ti marikriknam",
+    "errors": {
+      "updating_symptoms": "Dispensarem, saanmi a mapabaro dagiti bukodmo a sintomas"
+    },
+    "felt_well": "Nasayaat ti panagriknam",
+    "no_entry": "Awan entri",
+    "no_symptoms": "Awan dagiti sintomas",
+    "share_history": "Iburay ti pakasaritaan ti sintomas",
+    "sharing": {
+      "header": "Pakasaritaan ti sintomas manipud {{startDate}} agpatingga iti {{endDate}}",
+      "no_symptoms_were_logged": "Awan naka-log a sintomas",
+      "you_did_not_feel_well": "Madmadi ti marikriknam, nairaman dagiti sintomas: {{symptomList}}",
+      "you_felt_well": "Nasayaat ti panagriknam"
+    },
+    "symptom_history": "Dagiti sintomas",
+    "to_protect_your_privacy": "Tapno proteheran ti kinapribadom, naidulin dagiti entri iti aparatom ken awtomatiko a maikkat kalpasan ti {{days}} nga aldaw."
+  },
+  "verification_code_alerts": {
+    "code_used_body": "Nausaren ti naited a verification code.",
+    "code_used_title": "Nausaren ti Verification Code",
+    "invalid_code_body": "Imbalido ti verification code nga insubmitirmo.\n\nTi code ket masapul a balido a verification code a naited kenka babaen iti awtoridad ti salun-atmo.\n\nMabalin pay a nalpasen a nag-expire ti code mo. No kasta, masapulmo ti agrekuesta iti baro a code manipud iti bukodmo nga awtoridad ti salun-at.",
+    "invalid_code_title": "Saan a balido a Code",
+    "network_connection_body": "Masapulmo ti maikonekta iti WiFi tapno makaisubmitir iti verification code.",
+    "network_connection_title": "Awan Koneksion iti Internet",
+    "unknown_body": "Napasamak ti saan nga ekspektaren a kamali. Maidawat a padasen manen.",
+    "unknown_title": "Adda Rimsua a Kamali"
+  }
+}
