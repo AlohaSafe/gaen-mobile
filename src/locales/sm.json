@@ -1,0 +1,497 @@
+{
+  "_display_name": "Samoan",
+  "about": {
+    "description": "O le app {{applicationName}} o loo maua i le {{healthAuthorityName}}.",
+    "operating_system_abbr": "OS:",
+    "version": "Vaega:"
+  },
+  "aloha_safe": {
+    "about": "Ua maua le app o le AlohaSafe Alert i le",
+    "contact_provider": "Faafesootai se auaunaga tau le\n soifua maloloina e fai ai se siaki mo le COVID-19 ma ta'u i ai se tulaga atonu na e latalata ai i se tasi o aafia. ",
+    "have_you_had_symptoms": "Pe ua aliali mai ni āuga ia te oe?",
+    "hawaii_us": "Hawaii, Iunaite Setete",
+    "healthAuthorityName": "Matagaluega a le Soifua Maloloina a le Setete o Hawaii",
+    "legal": "Faiga Faavae Faaletulafono mo le\n AlohaSafe Alert i Telefoni Feavea'i:",
+    "recognizing_symptoms": "O le iloaina o āuga o le COVID-19,\n ma le taimi na amata ai, e mafai ona fesoasoani e maitaulia poo anafea na sili ai ona e aafia (e masani lava ona feoloolo  ni aso a o lei amata ona aliali mai āuga). O le tagata ua aafia I le COVID-19 atonu e leai ni āuga, ae e mafai lava ona pipisi atu i isi.  ",
+    "symptoms_include": "O āuga e mafai ona aofia ai se tasi\n poo nisi o mea nei:"
+  },
+  "callback": {
+    "fill_out_the_info": "Faatumu faamatalaga o loo i lalo\n ona faafesootai atu lea o se contact tracer mai le {{healthAuthorityName}}.  ",
+    "firstname": "Igoa muamua",
+    "lastname": "Faai'u",
+    "phone_number_required": "Numera o le telefoni (manaomia)",
+    "request_a_call": "Faatalosaga le vili mai o se\n contact tracer",
+    "success_body": "O loo galulue mamafa a matou\ncontact tracer ina ia tausia pea le saogalemu o oe ma lou afio'aga. Ua maua e le {{healthAuthorityName}} lau talosaga mo se toe vili atu. O le a faafesootai mai oe e se tagata ua iai tomai faapitoa i totonu o le 24 itula.",
+    "success_got_it": "Lea ua maua",
+    "success_header": "O lea ua e iai i le faasologa"
+  },
+  "common": {
+    "back": "Toe foi i tua",
+    "cancel": "Faalēaogā",
+    "close_screen": "Tapē le screen",
+    "confirm": "Faamautinoa",
+    "continue": "Faaauau",
+    "done": "Ua uma",
+    "edit": "Toe teuteu",
+    "learn_more": "Sailiili atili",
+    "maybe_later": "Atonu i se taimi mulimuli ane",
+    "more": "Nisi mea",
+    "next": "Sosoo mai",
+    "no_thanks": "Leai faafetai",
+    "off": "TAPĒ",
+    "okay": "Ua lelei",
+    "on": "TATALA",
+    "save": "Sefe",
+    "select_language": "Filifili le gagana",
+    "settings": "Faatulagana Tatala\n",
+    "skip": "Faamisi",
+    "something_went_wrong": "E iai se mea na faaletonu",
+    "start": "Amata",
+    "submit": "Tuuina atu",
+    "success": "Manuia"
+  },
+  "covid_data": {
+    "7_day_avg": "7 aso masani",
+    "apologies_data_unavailable": "Faatoese atu, e lē o maua\nfaamaumauga o le COVID.",
+    "daily_new_cases": "Gasegase fou i aso taitasi",
+    "error_getting_data": "Faamalie atu, e lē o mafai ona matou mauaina faamaumauga o gasegase fou o le COVID mo le {{location}}.\n",
+    "new_cases": "Gasegase Fou",
+    "past_14_days": "14 aso ua tuana'i",
+    "positive_test_rate": "Numera o siaki ua faamaonia le\naafia",
+    "see_more": "Taga'I atili",
+    "source": "puna: {{source}}",
+    "spread_of_the_virus_in": "Gaioiga Lata Mai Nei o le COVID-19 i Hawaii",
+    "trending_down": "Ua tau lē toe moomia",
+    "trending_up": "Ua faateleina le moomia"
+  },
+  "errors": {
+    "description": "E iai se mea sese ua tulai mai. Faamolemole ia toe avane i luga le app.\n",
+    "reload": "Toe avane i luga",
+    "title": "Sese e Lē o Iloa"
+  },
+  "escrow_verification": {
+    "error": {
+      "invalid_phone_number": "E tatau ona 10 digits o le numera \no le telefoni"
+    },
+    "person_and_health_expert": "Se tagata o loo talanoa atu i se tagata tomai faapitoa i le soifua maloloina",
+    "start": {
+      "body": "Afai ua faamaonia i lau siaki na fai ua e aafia i le COVID-19 (e lei maua mai se siaki na sue ai le toto), e mafai ona e lipoti atu lau siaki e aunoa ma le faailoa o lou suafa.\n\nO le lipotia o lau siaki o le a fesoasoani i isi i lou afio'aga ina ia taofiofia le pipisi o le siama.\n ",
+      "header": "Lipoti atu se siaki ua faamaonia ai\n le aafia i le siama.",
+      "what_is_a_verification_code": "O le ā le verificaion code\n (verification code)?"
+    },
+    "user_details_form": {
+      "phone_number": "Numera telefoni",
+      "subheader": "Faailoa mai le numera o lau telefoni ma le aso na fai ai lau siaki ona matou text atu lea ia te oe lau faailoga faamaonia.\n",
+      "test_date": "Aso o le siaki",
+      "test_details": "Faamatalaga o le Siaki"
+    }
+  },
+  "export": {
+    "code": "Faailoga (code)",
+    "complete_body_bluetooth": "O loo e fesoasoani e taofiofi le pipisi atu o le siama ma puipuia ai isi i lou afioaga.",
+    "complete_title": "Faafetai mo le tausia o le\n saogalemu o lou afio'aga!",
+    "consent_body_0": "E tuu atu i lau faitalia pe e te manao e faailoa atu ua e aafia i le siama, ma se'iloga ua e malie i ai.",
+    "consent_body_2": "Pau lava faamatalaga e faasoa atu o ni numera o lau telefoni o loo fefaasoaai i luga o le Bluetooth ma isi telefoni sa latalata ane i le 14 aso ua tuanai, faatasi ai ma se lamatiaga mamafa sa faavae i le taimi na alia'e ai āuga o lou aafia.\n",
+    "consent_button_title": "Ua ou Malamalama ma Malie",
+    "consent_warning_message": "O le faaauau pea o le a pe ai lau verification code. Afai e te manao e faailoa atu i le lumanai le faamaonia o lou aafia i le siama, e tatau ona maua muamua sou verification code.",
+    "consent_warning_title": "Lapata'iga!",
+    "enable_exposure_notifications_body": "E tatau ona e faaola le vaega e faailoa mai pe afai sa latalata i se tasi o iai le siama, e lipotia ai le iuga o se siaki ua faamaonia ua aafia i le siama",
+    "enable_exposure_notifications_button": "Faaola le Exposure Notifications\n",
+    "enable_exposure_notifications_title": "Faaola le Exposure Notifications (le vaega e faailoa mai ai pe afai sa latalata I se tasi o iai le siama",
+    "enter_verification_code": "Ta i totonu le verification code",
+    "error": {
+      "invalid_format": "O code atonu e na o fuainumera ma mataitusi e aofia ai.",
+      "network_connection_error": "E lē o ola le initaneti",
+      "unknown_code_verification_error": "Faaaogā se isi code"
+    },
+    "intro": {
+      "body1": "Afai ua e maua se verification code mai {{healthAuthorityName}} mo se siaki o le COVID-19 ua faamaonia le aafia i le siama, e mafai ona e tuuina mai le verification code i le faamalama o loo sosoo mai.\n",
+      "body2": "Afai e lē o iai sau code, ae ua faamaonia i lau siaki ua e aafia I le siama, e tatau ona e saili mai sau  verification code mai le {{healthAuthorityName}} a o e lei faaauau. \n",
+      "header": "O ia te oe lau verification code?",
+      "what_is_a": "O le ā le verification code (verification code)?"
+    },
+    "never_mind_button_title": "E lē afaina",
+    "person_and_health_expert": "Se tagata o loo talanoa atu i se tagata tomai faapitoa i le soifua maloloina",
+    "publish_consent_title_bluetooth": "Faailoa atu i isi tagata i lou afioaga\n",
+    "publish_keys": {
+      "errors": {
+        "description": "E lē mafai ona faamae'aina le polokalame. {{message}}",
+        "internal_server_error": "O loo iai ni faafitauli i le server, faamolemole toe taumafai mai i se taimi mulimuli ane\n",
+        "timeout": "Ua umi tele ona faatali le faamae'aina o le talosaga\n",
+        "unknown": "E lei mafai ona tuuina mai faamaumauga faaaliali\n "
+      },
+      "no_op": {
+        "empty_exposure_keys": "E foliga ai e leai ni encounter logs i lau masini, se'i faatali mo se 24 itula ona e amata lea pe afai faato'ā toe seti au faamaumauga. Atonu e ono moomia ona e toe talosaga mo se  verification code fou.\n ",
+        "empty_exposure_keys_title": "E lē o maua se faamaumauga o nisi na feiloai (logging data)\n ",
+        "no_token_for_existing_keys": "O faamaumauga o loo iai na tuuina atu i le server. E masani lava e ta'u mai ai sa taumafai muamua le faiga o lenei mea i le masini lenei, ae sa ese le polokalame na faaaogā. E mafai ona e faamatala atu lenei mea i e pulega na latou saunia maia le  verification code lea sa faaaogā. E {{newKeysInserted}} ki fou sa faaopoopo ai.\n",
+        "no_token_for_existing_keys_title": "Taumafaiga e tuuina atu ki o loo iai nei"
+      }
+    },
+    "symptom_onset": {
+      "did_you_have_symptoms": "Pe na e faalogoina ni āuga?\n",
+      "no_i_didnt_have": "Leai, e leai ni āuga na ou lagonaina",
+      "symptoms": "Āuga",
+      "when_did_your_symptoms": "O anafea na amata ai ou āuga?",
+      "yes_i_did_have": "Ioe, sa iai o'u āuga"
+    },
+    "verification_code_info": {
+      "how_do_i_get_body": "Faafesootai le pulega a le tou soifua maloloina, {{healthAuthorityName}}.",
+      "how_do_i_get_header": "E faapefea ona ou maua se  verification code?",
+      "info_body": "O le  verification code, o se code lea e tuu atu ia te oe e le pulega a le tou soifua maloloina, {{healthAuthorityName}}, pe afai ua e tuuina atu le iuga o lau siaki na fai, ua e aafia i le siama o le faama'i.\n\nO le  verification code e faaaogā e faamautinoa ai, e moni lava le iuga o lou siaki na fai, ua e aafia i le siama.\n\nO  verification code taitasi o le a uma le aogā pe a mavae se taimi puupuu ina ia faamautinoa ai e lē tuuina atu iuga o siaki ua leva ona te'a.\n\nAfai e iai se mea sese i luga o lau masini i le taimi o loo e taumafai e tuuina atu lau  verification code, e tatau ona e toe tapa i le pulega a le tou soifua maloloina mo se isi code fou a o lei toe tuuina atu.\n",
+      "info_header": "O le ā le verification code?",
+      "what_happens_body": "A o e tuuina mai lau verification code, o le a tāpā oe e le app e faailoa mai ni exposure keys e lē o faaalialia solo, mai isi masini ia o loo e fesootai atu i ai.\n\nAfai e tuu atu lau faatagana, o le a lafo atu e le app nei ki i se server o loo faailoa maia ni tulaga ua latalata ai i se tasi o iai le siama. O le a faailoa atu e le server mo faaaliga i masini o loo e fesoota'i ai  le iuga o le siaki lea ua faamaonia ai ua e aafia.\n\nE lē taitai ona aoaoina ma teu e le app ni faamatalaga e patino i se tagata. E na o ki e lē faailoaina faalauaitele o loo teu i luga o lau masini e mafai ona faasoa atu.\n\n",
+      "what_happens_header": "O le ā se mea e tupu pe a ou tuuina atu la'u code?\n"
+    }
+  },
+  "exposure_history": {
+    "check_for_exposures": "Siaki mo ni tulaga ua latalata ai i ē o iai le siama\n",
+    "days_remaining": "E {{daysOfQuarantineLeft}} aso o loo totoe I le vaitaimi na fautuaina ai le faanofoesea o oe mo le vaavaaiga lelei.\n",
+    "exposure_detail": {
+      "general_guidance": "Taiala faalauaitele",
+      "next_steps": "Toe iloilo taiala mo le soifua maloloina\n",
+      "personalize_my_guidance": "Faapatino a'u taiala",
+      "schedule_callback": "Faatulaga se vili o le telefoni e saili se fesoasoani mai se contact tracer (polokalame e faailoa ai tagata sa latalata i ē ua iai le siama) mai le {{healthAuthorityName}}.\n",
+      "speak_with_contact_tracer": "Talanoa i se contact tracer"
+    },
+    "exposure_report": "Lipoti tulaga sa latalata ai i se tasi ua aafia i le siama\n",
+    "exposure_summary": "O se tasi sa e latalata i ai i le va o le {{startDate}} ma le {{endDate}} ua faamaonia i lana siaki ua aafia i le COVID-19.\n",
+    "health_guidelines": {
+      "six_feet_apart": "Tausisi le 6 futu le va ma le isi tagata",
+      "stay_home": "Nofo i le fale pe a ma'i",
+      "title": "Taiala o le Soifua Maloloina",
+      "two_meters_apart": "Tausisi le 2 mita le va ma le isi tagata\n",
+      "wash_your_hands": "Ia fufulu ou lima i taimi uma",
+      "wear_a_mask": "Fai se talifofoga"
+    },
+    "how_does_this_work": "Faapefea ona fai?",
+    "how_does_this_work_para": "Pe a ola le Exposure Notifications, e faaaogā e lau telefoni le Bluetooth e fesuia'i ma sefe ai faasologa o numera (e ta'u o random IDs) mai soo se telefoni o loo latalata i lena telefoni o loo ola foi le Exposure Notifications. O IDs o le a lē maitaulia patino ai oe i isi tagata ma e fesuisuia'i i le tele o taimi o le aso ina ia puipuia ai lava lou tulaga totino.\n\n",
+    "last_days": "14 aso talu ai",
+    "more_info": "A'oa'oina atili e uiga i le vaega e faailoa mai ai pe na latalata i se tasi o iai le siama (Exposure Notifications)\n",
+    "next_steps": "Laasaga e Sosoo ai",
+    "no_connectivity_message": "E lē o ola lau initaneti!\n ",
+    "no_exposure_reports": "Leai ni Lipoti o le Latalata ise tasi ua iai le siama\n",
+    "no_exposure_reports_over_past": "Ua te'a le 14 aso e te lei maua se lipoti o se latalata I se tasi ua iai le siama",
+    "possible_exposures": "Nisi Atonu na Latalata i se tasi ua iai le siama",
+    "review_health_guidance": "Toe Iloilo Taiala a le Soifua Maloloina\n\n",
+    "updated": "Mea fou",
+    "why_did_i_get_an_en": "Aisea na ou maua ai se faailoaga pe afai e iai sa latalata i se isi ua aafia i le siama\n",
+    "why_did_i_get_an_en_para": "O le a e maua se faailoaga pe afai sa e latalata I se tasi ua maua mulimuli ane i sona siaki na fai mo le COVID-19 ua aafia i le siama ma ua manao e faailoa atu i isi. ",
+    "your_device_exchanged": "I totonu o aso taitasi ua faasolo atu i lalo, sa fefaasoaa'i e lau masini ki ma le isi masini\nlea na maua mulimuli ane ai le iuga o le siaki ua aafia le tagata i le siama."
+  },
+  "exposure_notification_alerts": {
+    "bluetooth_body": "Ina ia faaola le Exposure Notifications, e tatau ona e faaola muamua le Bluetooth i lau Settings app.",
+    "bluetooth_title": "Faaola le Bluetooth",
+    "cant_check_for_exposures_body": "E tatau ona faaola le Exposure Notifications e siaki ai poo iai nisi na latalata i se tasi ua aafia i le siama\n",
+    "cant_check_for_exposures_button": "Faaola le Exposure Notifications\n",
+    "cant_check_for_exposures_title": "E lē mafai ona siaki mo nisi na latalata i se tasi ua aafia i le siama\n",
+    "location_body": "E tāpā  e le Google ia masini o loo faaaogāina le Android 10 poo lalo ifo ia iai ni vaega mo nofoaga e mafai ona faaaogā le Exposure Notifications. E LĒ sueina pe teuina pea  e le {{applicationName}} se faamaumauga o lou nofoaga.\n",
+    "location_title": "Faaola Auaunaga mo Nofoaga",
+    "set_active_region_ios_body": "Tatala le Settings app, saili mo le vaega o le Exposure Notifications i lenei app, ona oomi lea o le \"Set As Active Region\".\n",
+    "set_active_region_ios_title": "Set Active Region (faailoa le vaipanoa o loo iai lē ua aafia i le siama)",
+    "share_exposure_information_ios_body": "Tatala le Settings app, saili mo le vaega o le Exposure Notifications i lenei app. Faamautinoa o loo faaola le \"Share Exposure Information\", ona oomi lea o le 'Set As Active Region'.\n",
+    "share_exposure_information_ios_title": "Share Exposure Information (faasoa atu faamatalaga o se tasi na latalata i se tasi ua aafia I le siama)\n",
+    "unhandled_error_body": "E iai se mea na tupu sa lei faatalitalia. Faamolemole tapuni ona toe tatala lea o le app ma toe fai.\n\n",
+    "unhandled_error_title": "E iai se mea na faaletonu",
+    "use_exposure_notifications_android_body": "Ina ia faaola le Exposure Notifications, alu i le faamalama o le COVID-19 Exposure Notifications o lau Settings app ma faaola le \"Use Exposure Notifications\".",
+    "use_exposure_notifications_android_title": "Faaola Exposure Notifications"
+  },
+  "exposure_scanning_status": {
+    "fix_this": "Faalelei le mea lenei",
+    "learn_more": "A'oa'oina atili",
+    "your_device_is_not": "E lē o mafai e lau masini ona maua i latou o loo latalata i se tasi ua aafia i le siama. Faalelei le faalētonu o loo ta'ua i lalo ina ia faaola ai le Exposure Detection.\n",
+    "your_device_is_scanning": "O loo mafai e lau masini ona maua i latou o loo latalata i se tasi ua aafia i le siama ma o le a faaauau lava ona faia faapena e tusa pe e te tapunia le app.\n"
+  },
+  "home": {
+    "bluetooth": {
+      "location_disabled_error_message": "Ina ia faaola le Exposure Notifications, ia faataga le oo atu I le Location i le Settings app\n",
+      "location_disabled_error_title": "Pule i Settings",
+      "location_header": "Nofoaga",
+      "location_subheader": "E lē taitai ona oo le {{applicationName}}  i faamaumauga o lou nofoaga ma le taitai ona sueina atu lau masini ",
+      "proximity_tracing_header": "Exposure Notifications (le vaega e\n faailoa mai ai pe afai sa latalata i se tasi o iai le siama)",
+      "share": "Faasoa {{applicationName}}",
+      "share_message": "Siaki le app lenei {{applicationName}}, e mafai ona fesoasoani ia i tatou e taofiofi le oo mai o le COVID-19 {{appDownloadUrl}}\n",
+      "tracing_off_header": "\nO loo tapē le Exposure Detection",
+      "tracing_on_header": "O loo ki le Exposure Detection"
+    },
+    "bluetooth_info_body": "Ua iiteina e lau telefoni isi telefoni sa e faaaogā e latalata i le faaaogāina o le Bluetooth Low Energy. E mafai ai e le app ona tatala mea o loo e faia i aso taitasi e aunoa ma le iloa e isi, e tusa lava pe e te lē o tatalaina le app i lau masini.\n",
+    "call_emergency_services": "Vili le Emergency Services (auaunaga mo ma'i ma faalavelave faafuase'i)",
+    "error": {
+      "share_link_failed": "Lei mafai ona tatala le link e faasoa"
+    },
+    "fix": "Faalelei mataupu i le {{technology}}",
+    "get_more_info": "Saili nisi faamatalaga  I le {{technology}}",
+    "have_a_positive_test": "Pe na fai lou siaki ma l faamaonia e te lē o aafia?\n",
+    "location_info_body": "E tāpā  e le Google ia masini o loo faaaogāina le Android 10 poo lalo ifo ia iai ni vaega mo nofoaga e mafai ona faaaogā le Exposure Detection. E LĒ sueina pe teuina pea  e le {{applicationName}} se faamaumauga o lou nofoaga.",
+    "location_info_subheader": "E lē  sueina pe teuina pea  e le {{applicationName}} se faamaumauga o lou nofoaga.\n",
+    "open_healthcheck": "Siaki faalauaitele o le soifua maloloina",
+    "proximity_tracing_info_body_1": "Afai o loo ki smartphones lea ua tuu i ai le app, faaola ma le Bluetooth, ma o loo fetalata'i mo se vaitaimi, ua faamauina ai la i lau masini se fesootaiga ma se tasi ua iai le siama.\n",
+    "proximity_tracing_info_body_2": "I lena fesootaiga, o au faamaumauga, ma faamatalaga e tumau lava ona lē iloaina e isi. E lē teuina i le app soo se faamaumauga totino. E na o ID eseese e fefaasoaa'i. O mea na e tapē pe a mavae le 14 aso.\n",
+    "proximity_tracing_info_subheader_1": "Faapefea ona aogā le Exposure Notifications?\n",
+    "proximity_tracing_info_subheader_2": "Pe o saogalemu a'u faamaumauga?",
+    "verification_code_card": {
+      "if_you_have_a_code": "Tuuina mai la'u verification code e fesoasoani i le tausia o le saogalemu o lou afio'aga.\n",
+      "if_you_have_a_positive_test": "Afai ua faamaonia i lau siaki ua e aafia i le COVID-19,  e mafai ona e lipoti mai le siaki e aunoa ma le faailoa mai o oe, e fesoasoani ina ia faatumau le saogalemu o lou afio'aga.\n\n",
+      "more_info": "O le ā le verification code?",
+      "report_positive_test": "Lipoti mai Siaki ua Faamaonia le Aafia i le Siama\n",
+      "submit_code": "Tuuina mai le code\n"
+    }
+  },
+  "label": {
+    "checked_checkbox": "Na siaki le checkbox",
+    "go_to_home_view": "Alu i le Home View",
+    "launch_enable_notif": "Faaola le Notifications\n",
+    "launch_get_started": "Amata loa",
+    "launch_screen1_header": "Afio mai i",
+    "privacy_policy": "Faiga Faavae o Mataupu Totino",
+    "unchecked_checkbox": "E lei siakia le checkbox"
+  },
+  "navigation": {
+    "exposure_history": "Exposures",
+    "home": "Dashboard",
+    "settings": "Settings",
+    "symptom_history": "Āuga"
+  },
+  "onboarding": {
+    "app_setup_complete_body": "O loo aogā le {{applicationName}}. Faafetai mo le fesoasoani mai e faamuta le pipisi o le faama'i.\n",
+    "app_setup_complete_header": "Mae'a le App Setup!",
+    "app_setup_incomplete_body": "E tāpā e le {{applicationName}} le faatagana a le Exposure Notifications ma le Bluetooth ina ia iloa ai poo anafea na e latalata atu i se tasi ua aafia I le COVID-19. E mafai ona e pulea lenei mea i le Settings.",
+    "app_setup_incomplete_header": "E lē o Mae'a le App Setup",
+    "app_setup_incomplete_location_body": "E tāpā e le {{applicationName}} le faatagana a le Exposure Notifications, Bluetooth, ma le Location ina ia iloa ai poo anafea na e latalata atu i se tasi ua aafia I le COVID-19. E mafai ona e pulea lenei mea i le Settings.",
+    "eula": "Faamuta le User Legal Agreement",
+    "eula_agree_terms_of_use": "Ou te ioe ua uma ona ou faitauina ma talia aiaiga o le faaaogāina\n",
+    "i_am_over": "Ioe, ua silia ma le {{minimumAge}} lo'u matua\n",
+    "location_alert_body": "Ina ia faaaogā le Exposure Notifications, e tatau ona faaola le Location Services",
+    "location_alert_header": "Faaola le Location Services\n",
+    "location_body": "E tāpā  e le Google ia masini o loo faaaogāina le Android 10 poo lalo ifo ia iai ni vaega mo nofoaga e mafai ona faaaogā le Exposure Detection. E LĒ sueina pe teuina pea  e le {{applicationName}} se faamaumauga o lou nofoaga.\n",
+    "location_header": "Faaola le Location\n",
+    "location_services_already_active": "O loo ola auaunaga mo le Location\n",
+    "location_subheader": "E lē taitai ona oo le {{applicationName}}  i faamaumauga o lou nofoaga ma le taitai ona sueina atu lau masini.",
+    "no_take_me": "Leai, toe faafoi a'u i tua\n",
+    "notification_body1": "O le a e mauaina ni faaaliga pe a fai ua umi tele o e latalata i se tasi ua lipotia mai le aafia i le COVID-19.",
+    "notification_body2": "E fai e le app lenei mea e faaaogā ai le Bluetooth Low Energy ma maua ai ni codes eseese e aunoa ma le iloa poo ai oe poo fea foi sa e iai. E mafai ona e tapē lenei app I soo se taimi i settings.",
+    "notification_header": "Ia faailoa atu pe afai sa e latalata i se tasi ua aafia i le siama\n",
+    "notification_subheader1": "O afea o le a faailoa mai ai ia te au?",
+    "notification_subheader2": "E faapefea ona fai?",
+    "notification_subheader3": "E lē puipuia e lenei app oe mai le pisia i le COVID-19.",
+    "please_read_the": "Faamolemole ia faitau le",
+    "privacy_policy": "Faiga Faave mo Mataupu Totino",
+    "protect_privacy": {
+      "body_1": "E lē o iai i nei IDs ni faamatalaga totino ma e ta'i 10-20 minute ma toe suia ina ia puipuia ai lou faasinomaga.",
+      "body_2": "E faafesuia'I e telefoni IDs eseese ma isi masini e faaaogā ai le Bluetooth Low Energy. E mafai ai ona sue ai e le {{applicationName}}  i latou e te fetaui i ai i aso taitasi e aunoa ma le faailoaina, e tusa lava pe lē o tatalaina i lau masini.",
+      "body_3": "Pe a uma ona faamaonia i lau siaki ua e aafia i le COVID-19, e mafai e I latou o loo faaaogāina le app ona faailoa se verification code i le {{applicationName}} ina ia faamaonia ai o latou aafiaga. O le a faailoga IDs talu ai nei o a latou telefoni ma tuu ma le saogalemu i luga o le server. O lenei faiga tau faamaoniga e mafai ona taofia ai ni lipotia sese o nisi faapea ua aafia i le siama. ",
+      "body_4": "Afai e tutusapau le ID ua faailoga ma se ID o loo teu i lau telefoni,  e faaalia ai atonu sa e fetaui i se tasi ua faamaonia lona siaki ua aafia i le COVID-19. O le auala lena e mafai ai e le {{applicationName}} ona iloa pe faamata ua e aliali atu i le siama.",
+      "body_5": "Afai ua maua e tutusa, o le a faailoa atu e le {{applicationName}} ia te oe ma avatu nisi taiala atili mai le tou matagaluega o le soifua maloloina.\n\nO le auala lenei e mafai e le {{applicationName}} ona avatua ia te oe le malosi e fai ai au faaiuga e faatatau i lou soifua maloloina, ma tausi ai pea le saogalemu o lou afio'aga, ae fai nei mea uma e aunoa ma le iloa poo ai oe ae o fea foi sa e iai.\n",
+      "subheader_1": "Pe a e faaola le Exposure Notifications, ua aofia ai ma lau telefoni i IDs eseese ia e fai ma fesuisuia'i.",
+      "subheader_2": "O telefoni o loo iai Exposure Notifications e mafai ona fesuia'ia IDs ma isi masini e aliali atu i ai",
+      "subheader_3": "Pe a faamaonia le siaki ua aafia i le siama se tagata o loo faaaogāina se masini, e mafai ona latou filifili pe faailoa le tulaga ua iai lo latou soifua maloloina e aunoa ma le iloa poo ai latou",
+      "subheader_4": "E tau fai faamanatu mai lea taimi i lea taimi e telefoni taitasi i le server mo le lisi o IDs ua faailoga ma saili mo isi IDs ua tutusapau",
+      "subheader_5": "O le a faailoa atu ia te oe pe afai e maua e le {{applicationName}} se ID ua aafia i le siama e tutusapau ma le ID ua faailoga\n"
+    },
+    "protect_privacy_button": "Le auala e puipuia ai mataupu e patino ia te oe\n",
+    "proximity_tracing_already_active": "O loo ola Exposure notifications",
+    "proximity_tracing_body1": "Afai o loo ki smartphones ua iai le app, o loo faaola le Bluetooth, ma ua umi se taimi o felata'I nei telefoni, e iai se tasi na e feiloai i ai ua faamauina pe lesitalaina i luga o lau masini.\n",
+    "proximity_tracing_body2": "I lena fesootaiga, o au faamaumauga, ma faamatalaga e tumau lava ona lē iloaina e isi. E lē teuina i le app soo se faamaumauga totino. E na o ID eseese e fefaasoaa'i. O mea na e tapē pe a mavae le 14 aso.\n",
+    "proximity_tracing_button": "Faaola le Exposure Notifications",
+    "proximity_tracing_header": "Faaola le Exposure Notifications",
+    "proximity_tracing_subheader1": "E faapefea ona fai?\n",
+    "proximity_tracing_subheader2": "Poo saogalemu la'u data?",
+    "proximity_tracing_subheader3": "E lē puipuia e lenei app oe mai le pisia i le COVID-19.",
+    "screen1_button": "E faapefea ona fai?",
+    "screen1_header": "E mafai ona tatou galulue faatasi e taofiofi le pipisi vave o le COVID-19.",
+    "screen1_image_label": "E toalua tagata o loo faapā faatasi o la lima",
+    "screen1_title": "Malo lava mo le faaaogāina o le AlohaSafe Alert",
+    "screen2_button": "Poo puipuia mea e patino ia te au?",
+    "screen2_header": "E manatua e lau telefoni isi masini e fesootai i ai, ae lē faailoaina ai oe i isi.",
+    "screen2_image_label": "E toalua tagata o loo talanoa ia la telefoni",
+    "screen3_button": "E faapefea pe afai sa ou latalata atu i se tasi ua aafia i le siama?",
+    "screen3_header": "E lē taitai ona alu ese atu ma lau telefoni faamatalaga e maitaulia ai oe.",
+    "screen3_image_label": "Se tagata o loo i luma o se telefoni o loo loka",
+    "screen4_button": "Amata loa",
+    "screen4_header": "O le a faailoa atu e le app ia te oe pe afai ua e latalata i se tagata ua aafia i le COVID-19\n",
+    "screen4_image_label": "O se tagata o loo ia maua mai ni faaaliga i lana telefoni",
+    "terms_header_title": "Tuutuuga o le faaaogāina",
+    "verify_your_age": "Faamautinoa mai Ou Tausaga",
+    "welcome_image_label": "Se ata faata'ita'i o tagata o loo fai uma a latou ufifofoga, o loo fesootai e solo e pei o ni faapona (nodes) o loo fesootai solo.",
+    "you_must_be": "E tatau ona {{minimumAge}} lou matua pe sili atu e faaaogā ai le {{applicationName}}. Po ua silia ma le {{minimumAge}} ou tausaga?"
+  },
+  "product_analytics": {
+    "i_understand_and_consent": "Ua ou Malamalama ma Malie",
+    "privacy_policy": "Faiga Faavae o Mataupu Totino",
+    "share_anonymized_data": "Faasoa atu Data e Lē Faailoaina ai\nse Tasi",
+    "share_anonymized_data_disclaimer": "O le faia, ua e malie ai e faasoa atu\n data o mea na tutpu e aunoa ma le faailoaina o se tasi I le {{healthAuthorityName}}",
+    "share_data_para_1": "O data ua aoaoina faatasi ma e lē faailoaina i isi, e uiga i le auala o loo faaaogā ai e tagata lautele lenei app, ua fesoasoani i le {{healthAuthorityName}} Komisi, e vailiili, malamalama, ma taofiofia ai le pipisi atu o le COVID-19.",
+    "share_data_para_2": "E lē o iai i lenei data ni faamatalaga e maitaulia totino ai se tasi.",
+    "stop_sharing_data": "Taofi le Faasoa atu o Data"
+  },
+  "screen_titles": {
+    "bluetooth": "Bluetooth",
+    "exposure_history": "Exposures (aliali atu)",
+    "exposure_notifications": "Exposure Notifications (le vaega e\nfaailoa mai ai pe afai sa latalata i se tasi o iai le siama)\n",
+    "exposure_scanning": "Exposure Detection (iiteina ua latalata i se tasi o iai le siama)",
+    "home": "Dashboard",
+    "how_the_app_works": "Faapefea ona fai le app",
+    "legal": "Faaletulafono",
+    "location": "Nofoaga",
+    "protect_privacy": "Faapefea ona matou puipuia mea\ne totino ia te oe",
+    "select_language": "Filifili le Gagana",
+    "select_symptoms": "Filifili Āuga",
+    "settings": "Faatulagana"
+  },
+  "self_assessment": {
+    "age_range": {
+      "eighteen_to_sixty_four": "18 - 64",
+      "get_my_guidance": "Aumai la'u taiala",
+      "how_old_are_you": "Ua fia tausaga o lou matua?",
+      "sixty_five_and_over": "65+"
+    },
+    "call_emergency_services": {
+      "call_emergencies": "Vili {{emergencyPhoneNumber}}",
+      "seek_medical_attention": "Saili vave se fesoasoani faafoma'i",
+      "urgent_medical_attention_needed": "Atonu e moomia se fesoasoani\n faanatinati ai se foma'i. Vili loa le {{emergencyPhoneNumber}} pe alu i le Emergency Department"
+    },
+    "emergency_symptoms": {
+      "are_you_experiencing": "O e lagonaina nisi o nei āuga\nfaafuase'i?",
+      "chest_pain": "Ogaoga, faalausosoo le tiga o le\n fatafata",
+      "difficulty_breathing": "Matuā faigata ona mānava",
+      "disorientation": "Matuā lē sagatonu le mafaufau pe\n ua lē tali lelei mai",
+      "lightheadedness": "Ogaoga, faalausosoo le tau tigatigā o le ulu",
+      "select_any": "Filifili āuga uma o loo e maua ai (pe leai se āuga)"
+    },
+    "general_symptoms": {
+      "aching": "Tiga atoa le tino",
+      "are_you_experiencing": "Poo e lagonaina nisi o nei āuga?",
+      "cough": "Amata ona tale pe ua faateteleina le leaga o le tale",
+      "difficulty_breathing": "Tau amata ona faafaigata le mānava",
+      "fever_or_chills": "Fiva pe oso le faamaalili",
+      "loss_of_smell_taste_appetite": "Ua faaauau lava ona lē toe lagonaina manogi o mea, tofo o mea'ai, pe ua leai se mata'ai",
+      "other": "Isi",
+      "select_any": "Filifili āuga uma o loo e maua ai",
+      "vomiting_or_diarrhea": "Faasuati pe manava  tatā"
+    },
+    "guidance": {
+      "call_your_healthcare_provider": "Vili le tou vaega a le soifua maloloina, le laina telefoni mo fautuaga faafoma'I, poo le vaega e te vili ai le telefoni mo talavai i totonu o le 24 itulau.",
+      "clean_hands": "Ia fufulu ou lima i taimi uma.",
+      "cover_coughs": "Ia pupuni lou fofoga pe a e tale ma mafatua.",
+      "dont_go_to_work": "Aua e te alu e faigaluega, i le aoga, poo nofoaga faitele.",
+      "dont_use_public_transport": "Aua e te fealua'i i auala o feoa'iga lautele pe e te lua o faatasi ma se isi tagata I se taavale.",
+      "drink_water": "To'aga e inu le vai ma isi mea faasuavaia manino e taofi ai le alu ese o le vai mai lou tino (dehydration).",
+      "feeling_fine": "Fiafia e faalogo atu ua e malosi. E tatau lava ona vaavaai lelei ou āuga ma nofo lelei i le fale.",
+      "find_a_test_center_nearby": "Laasaga e Sosoo ai",
+      "find_telehealth": "Saili mo auaunaga tau soifua maloloina e faatino i luga o le telefoni",
+      "follow_cdc_guidance": "Afai ua alia'e ni ou āuga, mulimuli I le taiala CDC.",
+      "guidance": "Lou Taiala",
+      "if_symptoms_develop": "Afai sa alia'e ia te oe soo se āuga o le COVID-19 pe ua amata faateteleina le lelei o lau faalogo, vili le tou vaega a le soifua maloloina, le laina telefoni mo fautuaga faafoma'I, poo le vaega e te vili ai le telefoni mo talavai.",
+      "may_help_you_feel_better": "O nsi nei o laasaga e ono fesoasoani e te lagona ai le malosi:",
+      "monitor_your_symptoms": "E alofa atu ua e ma'i. Nofo i le fale ma mata'itu lelei ou āuga. Vili i le tou falema'I pe a e lagona ua tigaina tele ou āuga, nofo i le fale.",
+      "practice_social_distancing": "Faatino le tausi o le vāvāmamao.",
+      "protect_others": "Fai laasaga nei ina ia fesoasoani e puipuia isi mai le oo ina mama'i.",
+      "rest": "Nofo i le fale ma malolo.",
+      "seek_medical_care": "Afai e te lagona o se mea ua moomia vave se fesoasoani pe ua e lagona le tigaina, saili loa se fesoasoani faafoma'i.",
+      "stay_6_feet_away": "Ia tausisia pea le lē itiiti ifo ma le 6 futu le mamao mai isi ma aua e te alu i le mea o loo tumutumu ai tagata.",
+      "stay_at_home": "Nofo i le fale se'ivaganā pe a alu e vaai se foma'i.",
+      "stay_away_from_higher_risk_people": "Afai e mafai, aua ne'i e latalata i tagata e lamatiagofie i le ono mama'I mai le COVID-19.",
+      "stay_home_14_days": "Nofo i le fale mo le 14 aso.",
+      "take_care_of_yourself": "Faata'ita'i ona e tausia oe lava pe tausi se isi o loo ma'i.",
+      "take_temperature": "Fua faalua lou fiva i le aso ma mata'itu ni āuga o le COVID-19 e alia'e.",
+      "watch_for_covid_symptoms": "Mata'itu ni āuga o le COVID-19.",
+      "you_have_underlying_conditions": "E alofa atu ua e ma'i. Atonu e fesootai atu ou āuga i le COVID-19. E iai foi isi ou ma'I atonu e te oo ai i se lamatiaga o lou matuā ma'i tigaina.",
+      "your_symptoms_might_be_related": "E alofa atu ua e ma'i. Atonu e fesootai atu ou āuga i le COVID-19."
+    },
+    "how_are_you_feeling": {
+      "good": "Lelei",
+      "not_well": "E lē o malosi",
+      "title": "O ā mai lau faalogo?"
+    },
+    "intro": {
+      "agree_and_start_assessment": "Ioeina ma amata loa le iloiloga",
+      "covid19_self_assessment": "Iloiloga a le Tagata Lava ia  mo le COVID-19",
+      "find_out_how_to_care": "Saili pe faapefea ona e tausia oe lava ma tausi ma isi pe afai sa iai se fesootaiga vavalalata ma se tasi ua faamaonia le aafia i le COVID-19",
+      "if_this_is": "Afai o se ma'i tigaina, vili loa le {{emergencyPhoneNumber}}",
+      "learn_more": "Faamasani atili i le CDC Coronavirus Self-Checker lea e faavae mai ai luga lenei Self Assessment (iloiloga a le tagata ia te ia lava)",
+      "this_is_based_on": "O loo faavae a'e i luga o le taiala sili ona lata mai  sa maua mai le CDC ma atonu sa toe faafou a o mavae atu taimi, a o tatou a'oa'oina isi mea e tele i le auala e pipisi ai le siaa ma faapogaia ai le faama'i",
+      "this_is_not_intended": "E lē o fuafuaina lenei mea mo se faamautinoaina o le ma'i poo se togafitiga",
+      "you_are_a_resident": "O oe o se tagatā o loo nofo i le afio'aga ua lagolagoina e {{ healthAuthorityName }}"
+    },
+    "underlying_conditions": {
+      "blood_disorder": "O faalētonu o le toto, e pei o le faama'i o le lē lava o sela mūmū o le toto (sickle cell disease) poo le lē lava o sela faatupu toto (thalassemia)",
+      "cerebrovascular_disease": "Faama'i o le pepē o ālatoto o le fai'ai poo tulaga o neura o le tino, e pei o le pē o le fai'ai (stroke) poo le galogalo mea (dementia)",
+      "diabetes": "Ma'I suka",
+      "do_you_have": "O maua oe I se tasi o nei mea?",
+      "heart_condition": "O tulaga ogaoga o le fatu, e pei āuga eseese ua afaina ai le fatu (heart failure, coronary artery disease, poo le cardiomyopathy)",
+      "high_blood_pressure": "Toto maualuga",
+      "kidney_disease": "Ma'I faaumiumi o fatuga'o",
+      "liver_disease": "Ma'i ate",
+      "obesity": "Putagaele",
+      "pregnancy": "Ma'itaga",
+      "select_all_or_none": "Filifili uma vaega o loo e maua ai (pe leai)",
+      "smoking": "Ulaula",
+      "weakened_immune_system": "Ua vaivai le vaega o le tino e tetee atu I faama'i poo le faaaogāina o ni talavai e ono faaleagaina ai le vaega o le tino e tetee atu i faama'i (immune system)"
+    }
+  },
+  "settings": {
+    "data_deleted": "Ua tapē faamaumauga",
+    "delete_data_are_you_sure": "Ua e mautinoa?",
+    "delete_data_disclosure1": "Pe a e oomia le \"Delete My Data\", o le a tapē uma ai lava faamaumauga sa teu i le {{applicationName}}:",
+    "delete_data_disclosure2": "E lē tapēina ai faamaumauga na fau a'e pe aoaoina mai e lau masini mo Exposure Notifications.",
+    "delete_data_language_token": "E mafai ona e tapēina nei faamaumauga faaopoopo i le Settings a lau masini.",
+    "delete_data_note": "Mātau mai",
+    "delete_data_onboarding_token": "O se vaega (token) o loo teu i lau masini e sefe ai pe faamata ua e faamae'aina le vaega amata o le app",
+    "delete_data_product_analytics": "O le vaega (token) o loo teu i lau masini e sefe ai pe faamata ua e malie i le faasoaina atu o faamaumauga (product analytics data)",
+    "delete_data_symptom_history": "Soo se faamaumauga o āuga (symptom logs) o loo teuina I lau masini",
+    "delete_data_this_action": "O le a tapē ese e lenei faiga faamaumauga uma lava sa teu i le {{applicationName}}.",
+    "delete_my_data": "Tapē o'u faamaumauga",
+    "errors": {
+      "deleting_data": "Faamalie atu, e lē mafai ona matou tapēina ou faamaumauga"
+    },
+    "not_sharing_anonymized_data": "E lē faasoaina atu faamaumauga e lē o faailoaina  ai se tasi",
+    "share_anonymized_data": "Faasoa atu faamaumauga e lē o faailoaina ai se tasi",
+    "sharing_anonymized_data": "Faasoaina atu faamaumauga e lē o\nfaailoaina ai se tasi"
+  },
+  "symptom": {
+    "bluish_lips_or_face": "Lanu moana laugutu poo foliga",
+    "congestion_or_runny_nose": "Afu le tino pe tafe le isu",
+    "cough": "Tale",
+    "diarrhea": "Manava tatā",
+    "fatigue": "Ivā",
+    "fever_or_chills": "Fiva pe oso le faamalili",
+    "headache": "Tiga le ulu",
+    "inability_to_wake_or_stay_awake": "Leai se malosi e nofo i luga pe ala umi\n",
+    "muscle_or_body_aches": "Tiga maso ma le tino",
+    "nausea_or_vomiting": "Faafaufau pe faasuati",
+    "new_confusion": "E fou le nunumi o le mafaufau",
+    "new_loss_of_taste_or_smell": "E fou le lē manogi se tofo poo se \nmanogi",
+    "other": "Isi",
+    "persistent_pain_or_pressure_in_the_chest": "Faaauau ona tiga pe fufusi le fatafata",
+    "shortness_of_breath_or_difficulty_breathing": "Tau lē lava le mānava pe ua faigata ona mānava\n",
+    "sore_throat": "Tiga le faa'ī",
+    "trouble_breathing": "Faalētonu le mānava"
+  },
+  "symptom_history": {
+    "did_not_feel_well": "Sa lei malosi lau faalogo pei ua e ma'i",
+    "errors": {
+      "updating_symptoms": "E faamalie atu, e lē mafai ona matou toe faafouina suiga o āuga e lagonaina"
+    },
+    "felt_well": "Sa malosi lau faalogo",
+    "no_entry": "Leai se mea o tuuina i totonu",
+    "no_symptoms": "Leai ni āuga",
+    "share_history": "Faasoa atu talaaga o āuga na iai",
+    "sharing": {
+      "header": "Talaaga o āuga mai le {{startDate}} e oo i le {{endDate}}",
+      "no_symptoms_were_logged": "E leai ni āuga na tuuina i totonu",
+      "you_did_not_feel_well": "Sa lei malosi lau faalogo pei ua e ma'I, e aofia ai ma āuga: {{symptomList}}",
+      "you_felt_well": "Sa e lagona le malosi"
+    },
+    "symptom_history": "Āuga",
+    "to_protect_your_privacy": "Ina ia puipuia ou tulaga totino, o mea uma e tuu I totonu o loo teu uma i lau masini ma e otomeki lava ona tapē pe a mavae le {{days}} aso.\n"
+  },
+  "verification_code_alerts": {
+    "code_used_body": "Ua uma ona faaaogā le verificaion code.\n",
+    "code_used_title": "Uma ona Faaaogā le Verification Code\n\n",
+    "invalid_code_body": "E lē o sa'o le verificaion code na e tuuina mai.\n\nE tatau ona sa'o le verificaion code e tuu atu ia te oe e le pulega a le tou soifua maloloina.\n\nE mafai foi ona uma le aogā o lau verificaion code. Afai e sa'o, e tatau la ona e toe talosaga i le pulega a le tou soifua maloloina mo se code fou.\n",
+    "invalid_code_title": "E lē o sa'o le Code",
+    "network_connection_body": "E moomia ona ola lau WiFi e lafo mai ai le verificaion code.\n",
+    "network_connection_title": "E lē o Ola le Initaneti",
+    "unknown_body": "E iai se mea sese na tupu sa lei faatalitalia. Toe taumafai.\n",
+    "unknown_title": "E Iai se Mea na Faalētonu"
+  }
+}

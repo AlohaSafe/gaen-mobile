@@ -26,6 +26,7 @@ import ilo from "./ilo.json"
 import it from "./it.json"
 import ja from "./ja.json"
 import ko from "./ko.json"
+import mh from "./mh.json"
 import ml from "./ml.json"
 import nl from "./nl.json"
 import pl from "./pl.json"
@@ -33,6 +34,7 @@ import pt_BR from "./pt_BR.json"
 import ro from "./ro.json"
 import ru from "./ru.json"
 import sk from "./sk.json"
+import sm from "./sm.json"
 import so from "./so.json"
 import tl from "./tl.json"
 import tr from "./tr.json"
@@ -71,6 +73,7 @@ const LANGUAGE_RESOURCES: Resource = {
   it: { label: it._display_name, translation: it },
   ja: { label: ja._display_name, translation: ja },
   ko: { label: ko._display_name, translation: ko },
+  mh: { label: mh._display_name, translation: mh },
   ml: { label: ml._display_name, translation: ml },
   nl: { label: nl._display_name, translation: nl },
   pl: { label: pl._display_name, translation: pl },
@@ -78,6 +81,7 @@ const LANGUAGE_RESOURCES: Resource = {
   ro: { label: ro._display_name, translation: ro },
   ru: { label: ru._display_name, translation: ru },
   sk: { label: sk._display_name, translation: sk },
+  sm: { label: sm._display_name, translation: sm },
   so: { label: so._display_name, translation: so },
   tl: { label: tl._display_name, translation: tl },
   tr: { label: tr._display_name, translation: tr },

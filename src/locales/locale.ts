@@ -17,6 +17,7 @@ export type Locale =
   | "it"
   | "ja"
   | "ko"
+  | "mh"
   | "ml"
   | "nl"
   | "pl"
@@ -24,6 +25,7 @@ export type Locale =
   | "ro"
   | "ru"
   | "sk"
+  | "sm"
   | "so"
   | "tl"
   | "tr"
@@ -120,6 +122,9 @@ export const fromString = (l: string): Locale => {
     case "ko": {
       return "ko"
     }
+    case "mh": {
+      return "mh"
+    }
     case "ml": {
       return "ml"
     }
@@ -141,6 +146,9 @@ export const fromString = (l: string): Locale => {
     }
     case "sk": {
       return "sk"
+    }
+    case "sm": {
+      return "sm"
     }
     case "so": {
       return "so"

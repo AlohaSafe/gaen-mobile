@@ -1,0 +1,499 @@
+{
+  "_display_name": "Marshallese",
+  "about": {
+    "description": "{{applicationName}} app enaaj iwoj ilo {{healthAuthorityName}}.",
+    "operating_system_abbr": "OS:",
+    "version": "Wawein eo juon:"
+  },
+  "aloha_safe": {
+    "about": "AlohaSafe Alert app enaaj iwoj ilo ",
+    "contact_provider": "Kurlok ro ilo jikin ajmour eo nan am bok teej in COVID-19 im karon er elane kwoj loe ke kwar ajedede nan naninmij in.",
+    "have_you_had_symptoms": "Eaar wor ke kakolkol ko ippam?",
+    "hawaii_us": "Hawaii, United States",
+    "healthAuthorityName": "Ra eo an jikin ajmour ilo Hawaii",
+    "legal": "Kakien ko an AlohaSafe Alert Mobile:",
+    "recognizing_symptoms": "Kile lok kakolkol ko an COVID-19, im neet renaaj ijino, enaaj jiban kalikar elane kobok naninmij in, (Ekke an walok jejjot raan mokta jen am bok kakolkol ko). Armij eo ewor COVID-19 ippen, emaron ejelok kakolkol ko ippen ak ekabobo.",
+    "symptoms_include": "Kakolkol ko reemaron juon ak lonlok iaan men kein:"
+  },
+  "callback": {
+    "fill_out_the_info": "Kanne melele kein ilal im juon rijerbal in etale naninmij in {{healthAuthorityName}} enaaj kenono ibam.",
+    "firstname": "Et eo etam",
+    "lastname": "Laaj neim",
+    "phone_number_required": "Talboon nomba (menin aikuij)",
+    "request_a_call": "Kajjitok bwe ro rietale naninmij in ren kur waj iok",
+    "success_body": "Ro rietale rej kate er jonan wot aer maron bwe ren kejbarok iok kab jukjukin bed eo am. {{healthAuthorityName}} emoj aer loe kajjitok eo am im renaaj kur waj iok. Ro rej jerbal renaj kur waj iok iumwin 24 awa kein.",
+    "success_got_it": "Emman ke",
+    "success_header": "Kwoj bed ilo kottar"
+  },
+  "common": {
+    "back": "Rool",
+    "cancel": "Jolok",
+    "close_screen": "Kiili screen eo",
+    "confirm": "Kamoole",
+    "continue": "Wonmaanlok wot",
+    "done": "Dedelok",
+    "edit": "Jeje",
+    "learn_more": "Ekatak elaplok",
+    "maybe_later": "Bolen tokelik",
+    "more": "Lonlok",
+    "next": "Men eo juon",
+    "no_thanks": "Bolen ijjab",
+    "off": "KUNE",
+    "okay": "Eman",
+    "on": "EJO",
+    "save": "Kejbarok",
+    "select_language": "Kelet kajin eo",
+    "settings": "Kebellok jetiin eo",
+    "skip": "Wonmaanlok jene",
+    "something_went_wrong": "Juon men eo bod kilen",
+    "start": "Jinoe",
+    "submit": "Jilkinlok",
+    "success": "Etobrak"
+  },
+  "covid_data": {
+    "7_day_avg": "Ekka an 7 Raan",
+    "apologies_data_unavailable": "Jolok bod, melele ko ikijeen COVID rejab maron walok.",
+    "daily_new_cases": "Keij ko rej walok aolep raan",
+    "error_getting_data": "Jolok bod, kemij jab maron jibwetok keij ko rekaaltata ikijen COVID nan {{location}}.",
+    "new_cases": "Keij ko rekeel",
+    "past_14_days": "Emootlok 14 Raan",
+    "positive_test_rate": "Jonok nan ro emoj aer alikar ke rebok kij in",
+    "see_more": "Lale elonlok",
+    "source": "Ijo ej itok melele: {{source}}",
+    "spread_of_the_virus_in": "Makitkit ko kio an COVID-19 ilo Hawaii",
+    "trending_down": "Ej walallok",
+    "trending_up": "Ej walonlok"
+  },
+  "errors": {
+    "description": "Ewor bod ear walok. Jouj im bar jinoe jen jinoin app eo.",
+    "reload": "Bar jinoe",
+    "title": "Bod ejjelok melele kake"
+  },
+  "escrow_verification": {
+    "error": {
+      "invalid_phone_number": "Talboon nomba ej aikuij 10 nomba"
+    },
+    "person_and_health_expert": "Armej eo ej kenono ibben eo etijemlok kin ajmour",
+    "start": {
+      "body": "Elane kakolkol ko am rej kwalok bwe eor am COVID-19 (ejab jen men ko im rej kein jumae teej) komaron kwalok kin teej eo am ako koban kwalok etam.\n\nKolak kwalok kin tobrak in test eo am enaj koman bwe ro jet ilo jukjukin bed eo ren kejbarok lok an ajeded kij eo.",
+      "header": "Kwaloke teej eo ebok kij in",
+      "what_is_a_verification_code": "Ta in verification code?"
+    },
+    "user_details_form": {
+      "phone_number": "Talboon nomba",
+      "subheader": "Jouj im letok talboon nomba eo am im raan in teej eo im kem naaj jeje waj kin verificaion code eo.",
+      "test_date": "Raan in teej",
+      "test_details": "Melele ko kin teej eo"
+    }
+  },
+  "export": {
+    "code": "Code",
+    "complete_body_bluetooth": "Kwoj komman bwe en diklok an ajedeed naninmij eo im kejbarok ro jet ilo jukjukin bed eo.",
+    "complete_title": "Komol bwe kwoj kejbarok jukjukin bed eo am!",
+    "consent_body_0": "Kajjeon kwaloke tobrak in teej eo am ej am kelet im enaaj bedbed wot ioon malim eo am.",
+    "consent_body_2": "Melele ko de kein renaaj kwaloki ej kon jet nomba ko renaaj kelete talboon nomba eo ilo Bulutuut iben nomba ko jet rej ebaake iumwin 14 raan ko rej jemlok, ibben jonan kauwatata eo ilo jikoor in bedbed wot ion neet kakolkol ko ibbam raar jino walok.",
+    "consent_button_title": "Imelele im ij komalim",
+    "consent_warning_message": "Wonmaanlok wot enaaj kabojrak jen an code eo am jerbal. Elane kwonaaj konaan kwaloke ke teej eo am ej kalikar ke kobok kij in tokelik, kwoj aikuij mokta bok juon am verification code keel.",
+    "consent_warning_title": "Kauwatata!",
+    "enable_exposure_notifications_body": "Kwoj aikuij in kobellok kojjela in kapopo ko nan am kwalok ke teej eo am ej kwalok ke kobok kij in.",
+    "enable_exposure_notifications_button": "Kajoe kojjela in kapopo ko",
+    "enable_exposure_notifications_title": "Kajoe kojjela in kapopo ko nan am wonmaanlak wot",
+    "enter_verification_code": "Kadelon verification code eo",
+    "error": {
+      "invalid_format": "Code ko rej tok wot lo nomba im leta",
+      "network_connection_error": "Ejelok internet connection",
+      "unknown_code_verification_error": "Kajjeon bar juon code"
+    },
+    "intro": {
+      "body1": "Elane kwaar elolo verification code jen {{healthAuthorityName}} nan juon test eo ebok kij in COVID-19, komaron jilkinlok verification code eo ilo screen eo juon.",
+      "body2": "Elane ejelok am code, botaab teej eo am ej kalikar ke kobok kij in, konej aikuij boke verification code eo am jen {{healthAuthorityName}} mokta jen am wonmaanlok.",
+      "header": "Ewor ke am verification code?",
+      "what_is_a": "Ta in verification code?"
+    },
+    "never_mind_button_title": "Ejelok tokjen",
+    "person_and_health_expert": "Armej eo ej kenono ibben eo etijemlok kin ajmour",
+    "publish_consent_title_bluetooth": "Karon ro jet ilo jukjukin in bed eo am",
+    "publish_keys": {
+      "errors": {
+        "description": "Jerbal eo emaron jab dedelok. {{message}}",
+        "internal_server_error": "Server eo ej bed ilo an jab emman, jouj im bar kajjeon",
+        "timeout": "kajjitok eo ebok elap ien nan an dedelok",
+        "unknown": "Jab maron in jilkinlok teta ko rej aikuij diwoj nabojlok"
+      },
+      "no_op": {
+        "empty_exposure_keys": "Einwot ej kwalok ke ejelok am look ilo kein jerbal eo am, jouj im kotar 24 awa nan am wonmaanlok elane kwar bar rijete aolep teta ko am. Kwoj aikuij bar kajitok juon verification code keel.",
+        "empty_exposure_keys_title": "Ejelok data ikijeen look ko rej walok",
+        "no_token_for_existing_keys": "Teta eo ekar baj bed wot ar mootlak nan server eo. Ej kwalok melelein ke jerbal in ar kajjeon koman mokta lok jen kein jerbal in, ak juon wot eo application. Komaron kenono kake menin nan ro tellokier im rej bok eddo in verification code eo ar jerbal. Eaar wor {{newKeysInserted}} ki keel raar kobaiki.",
+        "no_token_for_existing_keys_title": "Kajjeon kar lelok ki kein rebed"
+      }
+    },
+    "symptom_onset": {
+      "did_you_have_symptoms": "Elon ke am kakolkol?",
+      "no_i_didnt_have": "Jaab, ejelok ao kakolkol",
+      "symptoms": "Kakolkol ko",
+      "when_did_your_symptoms": "Eaar ijjino neet kakolkol ko am?",
+      "yes_i_did_have": "Aet, ekar lon ao kakolkol"
+    },
+    "verification_code_info": {
+      "how_do_i_get_body": "Kurlok ro ilo jikin ajmour eo, {{healthAuthorityName}}.",
+      "how_do_i_get_header": "Ewi wawein ao bok verification code eo?",
+      "info_body": "Verification code ej juon code eo rej lewaj nan kwe jen jikin ajmour eo, {{healthAuthorityName}}, elane tobrak in test eo am ej kwalok ke kobok kij in.\n\nVerification code eo ej jerbal nan kamool ke tobrak in test eo am me kobok kij ie ej lukin mool.\n\nKajojo verification code enaj jemlok kitien ilo juon ien eo ekadu nan kwalok ke teej ko remaat kitier rejab lilok.\n\nElane kwonaaj ioon bod elane kwonaaj jilkinlok verification code eo, kwoj aikuij kajjitok kin juon code keel jen ro ilo jikin ajmour mokta jen am bar jilkinlok.",
+      "info_header": "Ta in verification code?",
+      "what_happens_body": "Elane kwonaaj jilkinlok verification code eo, app eo enaj kajjitok bwe kwon jeere nomba eo raar lewaj jen kein jerbal ko am im emoj an konaak ie.\n\nElane kwonaaj lelok melim, app in enaaj jilkinlok ki kein nan kojjela in kapopo jobor eo. Notification server eo enaaj kejeleik kein jerbal ek am im emoj am konaak ie ikijeen tobrak in test eo am im ej kwalok ke kobok kij in.\n\nApp eo ejab ebok ak kejbarok melele ko kin kwe. Ki ko wot emoj keleti im rej bed ilo kein jerbal eo am rej share ie.",
+      "what_happens_header": "Ta eo enaaj walok elane inaaj jilkinlok code eo ao?"
+    }
+  },
+  "exposure_history": {
+    "check_for_exposures": "Lukin lale nan kadiwoj nabojlok",
+    "days_remaining": "Elon {{daysOfQuarantineLeft}} jejjo raan wot ilo quarantine period eo am.",
+    "exposure_detail": {
+      "general_guidance": "Kein kenono ko nan lori",
+      "next_steps": "Etale kein kenono ko ikijeen ajmour",
+      "personalize_my_guidance": "Komman ao make men ko nan lori",
+      "schedule_callback": "Karok ien kurlok jiban ko nan iben ro rej etale jen {{healthAuthorityName}}.",
+      "speak_with_contact_tracer": "Kenono ibben ro rej etale"
+    },
+    "exposure_report": "Ripoot in po ko",
+    "exposure_summary": "Juon eo kwar bed iturin ilo {{startDate}} im {{endDate}} raar walok ke rebok kij in ilo tobrak in teej eo aer ikijeen COVID-19.",
+    "health_guidelines": {
+      "six_feet_apart": "Etolok tarin 6 ne",
+      "stay_home": "Bed wot mweo elane konaninmij",
+      "title": "Wawein tel ko ikijeen Ajmour",
+      "two_meters_apart": "Etolok 2 miita jen doon",
+      "wash_your_hands": "Kakutkut am kwal beim",
+      "wear_a_mask": "Kejerbal maaj"
+    },
+    "how_does_this_work": "Ewi wawein an menin jerbal?",
+    "how_does_this_work_para": "Elane kojjela in kapopo ko rej ebol, talboon eo ej kojerbal Bulutuut nan leto-letak im kejbarok jabrewot nomba ilo lain (rej naetan ID ko jabdewot) jen jabdewot talboon ko im rej ebaak im eboreinwot bar jo kojjela in kapopo ko ie. ID kein rej rejamin kwalok won kwe nan ro rej bar kejerbale menin im elon ien ej oktak aoleb raan nan kejbarok melele ko ikijeem.",
+    "last_days": "Raan ko 14 eliktata",
+    "more_info": "Katak elaplok kin kojjela in kapopo ko",
+    "next_steps": "Bunten ne ko jet",
+    "no_connectivity_message": "Kwojab koneek nan internet!",
+    "no_exposure_reports": "Ejjelok ripoot kijeen melele ko kin po",
+    "no_exposure_reports_over_past": "Kojanin elolo ripoot ikijeen melele ko kin po ilowaan raan ko 14 rej jemlok",
+    "possible_exposures": "Kilen ko nan po",
+    "review_health_guidance": "Etale kakien ko kin Ajmour",
+    "updated": "Kokeel",
+    "why_did_i_get_an_en": "Etke eaar itok kojjela kin kapopo ko?",
+    "why_did_i_get_an_en_para": "Konaaj loe kojjela in kapopo ko elane kwar bed iturun ro im renaaj walok lo teej ko aer ke rebok kij in COVID-19 im emoj aer kelet ke ren karon ro jet.",
+    "your_device_exchanged": "Ilowaan aolepen raan kein ijin ilal, kein jerbal eo am ej janij ki iben kein jerbal eo juon im ej kwalok kin tobrak in teej eo ke ebok kij in."
+  },
+  "exposure_notification_alerts": {
+    "bluetooth_body": "Nan kobellok kojjela eo kapopo ko, kwoj aikuij mokta kobellok Bulutuut ilo app jetiin eo am.",
+    "bluetooth_title": "Kajoe Bulutuut",
+    "cant_check_for_exposures_body": "Kwoj aikuij kajeo kojela in kapopo ko nan jeek nan kapopo.",
+    "cant_check_for_exposures_button": "Kajoe kojjela in kapopo ko",
+    "cant_check_for_exposures_title": "Eban jeek nan kapopo",
+    "location_body": "Google ej kwalok bwe kein jerbal ko re kejerbal Android 10 ak lallok rej kajoe location services nan kojerbal Exposure Notifications (Kojjela in kapopo ko). {{applicationName}} EJAB lale ak kejbarok rekoot in ijo kwoj bed ie.",
+    "location_title": "Kajoe location Services",
+    "set_active_region_ios_body": "Kobellok jetiin app eo, etal nan kojjela in kapopo   jetiin eo an app in, innem jibede \"Set As Active Region (Kommane bwe en jo jikin eo)\".",
+    "set_active_region_ios_title": "Set Active Region (Kommane jikin eo)",
+    "share_exposure_information_ios_body": "Kobellok jetiin app, innem etal nan kojjela eo kin kapopo jetiin eo nan app in. Lukin lale bwe \"Jeer kojjela kin kapopo\" en jo, innem jibede \"Set As Active Region (Kommane bwe en jo jikin eo)\".",
+    "share_exposure_information_ios_title": "Jeer kojjela kin kapopo",
+    "unhandled_error_body": "Juon men eo jekar jab kotmene ewalok. Jouj im kiili im bar kobelloke app eo im bar kajjeon juon alen.",
+    "unhandled_error_title": "Juon men eo bod kilen",
+    "use_exposure_notifications_android_body": "Nan kajoe kojjela eo kin kapopo, etal nan COVID-19 Exposure Notifications (Kojjela in kapopo ko) screen ilo jetiin app eo am im kajoe \"use Exposure Notification (Kejerbal Kojjela in kapopo ko)\".",
+    "use_exposure_notifications_android_title": "Kajoe kojjela in kapopo ko"
+  },
+  "exposure_scanning_status": {
+    "fix_this": "Kommane menin",
+    "learn_more": "Ekatak elaplok",
+    "your_device_is_not": "Kein jerbal eo am ejab kwalok tok po ko. Kommane men kein ilal nan kajoe Exposure Detection (Kapopo ko rewalok).",
+    "your_device_is_scanning": "Kein jerbal eo am ej kwalok kein kapopo ko im enaaj wonmaanlok wot im kommane wawein in jekdoon konaaj kiili app eo."
+  },
+  "home": {
+    "bluetooth": {
+      "location_disabled_error_message": "Nan am kobelloke Exposure Notifications (Kojjela in kapopo ko) tecknology, komelimi Location access ilo jetiin app eo",
+      "location_disabled_error_title": "Komelim ilo jetiin eo",
+      "location_header": "Jikin",
+      "location_subheader": "{{applicationName}} ejab delone teta in ijoko kwoj bed ie innem kein jerbal eo nejum rejamin bar loe.",
+      "proximity_tracing_header": "Exposure Notifications (Kojjela in kapopo ko)",
+      "share": "Jeer {{applicationName}}",
+      "share_message": "Lale app in {{applicationName}}, bwe en maron komamn ad depij COVID-19 jen an ajedeed! {{appDownloadUrl}}",
+      "tracing_off_header": "Kune Exposure Detection (Kapopo ko Rewalok) eo",
+      "tracing_on_header": "Kajoe Exposure Detection (Kapopo ko Rewalok) eo"
+    },
+    "bluetooth_info_body": "Talboon eo nejum ej bar loe talboon ko jet ilo am kebaake er im kejerbal Bluetooth low Energy. Menin ej komman bwe app eo en look e kajojo ien elane kwoj delone, jekdron ne kojab kobelloke app eo ilo kein jerbal eo am.",
+    "call_emergency_services": "Kurlok jikin jiban ko kin idin",
+    "error": {
+      "share_link_failed": "Jab maron kapelloke link nan jeer"
+    },
+    "fix": "Kommane jorraan kin {{technology}}",
+    "get_more_info": "Bok elaplok melele kin {{technology}}",
+    "have_a_positive_test": "Teej eo am ebok kij in ke?",
+    "location_info_body": "Google ej kwalok bwe kein jerbal ko rej kejerbal Android 10 ak lallok rej kajoe location services ko nan kojerbal Exposure Detection eo (Kapopo ko rewalok). {{applicationName}} EJAB lale ak kejbarok rekoot in ijo kwoj bed ie.",
+    "location_info_subheader": "{{applicationName}} ejab maron lale ak kejbarok ia eo kwoj bed ie",
+    "notifications_off": "Kajoe notification ko am nan kojjela waj elane kopo lo kij in",
+    "open_healthcheck": "Kobellok Healthcheck",
+    "proximity_tracing_info_body_1": "Elane talboon ko kwoj jibedi lowaer eped app in ie im ejo, kajoe Bulutuut, im rej bed iturin doon ilo jidik ien, ippen doon in enej delon ilo talboon eo nejim.",
+    "proximity_tracing_info_body_2": "Elane enaaj delone, teta ko am, im melele ko am make renaaj bed wot im ittino. App eo ejab kejbarok teta ko am make. ID ko jabdewot rej jenij. Renaaj jako elikin 14 raan.",
+    "proximity_tracing_info_subheader_1": "Ewi wawein an Kojjela in kapopo ko jerbal?",
+    "proximity_tracing_info_subheader_2": "Teta ko ao renaaj bed wot ke im kwon?",
+    "verification_code_card": {
+      "if_you_have_a_code": "Jilkinlok verification code eo am nan jiban kejbarok jukjukin bed eo am.",
+      "if_you_have_a_positive_test": "Elane konaaj bok teej eo im bok kij in COVID-19, komaron ripoot ilo aer jaje won kwe nan kejbarok jukjukin bed eo am.",
+      "more_info": "Ta in verification code?",
+      "report_positive_test": "Ripoo teej ko rebok kij in",
+      "submit_code": "Jilkinlok code eo"
+    }
+  },
+  "label": {
+    "checked_checkbox": "jeeke jeekbook eo",
+    "go_to_home_view": "Etal nan Home view",
+    "launch_enable_notif": "Kajoe Notification",
+    "launch_get_started": "Jinoe",
+    "launch_screen1_header": "Ruwainene nan ",
+    "privacy_policy": "Kakien ikijeen men ko rej aikuij ittino wot",
+    "unchecked_checkbox": "Jab jeeke jeekbook eo"
+  },
+  "navigation": {
+    "exposure_history": "Po ko",
+    "home": "Taajboot",
+    "settings": "Jetiin ko",
+    "symptom_history": "Kakolkol ko"
+  },
+  "onboarding": {
+    "app_setup_complete_body": "{{applicationName}} ejerbal. Komool kin am jiban komman bwe en jab lap kapopo.",
+    "app_setup_complete_header": "Ededelok app setup!",
+    "app_setup_incomplete_body": "{{applicationName}} menin aikuij nan Kojjela in kapopo ko im melim ko jen Bulutuut nan am jela naat kwaar ejadede nan COVID-19. Komaron komalimi ilo jetiin ko.",
+    "app_setup_incomplete_header": "App Setup eo ejanin dedelok",
+    "app_setup_incomplete_location_body": "{{applicationName}} menin aikuij nan Kojjela in kapopo ko, Bulutuut, im melim jen jikin ko kwoj bed ie nan am jela naat eo kwar ejadede nan COVID-19. Komaron komalimi ilo jetiin ko.",
+    "eula": "Kojemlok eo ej kojerbal kwon in",
+    "eula_agree_terms_of_use": "Ij kamoole bwe emoj ao riiti im bok toom ko nan kejerbale",
+    "i_am_over": "Aet, Emoj ao dedelok {{minimumAge}}",
+    "location_alert_body": "Nan kojerbal Kojjela in kapopo ko, Location Services (Jikin Ko) rej aikuij jo",
+    "location_alert_header": "Kajoe Location Services",
+    "location_body": "Google ej kwalok bwe kein jerbal ko rej kejerbal android 10 ak diklok ewor aer location services rejo nan kojerbal Bulutuut scanning nan Exposure Detection (Kapopo ko rewalok). Botsab, {{applicationName}} EJAB lale ak kojbarok rekoot ko kin ia eo kwoj bed ie.",
+    "location_header": "Kobellok Location",
+    "location_services_already_active": "Location Services ko rebellok",
+    "location_subheader": "{{applicationName}} ejab delone teta in ijoko kwoj bed ie innem kein jerbal eo nejum rejamin bar loe.",
+    "no_take_me": "Jaab, bar korol io",
+    "notification_body1": "Konaaj elolo kojjela ko elane kwaar bed iturin ilo juon ien eo aetok, nan eo emoj aer loe naninmij in COVID-19 ibben.",
+    "notification_body2": "App eo ej kommane menin ilo an kejerble Bluetooth Low Energy im kommane jabdewot code ko ilo an jab jela won kwe ak ia eo kwar bed ie. Komaron kiili menin jabrewot ien ilo jetiin eo.",
+    "notification_header": "Karon yuk elane emoj am ajedede nan naninmij in",
+    "notification_subheader1": "Neet eo renaaj karon io?",
+    "notification_subheader2": "Ewi wawein an jerbal?",
+    "notification_subheader3": "App in ejamin kejbarok iok jen COVID-19.",
+    "please_read_the": "Jouj im riiti ",
+    "privacy_policy": "Kakien ikijeen men ko rej aikuij ittino wot",
+    "protect_privacy": {
+      "body_1": "ID kein rejab kwalok kin men ko ikijeen armij im rej oktak aolep 10-20 minit nan kejbarok iok.",
+      "body_2": "Talboon rej leto-letak melele ko kin ID ko iben kein jerbal ko jet ilo aer kejerbale Bluetooth Low Energy. Ej kotlok bwe {{applicationName}} nan lale am delon ilo an ittino wot melele ko ikijeem, jekdoon ne kojab kobelloke lo kein jerbal eo nejum.",
+      "body_3": "Elikin an teej eo kwalok ke ewor am naninmij in COVID-19, ro rej kojerbale men kein remaron jeere verification code eo ibben {{applicationName}} nan kamoole kein jeek ko. Jabdewot ID lo talboon ko aer rej kokkalle im delon nan server eo. Jerbal in Verification in ej jiban kejbarok jen riabin ripoot ko ikijeen ro rebok kij in.",
+      "body_4": "Elane flagged ID eo emaaje ID eo emoj likit ilo talboon eo nejum, menin ej kalikar ke emoj am bed iturin juon eo ewor naninmij in COVID-19 ibben. Enin ej wawein {{applicationName}} ej kwalok elane kwaar ejedmatmat nan kij in.",
+      "body_5": "Elane enaaj maaj, {{applicationName}} renaaj kojjelaik iok im lewaj karok ko nan kwe jen jikin ajmour eo am.\n\nEnin ej wawein {{applicationName}} nan kokkajoor iok nan komman lomnak ko kin ajmour eo am, im kejbarok jukjukin bed eo am, ilo aer jaje kin won kwe ak ia ko kwaar bed ie.",
+      "subheader_1": "Elane konaaj kajoe kojjela in kapopo ko, talboon eo am emoj aer taak e ippen ID ko rej ukooktak",
+      "subheader_2": "Talbool ko ewor kojjela in kapopo ko im rejo rej jeniji ID ko ibben kein jerbal ko jet rej maron loi",
+      "subheader_3": "Elane eo ej kejerbale im teej eo an ebok kij in, remaron kelet nan jeer e naninmej in aer ilo an jab walok etan",
+      "subheader_4": "Kajojo talboon rej biin i server eo nan liij in ID ko rekokkalle im kabok aer meej",
+      "subheader_5": "Renaaj kojjelaik iok elane {{applicationName}} ej loe juon eo ebok naninmej in im emeeje yuk im ewor bulaak ID"
+    },
+    "protect_privacy_button": "Ewi wawein am kejbarok melele ko am make",
+    "proximity_tracing_already_active": "Kojjela in kapopo ko ej jerbal",
+    "proximity_tracing_body1": "Elane talboon ko kwoj jibedi lowaer eped app in ie im ejo, kajoe bulutuut, im rej bed iturin doon ilo jidik ien, ippen doon in enej delon ilo talboon eo nejim.",
+    "proximity_tracing_body2": "Elane enaaj delone, teta ko am, im melele ko am make renaaj bed wot im ittino. App eo ejab kejbarok teta ko am make. ID ko jabdewot rej jenij. Renaaj jako elikin 14 raan.",
+    "proximity_tracing_button": "Kobellok Kojjela in kapopo ko",
+    "proximity_tracing_header": "Kobellok Kojjela in kapopo ko",
+    "proximity_tracing_subheader1": "Ewi wawein an jerbal?",
+    "proximity_tracing_subheader2": "Teta ko ao renaaj bed wot ke im kwon?",
+    "proximity_tracing_subheader3": "App in ejamin kejbarok iok jen COVID-19.",
+    "screen1_button": "Ewi wawein an jerbal?",
+    "screen1_header": "Ibben doon, jemaron kadiklok COVID-19.",
+    "screen1_image_label": "Ruo armej rej kabbokolok pein doon mejatoto",
+    "screen1_title": "Kommol kin am kejerbale AlohaSafe Alert",
+    "screen2_button": "Melele ko ao make rej ke bed ilo aer kejbaroki?",
+    "screen2_header": "Talboon eo am ej kememej kein jerbal ko jet ej iooni, ako eban kwalok won kwe nan jabdewot.",
+    "screen2_image_label": "Ruo armej ilo talboon ko aer",
+    "screen3_button": "Ta eo ne emoj ao ejadede nan naninmej in?",
+    "screen3_header": "Melele ko am im rej kwalok won kwe rejamin jako jen talboon eo am.",
+    "screen3_image_label": "Armej eo imaan talboon eo ejab pellok",
+    "screen4_button": "Jinoe",
+    "screen4_header": "App eo enaaj kojelaik iok elane kwar bok naninmij in COVID-19",
+    "screen4_image_label": "Armej eo ej loe kojjela eo ilo talboon eo an",
+    "terms_header_title": "Toom ko nan kejerbali",
+    "verify_your_age": "Kamoole iio eo am",
+    "welcome_image_label": "Juon pijaan armej ro rej konak meej ko aer, ekoba einwot node ko ilo juon network.",
+    "you_must_be": "kwoj aikuij {{minimumAge}} ak rittolok nan kejerbale {{applicationName}}. Kwoj ke ilon in {{minimumAge}}?"
+  },
+  "product_analytics": {
+    "i_understand_and_consent": "Imelele im ij komalim",
+    "privacy_policy": "Kakien ikijeen men ko rej aikuij ittino wot",
+    "share_anonymized_data": "Jeere teta ko ilo an jab walok etan armej",
+    "share_anonymized_data_disclaimer": "Ilo am wonmaanlok wot, kwoj erre bwe konaaj jeere teta eo iben {{healthAuthorityName}}",
+    "share_data_para_1": "Tenkwadik im data ko raurok kin ewi wawein an jukjukin bed ko kejerbal app eo nan jiban {{healthAuthorityName}} Commission, etale, melele kake, im kadiklok an ajedeed naninmij in COVID-19.",
+    "share_data_para_2": "Teta in ejab bed melele ko rej kwalok kin kwe.",
+    "stop_sharing_data": "Bojrak jen jake to jake tak teta"
+  },
+  "screen_titles": {
+    "bluetooth": "Bulutuut",
+    "exposure_history": "Kapopo ko",
+    "exposure_notifications": "Exposure Notifications (Kojjela in kapopo ko)",
+    "exposure_scanning": "Exposure Detection (Kapopo ko rewalok)",
+    "home": "Taajboot",
+    "how_the_app_works": "Ewi wawein an app eo jerbal",
+    "legal": "Kakien",
+    "location": "Jikin",
+    "protect_privacy": "Ewi wawein am kejbarok melele ko am make",
+    "select_language": "Kelet kajin eo",
+    "select_symptoms": "Kelet kakolkol ko",
+    "settings": "Jetiin ko"
+  },
+  "self_assessment": {
+    "age_range": {
+      "eighteen_to_sixty_four": "18 - 64",
+      "get_my_guidance": "Ebok ao tel ko",
+      "how_old_are_you": "Jete am iio?",
+      "sixty_five_and_over": "65+"
+    },
+    "call_emergency_services": {
+      "call_emergencies": "Kurlok {{emergencyPhoneNumber}}",
+      "seek_medical_attention": "Bukotlok jikin takto ien eo emokajtata",
+      "urgent_medical_attention_needed": "Idun ko ikijeen takto remaron menin aikuij. Jouj im kurlok {{emergencyPhoneNumber}} ak etal nan ra eo an jikin idun"
+    },
+    "emergency_symptoms": {
+      "are_you_experiencing": "Kwoj ke enjaake jabdewot kakolkol kein an idun?",
+      "chest_pain": "Lukun nana, ekka an metak oob ak bam",
+      "difficulty_breathing": "Elukkun nana am menono",
+      "disorientation": "Lukkun jajelolokjen ak ban maron makitkit",
+      "lightheadedness": "Lukun nana, ekka an metak boram",
+      "select_any": "Kelet aolep men rej jelet iok (ak ejelok)."
+    },
+    "general_symptoms": {
+      "aching": "Metak aolepen enbwinnum",
+      "are_you_experiencing": "Elon ke jet iaan kakolkol kein kwoj enjaaki?",
+      "cough": "Keel ak nana lok bokbok",
+      "difficulty_breathing": "Edik ak ebwe an apan am emenono",
+      "fever_or_chills": "Piba ak bio",
+      "loss_of_smell_taste_appetite": "Bar kojako konemnem, kateet, ak konaan mona",
+      "other": "Ko jet",
+      "select_any": "Kelet aolep men kwoj boki.",
+      "vomiting_or_diarrhea": "Emmojlok ak Bidodo loje"
+    },
+    "guidance": {
+      "call_your_healthcare_provider": "Kurlok ro rej lorlorjake ajmour, lain eo an ebok naan in kapilok, ak eo lo jikin uno eo ilowaan 24 awa.",
+      "clean_hands": "Karreoiki peim aolep ien.",
+      "cover_coughs": "Pinej am bokbok im maje.",
+      "dont_go_to_work": "Jab etal nan jerbal, jikuul, ak ijoko elon armej ie.",
+      "dont_use_public_transport": "Jab iuwe lo wa ko elon armej rej iuwe ie ak iuwe ibben bar juon.",
+      "drink_water": "Idaak elab den im den ko jet rejab kolar nan kajbarok enbwinnum jen an mora (mora enbwin).",
+      "feeling_fine": "Emman ad ron ke emman am mour. Kwoj aikuij etale wot kakolkol ko im bed wot mweo.",
+      "find_a_test_center_nearby": "Bunten ne ko jet",
+      "find_telehealth": "Kabok jikin jiban ko kin ajmour im ta jerbal ko aer",
+      "follow_cdc_guidance": "Elane ewor am kakolkol, Lori unin tel ko an CDC.",
+      "guidance": "Tel ko nan kwe",
+      "if_symptoms_develop": "Elane enaaj wor am enjaake in kakolkol in COVID-19 ak elane enaaj nana lok, kurlok ro ilo jikin ajmour eo, jikin takto talbool lain eo, ak jikin ebok uno eo ippen ro rej jerbal ie.",
+      "may_help_you_feel_better": "Erkein ej jet bunten ne ko nan kokmanman am mour:",
+      "monitor_your_symptoms": "Jolok bod bwe konaninmij. Bed wot mweo im etale kakolkol ko am. Kurlok rikajmour eo elane kakolkol ko rej nana lok, bed wot mweo.",
+      "practice_social_distancing": "Kaminene etolok jen doon.",
+      "protect_others": "Bok bunten kein nan kejbarok ro jet jen air naninmij.",
+      "rest": "Bed wot mweo im kakije.",
+      "seek_medical_care": "Elane kwoj kile ke eidin ak enana lok am bed, kebaak jikin takto.",
+      "stay_6_feet_away": "Bed 6 ne etolok jen armej ro jet im etolok jen ijoko elon armej ie.",
+      "stay_at_home": "Bed wot mweo ijelokin ne kwoj bukot ajmour.",
+      "stay_away_from_higher_risk_people": "Elane emaron, bed etolok jen ro me ebidodo aer bok COVID-19.",
+      "stay_home_14_days": "Bed mweo imom ilowaan 14 raan.",
+      "take_care_of_yourself": "Ekatak wawein kejbarok iok make ak bar juon eo enaninmij.",
+      "take_temperature": "Bok bwilim ruo katton ilo juon raan im lale kakolkol ko ikijen COVID-19.",
+      "watch_for_covid_symptoms": "Lale kakolkol ko kin COVID-19.",
+      "you_have_underlying_conditions": "Jolok bod bwe ejjab emman am mour. Kakolkol kein am remaron kin COVID-19. Emaron bar wor naninmij ko ibam im remaron likit iok ilo kauwatata ilo an nej laplok am naninmij.",
+      "your_symptoms_might_be_related": "Jolok bod bwe ejjab emman am mour. Kakolkol kein am remaron kin COVID-19."
+    },
+    "how_are_you_feeling": {
+      "good": "Emman",
+      "not_well": "Ejjab eman",
+      "title": "Ej et am mour?"
+    },
+    "intro": {
+      "agree_and_start_assessment": "Erre im jino kaminene eo",
+      "covid19_self_assessment": "Kaminene eo kin COVID-19",
+      "find_out_how_to_care": "Bukot kilen endeet am kajmour iok make im ro jet elikin am bed iturin juon eo ewor naninmej in COVID-19 iben",
+      "if_this_is": "Elane menin idin, jouj im kurlok {{emergencyPhoneNumber}}",
+      "learn_more": "Ekatak elablok kin CDC Coronavirus kij eo ilo am jeeke kwe make im Kaminene in enaaj komman bedbed ioon",
+      "this_is_based_on": "Menin e ej bedbed ion waanjolok ekaal jen CDC emaron in bar updated tokelik einwot ad ekatak kin wawin an naninmij in ajeded im naninmij ko ej komane",
+      "this_is_not_intended": "Menin ejab nan komadmod ak kakolkol",
+      "you_are_a_resident": "Kwoj juon armij ej jokwe ilo jukjukin bedm eo im ej jiban jen {{ healthAuthorityName }}"
+    },
+    "underlying_conditions": {
+      "blood_disorder": "Jorren ilo botoktok, einwot naninmij in sickle cell ak thalassemia",
+      "cerebrovascular_disease": "Naninmij in eke ko im rej ettor ilo botoktok ko ilo komelij, einwot stroke ak demntia",
+      "diabetes": "Tonal ko",
+      "do_you_have": "Elon juon ian wawin naninmij kein ibam?",
+      "heart_condition": "Naninmij ilo menono, einwot joreen in menono, naninmij ko ilo eke ak metak oob",
+      "high_blood_pressure": "Lab highblood",
+      "kidney_disease": "Naninmij in kidney",
+      "liver_disease": "Naninmej in joreen aaj",
+      "lung_disease": "Naninmej in eer einwot an kebaak lok nan am ikijelok, COPD, bin am menono im joreen aarim",
+      "obesity": "Lukun kilep jen jonan",
+      "pregnancy": "Bororo",
+      "select_all_or_none": "Kelet aolep menkein im rej jelet eok (ak ne rejab)",
+      "smoking": "Kobatat",
+      "weakened_immune_system": "Mojno immune system eo ak ilo am ebok uno ko im rekajoor im koman an mojno immune suppression eo im ej bobrae organ ko"
+    }
+  },
+  "settings": {
+    "data_deleted": "Emoj an jako data",
+    "delete_data_are_you_sure": "Kwoj mol ke?",
+    "delete_data_disclosure1": "Elane kwonaj jibede \"Jere data ko ao (Delete My Data)\", aoleb data ko rar kakoni {{applicationName}} renaj ejeer:",
+    "delete_data_disclosure2": "Menin eban jeerlok teta ko im emoj kommani ak aini jen kein jerbal eo nejim nan kwalok kojjela in kapopo ko\n\nKomaron jeerelok kakobaba in Teta ko ilo jikin jetiin eo ilo kein jerbal eo nejum.",
+    "delete_data_language_token": "Emoj dror juon kein kakemejmej nan kakoni aolep kajin ko kajojo ilo device eo nejim device eo nejim",
+    "delete_data_note": "Melele",
+    "delete_data_onboarding_token": "Kein kakemejmej eo im ej bed ilo device eo nejim enaj kejbaroki jekdron emoj am kadedelok app in drelon eo",
+    "delete_data_product_analytics": "Men ko rar likiti ilo kein jerbal eo am mekar ta kwar lelok melim nan kakone men kein ilo data ko am",
+    "delete_data_symptom_history": "Jabrewot kakolkol ko renaj bed iloan device eo nejim",
+    "delete_data_this_action": "Wawin in enaj jolok aoleb data kokoni ilo {{applicationName}}.",
+    "delete_my_data": "Jeeri lok data ko ao",
+    "errors": {
+      "deleting_data": "Jolok bwod ak jekar jab maron jeeri lok data ko am"
+    },
+    "not_sharing_anonymized_data": "Jejab ajej data ko an bar jet",
+    "share_anonymized_data": "Jeere teta ko ilo an jab walok etan armej",
+    "sharing_anonymized_data": "Enaj ajej data ko an bar jet"
+  },
+  "symptom": {
+    "bluish_lips_or_face": "Blu tiom ak mejam",
+    "congestion_or_runny_nose": "Pwon botim im iuwir",
+    "cough": "Bokbok",
+    "diarrhea": "Ilok Lojeem",
+    "fatigue": "Aajloke",
+    "fever_or_chills": "Pipa im Pio",
+    "headache": "Metak bar",
+    "inability_to_wake_or_stay_awake": "Kojab maron ruj",
+    "muscle_or_body_aches": "Metak muscles ko ilo enbwinum",
+    "nausea_or_vomiting": "Molanlon ak emoj",
+    "new_confusion": "Ebwok komelij eo am im ejab eman am lemnak",
+    "new_loss_of_taste_or_smell": "Ebin am eet bwin im lemak juon men",
+    "other": "Ko jet",
+    "persistent_pain_or_pressure_in_the_chest": "Ikutkut an metak im bwon tok ubom",
+    "shortness_of_breath_or_difficulty_breathing": "Ikijelok im bin am menono",
+    "sore_throat": "Metak buruom",
+    "trouble_breathing": "Bin am menono"
+  },
+  "symptom_history": {
+    "did_not_feel_well": "Ekar jab eman am mour",
+    "errors": {
+      "updating_symptoms": "Jolok bwod, kem ejab maron kar update i kakolkol ko am"
+    },
+    "felt_well": "Ekar emman am mour",
+    "no_entry": "Ejelok kein drelon",
+    "no_symptoms": "Ejelok kakolkol",
+    "share_history": "Share kakolkol in bwebwenato eo",
+    "sharing": {
+      "header": "Bwebwenato in kakolkol {{startDate}} nan {{endDate}}",
+      "no_symptoms_were_logged": "Ejelok kakolkol ear drelon",
+      "you_did_not_feel_well": "Ejab eman am mour, im barainwot kakolkol ko am: {{symptomList}}",
+      "you_felt_well": "Ekar emman am mour"
+    },
+    "symptom_history": "Kakolkol ko",
+    "to_protect_your_privacy": "Nan kejbarok aolep melele ko kin kwe make, menko im rej kakoni ilo device eo nejim renaj make ejeer elikin wot {{days}} ran ko."
+  },
+  "verification_code_alerts": {
+    "code_used_body": "Verification code eo im rar letok emoj an jerbal.",
+    "code_used_title": "Emoj an jerbal verification code",
+    "invalid_code_body": "Kamol code eo kwar jilikintok ejab jimwe.\n\nCode eo am ej aikuij juon eo emoj kamole jen jikin ejmour eo im rar lewaj nan kwe.\n\nEmaron bar juon code eo am ejemlok kitien. Kin menin, kwonaj aikuj bar kajitok juon code kaal jen jikin ejmour eo.",
+    "invalid_code_title": "Ejab jimwe code eo",
+    "network_connection_body": "Kwoj aikuij connect nan WiFi nan am jilikin lok verification code.",
+    "network_connection_title": "Ejelak internet connection",
+    "unknown_body": "Ekar walok juon bwod eo im jekar jab kotmene ke emaron walok. Jouij im bar kajeon.",
+    "unknown_title": "Juon men eo bod kilen"
+  }
+}
