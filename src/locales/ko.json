@@ -182,7 +182,7 @@
     }
   },
   "exposure_history": {
-    "check_for_exposures": "최신 정보",
+    "check_for_exposures": "노출 여부 확인",
     "days_remaining": "권장 격리 기간에 남은 일수:",
     "exposure_detail": {
       "2m_apart": "2미터 간격",
@@ -199,7 +199,7 @@
       "wash_your_hands": "손을 씻으십시오.",
       "wear_a_mask": "마스크 착용"
     },
-    "exposure_report": "노출 신고서",
+    "exposure_report": "노출 기록",
     "exposure_summary": "{{startDate}}에서 {{endDate}} 사이에 근처에 있었던 사람들 중 에 하나가 코로나19 확진 판정을 받았습니다.",
     "health_guidelines": {
       "six_feet_apart": "6 피트 간격 유지",
@@ -211,12 +211,13 @@
     },
     "how_does_this_work": "어떻게 작동하나요?",
     "how_does_this_work_para": "노출 알림이 켜져 있는 경우 휴대폰은 블루투스 저에너지를 사용하여 노출 알림이 활성화 된 휴대폰과 가깝게 접촉하는 모든 휴대폰에서 임의 ID라고 하는 임의의 숫자 문자열을 교환합니다. 임의 ID는 다른 사용자에게 귀하를 개인적으로 식별하지 않으며 귀하의 개인 정보를 보호하기 위해 하루에 여러 번 변경됩니다.",
+    "if_fully_vaccinated": "이미 접종 완료된 경우 증상이 없고 공동주택에서 살지 않으면 자가격리하지 않아도 됩니다.",
     "last_days": "지난 14일간",
     "more_info": "노출 알림에 대해 자세히 알아보기",
     "next_steps": "다음 단계",
     "no_connectivity_message": "인터넷에 연결되어 있지 않습니다!",
-    "no_exposure_reports": "노출 신고서 없음",
-    "no_exposure_reports_over_past": "지난 14일 동안 노출 신고서를 받지 못했습니다.",
+    "no_exposure_reports": "노출 기록 없음",
+    "no_exposure_reports_over_past": "지난 14일 동안 노출 알림을 받지 못했습니다.",
     "possible_exposure": "코로나19 노출 가능성",
     "possible_exposures": "코로나19 노출 가능성",
     "protect_yourself_and_others": "귀하와 지역 사회를 보호하십시오.",

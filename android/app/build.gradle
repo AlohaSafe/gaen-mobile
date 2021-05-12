@@ -157,8 +157,8 @@ android {
         testBuildType System.getProperty('testBuildType', 'debug')
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
-        versionCode 39
-        versionName "1.0.13"
+        versionCode 41
+        versionName "1.0.15"
 
         //Fix problem in bt where .env.bt is not recognized
         resValue "string", "build_config_package", "org.pathcheck.covidsafepaths"

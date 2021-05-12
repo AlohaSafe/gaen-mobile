@@ -163,6 +163,7 @@
     },
     "how_does_this_work": "How does this work?",
     "how_does_this_work_para": "When Exposure Notifications are on, your phone uses Bluetooth to swap and save random number strings (called random IDs) from any phones it is in close proximity to that also have Exposure Notifications enabled. Random IDs won’t identify you personally to other users and change many times a day to protect your privacy.",
+    "if_fully_vaccinated": "If you are fully vaccinated, you do not need to quarantine, unless you develop symptoms or live/work in a congregate setting.",
     "last_days": "Last 14 days",
     "more_info": "Learn more about Exposure Notifications",
     "next_steps": "Next Steps",

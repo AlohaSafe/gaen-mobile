@@ -54,6 +54,9 @@ const ExposureSummary: FunctionComponent<ExposureSummaryProps> = ({
           {t("exposure_history.days_remaining", { daysOfQuarantineLeft })}
         </Text>
       </View>
+      <Text style={style.addendumText}>
+        {t("exposure_history.if_fully_vaccinated")}
+      </Text>
     </View>
   )
 }
@@ -62,6 +65,10 @@ const style = StyleSheet.create({
   summaryText: {
     ...Typography.body.x20,
     marginBottom: Spacing.small,
+  },
+  addendumText: {
+    ...Typography.body.x20,
+    marginTop: Spacing.small,
   },
   daysRemainingTextContainer: {
     backgroundColor: Colors.neutral.shade10,

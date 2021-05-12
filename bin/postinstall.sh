@@ -19,6 +19,6 @@
 
 FILE=node_modules/ts.data.json
 if [ -d "$FILE" ]; then
-  echo "renaming ts.data.json to ts-data-json"
-  mv $FILE node_modules/ts-data-json
+  echo "duplicating ts.data.json to ts-data-json"
+  cp -a $FILE node_modules/ts-data-json
 fi
